@@ -13,7 +13,7 @@
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.1.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_1_0_beta_snapshot_47-21-gd58a3be
+ESMF_VERSION_STRING_GIT=ESMF_8_1_0_beta_snapshot_47-21-gd58a3bea22
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -32,17 +32,17 @@ ESMF_F90COMPILER=mpifort
 ESMF_F90LINKER=mpifort
 
 ESMF_F90COMPILEOPTS=-O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp
-ESMF_F90COMPILEPATHS=-I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/mod/modO/Linux.gfortran.64.openmpi.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/src/include -I/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/include -I/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-21-gd58a3be' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O
+ESMF_F90COMPILEPATHS=-I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/mod/modO/Linux.gfortran.64.openmpi.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/src/include -I/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/include -I/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/include
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-21-gd58a3bea22' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=-ffree-form
 ESMF_F90COMPILEFIXCPP=-cpp -ffixed-form
 ESMF_F90COMPILEFIXNOCPP=
 
 ESMF_F90LINKOPTS=   -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp
-ESMF_F90LINKPATHS=-L/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -L/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0//lib -L/glade/u/apps/dav/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
+ESMF_F90LINKPATHS=-L/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -L/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0//lib -L/glade/u/apps/ch/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
 ESMF_F90ESMFLINKPATHS=-L/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default
-ESMF_F90LINKRPATHS=-Wl,-rpath,/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -Wl,-rpath,/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0//lib -Wl,-rpath,/glade/u/apps/dav/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
+ESMF_F90LINKRPATHS=-Wl,-rpath,/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0//lib -Wl,-rpath,/glade/u/apps/ch/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
 ESMF_F90ESMFLINKRPATHS=-Wl,-rpath,/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default
 ESMF_F90LINKLIBS=  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 ESMF_F90ESMFLINKLIBS=-lesmf   -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
@@ -51,13 +51,13 @@ ESMF_CXXCOMPILER=mpicxx
 ESMF_CXXLINKER=mpicxx
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -O -DNDEBUG -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp
-ESMF_CXXCOMPILEPATHS= -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/src/include  -I/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/include -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-21-gd58a3be' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
+ESMF_CXXCOMPILEPATHS= -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/src/include  -I/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/include -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/src/prologue/yaml-cpp/include
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-21-gd58a3bea22' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp
-ESMF_CXXLINKPATHS=-L/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -L/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0//lib -L/glade/u/apps/dav/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
+ESMF_CXXLINKPATHS=-L/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -L/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -L/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0//lib -L/glade/u/apps/ch/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
 ESMF_CXXESMFLINKPATHS=-L/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default
-ESMF_CXXLINKRPATHS=-Wl,-rpath,/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -Wl,-rpath,/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0//lib -Wl,-rpath,/glade/u/apps/dav/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
+ESMF_CXXLINKRPATHS=-Wl,-rpath,/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0//lib -Wl,-rpath,/glade/u/apps/ch/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/
 ESMF_CXXESMFLINKRPATHS=-Wl,-rpath,/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/lib/libO/Linux.gfortran.64.openmpi.default
 ESMF_CXXLINKLIBS= -lmpi_mpifh -lrt -lgfortran -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 ESMF_CXXESMFLINKLIBS=-lesmf  -lmpi_mpifh -lrt -lgfortran -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
@@ -116,12 +116,12 @@ ESMF_INTERNAL_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O
 # ESMF_LAPACK:            internal
 # ESMF_ACC_SOFTWARE_STACK:            none
 # ESMF_NETCDF:            nc-config
-# ESMF_NETCDF_INCLUDE:    /glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/include
+# ESMF_NETCDF_INCLUDE:    /glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/include
 # ESMF_NETCDF_LIBS:       -lnetcdf
-# ESMF_NETCDF_LIBPATH:    /glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib
+# ESMF_NETCDF_LIBPATH:    /glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib
 # ESMF_NFCONFIG:          nf-config
-# ESMF_NETCDFF_INCLUDE:   /glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/include
+# ESMF_NETCDFF_INCLUDE:   /glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/include
 # ESMF_NETCDFF_LIBS:      -lnetcdff -lnetcdf -lnetcdf
-# ESMF_NETCDFF_LIBPATH:   /glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0/lib /glade/u/apps/dav/opt/netcdf/4.7.3/gnu/9.1.0//lib
+# ESMF_NETCDFF_LIBPATH:   /glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0/lib /glade/u/apps/ch/opt/netcdf/4.7.3/gnu/9.1.0//lib
 # ESMF_PIO:               internal
 # ESMF_YAMLCPP:           internal
