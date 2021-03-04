@@ -6,6 +6,16 @@
   PASS  Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 169
   PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 179
   PASS  Create Alarm Test, ESMF_AlarmUTest.F90, line 188
+  PASS  Destroy Alarm Test, ESMF_AlarmUTest.F90, line 196
+  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 204
+  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 212
+  PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
+  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 228
+  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 236
+  PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
+  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 252
+  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 260
+  PASS  Get number of alarms after destroyed Alarm Test, ESMF_AlarmUTest.F90, line 274
   Beginning Test, file ESMF_AlarmUTest.F90, line 98
   NUMBER_OF_PROCESSORS           4
   PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
@@ -15,6 +25,17 @@
   PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 179
   PASS  Create Alarm Test, ESMF_AlarmUTest.F90, line 188
   PASS  Destroy Alarm Test, ESMF_AlarmUTest.F90, line 196
+  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 204
+  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 212
+  PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
+  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 228
+  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 236
+  PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
+  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 252
+  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 260
+  PASS  Get number of alarms after destroyed Alarm Test, ESMF_AlarmUTest.F90, line 274
+  PASS  Get a destroyed Alarm Test, ESMF_AlarmUTest.F90, line 284
+  PASS  Advance clock after destroyed alarm test, ESMF_AlarmUTest.F90, line 293
   Beginning Test, file ESMF_AlarmUTest.F90, line 98
   NUMBER_OF_PROCESSORS           4
   PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
@@ -55,27 +76,6 @@
   PASS  Get number of alarms after destroyed Alarm Test, ESMF_AlarmUTest.F90, line 274
   PASS  Get a destroyed Alarm Test, ESMF_AlarmUTest.F90, line 284
   PASS  Advance clock after destroyed alarm test, ESMF_AlarmUTest.F90, line 293
-  PASS  Destroy Alarm Test, ESMF_AlarmUTest.F90, line 196
-  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 204
-  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 212
-  PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
-  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 228
-  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 236
-  PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
-  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 252
-  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 260
-  PASS  Get number of alarms after destroyed Alarm Test, ESMF_AlarmUTest.F90, line 274
-  PASS  Get a destroyed Alarm Test, ESMF_AlarmUTest.F90, line 284
-  PASS  Advance clock after destroyed alarm test, ESMF_AlarmUTest.F90, line 293
-  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 204
-  PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 212
-  PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
-  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 228
-  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 236
-  PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
-  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 252
-  PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 260
-  PASS  Get number of alarms after destroyed Alarm Test, ESMF_AlarmUTest.F90, line 274
   PASS  Get a destroyed Alarm Test, ESMF_AlarmUTest.F90, line 284
   PASS  Advance clock after destroyed alarm test, ESMF_AlarmUTest.F90, line 293
   PASS  Destroy a destroyed Alarm Test, ESMF_AlarmUTest.F90, line 302
@@ -1226,51 +1226,6 @@ end Alarm ------------------------------
   PASS  Fractional Time Alarm Test 2, ESMF_AlarmUTest.F90, line 2410
   PASS  Test Alarm ringTime = Clock startTime, ESMF_AlarmUTest.F90, line 2434
   PASS  Alarm ringTime = Clock startTime with ringInterval, test 1, ESMF_AlarmUTest.F90, line 2462
-, test 2, ESMF_AlarmUTest.F90, line 2553
-  PASS  Alarm ringTime = Clock startTime with ringInterval, test 3 (reverse), ESMF_AlarmUTest.F90, line 2635
-  PASS  Alarm ringTime = Clock startTime with ringInterval, after clock restore, ESMF_AlarmUTest.F90, line 2707
-  PASS  Alarm list reallocation Test 1, ESMF_AlarmUTest.F90, line 2746
- rc=           0
- rc=           0
-  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
-  PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
-  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
-  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
-  PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
-  PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
-  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
-  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
-  Ending Test, file ESMF_AlarmUTest.F90, line 3388
-, test 2, ESMF_AlarmUTest.F90, line 2553
-  PASS  Alarm ringTime = Clock startTime with ringInterval, test 3 (reverse), ESMF_AlarmUTest.F90, line 2635
-  PASS  Alarm ringTime = Clock startTime with ringInterval, after clock restore, ESMF_AlarmUTest.F90, line 2707
-  PASS  Alarm list reallocation Test 1, ESMF_AlarmUTest.F90, line 2746
- rc=           0
- rc=           0
-  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
-  PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
-  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
-  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
-  PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
-  PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
-  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
-  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
-  Ending Test, file ESMF_AlarmUTest.F90, line 3388
-, test 2, ESMF_AlarmUTest.F90, line 2553
-  PASS  Alarm ringTime = Clock startTime with ringInterval, test 3 (reverse), ESMF_AlarmUTest.F90, line 2635
-  PASS  Alarm ringTime = Clock startTime with ringInterval, after clock restore, ESMF_AlarmUTest.F90, line 2707
-  PASS  Alarm list reallocation Test 1, ESMF_AlarmUTest.F90, line 2746
- rc=           0
- rc=           0
-  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
-  PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
-  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
-  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
-  PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
-  PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
-  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
-  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
-  Ending Test, file ESMF_AlarmUTest.F90, line 3388
   PASS  Alarm ringTime = Clock startTime with ringInterval, test 2, ESMF_AlarmUTest.F90, line 2553
   PASS  Alarm ringTime = Clock startTime with ringInterval, test 3 (reverse), ESMF_AlarmUTest.F90, line 2635
   PASS  Alarm ringTime = Clock startTime with ringInterval, after clock restore, ESMF_AlarmUTest.F90, line 2707
@@ -1286,7 +1241,52 @@ end Alarm ------------------------------
   PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
   PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
-  PET           0  Test Elapsed Time    20.402000000000005       msec.
-  PET           2  Test Elapsed Time    20.836000000000020       msec.
-  PET           1  Test Elapsed Time    20.716999999999985       msec.
-  PET           3  Test Elapsed Time    21.004999999999995       msec.
+, test 2, ESMF_AlarmUTest.F90, line 2553
+  PASS  Alarm ringTime = Clock startTime with ringInterval, test 3 (reverse), ESMF_AlarmUTest.F90, line 2635
+  PASS  Alarm ringTime = Clock startTime with ringInterval, after clock restore, ESMF_AlarmUTest.F90, line 2707
+  PASS  Alarm list reallocation Test 1, ESMF_AlarmUTest.F90, line 2746
+ rc=           0
+ rc=           0
+  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
+  PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
+  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
+  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
+  PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
+  PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
+  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
+  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
+  Ending Test, file ESMF_AlarmUTest.F90, line 3388
+, test 2, ESMF_AlarmUTest.F90, line 2553
+  PASS  Alarm ringTime = Clock startTime with ringInterval, test 3 (reverse), ESMF_AlarmUTest.F90, line 2635
+  PASS  Alarm ringTime = Clock startTime with ringInterval, after clock restore, ESMF_AlarmUTest.F90, line 2707
+  PASS  Alarm list reallocation Test 1, ESMF_AlarmUTest.F90, line 2746
+ rc=           0
+ rc=           0
+  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
+  PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
+  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
+  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
+  PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
+  PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
+  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
+  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
+  Ending Test, file ESMF_AlarmUTest.F90, line 3388
+, test 2, ESMF_AlarmUTest.F90, line 2553
+  PASS  Alarm ringTime = Clock startTime with ringInterval, test 3 (reverse), ESMF_AlarmUTest.F90, line 2635
+  PASS  Alarm ringTime = Clock startTime with ringInterval, after clock restore, ESMF_AlarmUTest.F90, line 2707
+  PASS  Alarm list reallocation Test 1, ESMF_AlarmUTest.F90, line 2746
+ rc=           0
+ rc=           0
+  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
+  PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
+  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
+  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
+  PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
+  PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
+  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
+  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
+  Ending Test, file ESMF_AlarmUTest.F90, line 3388
+  PET           1  Test Elapsed Time    20.424999999999997       msec.
+  PET           2  Test Elapsed Time    20.211999999999978       msec.
+  PET           0  Test Elapsed Time    20.166999999999991       msec.
+  PET           3  Test Elapsed Time    20.720999999999989       msec.
