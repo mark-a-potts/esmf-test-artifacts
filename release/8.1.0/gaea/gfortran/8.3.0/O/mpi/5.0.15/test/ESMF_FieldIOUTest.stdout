@@ -75,6 +75,8 @@
   PASS  Compare readin data to the existing data, ESMF_FieldIOUTest.F90, line 470
  Maximum Error (read-write) =    0.0000000000000000     
   PASS  Compare readin data to the existing data, ESMF_FieldIOUTest.F90, line 470
+  PASS  Read data to object field_r, ESMF_FieldIOUTest.F90, line 434
+  PASS  Point data to Fortran pointer Farray_r, ESMF_FieldIOUTest.F90, line 447
  Maximum Error (read-write) =    0.0000000000000000     
   PASS  Compare readin data to the existing data, ESMF_FieldIOUTest.F90, line 470
   PASS  Compare readin data to the existing data, ESMF_FieldIOUTest.F90, line 470
@@ -179,8 +181,11 @@
   PASS  Creating a Grid with 2DEs/PET to use in Field Tests, ESMF_FieldIOUTest.F90, line 853
   PASS  Creating a Grid with 2DEs/PET to use in Field Tests, ESMF_FieldIOUTest.F90, line 853
   PASS  Create a field from 2DE grid and fortran dummy array, ESMF_FieldIOUTest.F90, line 864
+  PASS  Get and fill Farray_w from field DE 0, ESMF_FieldIOUTest.F90, line 876
   PASS  Create a field from 2DE grid and fortran dummy array, ESMF_FieldIOUTest.F90, line 864
+  PASS  Get and fill Farray_w from field DE 0, ESMF_FieldIOUTest.F90, line 876
   PASS  Create a field from 2DE grid and fortran dummy array, ESMF_FieldIOUTest.F90, line 864
+  PASS  Get and fill Farray_w from field DE 0, ESMF_FieldIOUTest.F90, line 876
   PASS  Create a field from 2DE grid and fortran dummy array, ESMF_FieldIOUTest.F90, line 864
   PASS  Get and fill Farray_w from field DE 0, ESMF_FieldIOUTest.F90, line 876
   PASS  Get and fill Farray_w from field DE 0, ESMF_FieldIOUTest.F90, line 876
@@ -233,8 +238,11 @@
   PASS  Create a mesh on the 1D elemental distgrid, ESMF_FieldIOUTest.F90, line 1025
   PASS  Create a mesh on the 1D elemental distgrid, ESMF_FieldIOUTest.F90, line 1025
   PASS  Get Field Bounds based on elem_mesh, ESMF_FieldIOUTest.F90, line 1034
+  PASS  Create a mesh on the 1D elemental distgrid, ESMF_FieldIOUTest.F90, line 1025
   PASS  Get Field Bounds based on elem_mesh, ESMF_FieldIOUTest.F90, line 1034
+  PASS  Create a mesh on the 1D elemental distgrid, ESMF_FieldIOUTest.F90, line 1025
   PASS  Get Field Bounds based on elem_mesh, ESMF_FieldIOUTest.F90, line 1034
+  PASS  Create a mesh on the 1D elemental distgrid, ESMF_FieldIOUTest.F90, line 1025
   PASS  Get Field Bounds based on elem_mesh, ESMF_FieldIOUTest.F90, line 1034
   PASS  Create a Field on the 1D mesh, ESMF_FieldIOUTest.F90, line 1045
  Field Print Starts ====>
@@ -286,6 +294,9 @@
  Status: Base = Ready,  object = Ready
  Proxy        = no
 --- ESMCI::Array::print start ---
+ gridrank =            1
+--- ESMCI::Array::print start ---
+ Base name    = Array074
  Base name    = Array074
  Status: Base = Ready,  object = Ready
  Proxy        = no
@@ -347,6 +358,12 @@ LocalArrayPrint: Array at address 0x24c1170:
 ( 3, 1) =  2.122e-314
 ( 4, 1) =  0
 ( 5, 1) =  2.122e-314
+( 4, 1) =  0
+( 5, 1) =  2.122e-314
+( 4, 1) =  0
+( 5, 1) =  2.122e-314
+( 6, 1) =  2.122e-314
+( 5, 1) =  2.122e-314
 ( 6, 1) =  2.122e-314
 ( 7, 1) =  2.122e-314
 ( 8, 1) =  0
@@ -395,6 +412,7 @@ LocalArrayPrint: Array at address 0x24d6a50:
 (10, 1) =  2.122e-314
   skipping to end ...
 ( 1, 8) =  2.122e-314
+( 2, 8) =  0
 ( 2, 8) =  0
 ( 3, 8) =  2.122e-314
 ( 4, 8) =  2.122e-314
@@ -458,6 +476,7 @@ dim 2: [0]: [1 [1 [1, 8] 8] 8]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+           2           1          10                0           0
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
@@ -550,8 +569,6 @@ dim 2: [0]: [1 [1 [1, 8] 8] 8]
   PASS  Create ungridded dimensions attribute package on Field Test, ESMF_FieldIOUTest.F90, line 1331
   PASS  Set ungridded dimension label values on Field Test, ESMF_FieldIOUTest.F90, line 1342
   PASS  Set ungridded dimension label values on Field Test, ESMF_FieldIOUTest.F90, line 1342
-  PASS  Set ungridded dimension label values on Field Test, ESMF_FieldIOUTest.F90, line 1342
-  PASS  Set ungridded dimension label values on Field Test, ESMF_FieldIOUTest.F90, line 1342
   PASS  Create attribute package for Field variable Test, ESMF_FieldIOUTest.F90, line 1351
   PASS  Create attribute package for Field variable Test, ESMF_FieldIOUTest.F90, line 1351
   PASS  Create attribute package for Field variable Test, ESMF_FieldIOUTest.F90, line 1351
@@ -578,6 +595,9 @@ dim 2: [0]: [1 [1 [1, 8] 8] 8]
   PASS  Create Grid from DistGrid (from deBlockList) test, ESMF_FieldIOUTest.F90, line 1474
   PASS  Create Field from Grid (from deBlockList)  test, ESMF_FieldIOUTest.F90, line 1484
   PASS  Create Field from Grid (from deBlockList)  test, ESMF_FieldIOUTest.F90, line 1484
+  PASS  Create Grid from DistGrid (from deBlockList) test, ESMF_FieldIOUTest.F90, line 1474
+  PASS  Create DistGrid (from deBlockList) test, ESMF_FieldIOUTest.F90, line 1462
+  PASS  Create Grid from DistGrid (from deBlockList) test, ESMF_FieldIOUTest.F90, line 1474
   PASS  Create Field from Grid (from deBlockList)  test, ESMF_FieldIOUTest.F90, line 1484
   PASS  Create Field from Grid (from deBlockList)  test, ESMF_FieldIOUTest.F90, line 1484
   PASS  Write Field (from deBlockList) test, ESMF_FieldIOUTest.F90, line 1495

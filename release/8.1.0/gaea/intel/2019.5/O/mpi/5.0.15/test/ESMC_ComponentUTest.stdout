@@ -46,6 +46,8 @@ PASS Create ESMC_GridComp object, ESMC_ComponentUTest.C, line 268
   Component name = gridded component in C
  Gridded Component:
   Component name = gridded component in C
+  Component name = gridded component in C
+PASS Print ESMC_GridComp object, ESMC_ComponentUTest.C, line 276
 PASS Print ESMC_GridComp object, ESMC_ComponentUTest.C, line 276
 PASS Print ESMC_GridComp object, ESMC_ComponentUTest.C, line 276
 PASS Print ESMC_GridComp object, ESMC_ComponentUTest.C, line 276
@@ -81,6 +83,7 @@ PASS ESMC_GridCompSetServices() using myRegistrationInC(), ESMC_ComponentUTest.C
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
+     status: Unspecified intent direction, object count: 0
      reconcile needed: F
 I am in myRegistrationInC()
 I am in myInitInC()
@@ -105,6 +108,11 @@ I am in myInitInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
  Root Info (Attributes):
 PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
 PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
@@ -264,6 +272,10 @@ I am in myRunInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+{} ESMF_StatePrint: (pet 3):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
 Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -469,6 +481,10 @@ I am in myFinalizeInC()
  Root Info (Attributes):
 PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
+{} ESMF_StatePrint: (pet 3):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
 Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -540,10 +556,12 @@ PASS Create ESMC_GridComp object, ESMC_ComponentUTest.C, line 334
   Component name = gridded Component in C with Fortran registration
 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
-PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
+ I am in myInitInFortran()
+ ESMF_StatePrint: (pet 2):
+  State name: my import state
 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
  I am in myInitInFortran()
- ESMF_StatePrint: (pet 0):
+ ESMF_StatePrint: (pet 3):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
@@ -2517,6 +2535,7 @@ PASS Print ESMC_CplComp object, ESMC_ComponentUTest.C, line 393
  Coupler Component:
  Coupler Component:
   Component name = coupler component in C
+  Component name = coupler component in C
  Coupler Component:
   Component name = coupler component in C
  Coupler Component:
@@ -2566,7 +2585,6 @@ I am in myInitInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
@@ -2670,6 +2688,8 @@ I am in myRunInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
+PASS ESMC_CplCompRun() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 418
 {} ESMF_StatePrint: (pet 2):
   State name: my import state
      status: Unspecified intent direction, object count: 0
@@ -2918,7 +2938,6 @@ I am in myFinalizeInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-PASS ESMC_CplCompRun() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 418
 PASS ESMC_CplCompFinalize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 426
 PASS Destroy ESMC_CplComp object, ESMC_ComponentUTest.C, line 434
 {} ESMF_StatePrint: (pet 1):

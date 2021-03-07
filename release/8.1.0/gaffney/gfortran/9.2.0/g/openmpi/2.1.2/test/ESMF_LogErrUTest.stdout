@@ -4,7 +4,6 @@
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  Starting LogErr Tests
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
- Starting LogErr Tests
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
 --------------------------------------------------------------------------
 WARNING: Open MPI will create a shared memory backing file in a
@@ -41,8 +40,6 @@ disable this message.
   PASS  Pre-initialize LogWrite Test, ESMF_LogErrUTest.F90, line 137
   PASS  Pre-initialize LogWrite Test, ESMF_LogErrUTest.F90, line 137
   PASS  Open Log Test, ESMF_LogErrUTest.F90, line 145
-  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 145
-  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 145
   PASS  Open ESMF_LOGKIND_SINGLE Log Test, ESMF_LogErrUTest.F90, line 155
   PASS  Write to Single Log Test with prefixes, ESMF_LogErrUTest.F90, line 164
   PASS  Get default noPrefix Test, ESMF_LogErrUTest.F90, line 174
@@ -67,6 +64,7 @@ disable this message.
   PASS  Write to Single Log Test without timestamp, ESMF_LogErrUTest.F90, line 202
  ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET3'
   PASS  Open ESMF_LOGKIND_NONE Log of opened file Test, ESMF_LogErrUTest.F90, line 211
+  PASS  Open ESMF_LOGKIND_NONE Log Test, ESMF_LogErrUTest.F90, line 228
   PASS  Log Close Test, ESMF_LogErrUTest.F90, line 219
   PASS  Open ESMF_LOGKIND_NONE Log Test, ESMF_LogErrUTest.F90, line 228
   PASS  Use of separate log Test, ESMF_LogErrUTest.F90, line 237
@@ -238,6 +236,7 @@ disable this message.
   PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
   PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 614
+  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 564
   rc2 =           -1
   rc =            2
   PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 623
@@ -250,6 +249,9 @@ disable this message.
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
   PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
   rc =            2
+  rc2 =           -1
+  PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
+ default Log file name = PET3.LogErrUTest.Log
   PASS  Open Log Test, ESMF_LogErrUTest.F90, line 674
   rc =            0
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET2.Log_Test_File_2'
@@ -352,8 +354,9 @@ disable this message.
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET1.Log_Test_File_2'
   PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
   rc =           19
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'PET3.Log_Test_File_2'
   PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
- Log file name = PET1.Log_Test_File_2
+ Log file name = PET3.Log_Test_File_2
   PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
@@ -542,6 +545,10 @@ end Time -------------------------------
   PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
   PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
   PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
   PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
   PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
   PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
@@ -549,12 +556,18 @@ end Time -------------------------------
   PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
   PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
   PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
   PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
   PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
   PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
   PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
   PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
   PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
   PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
   PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
   PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155

@@ -6,6 +6,8 @@
   Beginning Test, file ESMF_IO_YAMLUTest.F90, line 54
   NUMBER_OF_PROCESSORS           4
   INFO  ESMF was built with YAML support via the external yaml-cpp library
+  PASS  ESMF_IO_YAMLCreate(): create YAML_IO object, ESMF_IO_YAMLUTest.F90, line
+  74
   Beginning Test, file ESMF_IO_YAMLUTest.F90, line 54
   NUMBER_OF_PROCESSORS           4
   INFO  ESMF was built with YAML support via the external yaml-cpp library
@@ -14,6 +16,7 @@
   INFO  ESMF was built with YAML support via the external yaml-cpp library
   PASS  ESMF_IO_YAMLCreate(): create YAML_IO object, ESMF_IO_YAMLUTest.F90, line
   74
+  INFO  ESMF was built with YAML support via the external yaml-cpp library
   PASS  ESMF_IO_YAMLCreate(): create YAML_IO object, ESMF_IO_YAMLUTest.F90, line
   74
   PASS  ESMF_IO_YAMLCreate(): create YAML_IO object, ESMF_IO_YAMLUTest.F90, line
@@ -74,6 +77,16 @@ field_dictionary:
       standard_name: air_pressure
     - alias: [t, temp]
       standard_name: air_temperature
+           8   entries:
+           9     - standard_name: air_pressure
+          10       canonical_units: Pa
+          11       description: Air pressure
+          12     - standard_name: air_temperature
+          13       canonical_units: K
+          14 
+       description: Bulk temperature of the air, not the surface (skin) temperat
+ ure
+          15     - alias: p
   PASS  ESMF_IO_YAMLWrite(): write native YAML content to standard output, ESMF_
  IO_YAMLUTest.F90, line 98
 field_dictionary:
@@ -233,6 +246,8 @@ field_dictionary:
  st.F90, line 242
   PASS  ESMF_IO_YAMLParse(): parse YAML as NUOPC Field dictionary, ESMF_IO_YAMLU
  Test.F90, line 151
+  PASS  ESMF_IO_YAMLContentGet(): verify content size (1), ESMF_IO_YAMLUTest.F90
+ , line 269
   PASS  ESMF_IO_YAMLParse(): parse YAML as NUOPC Field dictionary, ESMF_IO_YAMLU
  Test.F90, line 151
   PASS  ESMF_IO_YAMLParse(): parse YAML as NUOPC Field dictionary, ESMF_IO_YAMLU
@@ -249,6 +264,8 @@ field_dictionary:
  UTest.F90, line 165
    Ingested content:
    -----------------
+  PASS  ESMF_IO_YAMLParse(): generate FreeFormat content from YAML, ESMF_IO_YAML
+ UTest.F90, line 165
  unit_test_content:
   - key1: value1
   - key2: value2
@@ -284,8 +301,6 @@ field_dictionary:
            9 ----------------------------------------------------------------
   PASS  ESMF_IO_YAMLContentGet(): get FreeFormat content, ESMF_IO_YAMLUTest.F90,
   line 190
-           1 standardName:                                       air_pressure
-           2 canonicalUnits:                                               Pa
            3 synonym:                                                       p
            4 ----------------------------------------------------------------
            5 standardName:                                    air_temperature
@@ -343,7 +358,6 @@ field_dictionary:
  e 253
   PASS  ESMF_IO_YAMLContentGet(): verify content size (2), ESMF_IO_YAMLUTest.F90
  , line 281
-   Ingested content:
    -----------------
  unit_test_content:
   - key1: value1

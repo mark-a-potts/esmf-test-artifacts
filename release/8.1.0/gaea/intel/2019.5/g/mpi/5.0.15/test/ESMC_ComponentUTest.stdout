@@ -77,7 +77,6 @@ PASS ESMC_GridCompSetServices() using myRegistrationInC(), ESMC_ComponentUTest.C
      status: Unspecified intent direction, object count: 0
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
-     status: Unspecified intent direction, object count: 0
      reconcile needed: F
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
@@ -88,6 +87,7 @@ I am in myInitInC()
 I am in myRegistrationInC()
 I am in myInitInC()
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
 I am in myRegistrationInC()
 I am in myInitInC()
  Base name    = my import state
@@ -101,7 +101,8 @@ I am in myInitInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
  Proxy        = no
  Root Info (Attributes):
  Proxy        = no
@@ -112,8 +113,6 @@ PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTe
 PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
 {} ESMF_StatePrint: (pet 0):
 {} ESMF_StatePrint: (pet 1):
-  State name: my import state
-{} ESMF_StatePrint: (pet 2):
   State name: my import state
      status: Unspecified intent direction, object count: 0
 {} ESMF_StatePrint: (pet 3):
@@ -314,11 +313,6 @@ I am in myRunInC()
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
-PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
-{} ESMF_StatePrint: (pet 1):
-  State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
 Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -366,7 +360,7 @@ I am in myFinalizeInC()
  Proxy        = no
  Root Info (Attributes):
 PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
-{} ESMF_StatePrint: (pet 2):
+{} ESMF_StatePrint: (pet 1):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
@@ -470,6 +464,10 @@ I am in myFinalizeInC()
  Root Info (Attributes):
 PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
+{} ESMF_StatePrint: (pet 3):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
 Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -516,6 +514,8 @@ I am in myFinalizeInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
+PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
 PASS Destroy ESMC_GridComp object, ESMC_ComponentUTest.C, line 325
@@ -2560,6 +2560,12 @@ I am in myInitInC()
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Proxy        = no
+ Root Info (Attributes):
+ ESMF_StatePrint: (pet 3):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
 I am in myCplRegistrationInC()
 I am in myInitInC()
  Base name    = my import state
@@ -2618,8 +2624,6 @@ setting CplComp internal state to data: 0x874250
 I am in myRunInC()
  Base name    = my import state
  Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
 {} ESMF_StatePrint: (pet 1):
   State name: my import state
      status: Unspecified intent direction, object count: 0
@@ -2987,7 +2991,6 @@ PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
 {} I am in myRegistrationInFortran()
-{} I am in myRegistrationInFortran()
  Coupler Component:
   Component name = coupler component in C with Fortran registration
 {} I am in myRegistrationInFortran()
@@ -2996,10 +2999,12 @@ PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
 {} I am in myRegistrationInFortran()
  Coupler Component:
   Component name = coupler component in C with Fortran registration
+{} I am in myRegistrationInFortran()
  Coupler Component:
   Component name = coupler component in C with Fortran registration
 PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
 PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
+ I am in myInitInFortran()
 PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
  I am in myInitInFortran()
  ESMF_StatePrint: (pet 1):
@@ -3104,6 +3109,8 @@ getting CplComp internal state to data: 0x874c80
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ ESMF_StatePrint: (pet 1):
+  State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
 Clock ----------------------------------

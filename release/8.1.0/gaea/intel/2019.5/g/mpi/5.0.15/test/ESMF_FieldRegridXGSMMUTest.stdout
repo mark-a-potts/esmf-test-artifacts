@@ -1,6 +1,6 @@
   Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
-  NUMBER_OF_PROCESSORS           2
   Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
+  NUMBER_OF_PROCESSORS           2
   NUMBER_OF_PROCESSORS           2
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
@@ -242,6 +242,7 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+ Field Print Ends   ====>
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
@@ -359,7 +360,7 @@ connectionCount = 0
 ~ lower class' values ~
 deCount = 2
 Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
 DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
 --- ESMCI::DistGrid::print end ---
 --- ESMCI::DistGrid::print start ---
@@ -404,16 +405,16 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 0: (1, 1) / 
  for DE 1: (2, 3) / 
 indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (2, 3) /
+ for localDE 0 - DE 0:  (1) /
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 2: (11, 2)
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 1: (10)
 connectionCount = 0
 ~ lower class' values ~
 deCount = 2
 Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
 --- ESMCI::DistGrid::print end ---
  Field Print Starts ====>
@@ -459,9 +460,7 @@ LocalArrayPrint: Array at address 0x8ea1f0:
 ( 3) =  0
 ( 4) =  0
 ( 5) =  0
-( 6) =  0
-( 7) =  0
-dim 1: [0]: [1 [1 [1, 7] 7] 7]
+dim 1: [0]: [1 [1 [1, 5] 5] 5]
 --- ESMCI::Array::print end ---
 {}Array typekind/rank: Real*8 / 1 
 ~ lower class' values ~
@@ -478,7 +477,9 @@ LocalArrayPrint: Array at address 0x8e9920:
 ( 3) =  0
 ( 4) =  0
 ( 5) =  0
-dim 1: [0]: [1 [1 [1, 5] 5] 5]
+( 6) =  0
+( 7) =  0
+dim 1: [0]: [1 [1 [1, 7] 7] 7]
 --- ESMCI::Array::print end ---
  arrayrank =            1
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
@@ -486,6 +487,7 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
            1          -1          -1                0           0
           -1          -1          -1               -1          -1
+           1          -1          -1                0           0
           -1          -1          -1               -1          -1
            1          -1          -1                0           0
           -1          -1          -1               -1          -1
@@ -514,6 +516,9 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
    1.00000000000000        1.00000000000000        1.00000000000000     
   0.000000000000000E+000  0.000000000000000E+000
   0.000000000000000E+000
+ - SMM from A -> X
+   1.00000000000000        1.00000000000000        1.00000000000000     
+  0.000000000000000E+000  0.000000000000000E+000
  - SMM from A -> X
    1.00000000000000        1.00000000000000        1.00000000000000     
    1.00000000000000        1.00000000000000        1.00000000000000     
@@ -619,6 +624,7 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
+           1 flux on xgrid:    2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        1.99999999999999        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
@@ -1452,6 +1458,18 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
           75 ->         163
           76 ->         163
           66 ->         164
+          63 ->         145
+          53 ->         146
+          54 ->         146
+          63 ->         146
+          64 ->         146
+          54 ->         147
+          55 ->         147
+          64 ->         147
+          65 ->         147
+          61 ->         155
+          71 ->         155
+          61 ->         156
           76 ->         164
           66 ->         165
           67 ->         165
