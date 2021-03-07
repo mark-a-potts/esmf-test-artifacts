@@ -188,8 +188,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Sat Mar 6 02:31:15 CST 2021 on Orion-24-17.HPC.MsState.Edu
-Machine characteristics: Linux Orion-24-17.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Sun Mar 7 02:22:50 CST 2021 on Orion-15-45.HPC.MsState.Edu
+Machine characteristics: Linux Orion-15-45.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g'
@@ -2939,6 +2939,15 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Base/src/ES
+          MCI_Info.C", line 766: warning: variable "ret" is used before its
+          value is set
+                try { check_overflow(ret, at_index); }
+                                     ^
+          detected during instantiation of "T ESMCI::Info::get(ESMCI::key_t &,
+                    const T *, const int *, bool, std::string *, bool) const
+                    [with T=float]" at line 839
+
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -2975,15 +2984,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Base/src/ES
-          MCI_Info.C", line 766: warning: variable "ret" is used before its
-          value is set
-                try { check_overflow(ret, at_index); }
-                                     ^
-          detected during instantiation of "T ESMCI::Info::get(ESMCI::key_t &,
-                    const T *, const int *, bool, std::string *, bool) const
-                    [with T=float]" at line 839
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Base/src/ES
           MCI_Info.C", line 766: warning: variable "ret" is used before its
@@ -3048,14 +3048,14 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                             ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Base/src/ES
-          MC_InfoCDefGeneric.C", line 52: warning: variable "version" was
-          declared but never referenced
+          MCI_Info.C", line 44: warning: variable "version" was declared but
+          never referenced
    static const char *const version = "$Id$";
                             ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Base/src/ES
-          MCI_Info.C", line 44: warning: variable "version" was declared but
-          never referenced
+          MC_InfoCDefGeneric.C", line 52: warning: variable "version" was
+          declared but never referenced
    static const char *const version = "$Id$";
                             ^
 
@@ -3273,13 +3273,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
           break;
           ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/TimeMgr/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/ESMCI_Time.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Time.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src
           /ESMCI_TimeInterval.C", line 41: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/TimeMgr/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/ESMCI_Time.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Time.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src
           /ESMCI_Time.C", line 1523: warning: statement is unreachable
             break;
@@ -3292,6 +3292,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                            ^
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/TimeMgr/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/ESMCI_Calendar.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Calendar.o
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/TimeMgr/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/ESMCI_Alarm.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Alarm.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src
           /ESMCI_Calendar.C", line 1305: warning: statement is unreachable
               break;
@@ -3317,7 +3318,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
           break;
           ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/TimeMgr/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src/ESMCI_Alarm.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Alarm.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/TimeMgr/src
           /ESMCI_Calendar.C", line 41: warning: variable "version" was declared
           but never referenced
@@ -7484,24 +7484,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
           ^
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MeshRedist.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshRedist.o
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MathUtil.C", line 33: warning: variable "version" was declared
-          but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_Mesh_Regrid_Glue.C", line 117: warning: variable "srcarray" was
-          declared but never referenced
-    ESMCI::Array &srcarray = **arraysrcpp;
-                  ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_Mesh_Regrid_Glue.C", line 118: warning: variable "dstarray" was
-          declared but never referenced
-    ESMCI::Array &dstarray = **arraydstpp;
-                  ^
-
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -7538,6 +7520,24 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_Mesh_Regrid_Glue.C", line 117: warning: variable "srcarray" was
+          declared but never referenced
+    ESMCI::Array &srcarray = **arraysrcpp;
+                  ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_Mesh_Regrid_Glue.C", line 118: warning: variable "dstarray" was
+          declared but never referenced
+    ESMCI::Array &dstarray = **arraydstpp;
+                  ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MathUtil.C", line 33: warning: variable "version" was declared
+          but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_Mesh_Regrid_Glue.C", line 1777: warning: variable "rc" was
@@ -7663,13 +7663,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
          if ((orig_owner < 0) || (orig_owner > num_procs-1)) {
                          ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_Rendez_Nearest.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Rendez_Nearest.o
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_OTree.C", line 41: warning: variable "version" was declared but
-          never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -7707,6 +7700,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_Rendez_Nearest.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Rendez_Nearest.o
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_OTree.C", line 41: warning: variable "version" was declared but
+          never referenced
+  static const char *const version = "$Id$";
+                           ^
+
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_Mesh_Regrid_Glue.C", line 1186: warning: function
           "cnsrv_check_for_mesh_errors" was declared but never referenced
@@ -7721,6 +7721,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
         ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_Mesh_XGrid_Glue.C", line 42: warning: variable "version" was
+          declared but never referenced
+   static const char *const version =
+                            ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MeshCXX.C", line 296: warning: expression has no effect
      for (ni2; ni2 != ne2; ++ni2) {
           ^
@@ -7729,12 +7735,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
           MCI_MeshCXX.C", line 369: warning: expression has no effect
      for (ni2; ni2 != ne2; ++ni2) {
           ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_Mesh_XGrid_Glue.C", line 42: warning: variable "version" was
-          declared but never referenced
-   static const char *const version =
-                            ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MeshCXX.C", line 629: warning: missing return statement at end of
@@ -7885,13 +7885,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                            ^
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh.o
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_BBox.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_BBox.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MeshCXX.C", line 36: warning: variable "version" was declared but
           never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_BBox.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_BBox.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_Rendez_Nearest.C", line 122: warning: variable "idx" was declared
           but never referenced
@@ -8284,6 +8284,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
     int localrc;
         ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Mapping.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Mapping.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh.C", line 2455: warning: variable "merr" was declared but
           never referenced
@@ -8296,7 +8297,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       int localrc, merr;
           ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Mapping.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Mapping.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Bilinear.C", line 88: warning: variable "merr" was
           declared but never referenced
@@ -8353,6 +8353,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Redist.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Redist.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Conserve.C", line 428: warning: variable "num_sintd_nodes"
           was declared but never referenced
@@ -8377,7 +8378,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       int merr,localrc;
                ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Redist.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Redist.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Dual.C", line 1015: warning: variable "localrc" was
           declared but never referenced
@@ -8459,6 +8459,91 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       ESMC_CoordSys_Flag coordSys=mbmp->coordsys;
                          ^
 
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_GToM_Glue.C", line 184: warning: integer conversion
+          resulted in a change of sign
+        int elem_gid=GTOM_BAD_ID;
+                     ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_GToM_Glue.C", line 313: warning: variable "nonde_index"
+          was declared but never referenced
+        int nonde_index[2];
+            ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 1189: warning: variable "tmp_coords" was
+          declared but never referenced
+    double tmp_coords[MAX_NUM_POLY_COORDS];
+           ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_GToM_Glue.C", line 646: warning: variable "index" was set
+          but never used
+         int index[2];
+             ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_GToM_Glue.C", line 701: warning: variable "index" was set
+          but never used
+     int index[2];
+         ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_GToM_Glue.C", line 702: warning: variable "nonde_index"
+          was declared but never referenced
+     int nonde_index[2];
+         ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_GToM_Glue.C", line 756: warning: variable "index" was set
+          but never used
+     int index[2];
+         ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_GToM_Glue.C", line 757: warning: variable "nonde_index"
+          was declared but never referenced
+     int nonde_index[2];
+         ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 1426: warning: variable "sdim" was declared
+          but never referenced
+      int sdim=mbmp->sdim;
+          ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 1427: warning: variable "pdim" was declared
+          but never referenced
+      int pdim=mbmp->pdim;
+          ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 1711: warning: variable "mesh" was declared
+          but never referenced
+      Interface *mesh=mbmp->mesh;
+                 ^
+
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Rendez_EtoP.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Rendez_EtoP.o
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 2196: warning: variable "merr" was declared
+          but never referenced
+      int localrc, merr;
+                   ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 2265: warning: variable "msg" was declared
+          but never referenced
+      char msg[256];
+           ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 2502: warning: variable "orig_sdim" was
+          declared but never referenced
+      int orig_sdim=meshp->orig_sdim;
+          ^
+
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -8497,91 +8582,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_GToM_Glue.C", line 184: warning: integer conversion
-          resulted in a change of sign
-        int elem_gid=GTOM_BAD_ID;
-                     ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_GToM_Glue.C", line 313: warning: variable "nonde_index"
-          was declared but never referenced
-        int nonde_index[2];
-            ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_GToM_Glue.C", line 646: warning: variable "index" was set
-          but never used
-         int index[2];
-             ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_GToM_Glue.C", line 701: warning: variable "index" was set
-          but never used
-     int index[2];
-         ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_GToM_Glue.C", line 702: warning: variable "nonde_index"
-          was declared but never referenced
-     int nonde_index[2];
-         ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_GToM_Glue.C", line 756: warning: variable "index" was set
-          but never used
-     int index[2];
-         ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_GToM_Glue.C", line 757: warning: variable "nonde_index"
-          was declared but never referenced
-     int nonde_index[2];
-         ^
-
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Rendez_EtoP.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Rendez_EtoP.o
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 1189: warning: variable "tmp_coords" was
-          declared but never referenced
-    double tmp_coords[MAX_NUM_POLY_COORDS];
-           ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 1426: warning: variable "sdim" was declared
-          but never referenced
-      int sdim=mbmp->sdim;
-          ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 1427: warning: variable "pdim" was declared
-          but never referenced
-      int pdim=mbmp->pdim;
-          ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 1711: warning: variable "mesh" was declared
-          but never referenced
-      Interface *mesh=mbmp->mesh;
-                 ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 2196: warning: variable "merr" was declared
-          but never referenced
-      int localrc, merr;
-                   ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 2265: warning: variable "msg" was declared
-          but never referenced
-      char msg[256];
-           ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 2502: warning: variable "orig_sdim" was
-          declared but never referenced
-      int orig_sdim=meshp->orig_sdim;
-          ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Conserve.C", line 52: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
@@ -8593,7 +8593,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static bool debug=false;
               ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Search_EtoE.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Search_EtoE.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Mapping.C", line 878: warning: statement is unreachable
     return false;
@@ -8605,6 +8604,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
     int pdim=2, sdim=2, ndof=2;
                         ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Search_EtoE.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Search_EtoE.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Dual.C", line 58: warning: variable "version" was declared
           but never referenced
@@ -8706,12 +8706,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_ShapeFunc.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_ShapeFunc.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Redist.C", line 132: warning: variable "mpi_comm" was set
-          but never used
-      MPI_Comm mpi_comm;
-               ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Mapping.C", line 317: warning: statement is unreachable
       if (is_outside_hex_sph3D_xyz(mdata, point)) {
       ^
@@ -8782,12 +8776,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       PARAMETRIC_DIM=2]" at line 624
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Redist.C", line 219: warning: variable "merr" was declared
-          but never referenced
-      int merr;
-          ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Mapping.C", line 317: warning: statement is unreachable
       if (is_outside_hex_sph3D_xyz(mdata, point)) {
       ^
@@ -8798,6 +8786,18 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                     SFUNC_TYPE=ESMCI::tet_shape_func,
                     MPTRAITS=ESMCI::MBTraits<double, double>, SPATIAL_DIM=3,
                     PARAMETRIC_DIM=3]" at line 659
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Redist.C", line 132: warning: variable "mpi_comm" was set
+          but never used
+      MPI_Comm mpi_comm;
+               ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Redist.C", line 219: warning: variable "merr" was declared
+          but never referenced
+      int merr;
+          ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Redist.C", line 510: warning: variable "merr" was declared
@@ -8815,6 +8815,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
           but never referenced
       int localrc, merr;
                    ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_Glue.C", line 52: warning: variable "version" was declared
+          but never referenced
+   static const char *const version = "$Id$";
+                            ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Redist.C", line 1110: warning: missing return statement at
@@ -8841,6 +8847,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                    ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
+          MCI_MBMesh_ShapeFunc.C", line 21: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Redist.C", line 1337: warning: missing return statement at
           end of non-void function "ESMCI::calc_size_elem_comm"
   }
@@ -8852,12 +8864,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       int merr;
           ^
 
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_ShapeFunc.C", line 21: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Util.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Util.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Redist.C", line 1454: warning: missing return statement at
           end of non-void function "ESMCI::calc_size_from_buff_elem_comm"
@@ -8876,18 +8883,11 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       int localrc, merr;
                    ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Util.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MBMesh_Util.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Redist.C", line 1716: warning: variable "merr" was
           declared but never referenced
       int localrc, merr;
                    ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
-          MCI_MBMesh_Glue.C", line 52: warning: variable "version" was declared
-          but never referenced
-   static const char *const version = "$Id$";
-                            ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/ES
           MCI_MBMesh_Redist.C", line 2218: warning: variable "merr" was
@@ -9249,7 +9249,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_GlobalIds.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_GlobalIds.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_DDir.C", line 60: warning: integer conversion resulted in
           a change of sign
@@ -9260,6 +9259,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                     const ESMCI::UInt *) [with HASH=ESMCI::DDir_lin_hash]" at
                     line 43
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_GlobalIds.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_GlobalIds.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_DDir.C", line 26: warning: variable "version" was declared
           but never referenced
@@ -9301,13 +9301,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       int id;
           ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MEFamily.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MEFamily.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_IOField.C", line 17: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MEFamily.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MEFamily.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MEField.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MEField.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_Kernel.C", line 284: warning: variable "done" was declared
@@ -9382,13 +9382,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshNC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshNC.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MeshField.C", line 23: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshNC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshNC.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObj.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshObj.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MEField.C", line 22: warning: variable "version" was
@@ -9410,13 +9410,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                            ^
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObjPack.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshObjPack.o
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObjTopo.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshObjTopo.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MeshExodus.C", line 39: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObjTopo.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshObjTopo.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MeshExodus.C", line 44: warning: function
           "ESMCI::share_parametric_dim" was declared but never referenced
@@ -9478,17 +9478,17 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
               double *cd_sph, *clip_cd_sph;
                                ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshPNC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshPNC.o
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_MeshNC.C", line 888: warning: statement is unreachable
-    return true;
-    ^
-
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MeshGen.C", line 25: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
                            ^
+
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshPNC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshPNC.o
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
+          gacy/ESMCI_MeshNC.C", line 888: warning: statement is unreachable
+    return true;
+    ^
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshRead.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshRead.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
@@ -9534,13 +9534,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_ParLog.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_ParLog.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MeshPNC.C", line 28: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_ParLog.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_ParLog.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_ParLog.C", line 21: warning: variable "version" was
           declared but never referenced
@@ -9562,6 +9562,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                            ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
+          gacy/ESMCI_MeshRefine.C", line 27: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MeshVTK.C", line 469: warning: variable "i" was declared
           but never referenced
       for (UInt i = 0; ei != ee; ++ei) {
@@ -9572,12 +9578,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
           but never referenced
       for (UInt i = 0; ni != ne; ++ni) {
                 ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_MeshRefine.C", line 27: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_MeshVTK.C", line 934: warning: variable "sdim" was
@@ -9728,30 +9728,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                            ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_WriteWeights.C", line 39: warning: function
-          "ESMCI::gather_data" was declared but never referenced
-  static void gather_data(const IWeights &w,
-              ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_WriteWeights.C", line 76: warning: function
-          "ESMCI::get_fname" was declared but never referenced
-  static std::string get_fname(const std::string &fbase, UInt psize, UInt rank) {
-                     ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_WriteWeights.C", line 307: warning: function
-          "ESMCI::nc_grid_file_2deg" was declared but never referenced
-  static void nc_grid_file_2deg(nc_grid_file &ncf) {
-              ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_WriteWeights.C", line 328: warning: function
-          "ESMCI::get_nc_grid_file" was declared but never referenced
-  static void get_nc_grid_file(nc_grid_file &ncf, const std::string &ncfile) {
-              ^
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_SM.C", line 201: warning: variable "num_sintd_nodes" was
           declared but never referenced
       int num_sintd_nodes;
@@ -9776,14 +9752,32 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
              ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_WriteWeightsPar.C", line 38: warning: variable "version"
-          was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
+          gacy/ESMCI_WriteWeights.C", line 39: warning: function
+          "ESMCI::gather_data" was declared but never referenced
+  static void gather_data(const IWeights &w,
+              ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
-          gacy/ESMCI_FindPnts.C", line 44: warning: variable "version" was
-          declared but never referenced
+          gacy/ESMCI_WriteWeights.C", line 76: warning: function
+          "ESMCI::get_fname" was declared but never referenced
+  static std::string get_fname(const std::string &fbase, UInt psize, UInt rank) {
+                     ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
+          gacy/ESMCI_WriteWeights.C", line 307: warning: function
+          "ESMCI::nc_grid_file_2deg" was declared but never referenced
+  static void nc_grid_file_2deg(nc_grid_file &ncf) {
+              ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
+          gacy/ESMCI_WriteWeights.C", line 328: warning: function
+          "ESMCI::get_nc_grid_file" was declared but never referenced
+  static void get_nc_grid_file(nc_grid_file &ncf, const std::string &ncfile) {
+              ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
+          gacy/ESMCI_WriteWeightsPar.C", line 38: warning: variable "version"
+          was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
@@ -9798,6 +9792,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
           "ESMCI::get_nc_grid_file1" was declared but never referenced
   static void get_nc_grid_file1(nc_grid_file1 &ncf, const std::string &ncfile, bool header_only) {
               ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
+          gacy/ESMCI_FindPnts.C", line 44: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Le
           gacy/ESMCI_SM.C", line 38: warning: variable "version" was declared
@@ -9836,7 +9836,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
         double angle;
                ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_MeshRegrid.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshRegrid.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
           gridding/ESMCI_ConserveInterp.C", line 468: warning: variable
           "num_sintd_nodes" was declared but never referenced
@@ -9861,13 +9860,14 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       double sintd_coords[MAX_NUM_POLY_COORDS_3D];
              ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_PatchRecovery.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_PatchRecovery.o
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_MeshRegrid.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_MeshRegrid.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
           gridding/ESMCI_ExtrapolationPoleLGC.C", line 1299: warning: variable
           "pole_id" was declared but never referenced
     long pole_id;
          ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_PatchRecovery.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_PatchRecovery.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
           gridding/ESMCI_Mapping.C", line 360: warning: statement is
           unreachable
@@ -10420,6 +10420,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                     SPATIAL_DIM=2, PARAMETRIC_DIM=2]" at line 1015
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
+          gridding/ESMCI_Conserve2ndInterp.C", line 39: warning: variable
+          "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
           gridding/ESMCI_Mapping.C", line 360: warning: statement is
           unreachable
       if (is_outside_hex_sph3D_xyz(mdata, point)) {
@@ -10451,13 +10457,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_Search.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Search.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
-          gridding/ESMCI_Conserve2ndInterp.C", line 39: warning: variable
+          gridding/ESMCI_ConserveInterp.C", line 38: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_Search.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Search.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
           gridding/ESMCI_Interp.C", line 2781: warning: variable "otype" was
           declared but never referenced
@@ -10476,12 +10482,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
     int idx = 0;
         ^
 
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
-          gridding/ESMCI_ConserveInterp.C", line 38: warning: variable
-          "version" was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_SearchNearestDToSLGC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_SearchNearestDToSLGC.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
           gridding/ESMCI_ExtrapolationPoleLGC.C", line 26: warning: variable
@@ -10489,13 +10489,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_SearchNearestLGC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_SearchNearestLGC.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
           gridding/ESMCI_Integrate.C", line 26: warning: variable "version" was
           declared but never referenced
    static const char *const version = "$Id$";
                             ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_SearchNearestLGC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_SearchNearestLGC.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_SearchNearestNPntsLGC.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_SearchNearestNPntsLGC.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_ShapeFunc.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_ShapeFunc.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Re
@@ -10705,7 +10705,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_gnuplot.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_gnuplot.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_input.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_input.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_loadbal.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_loadbal.o
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_maps.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_maps.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zo
           ltan/dr_loadbal.c", line 46: warning: variable "Num_GID" was set but
           never used
@@ -10718,6 +10717,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static int Num_GID = 1, Num_LID = 1;
                           ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_maps.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_maps.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_migrate.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_migrate.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_mmio.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_mmio.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Zoltan"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Zoltan/dr_mm_readfile.c -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/dr_mm_readfile.o
@@ -11268,7 +11268,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DIS_BUILDING_MB -DHAVE_VSNPRINTF -DLINUX -DUSE_MPI -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../parallel -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Moab/io"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/ReadVtk.cpp -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ReadVtk.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DIS_BUILDING_MB -DHAVE_VSNPRINTF -DLINUX -DUSE_MPI -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../parallel -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Moab/io"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/SMF_State.cpp -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/SMF_State.o
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DIS_BUILDING_MB -DHAVE_VSNPRINTF -DLINUX -DUSE_MPI -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../parallel -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Moab/io"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/Tqdcfr.cpp -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/Tqdcfr.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Mo
           ab/io/ReadVtk.cpp", line 595: warning: statement is unreachable
         break;
@@ -11284,6 +11283,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
         result = MB_FAILURE;
         ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DIS_BUILDING_MB -DHAVE_VSNPRINTF -DLINUX -DUSE_MPI -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../parallel -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Moab/io"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/Tqdcfr.cpp -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/Tqdcfr.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DIS_BUILDING_MB -DHAVE_VSNPRINTF -DLINUX -DUSE_MPI -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../parallel -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Moab/io"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/VtkUtil.cpp -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/VtkUtil.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DIS_BUILDING_MB -DHAVE_VSNPRINTF -DLINUX -DUSE_MPI -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../parallel -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Moab/io"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/WriteAns.cpp -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/WriteAns.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DIS_BUILDING_MB -DHAVE_VSNPRINTF -DLINUX -DUSE_MPI -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/.. -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/../parallel -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Moab/io"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Mesh/src/Moab/io/WriteGmsh.cpp -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/WriteGmsh.o
@@ -11716,12 +11716,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
    static const char *const version =
                             ^
 
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/LocStream/i
-          nterface/ESMCI_LocStream.C", line 49: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -11758,6 +11752,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/LocStream/i
+          nterface/ESMCI_LocStream.C", line 49: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 make[8]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/mod/modg/Linux.pgi.64.openmpi.default'
 make[8]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/mod/modg/Linux.pgi.64.openmpi.default'
@@ -11917,6 +11917,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
       char * ptr = (char *)(buffer + *offset);
              ^
 
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/XGrid/inter
+          face/ESMCI_XGrid.C", line 49: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -11953,12 +11959,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/XGrid/inter
-          face/ESMCI_XGrid.C", line 49: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
@@ -12430,6 +12430,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Field/inter
+          face/ESMCI_Field_F.C", line 38: warning: variable "version" was
+          declared but never referenced
+   static const char *const version =
+                            ^
+
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -12466,12 +12472,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Field/inter
-          face/ESMCI_Field_F.C", line 38: warning: variable "version" was
-          declared but never referenced
-   static const char *const version =
-                            ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Field/inter
           face/ESMCI_Field.C", line 50: warning: variable "version" was
@@ -12887,12 +12887,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
-"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/State/inter
-          face/ESMC_State.C", line 45: warning: variable "version" was declared
-          but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include/json.hpp", line
           14370: warning: pointless comparison of unsigned integer with zero
           const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
@@ -12929,6 +12923,12 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
+"/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/State/inter
+          face/ESMC_State.C", line 45: warning: variable "version" was declared
+          but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/State/inter
           face/ESMCI_State_F.C", line 34: warning: variable "version" was
@@ -13583,7 +13583,6 @@ dir=`pwd`; cd /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/mod/modg/Linux.pgi
 make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/mod/modg/Linux.pgi.64.openmpi.default'
 make[8]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/mod/modg/Linux.pgi.64.openmpi.default'
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServNetEsmfClient.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServNetEsmfClient.o
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServDataDesc.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServDataDesc.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServNetEsmfClient.C", line 479: warning: statement is
           unreachable
@@ -13596,6 +13595,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServDataDesc.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServDataDesc.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServDataDesc.C", line 33: warning: variable "version"
           was declared but never referenced
@@ -13610,13 +13610,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServClientInfo.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServClientInfo.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServDataMgr.C", line 40: warning: variable "version"
           was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServClientInfo.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServClientInfo.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServClientInfo.C", line 37: warning: variable "version"
           was declared but never referenced
@@ -13645,7 +13645,6 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
                            ^
 
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServRegistrarClient.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServRegistrarClient.o
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServComponentSvr.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServComponentSvr.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServRegistrarClient.C", line 511: warning: variable
           "retValue" was declared but never referenced
@@ -13670,6 +13669,7 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServComponentSvr.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServComponentSvr.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServCompSvrClient.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServCompSvrClient.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServCompSvrClient.C", line 1175: warning: variable
@@ -13826,13 +13826,13 @@ mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_
   static const char *const version = "$Id$";
                            ^
 
+mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServForkClient.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServForkClient.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServComponentSvr.C", line 106: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServForkClient.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServForkClient.o
 mpicxx -c -std=c++11 -g -fpic -lpthread -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/../include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/build_config/Linux.pgi.default -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/stubs/pthread  -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/include  -I/apps/pgi-2019/netcdf-4.7.4/include -I/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe59"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2 -DESMF_PGIVERSION_MAJOR=19 -DESMF_PGIVERSION_MINOR=9 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServProcCtrl.C -o /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_WebServProcCtrl.o
 "/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Superstructure/WebServices
           /src/ESMCI_WebServForkClient.C", line 49: warning: variable "version"
@@ -14949,6 +14949,6 @@ make[2]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/
 make[1]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g'
 make[1]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g'
 make[1]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g'
-ESMF library built successfully on Sat Mar 6 03:09:18 CST 2021
+ESMF library built successfully on Sun Mar 7 03:00:29 CST 2021
 To verify, build and run the unit and system tests with: make check
  or the more extensive: make all_tests
