@@ -6,11 +6,11 @@
 #SBATCH --ntasks-per-node=40
 #SBATCH --time=1:00:00
 #SBATCH --exclusive
-#SBATCH --output build-intel_18.0.4_mpiuni_g.bat_%j.o
+#SBATCH --output test-intel_18.0.4_mpiuni_g.bat_%j.o
 export JOBID=$SLURM_JOBID
 set -x
 module load intel/18.0.5.274  netcdf/4.7.0
-module list >& module-build.log
+module list >& module-test.log
 
 export ESMF_NETCDF=nc-config
 
@@ -20,6 +20,6 @@ export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make -j 40 clean 2>&1|tee clean_$JOBID.log 
-make -j 40 2>&1|tee build_$JOBID.log
+make install 2>&1|tee install_$JOBID.log 
+make all_tests 2>&1|tee test_$JOBID.log 
 
