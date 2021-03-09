@@ -24,26 +24,26 @@ ESMF_VERSION_PUBLIC='F'
 ESMF_VERSION_BETASNAPSHOT='T'
 
 
-ESMF_APPSDIR=/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/apps/appsg/Darwin.gfortran.64.mpich3.default
-ESMF_LIBSDIR=/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
+ESMF_APPSDIR=/Users/mpotts/gfortran_9.3.0_mpich3_g/apps/appsg/Darwin.gfortran.64.mpich3.default
+ESMF_LIBSDIR=/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
 
 
 ESMF_F90COMPILER=/usr/local/bin/gfortran-9
 ESMF_F90LINKER=mpif90
 
 ESMF_F90COMPILEOPTS=-g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer   -m64 -mcmodel=small -ffree-line-length-none  -fopenmp
-ESMF_F90COMPILEPATHS=-I/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/mod/modg/Darwin.gfortran.64.mpich3.default -I/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/src/include -I/Users/mpotts/stack-mods-47/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=mpich3 -DESMF_DIR=/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g
+ESMF_F90COMPILEPATHS=-I/Users/mpotts/gfortran_9.3.0_mpich3_g/mod/modg/Darwin.gfortran.64.mpich3.default -I/Users/mpotts/gfortran_9.3.0_mpich3_g/src/include -I/Users/mpotts/stack-mods-47/include
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=mpich3 -DESMF_DIR=/Users/mpotts/gfortran_9.3.0_mpich3_g
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=-ffree-form
 ESMF_F90COMPILEFIXCPP=-cpp -ffixed-form
 ESMF_F90COMPILEFIXNOCPP=
 
 ESMF_F90LINKOPTS=   -m64 -mcmodel=small  -fopenmp
-ESMF_F90LINKPATHS=-L/Users/mpotts/stack-mods-47/lib  -lz -L/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default -L/Users/mpotts/stack-mods-47/lib -L/usr/local/Cellar/gcc@9/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin20/9.3.0/../../../
-ESMF_F90ESMFLINKPATHS=-L/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
+ESMF_F90LINKPATHS=-L/Users/mpotts/stack-mods-47/lib  -lz -L/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default -L/Users/mpotts/stack-mods-47/lib -L/usr/local/Cellar/gcc@9/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin20/9.3.0/../../../
+ESMF_F90ESMFLINKPATHS=-L/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
 ESMF_F90LINKRPATHS=
-ESMF_F90ESMFLINKRPATHS=-L/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
+ESMF_F90ESMFLINKRPATHS=-L/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
 ESMF_F90LINKLIBS= -lstdc++ -lnetcdff -lnetcdf -lhdf5_hl -lhdf5  -lz
 ESMF_F90ESMFLINKLIBS=-lesmf  -lstdc++ -lnetcdff -lnetcdf -lhdf5_hl -lhdf5  -lz
 
@@ -51,14 +51,14 @@ ESMF_CXXCOMPILER=mpicxx
 ESMF_CXXLINKER=mpicxx
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -Wall -Wextra -Wno-unused  -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small  -fopenmp
-ESMF_CXXCOMPILEPATHS= -I/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/src/include  -I/Users/mpotts/stack-mods-47/include -I/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=mpich3 -DESMF_DIR=/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g -D__SDIR__='' -DESMF_CXXSTD=11
+ESMF_CXXCOMPILEPATHS= -I/Users/mpotts/gfortran_9.3.0_mpich3_g/src/include  -I/Users/mpotts/stack-mods-47/include -I/Users/mpotts/gfortran_9.3.0_mpich3_g/src/prologue/yaml-cpp/include
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=mpich3 -DESMF_DIR=/Users/mpotts/gfortran_9.3.0_mpich3_g -D__SDIR__='' -DESMF_CXXSTD=11
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small  -fopenmp
-ESMF_CXXLINKPATHS=-L/Users/mpotts/stack-mods-47/lib  -lz -L/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default -L/Users/mpotts/stack-mods-47/lib -L/usr/local/Cellar/gcc@9/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin20/9.3.0/../../../
-ESMF_CXXESMFLINKPATHS=-L/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
+ESMF_CXXLINKPATHS=-L/Users/mpotts/stack-mods-47/lib  -lz -L/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default -L/Users/mpotts/stack-mods-47/lib -L/usr/local/Cellar/gcc@9/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin20/9.3.0/../../../
+ESMF_CXXESMFLINKPATHS=-L/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
 ESMF_CXXLINKRPATHS=
-ESMF_CXXESMFLINKRPATHS=-L/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
+ESMF_CXXESMFLINKRPATHS=-L/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default
 ESMF_CXXLINKLIBS= -lmpifort -lgfortran -lnetcdff -lnetcdf -lhdf5_hl -lhdf5  -lz
 ESMF_CXXESMFLINKLIBS=-lesmf  -lmpifort -lgfortran -lnetcdff -lnetcdf -lhdf5_hl -lhdf5  -lz
 
@@ -80,18 +80,18 @@ ESMF_OPENACC_CXXCOMPILEOPTS=
 ESMF_OPENACC_CXXLINKOPTS=
 
 # ESMF Tracing compile/link options
-ESMF_TRACE_LDPRELOAD=/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default/libesmftrace_preload.dylib
+ESMF_TRACE_LDPRELOAD=/Users/mpotts/gfortran_9.3.0_mpich3_g/lib/libg/Darwin.gfortran.64.mpich3.default/libesmftrace_preload.dylib
 ESMF_TRACE_STATICLINKOPTS=-static -Wl,--wrap=c_esmftrace_notify_wrappers -Wl,--wrap=c_esmftrace_isinitialized -Wl,--wrap=write -Wl,--wrap=writev -Wl,--wrap=pwrite -Wl,--wrap=read -Wl,--wrap=open -Wl,--wrap=MPI_Allgather -Wl,--wrap=MPI_Allgatherv -Wl,--wrap=MPI_Allreduce -Wl,--wrap=MPI_Alltoall -Wl,--wrap=MPI_Alltoallv -Wl,--wrap=MPI_Alltoallw -Wl,--wrap=MPI_Barrier -Wl,--wrap=MPI_Bcast -Wl,--wrap=MPI_Bsend -Wl,--wrap=MPI_Gather -Wl,--wrap=MPI_Gatherv -Wl,--wrap=MPI_Iprobe -Wl,--wrap=MPI_Irecv -Wl,--wrap=MPI_Irsend -Wl,--wrap=MPI_Isend -Wl,--wrap=MPI_Issend -Wl,--wrap=MPI_Probe -Wl,--wrap=MPI_Recv -Wl,--wrap=MPI_Reduce -Wl,--wrap=MPI_Rsend -Wl,--wrap=MPI_Scan -Wl,--wrap=MPI_Scatter -Wl,--wrap=MPI_Scatterv -Wl,--wrap=MPI_Send -Wl,--wrap=MPI_Sendrecv -Wl,--wrap=MPI_Test -Wl,--wrap=MPI_Testall -Wl,--wrap=MPI_Testany -Wl,--wrap=MPI_Testsome -Wl,--wrap=MPI_Wait -Wl,--wrap=MPI_Waitall -Wl,--wrap=MPI_Waitany -Wl,--wrap=MPI_Waitsome -Wl,--wrap=mpi_allgather_ -Wl,--wrap=mpi_allgather__ -Wl,--wrap=mpi_allgatherv_ -Wl,--wrap=mpi_allgatherv__ -Wl,--wrap=mpi_allreduce_ -Wl,--wrap=mpi_allreduce__ -Wl,--wrap=mpi_alltoall_ -Wl,--wrap=mpi_alltoall__ -Wl,--wrap=mpi_alltoallv_ -Wl,--wrap=mpi_alltoallv__ -Wl,--wrap=mpi_alltoallw_ -Wl,--wrap=mpi_alltoallw__ -Wl,--wrap=mpi_barrier_ -Wl,--wrap=mpi_barrier__ -Wl,--wrap=mpi_bcast_ -Wl,--wrap=mpi_bcast__ -Wl,--wrap=mpi_bsend_ -Wl,--wrap=mpi_bsend__ -Wl,--wrap=mpi_exscan_ -Wl,--wrap=mpi_exscan__ -Wl,--wrap=mpi_gather_ -Wl,--wrap=mpi_gather__ -Wl,--wrap=mpi_gatherv_ -Wl,--wrap=mpi_gatherv__ -Wl,--wrap=mpi_iprobe_ -Wl,--wrap=mpi_iprobe__ -Wl,--wrap=mpi_irecv_ -Wl,--wrap=mpi_irecv__ -Wl,--wrap=mpi_irsend_ -Wl,--wrap=mpi_irsend__ -Wl,--wrap=mpi_isend_ -Wl,--wrap=mpi_isend__ -Wl,--wrap=mpi_issend_ -Wl,--wrap=mpi_issend__ -Wl,--wrap=mpi_probe_ -Wl,--wrap=mpi_probe__ -Wl,--wrap=mpi_recv_ -Wl,--wrap=mpi_recv__ -Wl,--wrap=mpi_reduce_ -Wl,--wrap=mpi_reduce__ -Wl,--wrap=mpi_reduce_scatter_ -Wl,--wrap=mpi_reduce_scatter__ -Wl,--wrap=mpi_rsend_ -Wl,--wrap=mpi_rsend__ -Wl,--wrap=mpi_scatter_ -Wl,--wrap=mpi_scatter__ -Wl,--wrap=mpi_scatterv_ -Wl,--wrap=mpi_scatterv__ -Wl,--wrap=mpi_scan_ -Wl,--wrap=mpi_scan__ -Wl,--wrap=mpi_send_ -Wl,--wrap=mpi_send__ -Wl,--wrap=mpi_sendrecv_ -Wl,--wrap=mpi_sendrecv__ -Wl,--wrap=mpi_test_ -Wl,--wrap=mpi_test__ -Wl,--wrap=mpi_testall_ -Wl,--wrap=mpi_testall__ -Wl,--wrap=mpi_testany_ -Wl,--wrap=mpi_testany__ -Wl,--wrap=mpi_testsome_ -Wl,--wrap=mpi_testsome__ -Wl,--wrap=mpi_wait_ -Wl,--wrap=mpi_wait__ -Wl,--wrap=mpi_waitall_ -Wl,--wrap=mpi_waitall__ -Wl,--wrap=mpi_waitany_ -Wl,--wrap=mpi_waitany__
 ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 # Internal ESMF variables, do NOT depend on these!
 
-ESMF_INTERNAL_DIR=/Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g
+ESMF_INTERNAL_DIR=/Users/mpotts/gfortran_9.3.0_mpich3_g
 
 #
 # !!! The following options were used on this ESMF build !!!
 #
-# ESMF_DIR: /Volumes/Four_TB_backup/mpotts/gfortran_9.3.0_mpich3_g
+# ESMF_DIR: /Users/mpotts/gfortran_9.3.0_mpich3_g
 # ESMF_OS: Darwin
 # ESMF_MACHINE: x86_64
 # ESMF_ABI: 64
