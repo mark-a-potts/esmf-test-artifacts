@@ -11,7 +11,9 @@ export JOBID=$SLURM_JOBID
 set -x
 module load gcc/8.3.0 openmpi/4.0.2 netcdf/4.7.2
 module list >& module-test.log
+
 export ESMF_NETCDF=nc-config
+
 export LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
 export ESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g
 export ESMF_COMPILER=gfortran
