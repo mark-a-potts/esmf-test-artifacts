@@ -4,7 +4,7 @@
 #SBATCH --qos=allnccs
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
-#SBATCH --time=1:00:00
+#SBATCH --time=1:20:00
 #SBATCH --exclusive
 #SBATCH --output test-pgi_2020_intelmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
