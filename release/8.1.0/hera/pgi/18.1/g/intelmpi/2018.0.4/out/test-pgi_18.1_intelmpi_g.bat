@@ -9,11 +9,11 @@
 #SBATCH --output test-pgi_18.1_intelmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
 set -x
-module load hdf5/1.10.5 
-module list
+module load pgi/18.10 impi/2018.0.4 
+module list >& module-test.log
 module list >& module-test.log
 
-
+export -n ESMF_NETCDF
 
 export ESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/pgi_18.1_intelmpi_g
 export ESMF_COMPILER=pgi
