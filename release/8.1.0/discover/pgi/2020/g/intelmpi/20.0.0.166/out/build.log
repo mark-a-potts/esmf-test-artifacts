@@ -4,10 +4,10 @@ ESMF_VERSION_STRING:    8.1.0 beta snapshot
 ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e
 --------------------------------------------------------------
 On branch release/8.1.0
-Your branch is up-to-date with 'origin/release/8.1.0'.
+Your branch is up to date with 'origin/release/8.1.0'.
+
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
 	build-pgi_2020_intelmpi_g.bat
 	src/Superstructure/AttributeAPI/interface/ESMF_AttributeInternals.F90
 	src/Superstructure/AttributeAPI/tests/ESMF_AttributeAutoLinkUTest.F90
@@ -127,8 +127,8 @@ ESMF_BENCHMARK_THRESHOLD_MSEC: 500
  
 --------------------------------------------------------------
  * Other relevant environment variables *
-PATH:    /usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/libfabric/bin:/usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/bin:/usr/local/pgi/linux86-64/20.4/bin:/usr/local/other/python/GEOSpyD/2019.10_py3.7/2020-01-15/bin:/home/mapotts1/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin:/opt/gnome/bin:/usr/slurm/bin
-LD_LIBRARY_PATH: /usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/libfabric/lib:/usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/lib/release:/usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/lib:/usr/local/pgi/linux86-64/20.4/lib
+PATH:    /usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/libfabric/bin:/usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/bin:/usr/local/pgi/linux86-64/20.4/bin:/usr/local/other/git/2.30.0/libexec/git-core:/usr/local/other/git/2.30.0/bin:/usr/local/other/python/GEOSpyD/2019.10_py3.7/2020-01-15/bin:/home/mapotts1/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin:/opt/gnome/bin:/usr/slurm/bin
+LD_LIBRARY_PATH: /usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/libfabric/lib:/usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/lib/release:/usr/local/intel/2020/compilers_and_libraries_2020.0.166/linux/mpi/intel64/lib:/usr/local/pgi/linux86-64/20.4/lib:/usr/local/other/git/2.30.0/lib
  
 --------------------------------------------------------------
  * Compilers, Linkers, Flags, and Libraries *
@@ -182,8 +182,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Mon Mar 8 01:01:14 EST 2021 on borgk204
-Machine characteristics: Linux borgk204 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Tue Mar 9 01:03:36 EST 2021 on borgq137
+Machine characteristics: Linux borgq137 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g'
@@ -2890,12 +2890,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
-          ase/src/ESMCI_Base.C", line 46: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
           ase/src/ESMCI_Info.C", line 1433: warning: variable "location_nc" was
           declared but never referenced
       const json *location_nc = nullptr;
@@ -2906,6 +2900,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           declared but never referenced
       json *location_tu = nullptr;
             ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
+          ase/src/ESMCI_Base.C", line 46: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
@@ -2981,6 +2981,42 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                     const T *, const int *, bool, std::string *, bool) const
                     [with T=long]" at line 842
 
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
+          ase/src/ESMCI_Info.C", line 766: warning: variable "ret" is used
+          before its value is set
+                try { check_overflow(ret, at_index); }
+                                     ^
+          detected during instantiation of "T ESMCI::Info::get(ESMCI::key_t &,
+                    const T *, const int *, bool, std::string *, bool) const
+                    [with T=bool]" at line 843
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
+          ", line 14370: warning: pointless comparison of unsigned integer with
+          zero
+          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
+                                                                                               ^
+          detected during:
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
+                      (NumberType) [with
+                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
+                      std::string, bool, int64_t, uint64_t, double,
+                      std::allocator, nlohmann::adl_serializer>,
+                      NumberType=uint64_t, <unnamed>=0]" at line 14005
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump(const
+                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
+                      [with BasicJsonType=nlohmann::basic_json<std::map,
+                      std::vector, std::string, bool, int64_t, uint64_t,
+                      double, std::allocator, nlohmann::adl_serializer>]" at
+                      line 20653
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
+          ase/src/ESMC_InfoCDef.C", line 42: warning: variable "version" was
+          declared but never referenced
+   static const char *const version = "$Id$";
+                            ^
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -3018,42 +3054,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
-          ase/src/ESMCI_Info.C", line 766: warning: variable "ret" is used
-          before its value is set
-                try { check_overflow(ret, at_index); }
-                                     ^
-          detected during instantiation of "T ESMCI::Info::get(ESMCI::key_t &,
-                    const T *, const int *, bool, std::string *, bool) const
-                    [with T=bool]" at line 843
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
-          ", line 14370: warning: pointless comparison of unsigned integer with
-          zero
-          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
-                                                                                               ^
-          detected during:
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
-                      (NumberType) [with
-                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
-                      std::string, bool, int64_t, uint64_t, double,
-                      std::allocator, nlohmann::adl_serializer>,
-                      NumberType=uint64_t, <unnamed>=0]" at line 14005
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump(const
-                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
-                      [with BasicJsonType=nlohmann::basic_json<std::map,
-                      std::vector, std::string, bool, int64_t, uint64_t,
-                      double, std::allocator, nlohmann::adl_serializer>]" at
-                      line 20653
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
-          ase/src/ESMC_InfoCDef.C", line 42: warning: variable "version" was
-          declared but never referenced
-   static const char *const version = "$Id$";
-                            ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/B
           ase/src/ESMCI_Info.C", line 44: warning: variable "version" was
@@ -5915,94 +5915,94 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
   static const char *const version = "$Id$";
                            ^
 
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
+          ", line 14370: warning: pointless comparison of unsigned integer with
+          zero
+          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
+                                                                                               ^
+          detected during:
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
+                      (NumberType) [with
+                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
+                      std::string, bool, int64_t, uint64_t, double,
+                      std::allocator, nlohmann::adl_serializer>,
+                      NumberType=uint64_t, <unnamed>=0]" at line 14005
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump(const
+                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
+                      [with BasicJsonType=nlohmann::basic_json<std::map,
+                      std::vector, std::string, bool, int64_t, uint64_t,
+                      double, std::allocator, nlohmann::adl_serializer>]" at
+                      line 16570
+            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
+                      StringType, BooleanType, NumberIntegerType,
+                      NumberUnsignedType, NumberFloatType, AllocatorType,
+                      JSONSerializer>::string_t
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::dump(int, char, bool,
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::error_handler_t) const [with
+                      ObjectType=std::map, ArrayType=std::vector,
+                      StringType=std::string, BooleanType=bool,
+                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
+                      NumberFloatType=double, AllocatorType=std::allocator,
+                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/I
           O/src/ESMCI_IO_Handler.C", line 398: warning: variable "localrc" was
           declared but never referenced
     int localrc = ESMF_RC_NOT_IMPL;         // local return code
         ^
 
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
-          ", line 14370: warning: pointless comparison of unsigned integer with
-          zero
-          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
-                                                                                               ^
-          detected during:
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
-                      (NumberType) [with
-                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
-                      std::string, bool, int64_t, uint64_t, double,
-                      std::allocator, nlohmann::adl_serializer>,
-                      NumberType=uint64_t, <unnamed>=0]" at line 14005
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump(const
-                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
-                      [with BasicJsonType=nlohmann::basic_json<std::map,
-                      std::vector, std::string, bool, int64_t, uint64_t,
-                      double, std::allocator, nlohmann::adl_serializer>]" at
-                      line 16570
-            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
-                      StringType, BooleanType, NumberIntegerType,
-                      NumberUnsignedType, NumberFloatType, AllocatorType,
-                      JSONSerializer>::string_t
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::dump(int, char, bool,
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::error_handler_t) const [with
-                      ObjectType=std::map, ArrayType=std::vector,
-                      StringType=std::string, BooleanType=bool,
-                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
-                      NumberFloatType=double, AllocatorType=std::allocator,
-                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src/../PIO  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/IO/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src/ESMCI_IO_YAML.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_IO_YAML.o
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
-          ", line 14370: warning: pointless comparison of unsigned integer with
-          zero
-          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
-                                                                                               ^
-          detected during:
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
-                      (NumberType) [with
-                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
-                      std::string, bool, int64_t, uint64_t, double,
-                      std::allocator, nlohmann::adl_serializer>,
-                      NumberType=uint64_t, <unnamed>=0]" at line 14005
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump(const
-                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
-                      [with BasicJsonType=nlohmann::basic_json<std::map,
-                      std::vector, std::string, bool, int64_t, uint64_t,
-                      double, std::allocator, nlohmann::adl_serializer>]" at
-                      line 16570
-            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
-                      StringType, BooleanType, NumberIntegerType,
-                      NumberUnsignedType, NumberFloatType, AllocatorType,
-                      JSONSerializer>::string_t
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::dump(int, char, bool,
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::error_handler_t) const [with
-                      ObjectType=std::map, ArrayType=std::vector,
-                      StringType=std::string, BooleanType=bool,
-                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
-                      NumberFloatType=double, AllocatorType=std::allocator,
-                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/I
           O/src/ESMCI_IO.C", line 44: warning: variable "version" was declared
           but never referenced
   static const char *const version = "$Id$";
                            ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
+          ", line 14370: warning: pointless comparison of unsigned integer with
+          zero
+          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
+                                                                                               ^
+          detected during:
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
+                      (NumberType) [with
+                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
+                      std::string, bool, int64_t, uint64_t, double,
+                      std::allocator, nlohmann::adl_serializer>,
+                      NumberType=uint64_t, <unnamed>=0]" at line 14005
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump(const
+                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
+                      [with BasicJsonType=nlohmann::basic_json<std::map,
+                      std::vector, std::string, bool, int64_t, uint64_t,
+                      double, std::allocator, nlohmann::adl_serializer>]" at
+                      line 16570
+            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
+                      StringType, BooleanType, NumberIntegerType,
+                      NumberUnsignedType, NumberFloatType, AllocatorType,
+                      JSONSerializer>::string_t
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::dump(int, char, bool,
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::error_handler_t) const [with
+                      ObjectType=std::map, ArrayType=std::vector,
+                      StringType=std::string, BooleanType=bool,
+                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
+                      NumberFloatType=double, AllocatorType=std::allocator,
+                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src/../PIO  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/IO/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_PIO_Handler.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
@@ -6219,6 +6219,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/I
+          O/src/ESMCI_IO_YAML.C", line 41: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -6256,12 +6262,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/I
-          O/src/ESMCI_IO_YAML.C", line 41: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/ESMCI_Co
           ntainer.h", line 225: warning: variable "rc" was declared but never
@@ -7769,13 +7769,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_Mesh_GToM_Glue.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Mesh_GToM_Glue.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_ClumpPnts.C", line 30: warning: variable "version" was
           declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_Mesh_GToM_Glue.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Mesh_GToM_Glue.o
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_Mesh_Regrid_Glue.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Mesh_Regrid_Glue.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MathUtil.C", line 2902: warning: incompatible
@@ -7789,12 +7789,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           declared but never referenced
    int rc;
        ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_GToM_Util.C", line 61: warning: integer conversion
-          resulted in a change of sign
-      int gid=GTOM_BAD_ID;
-              ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_Glue.C", line 167: warning: variable "rc" was
@@ -7843,6 +7837,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           declared but never referenced
       int localrc;
           ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_GToM_Util.C", line 61: warning: integer conversion
+          resulted in a change of sign
+      int gid=GTOM_BAD_ID;
+              ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_Glue.C", line 1569: warning: variable "rc" was
@@ -7949,13 +7949,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MeshCap.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshCap.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_GToM_Glue.C", line 589: warning: variable "buf"
           was declared but never referenced
      char buf[512];
           ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MeshCap.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshCap.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_GToM_Glue.C", line 1423: warning: variable
           "nonde_index" was declared but never referenced
@@ -8048,6 +8048,7 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MeshCXX.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshCXX.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_Regrid_Glue.C", line 117: warning: variable
           "srcarray" was declared but never referenced
@@ -8060,7 +8061,44 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
     ESMCI::Array &dstarray = **arraydstpp;
                   ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MeshCXX.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshCXX.o
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
+          ", line 14370: warning: pointless comparison of unsigned integer with
+          zero
+          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
+                                                                                               ^
+          detected during:
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
+                      (NumberType) [with
+                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
+                      std::string, bool, int64_t, uint64_t, double,
+                      std::allocator, nlohmann::adl_serializer>,
+                      NumberType=uint64_t, <unnamed>=0]" at line 14005
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump(const
+                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
+                      [with BasicJsonType=nlohmann::basic_json<std::map,
+                      std::vector, std::string, bool, int64_t, uint64_t,
+                      double, std::allocator, nlohmann::adl_serializer>]" at
+                      line 16570
+            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
+                      StringType, BooleanType, NumberIntegerType,
+                      NumberUnsignedType, NumberFloatType, AllocatorType,
+                      JSONSerializer>::string_t
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::dump(int, char, bool,
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::error_handler_t) const [with
+                      ObjectType=std::map, ArrayType=std::vector,
+                      StringType=std::string, BooleanType=bool,
+                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
+                      NumberFloatType=double, AllocatorType=std::allocator,
+                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_Regrid_Glue.C", line 1777: warning: variable "rc"
           was declared but never referenced
@@ -8079,44 +8117,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
       int rc;
           ^
 
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
-          ", line 14370: warning: pointless comparison of unsigned integer with
-          zero
-          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
-                                                                                               ^
-          detected during:
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
-                      (NumberType) [with
-                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
-                      std::string, bool, int64_t, uint64_t, double,
-                      std::allocator, nlohmann::adl_serializer>,
-                      NumberType=uint64_t, <unnamed>=0]" at line 14005
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump(const
-                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
-                      [with BasicJsonType=nlohmann::basic_json<std::map,
-                      std::vector, std::string, bool, int64_t, uint64_t,
-                      double, std::allocator, nlohmann::adl_serializer>]" at
-                      line 16570
-            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
-                      StringType, BooleanType, NumberIntegerType,
-                      NumberUnsignedType, NumberFloatType, AllocatorType,
-                      JSONSerializer>::string_t
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::dump(int, char, bool,
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::error_handler_t) const [with
-                      ObjectType=std::map, ArrayType=std::vector,
-                      StringType=std::string, BooleanType=bool,
-                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
-                      NumberFloatType=double, AllocatorType=std::allocator,
-                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
-
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_Glue.C", line 52: warning: variable "version" was
           declared but never referenced
@@ -8130,6 +8130,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
               ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MeshDual.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshDual.o
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_Mesh_XGrid_Glue.C", line 92: warning: variable "iiptr"
+          was declared but never referenced
+      ESMCI::InterArray<int> *iiptr = &ii;
+                              ^
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -8168,19 +8174,7 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_Mesh_XGrid_Glue.C", line 92: warning: variable "iiptr"
-          was declared but never referenced
-      ESMCI::InterArray<int> *iiptr = &ii;
-                              ^
-
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MeshRedist.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshRedist.o
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_Mesh_Regrid_Glue.C", line 1186: warning: function
-          "cnsrv_check_for_mesh_errors" was declared but never referenced
-  static void cnsrv_check_for_mesh_errors(Mesh &mesh, bool ignore_degenerate, bool *concave, bool *clockwise, bool *degenerate) {
-              ^
-
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -8231,13 +8225,19 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
          if ((orig_owner < 0) || (orig_owner > num_procs-1)) {
                          ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_OTree.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_OTree.o
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_Mesh_Regrid_Glue.C", line 1186: warning: function
+          "cnsrv_check_for_mesh_errors" was declared but never referenced
+  static void cnsrv_check_for_mesh_errors(Mesh &mesh, bool ignore_degenerate, bool *concave, bool *clockwise, bool *degenerate) {
+              ^
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_Mesh_XGrid_Glue.C", line 42: warning: variable
           "version" was declared but never referenced
    static const char *const version =
                             ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_OTree.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_OTree.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MeshCap.C", line 1198: warning: variable "r" was
           declared but never referenced
@@ -8282,7 +8282,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_Regrid_Nearest.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Regrid_Nearest.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MeshCXX.C", line 296: warning: expression has no effect
      for (ni2; ni2 != ne2; ++ni2) {
@@ -8304,6 +8303,18 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           at end of non-void function "ESMCI::ElemType2NumNodesCXX"
   }
   ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_MeshCXX.C", line 805: warning: expression has no effect
+    for (ni2; ni2 != ne2; ++ni2) {
+         ^
+
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_Regrid_Nearest.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Regrid_Nearest.o
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_OTree.C", line 41: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
@@ -8344,23 +8355,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_MeshCXX.C", line 805: warning: expression has no effect
-    for (ni2; ni2 != ne2; ++ni2) {
-         ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_OTree.C", line 41: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_Mesh.C", line 35: warning: variable "version" was
-          declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MeshDual.C", line 914: warning: missing return
           statement at end of non-void function "ESMCI::ElemType2Topo"
   }
@@ -8371,6 +8365,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           declared but never referenced
             int localrc;
                 ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_Mesh.C", line 35: warning: variable "version" was
+          declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_Rendez_Nearest.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Rendez_Nearest.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
@@ -8548,6 +8548,18 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
            ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_MBMesh_BBox.C", line 133: warning: variable "merr" was
+          declared but never referenced
+   int merr;
+       ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_MBMesh_BBox.C", line 269: warning: variable "merr" was
+          declared but never referenced
+    int merr;
+        ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh.C", line 759: warning: variable "localrc" was
           declared but never referenced
       int localrc, merr;
@@ -8596,21 +8608,9 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
         ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_MBMesh_BBox.C", line 133: warning: variable "merr" was
-          declared but never referenced
-   int merr;
-       ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh.C", line 1095: warning: variable "localrc" was
           declared but never referenced
     int localrc;
-        ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_MBMesh_BBox.C", line 269: warning: variable "merr" was
-          declared but never referenced
-    int merr;
         ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
@@ -8874,13 +8874,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
       int merr, localrc;
                 ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Glue.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Glue.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_BBox.C", line 33: warning: variable "version"
           was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Glue.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Glue.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_Conserve.C", line 428: warning: variable
           "num_sintd_nodes" was declared but never referenced
@@ -9020,6 +9020,7 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Redist.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Redist.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_Glue.C", line 73: warning: variable "merr" was
           declared but never referenced
@@ -9038,7 +9039,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
       ESMC_CoordSys_Flag coordSys=mbmp->coordsys;
                          ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Redist.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Redist.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_Glue.C", line 1189: warning: variable
           "tmp_coords" was declared but never referenced
@@ -9082,12 +9082,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_MBMesh_Dual.C", line 58: warning: variable "version"
-          was declared but never referenced
-  static const char *const version = "$Id: ESMCI_MeshDual.C,v 1.23 2012/01/06 20:17:51 svasquez Exp $";
-                           ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_GToM_Glue.C", line 184: warning: integer
           conversion resulted in a change of sign
         int elem_gid=GTOM_BAD_ID;
@@ -9129,7 +9123,51 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
      int nonde_index[2];
          ^
 
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_MBMesh_Dual.C", line 58: warning: variable "version"
+          was declared but never referenced
+  static const char *const version = "$Id: ESMCI_MeshDual.C,v 1.23 2012/01/06 20:17:51 svasquez Exp $";
+                           ^
+
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Regrid_Glue.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Regrid_Glue.o
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
+          ", line 14370: warning: pointless comparison of unsigned integer with
+          zero
+          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
+                                                                                               ^
+          detected during:
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
+                      (NumberType) [with
+                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
+                      std::string, bool, int64_t, uint64_t, double,
+                      std::allocator, nlohmann::adl_serializer>,
+                      NumberType=uint64_t, <unnamed>=0]" at line 14005
+            instantiation of "void
+                      nlohmann::detail::serializer<BasicJsonType>::dump(const
+                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
+                      [with BasicJsonType=nlohmann::basic_json<std::map,
+                      std::vector, std::string, bool, int64_t, uint64_t,
+                      double, std::allocator, nlohmann::adl_serializer>]" at
+                      line 16570
+            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
+                      StringType, BooleanType, NumberIntegerType,
+                      NumberUnsignedType, NumberFloatType, AllocatorType,
+                      JSONSerializer>::string_t
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::dump(int, char, bool,
+                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
+                      BooleanType, NumberIntegerType, NumberUnsignedType,
+                      NumberFloatType, AllocatorType,
+                      JSONSerializer>::error_handler_t) const [with
+                      ObjectType=std::map, ArrayType=std::vector,
+                      StringType=std::string, BooleanType=bool,
+                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
+                      NumberFloatType=double, AllocatorType=std::allocator,
+                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -9179,44 +9217,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           was declared but never referenced
     int pdim=2, sdim=2, ndof=2;
                         ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
-          ", line 14370: warning: pointless comparison of unsigned integer with
-          zero
-          const bool is_negative = std::is_same<NumberType, number_integer_t>::value and not(x >= 0); // see issue #755
-                                                                                               ^
-          detected during:
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump_integer
-                      (NumberType) [with
-                      BasicJsonType=nlohmann::basic_json<std::map, std::vector,
-                      std::string, bool, int64_t, uint64_t, double,
-                      std::allocator, nlohmann::adl_serializer>,
-                      NumberType=uint64_t, <unnamed>=0]" at line 14005
-            instantiation of "void
-                      nlohmann::detail::serializer<BasicJsonType>::dump(const
-                      BasicJsonType &, bool, bool, unsigned int, unsigned int)
-                      [with BasicJsonType=nlohmann::basic_json<std::map,
-                      std::vector, std::string, bool, int64_t, uint64_t,
-                      double, std::allocator, nlohmann::adl_serializer>]" at
-                      line 16570
-            instantiation of "nlohmann::basic_json<ObjectType, ArrayType,
-                      StringType, BooleanType, NumberIntegerType,
-                      NumberUnsignedType, NumberFloatType, AllocatorType,
-                      JSONSerializer>::string_t
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::dump(int, char, bool,
-                      nlohmann::basic_json<ObjectType, ArrayType, StringType,
-                      BooleanType, NumberIntegerType, NumberUnsignedType,
-                      NumberFloatType, AllocatorType,
-                      JSONSerializer>::error_handler_t) const [with
-                      ObjectType=std::map, ArrayType=std::vector,
-                      StringType=std::string, BooleanType=bool,
-                      NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
-                      NumberFloatType=double, AllocatorType=std::allocator,
-                      JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Rendez_Elem.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Rendez_Elem.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
@@ -9472,6 +9472,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_MBMesh_Patch.C", line 53: warning: variable "version"
+          was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_Regrid_Glue.C", line 162: warning: variable
           "ignoreDegenerate" was set but never used
       bool ignoreDegenerate=false;
@@ -9507,12 +9513,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
     ESMCI::Array &dstarray = **arraydstpp;
                   ^
 
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_MBMesh_Patch.C", line 53: warning: variable "version"
-          was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Search_EtoP.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Search_EtoP.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_Rendez_Elem.C", line 260: warning: variable "rc"
@@ -9520,6 +9520,7 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
     int rc, localrc;
         ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_ShapeFunc.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_ShapeFunc.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -9558,18 +9559,11 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_ShapeFunc.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_ShapeFunc.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_ShapeFunc.C", line 21: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/ESMCI_MBMesh_Redist.C", line 48: warning: variable "version"
-          was declared but never referenced
-   static const char *const version = "$Id$";
-                            ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_Rendez_EtoP.C", line 322: warning: variable "rc"
@@ -9578,6 +9572,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
         ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Util.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MBMesh_Util.o
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/ESMCI_MBMesh_Redist.C", line 48: warning: variable "version"
+          was declared but never referenced
+   static const char *const version = "$Id$";
+                            ^
+
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/ESMCI_MBMesh_Rendez_Elem.C", line 39: warning: variable
           "version" was declared but never referenced
@@ -9776,24 +9776,24 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                            ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Legacy/ESMCI_Exception.C", line 17: warning: variable
+          "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_CommRel.C", line 32: warning: variable "version"
           was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_Exception.C", line 17: warning: variable
-          "version" was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_FieldReg.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_FieldReg.o
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_BBox.C", line 29: warning: variable "version"
           was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_FieldReg.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_FieldReg.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_DDir.C", line 60: warning: integer conversion
           resulted in a change of sign
@@ -9805,18 +9805,18 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                     line 43
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Legacy/ESMCI_CommReg.C", line 22: warning: variable "version"
+          was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_DDir.C", line 26: warning: variable "version"
           was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_GeomRendezvous.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_GeomRendezvous.o
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_CommReg.C", line 22: warning: variable "version"
-          was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_GlobalIds.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_GlobalIds.o
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_HAdapt.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_HAdapt.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
@@ -9846,13 +9846,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
   static const char *const version = "$Id$";
                            ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MCoord.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MCoord.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_GeomRendezvous.C", line 33: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MCoord.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MCoord.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_Kernel.C", line 284: warning: variable "done"
           was declared but never referenced
@@ -9920,13 +9920,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
   static const char *const version = "$Id$";
                            ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshllField.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshllField.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MEField.C", line 22: warning: variable "version"
           was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshllField.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshllField.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshField.C", line 23: warning: variable
           "version" was declared but never referenced
@@ -9967,6 +9967,7 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
   static const char *const version = "$Id$";
                            ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObjPack.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshObjPack.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshMerge.C", line 190: warning: variable
           "num_pnts" was declared but never referenced
@@ -10015,7 +10016,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
               double *cd_sph, *clip_cd_sph;
                                ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObjPack.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshObjPack.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshObj.C", line 21: warning: variable "version"
           was declared but never referenced
@@ -10031,6 +10031,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObjTopo.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshObjTopo.o
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshPartition.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_MeshPartition.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Legacy/ESMCI_MeshObjPack.C", line 19: warning: variable
+          "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshMerge.C", line 48: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
@@ -10039,12 +10045,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshNC.C", line 40: warning: variable "version"
           was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_MeshObjPack.C", line 19: warning: variable
-          "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
@@ -10086,15 +10086,9 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                            ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_Migrator.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Migrator.o
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_MeshRefine.C", line 27: warning: variable
-          "version" was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_ParEnv.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_ParEnv.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_MeshSkin.C", line 27: warning: variable
+          esh/src/Legacy/ESMCI_MeshRefine.C", line 27: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
@@ -10110,6 +10104,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           declared but never referenced
       for (UInt i = 0; ni != ne; ++ni) {
                 ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Legacy/ESMCI_MeshSkin.C", line 27: warning: variable
+          "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshVTK.C", line 934: warning: variable "sdim"
@@ -10137,16 +10137,16 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_ParLog.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_ParLog.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_MeshUtils.C", line 78: warning: variable "rot"
-          was set but never used
-      int rot = 0;
-          ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_Migrator.C", line 18: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Legacy/ESMCI_MeshUtils.C", line 78: warning: variable "rot"
+          was set but never used
+      int rot = 0;
+          ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshUtils.C", line 119: warning: variable "rot"
@@ -10173,13 +10173,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
   static const char *const version = "$Id$";
                            ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_Polynomial.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Polynomial.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MeshVTK.C", line 29: warning: variable "version"
           was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_Polynomial.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_Polynomial.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Legacy/ESMCI_MEValues.C", line 28: warning: variable
           "version" was declared but never referenced
@@ -10230,13 +10230,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/.. -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_SparseMsg.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_SparseMsg.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_Rebalance.C", line 25: warning: variable
+          esh/src/Legacy/ESMCI_ShapeLagrange.C", line 24: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Legacy/ESMCI_ShapeLagrange.C", line 24: warning: variable
+          esh/src/Legacy/ESMCI_Rebalance.C", line 25: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
@@ -10819,12 +10819,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                     SPATIAL_DIM=1, PARAMETRIC_DIM=1]" at line 978
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Regridding/ESMCI_ExtrapolationPoleLGC.C", line 26: warning:
-          variable "version" was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_Mapping.C", line 360: warning: statement is
           unreachable
       if (is_outside_hex_sph3D_xyz(mdata, point)) {
@@ -10836,6 +10830,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                     SFUNC_TYPE=ESMCI::bar3_shape_func,
                     MPTRAITS=ESMCI::MPTraits<double, double>, SPATIAL_DIM=1,
                     PARAMETRIC_DIM=1]" at line 985
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Regridding/ESMCI_ExtrapolationPoleLGC.C", line 26: warning:
+          variable "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_Mapping.C", line 360: warning: statement is
@@ -10898,12 +10898,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       PARAMETRIC_DIM=1]" at line 985
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Regridding/ESMCI_Interp.C", line 2781: warning: variable
-          "otype" was declared but never referenced
-    UInt otype=MeshObj::NODE;
-         ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_Mapping.C", line 360: warning: statement is
           unreachable
       if (is_outside_hex_sph3D_xyz(mdata, point)) {
@@ -10928,18 +10922,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                     SFUNC_TYPE=ESMCI::bar3_shape_func,
                     MPTRAITS=ESMCI::MPTraits<double, ESMCI::fad_type>,
                     SPATIAL_DIM=1, PARAMETRIC_DIM=1]" at line 991
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Regridding/ESMCI_Interp.C", line 3444: warning: variable
-          "idx" was declared but never referenced
-    int idx = 0;
-        ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
-          esh/src/Regridding/ESMCI_Interp.C", line 3540: warning: variable
-          "idx" was declared but never referenced
-    int idx = 0;
-        ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_Mapping.C", line 360: warning: statement is
@@ -11020,6 +11002,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                     SPATIAL_DIM=2, PARAMETRIC_DIM=2]" at line 1015
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Regridding/ESMCI_Interp.C", line 2781: warning: variable
+          "otype" was declared but never referenced
+    UInt otype=MeshObj::NODE;
+         ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_Mapping.C", line 360: warning: statement is
           unreachable
       if (is_outside_hex_sph3D_xyz(mdata, point)) {
@@ -11050,6 +11038,18 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Regridding/ESMCI_Interp.C", line 3444: warning: variable
+          "idx" was declared but never referenced
+    int idx = 0;
+        ^
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
+          esh/src/Regridding/ESMCI_Interp.C", line 3540: warning: variable
+          "idx" was declared but never referenced
+    int idx = 0;
+        ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_PatchRecovery.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_PatchRecovery.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
@@ -11093,13 +11093,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
    static const char *const version = "$Id$";
                             ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_SearchNearestNPntsLGC.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_SearchNearestNPntsLGC.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_MeshRegrid.C", line 24: warning: variable
           "version" was declared but never referenced
    static const char *const version = "$Id$";
                             ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_SearchNearestNPntsLGC.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_SearchNearestNPntsLGC.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -11158,13 +11158,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                            ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_SpaceDir.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_SpaceDir.o
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_WMat.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_WMat.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_Search.C", line 45: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Infrastructure/Mesh/src/Regridding"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/parallel -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/../Moab/LocalDiscretization /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_WMat.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_WMat.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/M
           esh/src/Regridding/ESMCI_ShapeFunc.C", line 20: warning: variable
           "version" was declared but never referenced
@@ -12291,12 +12291,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/L
-          ocStream/interface/ESMCI_LocStream.C", line 49: warning: variable
-          "version" was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -12334,6 +12328,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/L
+          ocStream/interface/ESMCI_LocStream.C", line 49: warning: variable
+          "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 make[8]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/mod/modg/Linux.pgi.64.intelmpi.default'
 make[8]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/mod/modg/Linux.pgi.64.intelmpi.default'
@@ -12532,12 +12532,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/X
-          Grid/interface/ESMCI_XGrid.C", line 49: warning: variable "version"
-          was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -12575,6 +12569,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/X
+          Grid/interface/ESMCI_XGrid.C", line 49: warning: variable "version"
+          was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/X
           Grid/interface/ESMCI_XGrid_F.C", line 43: warning: variable "version"
@@ -13431,12 +13431,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
 
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/S
-          tate/interface/ESMCI_State.C", line 50: warning: variable "version"
-          was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
           zero
@@ -13474,6 +13468,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/S
+          tate/interface/ESMCI_State.C", line 50: warning: variable "version"
+          was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/S
           tate/interface/ESMC_State.C", line 45: warning: variable "version"
@@ -14332,12 +14332,6 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
      ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
-          ebServices/src/ESMCI_WebServSocketUtils.C", line 48: warning:
-          variable "version" was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
           ebServices/src/ESMCI_WebServComponentSvr.C", line 846: warning:
           variable "rc" was set but never used
                   int                     rc = 0;
@@ -14373,18 +14367,18 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           int     dataSize = 0;
                   ^
 
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
+          ebServices/src/ESMCI_WebServSocketUtils.C", line 48: warning:
+          variable "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
+
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServLowLevelSocket.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_WebServLowLevelSocket.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
           ebServices/src/ESMCI_WebServLowLevelSocket.C", line 712: warning:
           variable "bytesSent" was set but never used
           int     bytesSent = 0;
                   ^
-
-"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
-          ebServices/src/ESMCI_WebServLowLevelSocket.C", line 58: warning:
-          variable "version" was declared but never referenced
-  static const char *const version = "$Id$";
-                           ^
 
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include/json.hpp
           ", line 14370: warning: pointless comparison of unsigned integer with
@@ -14423,6 +14417,12 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
                       NumberIntegerType=int64_t, NumberUnsignedType=uint64_t,
                       NumberFloatType=double, AllocatorType=std::allocator,
                       JSONSerializer=nlohmann::adl_serializer]" at line 22647
+
+"/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
+          ebServices/src/ESMCI_WebServLowLevelSocket.C", line 58: warning:
+          variable "version" was declared but never referenced
+  static const char *const version = "$Id$";
+                           ^
 
 mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServCompSvrMgr.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_WebServCompSvrMgr.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
@@ -14470,13 +14470,13 @@ mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esm
           int     numFiles = 0;
                   ^
 
+mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServProcCtrlClient.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_WebServProcCtrlClient.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
           ebServices/src/ESMCI_WebServProcCtrl.C", line 49: warning: variable
           "version" was declared but never referenced
   static const char *const version = "$Id$";
                            ^
 
-mpipgc++ -c -std=c++11 -g -fpic -lpthread -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/../include -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/build_config/Linux.pgi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g -D__SDIR__='"src/Superstructure/WebServices/src"' -DESMF_CXXSTD=11 -DESMF_PGIVERSION_MAJOR=20 -DESMF_PGIVERSION_MINOR=4 -DESMF_PGIVERSION_PATCH=0 -DESMF_NO_F2018ASSUMEDTYPE /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/WebServices/src/ESMCI_WebServProcCtrlClient.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/obj/objg/Linux.pgi.64.intelmpi.default/ESMCI_WebServProcCtrlClient.o
 "/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g/src/Superstructure/W
           ebServices/src/ESMCI_WebServProcCtrlClient.C", line 192: warning:
           variable "bytesSent" was set but never used
@@ -15570,6 +15570,6 @@ make[2]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intel
 make[1]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g'
 make[1]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g'
 make[1]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_g'
-ESMF library built successfully on Mon Mar 8 01:46:53 EST 2021
+ESMF library built successfully on Tue Mar 9 01:51:21 EST 2021
 To verify, build and run the unit and system tests with: make check
  or the more extensive: make all_tests
