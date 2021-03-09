@@ -8,12 +8,11 @@
 #SBATCH --exclusive
 #SBATCH --output test-pgi_2020_intelmpi_O.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load comp/pgi/20.4 mpi/impi/20.0.0.166 
-module list >& module-test.log
+
 module list >& module-test.log
 
-export -n ESMF_NETCDF
+set -x
 
 export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_intelmpi_O
 export ESMF_COMPILER=pgi
