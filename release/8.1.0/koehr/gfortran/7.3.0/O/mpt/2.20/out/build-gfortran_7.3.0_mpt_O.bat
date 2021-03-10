@@ -8,7 +8,6 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /p/work1/mpotts/gfortran_7.3.0_mpt_O
-set -x
 
 module unload compiler/intel mpt
 module load gcc/7.3.0 mpt/2.20 netcdf-c/gnu/4.3.3.1
@@ -16,6 +15,7 @@ module load netcdf-c/gnu/4.4.2
 module list
 module list >& module-build.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/gnu/lib /app/COST/netcdf-c/4.3.3.1/gnu//lib /app/COST/hdf5/1.8.15/gnu//lib"

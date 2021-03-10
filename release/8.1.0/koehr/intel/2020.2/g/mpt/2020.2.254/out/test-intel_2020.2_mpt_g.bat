@@ -8,12 +8,12 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /p/work1/mpotts/intel_2020.2_mpt_g
-set -x
 module load compiler/intel/2020.2.254 compiler/intelmpi/2020.2.254 netcdf-c/intel/4.3.3.1
 module load netcdf-c/intel/4.4.2 
 module list
 module list >& module-test.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/intel/lib /app/COST/netcdf-c/4.3.3.1/intel//lib /app/COST/hdf5/1.8.15/intel//lib"
