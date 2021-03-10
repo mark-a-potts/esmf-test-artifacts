@@ -8,7 +8,6 @@
 #SBATCH --exclusive
 #SBATCH --output test-gfortran_8.3.0_mpiuni_g.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 
 module unload PrgEnv-intel
 
@@ -16,6 +15,7 @@ module load PrgEnv-gnu
 module load gcc/8.3.0  cray-netcdf/4.6.3.2
 module list >& module-test.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
