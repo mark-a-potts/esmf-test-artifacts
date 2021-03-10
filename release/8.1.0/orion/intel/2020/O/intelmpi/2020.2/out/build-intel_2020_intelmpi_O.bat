@@ -8,10 +8,10 @@
 #SBATCH --exclusive
 #SBATCH --output build-intel_2020_intelmpi_O.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load intel/2020.2 impi/2020.2 netcdf/4.7.4
 module list >& module-build.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_DIR=/work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_O
