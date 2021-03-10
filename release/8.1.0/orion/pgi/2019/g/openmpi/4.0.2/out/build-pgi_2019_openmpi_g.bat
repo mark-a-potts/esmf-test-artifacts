@@ -8,10 +8,10 @@
 #SBATCH --exclusive
 #SBATCH --output build-pgi_2019_openmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load pgi/2019 openmpi/4.0.2 netcdf/4.7.4
 module list >& module-build.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILER=mpif90
