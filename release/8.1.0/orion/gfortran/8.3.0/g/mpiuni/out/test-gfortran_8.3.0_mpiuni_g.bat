@@ -8,10 +8,10 @@
 #SBATCH --exclusive
 #SBATCH --output test-gfortran_8.3.0_mpiuni_g.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load gcc/8.3.0  netcdf/4.7.2
 module list >& module-test.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
