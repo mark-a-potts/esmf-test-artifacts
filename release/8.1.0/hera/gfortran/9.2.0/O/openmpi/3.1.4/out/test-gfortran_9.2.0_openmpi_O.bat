@@ -8,12 +8,12 @@
 #SBATCH --exclusive
 #SBATCH --output test-gfortran_9.2.0_openmpi_O.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load gnu/9.2.0 openmpi/3.1.4 netcdf/4.7.2
 module load hdf5/1.10.5 
 module list
 module list >& module-test.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF=split
