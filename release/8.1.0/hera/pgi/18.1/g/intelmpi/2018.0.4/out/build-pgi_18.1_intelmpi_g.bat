@@ -8,12 +8,11 @@
 #SBATCH --exclusive
 #SBATCH --output build-pgi_18.1_intelmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load pgi/18.10 impi/2018.0.4 
-module list >& module-build.log
+
 module list >& module-build.log
 
-export -n ESMF_NETCDF
+set -x
 
 export ESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/pgi_18.1_intelmpi_g
 export ESMF_COMPILER=pgi
