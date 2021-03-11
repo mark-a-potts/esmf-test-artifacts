@@ -31,5 +31,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 48 clean 2>&1|tee clean_$JOBID.log 
 make -j 48 2>&1|tee build_$JOBID.log
 
-./getres-build.sh
+ssh koehr01 /p/work1/mpotts/intel_2020.2_mpt_g/getres-build.sh
 
