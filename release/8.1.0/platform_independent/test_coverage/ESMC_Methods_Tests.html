@@ -5,7 +5,7 @@
 <font face='arial, helvetica, sans serif'><font color='#006699'><font size='+2'><b> <br>
 Public ESMC Methods With Tests </b> </font></font></font>
 <pre style='margin-left: 40px;'><font face='arial,' helvetica='' sans='' serif='' style='font-family: sans-serif;'><font size='-1'><br></font></font><font face='arial,' helvetica='' sans='' serif='' size='-1' style='font-family: sans-serif;'>
-Tue Mar  9 15:56:46 MST 2021
+Thu Mar 11 09:32:49 MST 2021
 <p>
 The following is the list of the implemented ESMF C public subroutines and functions. Below each
 is the path(s) to the test that calls the subroutine or function. Those without test
@@ -250,6 +250,8 @@ src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  field=ESMC_FieldCreateGridArr
 
 
 ESMC_FieldCreateGridTypeKind
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8,
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8,
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(grid, ESMC_TYPEKIND_R8, 
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  dstFracField = ESMC_FieldCreateGridTypeKind(grid, ESMC_TYPEKIND_R8, 
@@ -313,6 +315,8 @@ src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  exactfield = ESM
 
 ESMC_FieldDestroy
 src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_FieldDestroy(&field);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
 src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
@@ -347,6 +351,8 @@ src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  array2 = ESMC_FieldGetArray(f
 
 
 ESMC_FieldGetBounds
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldGetBounds(srcfield, 0, exLBound, exUBound, dimcount);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldGetBounds(dstfield, 0, exLBound2, exUBound2, dimcount);
 src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldGetBounds(srcfield, 0, exLBound, exUBound, dimcount);
 src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldGetBounds(dstfield, 0, exLBound2, exUBound2, dimcount);
 
@@ -357,6 +363,8 @@ src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  mesh2 = ESMC_FieldGetMesh(fie
 
 
 ESMC_FieldGetPtr
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
@@ -410,6 +418,8 @@ src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_FieldPrint(field2);
 
 
 ESMC_FieldRegrid
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, rh, NULL);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, rh2, NULL);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
@@ -454,6 +464,8 @@ src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_F
 
 
 ESMC_FieldRegridRelease
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegridRelease(&rh);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegridRelease(&rh2);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
@@ -479,6 +491,7 @@ src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_FieldR
 
 
 ESMC_FieldRegridStore
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &rh, 
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Create an InterArray for maskValues in ESMC_FieldRegridStore()");
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, NULL, &routehandle,
@@ -540,6 +553,8 @@ ESMC_GridAddCoord
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddCoord(grid_np, ESMC_STAGGERLOC_CORNER);
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddCoord(grid_tripole, ESMC_STAGGERLOC_CENTER);
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddCoord(grid_1p, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridAddCoord(dstgrid, ESMC_STAGGERLOC_CENTER);
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  localrc = ESMC_GridAddCoord(outGrid, ESMC_STAGGERLOC_CORNER);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_GridAddCoord(grid, ESMC_STAGGERLOC_CORNER);
@@ -674,6 +689,8 @@ src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreat
 
 ESMC_GridCreateNoPeriDim
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_np = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  dstgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex_d, &coordsys, &typekind, NULL, &rc);
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  outGrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, &indexflag, &localrc);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  grid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
@@ -712,6 +729,8 @@ src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_f
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridDestroy(&grid_np);
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridDestroy(&grid_1p);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridDestroy(&dstgrid);
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc = ESMC_GridDestroy(&(side_a_grids[0]));
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc = ESMC_GridDestroy(&(side_b_grids[0]));
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc = ESMC_GridDestroy(&(side_b_grids[1]));
@@ -740,6 +759,10 @@ src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridXCoord = (double *)
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(grid_1p, 2, 
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridXCoord_check = (double *)ESMC_GridGetCoord(grid_1p, 1,
 src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridYCoord_check = (double *)ESMC_GridGetCoord(grid_1p, 2, 
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridXCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 1,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridYCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 2,
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  double *xCoord = (double *)ESMC_GridGetCoord(outGrid, 1,
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  double *yCoord = (double *)ESMC_GridGetCoord(outGrid, 2,
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(srcgrid, 1,
@@ -1016,6 +1039,7 @@ src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_MeshGe
 
 
 ESMC_RouteHandleCreateFromFile
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rh2 = ESMC_RouteHandleCreateFromFile("rh_file.RH", &rc);
 
 
 ESMC_RouteHandlePrint
@@ -1028,6 +1052,7 @@ src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_Route
 
 
 ESMC_RouteHandleWrite
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_RouteHandleWrite(rh, "rh_file.RH");
 
 
 ESMC_SciCompCreate
@@ -1140,6 +1165,7 @@ src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc=ESMC_VMGet(vm, &localPet,
 src/Infrastructure/Mesh/tests/ESMC_Proj4UTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, (int *)NULL, (int *)NULL);
 src/Infrastructure/IO/tests/ESMCI_IO_PIOUTest.C:  rc = ESMC_VMGet(vm, &localPet, &petCount, &peCount,
 src/Infrastructure/IO/tests/ESMC_IO_InqUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, 
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, 
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
@@ -1171,6 +1197,7 @@ src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  vm=ESMC_VMGetGlobal(&rc);
 src/Infrastructure/Mesh/tests/ESMC_Proj4UTest.C:  vm=ESMC_VMGetGlobal(&rc);
 src/Infrastructure/IO/tests/ESMCI_IO_PIOUTest.C:  vm = ESMC_VMGetGlobal(&rc);
 src/Infrastructure/IO/tests/ESMC_IO_InqUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  vm=ESMC_VMGetGlobal(&rc);
 src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
 src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  vm=ESMC_VMGetGlobal(&rc);
