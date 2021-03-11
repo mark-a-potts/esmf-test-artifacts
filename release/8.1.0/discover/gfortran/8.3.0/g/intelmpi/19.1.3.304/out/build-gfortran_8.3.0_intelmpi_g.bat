@@ -8,12 +8,11 @@
 #SBATCH --exclusive
 #SBATCH --output build-gfortran_8.3.0_intelmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load comp/gcc/8.3.0 mpi/impi/19.1.3.304 
-module list >& module-build.log
+
 module list >& module-build.log
 
-export -n ESMF_NETCDF
+set -x
 
 export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_g
 export ESMF_COMPILER=gfortran
