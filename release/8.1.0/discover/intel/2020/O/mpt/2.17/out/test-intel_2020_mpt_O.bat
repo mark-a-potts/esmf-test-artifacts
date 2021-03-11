@@ -8,7 +8,6 @@
 #SBATCH --exclusive
 #SBATCH --output test-intel_2020_mpt_O.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 export ESMF_F90COMPILER=ifort
 export ESMF_CXXCOMPILER=icpc
 export MPICXX_CXX=icpc
@@ -17,6 +16,7 @@ module load hdf5/1.13.0
 module list
 module list >& module-test.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"
