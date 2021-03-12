@@ -8,10 +8,10 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/gfortran_9.1.0_mpt_g
-set -x
 module load gnu/9.1.0 mpt/2.22 netcdf/4.7.3
 module list >& module-build.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILER=mpif90
@@ -23,4 +23,6 @@ export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make -j 36 clean 2>&1|tee clean_$JOBID.log 
 make -j 36 2>&1|tee build_$JOBID.log
+
+ssh cheyenne6 /glade/scratch/mpotts/gfortran_9.1.0_mpt_g/getres-build.sh
 
