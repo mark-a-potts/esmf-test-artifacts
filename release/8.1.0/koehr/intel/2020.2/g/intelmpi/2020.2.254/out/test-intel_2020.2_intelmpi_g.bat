@@ -8,6 +8,8 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /p/work1/mpotts/intel_2020.2_intelmpi_g
+
+module unload compiler/intel mpt
 module load compiler/intel/2020.2.254 compiler/intelmpi/2020.2.254 netcdf-c/intel/4.3.3.1
 module load netcdf-c/intel/4.4.2 
 module list
