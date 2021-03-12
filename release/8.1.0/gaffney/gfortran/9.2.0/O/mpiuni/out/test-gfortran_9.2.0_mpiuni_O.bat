@@ -26,3 +26,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
 
+ssh gaffney06 /p/work1/mpotts/gfortran_9.2.0_mpiuni_O/getres-test.sh
+
