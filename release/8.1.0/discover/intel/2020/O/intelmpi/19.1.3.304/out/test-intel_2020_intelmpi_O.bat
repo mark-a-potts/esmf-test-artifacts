@@ -8,12 +8,12 @@
 #SBATCH --exclusive
 #SBATCH --output test-intel_2020_intelmpi_O.bat_%j.o
 export JOBID=$SLURM_JOBID
-set -x
 module load comp/intel/19.1.3.304 mpi/impi/19.1.3.304 netcdf4/4.7.4
 module load hdf5/1.13.0 
 module list
 module list >& module-test.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"

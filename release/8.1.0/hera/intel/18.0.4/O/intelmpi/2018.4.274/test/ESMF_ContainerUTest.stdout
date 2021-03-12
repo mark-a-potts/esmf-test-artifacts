@@ -24,8 +24,6 @@
  128
   PASS  Container Add Field 2nd time relaxed Test, ESMF_ContainerUTest.F90, line
   136
-  PASS  Container turn garbage feature ON Test, ESMF_ContainerUTest.F90, line 14
- 3
   PASS  Container Add Field 2nd time strict Test, ESMF_ContainerUTest.F90, line 
  128
   PASS  Container Add Field 2nd time relaxed Test, ESMF_ContainerUTest.F90, line
@@ -42,6 +40,8 @@
   PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
   PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_Container
  UTest.F90, line 158
+  PASS  Container turn garbage feature ON Test, ESMF_ContainerUTest.F90, line 14
+ 3
   PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
   PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_Container
  UTest.F90, line 158
@@ -66,6 +66,12 @@
                     
  fieldGarbageList(           3 )=
  testField3                                                                     
+                                                                                
+                                                                                
+                    
+ fieldGarbageList(           4 )=
+ testField4                                                                     
+                                                                                
                                                                                 
   PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 166
   PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 172
@@ -127,12 +133,6 @@
   PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 195
   PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 166
   PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 172
-                                                                                
-                    
- fieldGarbageList(           4 )=
- testField4                                                                     
-                                                                                
-                                                                                
                     
  fieldGarbageList(           5 )=
  testField5                                                                     
@@ -145,7 +145,7 @@
 Container::print() multipmap:item=  PASS  Container turn garbage feature OFF Test, ESMF_ContainerUTest.F90, line 1
  88
   PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 195
-Container::print() multipmap:item= size of fieldGarbageList:            5
+Container::print() multipmap:item=Container::print() multipmap:item=0 key=testField1 value= size of fieldGarbageList:            5
  fieldGarbageList(           1 )=
  testField1                                                                     
                                                                                 
@@ -159,19 +159,24 @@ Container::print() multipmap:item= size of fieldGarbageList:            5
  fieldGarbageList(           3 )=
  testField3                                                                     
                                                                                 
-0 key=testField1 value=0x2b0584267c40
-0 key=testField1 value=0x2b4966e43c40
-Container::print() multipmap:item=1 key=testField2 value=0x2b4966e43b00
-Container::print() multipmap:item=Container::print() multipmap:item=0 key=testField1 value=0x2acbd2987c40
-Container::print() multipmap:item=1 key=testField2 value=0x2acbd2987b00
-Container::print() multipmap:item=2 key=testField3 value=0x2acbd29879c0
-Container::print() multipmap:item=3 key=testField4 value=                                                                                
+                                                                                
                     
  fieldGarbageList(           4 )=
  testField4                                                                     
                                                                                 
                                                                                 
                     
+0 key=testField1 value=0x2ab2cfdbbc40
+Container::print() multipmap:item=1 key=testField2 value=0x2ab2cfdbbb00
+Container::print() multipmap:item=20 key=testField1 value=0x2b8ad6bebc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b8ad6bebb00
+Container::print() multipmap:item=2 key=testField3 value=0x2b8ad6beb9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2b8ad6beb8800x2b6f1e70fc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b6f1e70fb00
+Container::print() multipmap:item=2 key=testField3 value=0x2b6f1e70f9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2b6f1e70f880
+Container::print() multipmap:item=4 key=testField5 value=0x2b6f1e70f740
+Container::print()      list:item=0 key=testField1 value=0x2b6f1e70fc40
  fieldGarbageList(           5 )=
  testField5                                                                     
                                                                                 
@@ -179,229 +184,221 @@ Container::print() multipmap:item=3 key=testField4 value=
                     
   PASS  Container turn garbage feature OFF Test, ESMF_ContainerUTest.F90, line 1
  88
-Container::print() multipmap:item=1 key=testField2 value=0x2b0584267b00
-Container::print() multipmap:item=2 key=testField3 value=0x2b05842679c0
-Container::print() multipmap:item=3 key=testField4 value=0x2b0584267880
-Container::print() multipmap:item=4 key=testField5 value=0x2b0584267740
-Container::print()      list:item=0 key=testField1 value=0x2b0584267c40
-Container::print()      list:item=1 key=testField2 value=0x2b0584267b00
-Container::print()      list:item=2 key=testField3 value=0x2b05842679c0
-Container::print()      list:item=2 key=testField3 value=0x2b4966e439c0
-Container::print() multipmap:item=3 key=testField4 value=0x2b4966e43880
-Container::print() multipmap:item=4 key=testField5 value=0x2b4966e43740
-Container::print()      list:item=0 key=testField1 value=0x2b4966e43c40
-Container::print()      list:item=1 key=testField2 value=0x2b4966e43b00
-Container::print()      list:item=2 key=testField3 value=0x2b4966e439c0
-Container::print()      list:item=3 key=testField4 value=0x2b4966e43880
-Container::print()      list:item=4 key=testField5 value=0x2acbd2987880
-Container::print() multipmap:item=4 key=testField5 value=0x2acbd2987740
-Container::print()      list:item=0 key=testField1 value=0x2acbd2987c40
-Container::print()      list:item=1 key=testField2 value=0x2acbd2987b00
-Container::print()      list:item=2 key=testField3 value=0x2acbd29879c0
-Container::print()      list:item=3 key=testField4 value=0x2acbd2987880
-Container::print()      list:item=4 key=testField5 value=0x2acbd2987740
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
   PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 195
-Container::print() multipmap:item=03 key=testField4 value=0x2b0584267880
-Container::print()      list:item=4 key=testField5 value=0x2b0584267740
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
-  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
-  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
-  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
-0x2b4966e43740
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
-  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
-  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
-  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
-  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
-  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
-  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
-  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
-  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
-  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
- key=testField1 value=0x2aabe7aa7c40
-Container::print() multipmap:item=1 key=testField2 value=0x2aabe7aa7b00
-Container::print() multipmap:item=2 key=testField3 value=0x2aabe7aa79c0
-Container::print() multipmap:item=3 key=testField4 value=0x2aabe7aa7880
-Container::print() multipmap:item=4 key=testField5 value=0x2aabe7aa7740
-  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
-  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
-  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
-  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
-  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
-Container::print()      list:item=0 key=testField1 value=0x2aabe7aa7c40
-Container::print()      list:item=1 key=testField2 value=0x2aabe7aa7b00
-Container::print()      list:item=2 key=testField3 value=0x2aabe7aa79c0
-Container::print()      list:item=3 key=testField4 value=0x2aabe7aa7880
-Container::print()      list:item=4 key=testField5 value=0x2aabe7aa7740
-  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
- size of fieldGarbageList:            1
- fieldGarbageList(           1 )=
- testField3                                                                     
-                                                                                
-                                                                                
-                    
-  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
- size of fieldGarbageList:            1
- fieldGarbageList(           1 )=
- testField3                                                                     
-                                                                                
-                                                                                
-                    
-  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
-  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
- size of fieldGarbageList:            1
- fieldGarbageList(           1 )=
- testField3                                                                     
-                                                                                
-                                                                                
-                    
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
-  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
-  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
-  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
- e 283
-  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, li
- ne 291
-  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
- e 283
-  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, li
- ne 291
-Container::print() multipmap:item=0 key=testField1 value=0x2b4966e43c40
-Container::print() multipmap:item=1 key=testField2 value=0x2b4966e43b00
-Container::print() multipmap:item=2 key=testField4  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
- e 283
-  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, li
- ne 291
-Container::print() multipmap:item=0 key=testField1 value=0x2acbd2987c40
-Container::print() multipmap:item=1 key=testField2 value=0x2acbd2987b00
-Container::print() multipmap:item=2 key=testField4 value=0x2acbd2987880
-Container::print() multipmap:item=3 key=testField5 value=0x2acbd2987740
-Container::print()      list:item=0 key=  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
-  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
-Container::print() multipmap:item=0 key=testField1 value=0x2b0584267c40
-Container::print() multipmap:item=1 key=testField2 value=0x2b0584267b00
-Container::print() multipmap:item=2 key=testField4 value=0x2b0584267880
-Container::print() multipmap:item=3 key=testField5 value=0x2b0584267740
-Container::print()      list:item=0 key=testField1 value=0x2b0584267c40
-Container::print()      list:item=1 key=testField2 value=0x2b0584267b00
-Container::print()      list:item=2 key=testField4 value=0x2b0584267880
-Container::print()      list:item=3 key=testField5 value=0x2b0584267740
- value=0x2b4966e43880
-Container::print() multipmap:item=3 key=testField5 value=0x2b4966e43740
-Container::print()      list:item=0 key=testField1 value=0x2b4966e43c40
-Container::print()      list:item=1 key=testField2 value=0x2b4966e43b00
-Container::print()      list:item=2 key=testField4 value=0x2b4966e43880
-Container::print()      list:item=3 key=testField5 value=0x2b4966e43740
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
-  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
-testField1 value=0x2acbd2987c40
-Container::print()      list:item=1 key=testField2 value=0x2acbd2987b00
-Container::print()      list:item=2 key=testField4 value=0x2acbd2987880
-Container::print()      list:item=3 key=testField5 value=0x2acbd2987740
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
-  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
-  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
-  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
-  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
-  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
-  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
-  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
-  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 3
- 25
-  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
-  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
-  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 3
- 25
-  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
-  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 3
- 25
-  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
- size of fieldGarbageList:            1
- fieldGarbageList(           1 )=
- testField3                                                                     
-  PASS  Container Replace Field with one not present strict Test, ESMF_Container
- UTest.F90, line 332
-  PASS  Container Replace Field with one not present relaxed Test, ESMF_Containe
- rUTest.F90, line 340
-  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
-  PASS  Container Replace Field with one not present strict Test, ESMF_Container
- UTest.F90, line 332
-  PASS  Container Replace Field with one not present relaxed Test, ESMF_Containe
- rUTest.F90, line 340
-  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
-  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTes
- t.F90, line 354
-  PASS  Container Replace Field with one not present strict Test, ESMF_Container
- UTest.F90, line 332
-  PASS  Container Replace Field with one not present relaxed Test, ESMF_Containe
- rUTest.F90, line 340
-  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
-  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTes
- t.F90, line 354
-Container::print() multipmap:item=0 key=testField1 value=0x2acbd2987c40
-Container::print() multipmap:item=1 key=testField2 value=0x2acbd2987b00                                                                                
-                                                                                
-                    
-  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTes
- t.F90, line 354
-Container::print() multipmap:item=0 key=testField1 value=0x2b0584267c40
-Container::print() multipmap:item=1 key=testField2 value=0x2b0584267b00
-Container::print() multipmap:item=2 key=testField3 value=0x2b05842679c0
-Container::print() multipmap:item=3 key=testField4 value=0x2b0584267880
-Container::print() multipmap:item=4 key=testField5 value=0x2b0584267740
-Container::print()      list:item=0 key=testField1 value=0x2b0584267c40
-Container::print()      list:item=Container::print() multipmap:item=0 key=testField1 value=0x2b4966e43c40
-Container::print() multipmap:item=1 key=testField2 value=0x2b4966e43b00
-Container::print() multipmap:item=2 key=testField3 value=0x2b4966e439c0
-Container::print() multipmap:item=3 key=testField4 value=0x2b4966e43880
-Container::print() multipmap:item=4 key=testField5 value=0x2b4966e43740
-Container::print()      list:item=0 key=testField1 value=0x2b4966e43c40
-Container::print()      list:item=1 key=testField2 value=0x2b4966e43b00
-Container::print()      list:item=2 key=testField4 value=0x2b4966e43880
+ key=testField3 value=0x2ab2cfdbb9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2ab2cfdbb880
+Container::print() multipmap:item=4 key=testField5 value=0x2ab2cfdbb740
+Container::print()      list:item=0 key=testField1 value=0x2ab2cfdbbc40
+Container::print()      list:item=1 key=testField2 value=0x2ab2cfdbbb00
+Container::print()      list:item=2 key=testField3 value=0x2ab2cfdbb9c0
+Container::print()      list:item=3 key=testField4 value=0x2ab2cfdbb880
+Container::print()      list:item=4 key=testField5 value=0x2ab2cfdbb740
 
-Container::print() multipmap:item=2 key=testField3 value=0x2acbd29879c0
-Container::print() multipmap:item=3 key=testField4 value=0x2acbd2987880
-Container::print() multipmap:item=4 key=testField5 value=0x2acbd2987740
-Container::print()      list:item=0 key=testField1 value=0x2acbd2987c40
-Container::print()      list:item=1 key=testField2 value=0x2acbd2987b00
-Container::print()      list:item=2 key=testField4 value=0x2acbd2987880
-Container::print()      list:item=3 key=testField5 value=0x2acbd2987740
-Container::print()      list:item=4 key=testField3  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
+Container::print() multipmap:item=4 key=testField5 value=0x2b8ad6beb740
+Container::print()      list:item=0 key=testField1 value=0x2b8ad6bebc40
+Container::print()      list:item=1 key=testField2 value=0x2b8ad6bebb00
+Container::print()      list:item=2 key=testField3 value=0x2b8ad6beb9c0
+Container::print()      list:item=3 key=testField4 value=0x2b8ad6beb880
+Container::print()      list:item=4 key=testField5 value=0x2b8ad6beb740
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+Container::print()      list:item=1 key=testField2 value=0x2b6f1e70fb00
+Container::print()      list:item=2 key=testField3 value=0x2b6f1e70f9c0
+Container::print()      list:item=3 key=testField4 value=0x2b6f1e70f880
+Container::print()      list:item=4 key=testField5 value=0x2b6f1e70f740
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+Container::print() multipmap:item=0 key=testField1 value=0x2b2a21a5fc40
+Container::print() multipmap:item=1 key=  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+testField2 value=0x2b2a21a5fb00
+Container::print() multipmap:item=2 key=testField3 value=0x2b2a21a5f9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2b2a21a5f880
+Container::print() multipmap:item=4 key=testField5 value=0x2b2a21a5f740
+Container::print()      list:item=0 key=testField1 value=0x2b2a21a5fc40
+Container::print()      list:item=1 key=testField2 value=0x2b2a21a5fb00  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+ size of fieldGarbageList:            1
+ fieldGarbageList(           1 )=
+  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+ size of fieldGarbageList:            1
+ fieldGarbageList(           1 )=
+ testField3                                                                     
+                                                                                
+                                                                                
+                    
+
+Container::print()      list:item=2 key=testField3 value=0x2b2a21a5f9c0
+Container::print()      list:item=3 key=testField4 value=0x2b2a21a5f880
+Container::print()      list:item=4 key=testField5 value=0x2b2a21a5f740
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+ size of fieldGarbageList:            1
+ fieldGarbageList(           1 )=
+ testField3                                                                     
+                                                                                
+                                                                                
+                    
+ testField3                                                                     
+                                                                                
+                                                                                
+                    
+  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
  e 283
-1 key=testField2 value=0x2b0584267b00
-Container::print()      list:item=2 key=testField4 value=0x2b0584267880
-Container::print()      list:item=3 key=testField5 value=0x2b0584267740
-Container::print()      list:item=4 key=testField3 value=0x2b05842679c0
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
-  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
-  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
- .F90, line 375
-Container::print()      list:item=3 key=testField5 value=0x2b4966e43740
-Container::print()      list:item=4 key=testField3 value=0x2b4966e439c0
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
-  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
-  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
- .F90, line 375
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
- line 382
- value=0x2acbd29879c0
-  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
-  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
-  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
- .F90, line 375
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
- line 382
-  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
- line 398
+  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
+ e 283
   PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, li
  ne 291
-Container::print() multipmap:item=0 key=testField1 value=0x2aabe7aa7c40
-Container::print() multipmap:item=1 key=testField2 value=0x2aabe7aa7b00
-Container::print() multipmap:item=2 key=testField4 value=0x2aabe7aa7880
-Container::print() multipmap:item=3 key=testField5 value=0x2aabe7aa7740
-Container::print()      list:item=0 key=testField1  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+Container::print() multipmap:item=0 key=testField1 value=0x2ab2cfdbbc40
+Container::print() multipmap:item=1 key=testField2 value=0x2ab2cfdbbb00
+Container::print() multipmap:item=2 key=  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, li
+ ne 291
+Container::print() multipmap:item=0 key=testField1 value=0x2b8ad6bebc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b8ad6bebb00
+Container::print() multipmap:item=2 key=testField4 value=0x2b8ad6beb880
+Container::print() multipmap:item=3 key=testField5 value=0x2b8ad6beb740
+Container::print()      list:item=0 key=testField1 value=0x2b8ad6bebc40
+Container::print()      list:item=1 key=testField2  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
+ e 283
+  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, li
+ ne 291
+Container::print() multipmap:item=0 key=testField1 value=0x2b6f1e70fc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b6f1e70fb00
+Container::print() multipmap:item=2 key=testField4 value=0x2b6f1e70f880
+Container::print() multipmap:item=3 key=testField5 value=0x2b6f1e70f740
+Container::print()      list:item=0 key=testField1 value=0x2b6f1e70fc40
+Container::print()      list:item=1 key=testField2 value=0x2b6f1e70fb00
+Container::print()      list:item=2 key=testField4 value=0x2b6f1e70f880
+Container::print()      list:item=3 key=  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+testField4 value=0x2ab2cfdbb880
+Container::print() multipmap:item=3 key=testField5 value=0x2ab2cfdbb740
+Container::print()      list:item=0 key=testField1 value=0x2ab2cfdbbc40
+Container::print()      list:item=1 key=testField2 value=0x2ab2cfdbbb00
+Container::print()      list:item=2 key=testField4 value=0x2ab2cfdbb880
+Container::print()      list:item=3 key=testField5 value=0x2ab2cfdbb740
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
+  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
+ value=0x2b8ad6bebb00
+Container::print()      list:item=2 key=testField4 value=0x2b8ad6beb880
+Container::print()      list:item=3 key=testField5 value=0x2b8ad6beb740
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
+  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
+  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
+testField5 value=0x2b6f1e70f740
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
+  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
+  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
+  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
+  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 3
+ 25
+  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
+  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
+  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 3
+ 25
+  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
+  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 3
+ 25
+  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+  PASS  Container Replace Field with one not present strict Test, ESMF_Container
+ UTest.F90, line 332
+  PASS  Container Replace Field with one not present relaxed Test, ESMF_Containe
+ rUTest.F90, line 340
+  PASS  Container Replace Field with one not present strict Test, ESMF_Container
+ UTest.F90, line 332
+  PASS  Container Replace Field with one not present relaxed Test, ESMF_Containe
+ rUTest.F90, line 340
+  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
+  PASS  Container Replace Field with one not present strict Test, ESMF_Container
+ UTest.F90, line 332
+  PASS  Container Replace Field with one not present relaxed Test, ESMF_Containe
+ rUTest.F90, line 340
+  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
+  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTes
+ t.F90, line 354
+Container::print() multipmap:item=0 key=testField1 size of fieldGarbageList:            1
+ fieldGarbageList(           1 )=
+ testField3                                                                     
+                                                                                
+                                                                                
+                    
+  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
+  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTes
+ t.F90, line 354
+Container::print() multipmap:item=0 key=testField1 value=0x2ab2cfdbbc40
+Container::print() multipmap:item=1 key=testField2 value=0x2ab2cfdbbb00
+Container::print() multipmap:item=2 key=testField3 value=0x2ab2cfdbb9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2ab2cfdbb880
+Container::print() multipmap:item=4 key=testField5 value=0x2ab2cfdbb740
+Container::print()      list:item=0 key=  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTes
+ t.F90, line 354
+Container::print() multipmap:item=0 key=testField1 value=0x2b8ad6bebc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b8ad6bebb00
+Container::print() multipmap:item=2 key=testField3 value=0x2b8ad6beb9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2b8ad6beb880
+Container::print() multipmap:item=4 key=testField5 value=0x2b8ad6beb740
+Container::print()      list:item=0 key=testField1 value=0x2b8ad6bebc40
+Container::print()      list:item=1 key=testField2 value=0x2b8ad6bebb00
+ value=0x2b6f1e70fc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b6f1e70fb00
+Container::print() multipmap:item=2 key=testField3 value=0x2b6f1e70f9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2b6f1e70f880
+Container::print() multipmap:item=4 key=testField5 value=0x2b6f1e70f740
+Container::print()      list:item=0 key=testField1 value=0x2b6f1e70fc40
+Container::print()      list:item=1 key=testField2 value=0x2b6f1e70fb00
+Container::print()      list:item=2 key=testField4 value=0x2b6f1e70f880
+Container::print()      list:item=3 key=testField5  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, lin
+ e 283
+testField1 value=0x2ab2cfdbbc40
+Container::print()      list:item=1 key=testField2 value=0x2ab2cfdbbb00
+Container::print()      list:item=2 key=testField4 value=0x2ab2cfdbb880
+Container::print()      list:item=3 key=testField5 value=0x2ab2cfdbb740
+Container::print()      list:item=4 key=testField3 value=0x2ab2cfdbb9c0
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
+  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+Container::print()      list:item=2 key=testField4 value=0x2b8ad6beb880
+Container::print()      list:item=3 key=testField5 value=0x2b8ad6beb740
+Container::print()      list:item=4 key=testField3 value=0x2b8ad6beb9c0
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
+  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
+ .F90, line 375
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+ line 382
+ value=0x2b6f1e70f740
+Container::print()      list:item=4 key=testField3 value=0x2b6f1e70f9c0
+  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
+  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
+ .F90, line 375
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+ line 382
+  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, li
+ ne 291
+Container::print() multipmap:item=0 key=testField1 value=0x2b2a21a5fc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b2a21a5fb00
+Container::print() multipmap:item=2 key=testField4 value=0x2b2a21a5f880
+Container::print() multipmap:item=3 key=  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
+ .F90, line 375
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
  line 382
   PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
  line 398
@@ -421,6 +418,8 @@ Container::print()      list:item=0 key=testField1  PASS  Verify Container Get f
  F_ContainerUTest.F90, line 421
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
  F_ContainerUTest.F90, line 437
+  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
+ line 398
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.
  F90, line 408
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
@@ -431,12 +430,11 @@ Container::print()      list:item=0 key=testField1  PASS  Verify Container Get f
  F_ContainerUTest.F90, line 437
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerU
  Test.F90, line 447
-  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
- R Test, ESMF_ContainerUTest.F90, line 453
- value=0x2aabe7aa7c40
-Container::print()      list:item=1 key=testField2 value=0x2aabe7aa7b00
-Container::print()      list:item=2 key=testField4 value=0x2aabe7aa7880
-Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
+testField5 value=0x2b2a21a5f740
+Container::print()      list:item=0 key=testField1 value=0x2b2a21a5fc40
+Container::print()      list:item=1 key=testField2 value=0x2b2a21a5fb00
+Container::print()      list:item=2 key=testField4 value=0x2b2a21a5f880
+Container::print()      list:item=3 key=testField5 value=0x2b2a21a5f740
   PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
  F_ContainerUTest.F90, line 437
@@ -452,13 +450,12 @@ Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
  R Test, ESMF_ContainerUTest.F90, line 453
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 460
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
+ R Test, ESMF_ContainerUTest.F90, line 453
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 460
-  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
- , ESMF_ContainerUTest.F90, line 485
   PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
   PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
-  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 485
  fieldListOut(           1 )=
@@ -469,6 +466,10 @@ Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
  fieldListOut(           2 )=
  testField2                                                                     
                                                                                 
+                                                                                
+                    
+ fieldListOut(           3 )=
+ testField4                                                                     
                                                                                 
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 485
@@ -497,6 +498,8 @@ Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
                                                                                 
                                                                                 
                     
+  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
+ , ESMF_ContainerUTest.F90, line 485
  fieldListOut(           1 )=
  testField1                                                                     
                                                                                 
@@ -523,12 +526,9 @@ Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
                                                                                 
                     
   PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 507
+  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
   PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 3
  25
-                    
- fieldListOut(           3 )=
- testField4                                                                     
-                                                                                
                                                                                 
                     
  fieldListOut(           4 )=
@@ -554,18 +554,20 @@ Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
   PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 536
   PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90
  , line 543
+  PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90
+ , line 543
+  PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, l
+ ine 550
   PASS  Container Replace Field with one not present strict Test, ESMF_Container
  UTest.F90, line 332
-  PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90
- , line 543
-  PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, l
- ine 550
   PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, l
  ine 550
   PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90
  , line 543
   PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, l
  ine 550
+  PASS  Container Get item from multiple item container Test, ESMF_ContainerUTes
+ t.F90, line 557
   PASS  Container Replace Field with one not present relaxed Test, ESMF_Containe
  rUTest.F90, line 340
   PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
@@ -575,8 +577,6 @@ Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
  rUTest.F90, line 565
   PASS  Container Remove item from multiple item container relaxed Test, ESMF_Co
  ntainerUTest.F90, line 573
-  PASS  Container Get item from multiple item container Test, ESMF_ContainerUTes
- t.F90, line 557
   PASS  Container Get isPresent from multiple item container Test, ESMF_Containe
  rUTest.F90, line 565
   PASS  Container Remove item from multiple item container relaxed Test, ESMF_Co
@@ -591,10 +591,8 @@ Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
  Test.F90, line 580
   PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTes
  t.F90, line 354
-Container::print() multipmap:item=0 key=testField1 value=0x2aabe7aa7c40
-Container::print() multipmap:item=1 key=testField2 value=0x2aabe7aa7b00
-Container::print() multipmap:item=2 key=testField3 value=0x2aabe7aa79c0
-  PASS  Container Remove item from multiple item container Test, ESMF_ContainerU
+Container::print() multipmap:item=0 key=testField1 value=0x2b2a21a5fc40
+Container::print() multipmap:item=1 key=testField2 value=0x2b2a21a5fb00  PASS  Container Remove item from multiple item container Test, ESMF_ContainerU
  Test.F90, line 580
   PASS  Container Remove item from multiple item container multi Test, ESMF_Cont
  ainerUTest.F90, line 588
@@ -620,77 +618,81 @@ Container::print() multipmap:item=2 key=testField3 value=0x2aabe7aa79c0
  nerUTest.F90, line 603
   PASS  Container Replace Field in multiple item container relaxed Test, ESMF_Co
  ntainerUTest.F90, line 611
-Container::print() multipmap:item=3 key=testField4 value=0x2aabe7aa7880
-Container::print() multipmap:item=4 key=testField5 value=0x2aabe7aa7740
-Container::print()      list:item=0 key=testField1 value=0x2aabe7aa7c40
-Container::print()      list:item=1 key=testField2 value=0x2aabe7aa7b00
-Container::print()      list:item=2 key=testField4 value=0x2aabe7aa7880
-Container::print()      list:item=3 key=testField5 value=0x2aabe7aa7740
-Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
-  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_Co
+
+Container::print() multipmap:item=2 key=testField3 value=0x2b2a21a5f9c0
+Container::print() multipmap:item=3 key=testField4 value=0x2b2a21a5f880
+Container::print() multipmap:item=4 key=testField5 value=0x2b2a21a5f740
+Container::print()      list:item=0 key=testField1 value=0x2b2a21a5fc40
+Container::print()      list:item=1 key=testField2 value=0x2b2a21a5fb00
+Container::print()      list:item=2 key=testField4 value=0x2b2a21a5f880
+Container::print()      list:item=3 key=testField5 value=  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_Co
  ntainerUTest.F90, line 611
   PASS  Container Replace Field in multiple item container strict Test, ESMF_Con
  tainerUTest.F90, line 618
-  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
-  PASS  Container Replace Field in multiple item container strict Test, ESMF_Con
- tainerUTest.F90, line 618
-  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
-  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, 
- line 642
-  PASS  Container Replace Field in multiple item container strict Test, ESMF_Con
- tainerUTest.F90, line 618
-  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
-  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, 
- line 642
+0x2b2a21a5f740
+Container::print()      list:item=4 key=testField3 value=0x2b2a21a5f9c0
   PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
-  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
   PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, 
  line 642
-  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line
-  651
+  PASS  Container Replace Field in multiple item container strict Test, ESMF_Con
+ tainerUTest.F90, line 618
+  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
+  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, 
+ line 642
+  PASS  Container Replace Field in multiple item container strict Test, ESMF_Con
+ tainerUTest.F90, line 618
+  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
+  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, 
+ line 642
+  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
   PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
  .F90, line 375
+  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line
+  651
+  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
+ .F90, line 657
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+ line 664
+  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line
+  651
+  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
+ .F90, line 657
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+ line 664
+  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
+ line 680
+  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_Co
+ ntainerUTest.F90, line 690
+  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line
+  651
+  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
+ .F90, line 657
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+ line 664
+  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
+ line 680
+  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_Co
+ ntainerUTest.F90, line 690
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
+ t, ESMF_ContainerUTest.F90, line 696
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
  line 382
-  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
- .F90, line 657
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
- line 664
-  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
- line 680
-  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line
-  651
-  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
- .F90, line 657
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
- line 664
-  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
- line 680
-  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_Co
- ntainerUTest.F90, line 690
-  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
- t, ESMF_ContainerUTest.F90, line 696
-  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line
-  651
-  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
- .F90, line 657
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
- line 664
-  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
- line 680
-  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_Co
- ntainerUTest.F90, line 690
-  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
- t, ESMF_ContainerUTest.F90, line 696
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
- line 703
-  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
   PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
  line 398
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.
- F90, line 408
+  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
+ line 680
   PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_Co
  ntainerUTest.F90, line 690
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
+ t, ESMF_ContainerUTest.F90, line 696
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+ line 703
+  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
+ F_ContainerUTest.F90, line 719
+  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ES
+ MF_ContainerUTest.F90, line 729
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
  t, ESMF_ContainerUTest.F90, line 696
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
@@ -702,6 +704,7 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
  R Test, ESMF_ContainerUTest.F90, line 735
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
  line 703
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
  F_ContainerUTest.F90, line 719
@@ -713,24 +716,20 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
  line 742
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 758
- F_ContainerUTest.F90, line 719
-  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ES
- MF_ContainerUTest.F90, line 729
-  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
- R Test, ESMF_ContainerUTest.F90, line 735
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
- line 742
-  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
- , ESMF_ContainerUTest.F90, line 758
-  PASS  Container Replace Field in multiple item container multi Test, ESMF_Cont
- ainerUTest.F90, line 766
+ F90, line 408
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
  t, ESMF_ContainerUTest.F90, line 414
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESM
  F_ContainerUTest.F90, line 421
-  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
- F_ContainerUTest.F90, line 437
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
+ R Test, ESMF_ContainerUTest.F90, line 735
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
+ line 742
+  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
+ , ESMF_ContainerUTest.F90, line 758
+  PASS  Container Replace Field in multiple item container multi Test, ESMF_Cont
+ ainerUTest.F90, line 766
+  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
  line 742
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 758
@@ -746,7 +745,10 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
  .F90, line 789
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
  line 796
-  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
+  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
+ F_ContainerUTest.F90, line 437
+  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerU
+ Test.F90, line 447
   PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 783
   PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
  .F90, line 789
@@ -754,10 +756,10 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
  line 796
   PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
  line 814
-  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerU
- Test.F90, line 447
-  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
- R Test, ESMF_ContainerUTest.F90, line 453
+  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.
+ F90, line 823
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
+ t, ESMF_ContainerUTest.F90, line 829
   PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest
  .F90, line 789
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, 
@@ -769,6 +771,7 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
  t, ESMF_ContainerUTest.F90, line 829
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESM
+ F_ContainerUTest.F90, line 836
   PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, 
  line 814
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.
@@ -781,20 +784,11 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
  F_ContainerUTest.F90, line 854
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerU
  Test.F90, line 864
-  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.
- F90, line 823
-  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Tes
- t, ESMF_ContainerUTest.F90, line 829
-  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESM
- F_ContainerUTest.F90, line 836
-  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
- F_ContainerUTest.F90, line 854
-  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerU
- Test.F90, line 864
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
- R Test, ESMF_ContainerUTest.F90, line 870
+ R Test, ESMF_ContainerUTest.F90, line 453
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 460
+  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESM
  F_ContainerUTest.F90, line 836
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
  F_ContainerUTest.F90, line 854
@@ -804,20 +798,24 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
  R Test, ESMF_ContainerUTest.F90, line 870
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 877
+  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESM
+ F_ContainerUTest.F90, line 854
+  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerU
+ Test.F90, line 864
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
  R Test, ESMF_ContainerUTest.F90, line 870
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 877
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 895
-  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 904
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDE
+ R Test, ESMF_ContainerUTest.F90, line 870
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 877
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 895
   PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 904
   PASS  Container Create UDT Test, ESMF_ContainerUTest.F90, line 926
-  PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, lin
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test
  , ESMF_ContainerUTest.F90, line 485
  fieldListOut(           1 )=
@@ -831,11 +829,14 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
   PASS  Container Create UDT Test, ESMF_ContainerUTest.F90, line 926
   PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, lin
  e 933
+  PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, lin
+  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 904
   PASS  Container Create UDT Test, ESMF_ContainerUTest.F90, line 926
   PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, lin
  e 933
   PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, lin
  e 948
+  PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, lin
  e 933
   PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, lin
  e 948
@@ -861,7 +862,6 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
                                                                                 
                     
   PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 507
-  PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, lin
  e 948
   PASS  Container Add 2nd UDT Test, ESMF_ContainerUTest.F90, line 964
   PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
@@ -869,20 +869,13 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
   PASS  Container Add 2nd UDT Test, ESMF_ContainerUTest.F90, line 964
   PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
   PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
-  PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, 
- line 985
-  PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, l
- ine 991
   PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
   PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
   PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, 
  line 985
   PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, l
  ine 991
-  PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, l
- ine 997
   PASS  Container Create Test, ESMF_ContainerUTest.F90, line 518
-  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 529
   PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, 
  line 985
   PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, l
@@ -890,6 +883,14 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
   PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, l
  ine 997
   PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
+  PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, 
+ line 985
+  PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, l
+ ine 991
+  PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, l
+ ine 997
+  PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
+  PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
   PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, l
  ine 997
   PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
@@ -898,14 +899,7 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
  90, line 1027
   PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F9
  0, line 1033
-  PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
-  PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
-  PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F
- 90, line 1027
-  PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F9
- 0, line 1033
-  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F9
- 0, line 1039
+  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 529
   PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 536
   PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
   PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F
@@ -914,17 +908,27 @@ Container::print()      list:item=4 key=testField3 value=0x2aabe7aa79c0
  0, line 1033
   PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F9
  0, line 1039
-Container::print() multipmap:item=0 key=myUDT2 value=0x2b058424fe20
-Container::print()      list:item=0 key=myUDT2  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F9
+Container::print() multipmap:item=0 key=myUDT2 value=0x2ab2cfda3e20
+Container::print()      list:item=0 key=myUDT2 value=0x2ab2cfda3e20
+  PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F
+ 90, line 1027
+  PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F9
+ 0, line 1033
+  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F9
  0, line 1039
-Container::print() multipmap:item=0 key=myUDT2 value=0x2b4966e2be20
-Container::print()      list:item=0 key=myUDT2 value=0x2b4966e2be20
+Container::print() multipmap:item=0 key=myUDT2 value=0x2b8ad6bd3e20
+Container::print()      list:item=0 key=myUDT2 value=0x2b8ad6bd3e20
+  PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
+  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F9
+ 0, line 1039
+Container::print() multipmap:item=0 key=myUDT2 value=0x2b6f1e6f7e20
+Container::print()      list:item=0 key=myUDT2 value=0x2b6f1e6f7e20
   PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
   PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, 
  line 1053
  before Clear() garbageCount=           2
-Container::print() multipmap:item=0 key=myUDT2 value=0x2acbd296fe20
-Container::print()      list:item=0 key=myUDT2 value=0x2acbd296fe20
+  PASS  Container Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 106
+ 2
   PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
   PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, 
  line 1053
@@ -933,8 +937,6 @@ Container::print()      list:item=0 key=myUDT2 value=0x2acbd296fe20
  2
  before Clear() itemCount=           1
   PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
- value=0x2b058424fe20
-  PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
   PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, 
  line 1053
  before Clear() garbageCount=           2
@@ -942,21 +944,12 @@ Container::print()      list:item=0 key=myUDT2 value=0x2acbd296fe20
  2
  before Clear() itemCount=           1
   PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
-  PASS  Container Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 106
- 2
  before Clear() itemCount=           1
   PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
   PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, l
  ine 1078
  after Clear() garbageCount=           3
   PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
-  PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, l
- ine 1078
- after Clear() garbageCount=           3
-  PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
- after Clear() itemCount=           0
-  PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 110
- 9
   PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90
  , line 543
   PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, l
@@ -969,11 +962,18 @@ Container::print()      list:item=0 key=myUDT2 value=0x2acbd296fe20
   PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 110
  9
   PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
+  Ending Test, file ESMF_ContainerUTest.F90, line 1119
+  PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, l
+ ine 1078
+ after Clear() garbageCount=           3
+  PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
  after Clear() itemCount=           0
   PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 110
  9
   PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
-  Ending Test, file ESMF_ContainerUTest.F90, line 1119
+ after Clear() itemCount=           0
+  PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 110
+ 9
   PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
   Ending Test, file ESMF_ContainerUTest.F90, line 1119
   Ending Test, file ESMF_ContainerUTest.F90, line 1119
@@ -1071,8 +1071,8 @@ Container::print()      list:item=0 key=myUDT2 value=0x2acbd296fe20
  0, line 1033
   PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F9
  0, line 1039
-Container::print() multipmap:item=0 key=myUDT2 value=0x2aabe7a8fe20
-Container::print()      list:item=0 key=myUDT2 value=0x2aabe7a8fe20
+Container::print() multipmap:item=0 key=myUDT2 value=0x2b2a21a47e20
+Container::print()      list:item=0 key=myUDT2 value=0x2b2a21a47e20
   PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
   PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, 
  line 1053
@@ -1090,7 +1090,7 @@ Container::print()      list:item=0 key=myUDT2 value=0x2aabe7a8fe20
  9
   PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
   Ending Test, file ESMF_ContainerUTest.F90, line 1119
-  PET           2  Test Elapsed Time    3.98799999999999       msec.
-  PET           0  Test Elapsed Time    4.03799999999999       msec.
-  PET           3  Test Elapsed Time    4.12099999999999       msec.
-  PET           1  Test Elapsed Time    4.25200000000001       msec.
+  PET           1  Test Elapsed Time    4.10100000000002       msec.
+  PET           2  Test Elapsed Time    4.13300000000000       msec.
+  PET           3  Test Elapsed Time    4.11100000000000       msec.
+  PET           0  Test Elapsed Time    4.43900000000000       msec.
