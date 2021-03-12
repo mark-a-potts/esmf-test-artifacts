@@ -8,10 +8,10 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/intel_18.0.5_mpt_O
-set -x
 module load intel/18.0.5 mpt/2.19 netcdf/4.6.3
 module list >& module-build.log
 
+set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O
@@ -22,4 +22,6 @@ export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make -j 36 clean 2>&1|tee clean_$JOBID.log 
 make -j 36 2>&1|tee build_$JOBID.log
+
+ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_mpt_O/getres-build.sh
 
