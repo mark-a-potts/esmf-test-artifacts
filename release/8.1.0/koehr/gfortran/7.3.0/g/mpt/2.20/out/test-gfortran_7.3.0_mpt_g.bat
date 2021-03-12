@@ -19,8 +19,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/gnu/lib /app/COST/netcdf-c/4.3.3.1/gnu//lib /app/COST/hdf5/1.8.15/gnu//lib"
-export ESMF_NETCDFF_LIBS="-lnetcdf -lnetcdf -lhdf5 -lhdf5_hl -lz"
-export ESMF_NETCDFF_LIBS="-lnetcdff -lnetcdf"
+export ESMF_NETCDFF_LIBS="-lnetcdff -lnetcdf -lhdf5 -lhdf5_hl -lz"
 export ESMF_NETCDF_LIBPATH=/app/COST/netcdf-c/4.3.3.1/gnu//lib
 export ESMF_NETCDF_INCLUDE=/app/COST/netcdf-c/4.3.3.1/gnu/include
 export ESMF_NETCDFF_INCLUDE="/app/COST/netcdf-fortran/4.4.2/gnu/include /app/COST/netcdf-c/4.3.3.1/gnu//include /app/COST/hdf5/1.8.15/gnu//include"
@@ -33,4 +32,6 @@ export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
+
+ssh koehr01 /p/work1/mpotts/gfortran_7.3.0_mpt_g/getres-test.sh
 
