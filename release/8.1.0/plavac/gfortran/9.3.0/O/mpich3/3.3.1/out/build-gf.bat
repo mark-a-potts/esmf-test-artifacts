@@ -2,7 +2,7 @@
 export JOBID=$1
 module load None 3.3.1 
 
-module list >& module-test.log
+module list >& module-build.log
 
 set -x
 
@@ -12,6 +12,7 @@ export CC=/usr/local/bin/gcc-9
 export CXX=/usr/local/bin/g++-9
 export FC=/usr/local/bin/gfortran-9
 export PATH=/Users/mpotts/stack-mods-47/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/Users/mpotts/stack-mods-mpich-3.4/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/Users/mpotts/stack-mods-47/lib
 export LIBRARY_PATH=$LIBRARY_PATH:/Users/mpotts/stack-mods-47/lib
 export MPICH_CC=$CC
@@ -32,10 +33,6 @@ export ESMF_COMM=mpich3
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make install 2>&1|tee install_$JOBID.log 
-make all_tests 2>&1|tee test_$JOBID.log 
-
-export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
-cd nuopc-app-prototypes
-./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
+make -j 4 clean 2>&1|tee clean_$JOBID.log 
+make -j 4 2>&1|tee build_$JOBID.log
 
