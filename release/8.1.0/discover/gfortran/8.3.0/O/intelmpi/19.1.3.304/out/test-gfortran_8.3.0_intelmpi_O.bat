@@ -6,19 +6,16 @@
 #SBATCH --ntasks-per-node=28
 #SBATCH --time=1:00:00
 #SBATCH --exclusive
-#SBATCH --output test-intel_2020_intelmpi_O.bat_%j.o
+#SBATCH --output test-gfortran_8.3.0_intelmpi_O.bat_%j.o
 export JOBID=$SLURM_JOBID
-module load comp/intel/19.1.3.304 mpi/impi/19.1.3.304 netcdf4/4.7.4
-module load hdf5/1.13.0 
-module list
+module load comp/gcc/8.3.0 mpi/impi/19.1.3.304 
+
 module list >& module-test.log
 
 set -x
-export ESMF_NETCDF=nc-config
 
-export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/intel_2020_intelmpi_O
-export ESMF_COMPILER=intel
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O
+export ESMF_COMPILER=gfortran
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
