@@ -8,10 +8,10 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/gfortran_9.1.0_openmpi_O
+set -x
 module load gnu/9.1.0 openmpi/4.0.5 netcdf/4.7.3
 module list >& module-test.log
 
-set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILER=mpif90
@@ -23,6 +23,4 @@ export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
-
-ssh cheyenne6 /glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/getres-test.sh
 
