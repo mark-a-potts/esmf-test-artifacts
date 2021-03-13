@@ -159,13 +159,13 @@
   PASS  DELayout non-equality after destroy Test, ESMF_DELayoutUTest.F90, line 3
  16
   PASS  Double DELayoutDestroy through alias Test, ESMF_DELayoutUTest.F90, line 
- 323
   PASS  Double DELayoutDestroy through alias Test, ESMF_DELayoutUTest.F90, line 
  323
   PASS  Double DELayoutDestroy through alias Test, ESMF_DELayoutUTest.F90, line 
  323
   PASS  Double DELayoutDestroy through alias Test, ESMF_DELayoutUTest.F90, line 
  323
+ 323
   PASS  Default DELayout Create Test, ESMF_DELayoutUTest.F90, line 330
   PASS  Default DELayout Create Test, ESMF_DELayoutUTest.F90, line 330
   PASS  Default DELayout Create Test, ESMF_DELayoutUTest.F90, line 330
@@ -174,12 +174,12 @@
   PASS  Default DELayout Destroy Test, ESMF_DELayoutUTest.F90, line 339
   PASS  Default DELayout Destroy Test, ESMF_DELayoutUTest.F90, line 339
   PASS  Default DELayout Destroy Test, ESMF_DELayoutUTest.F90, line 339
-  PASS  Default DELayout Destroy Twice Test, ESMF_DELayoutUTest.F90, line 346
   PASS  Default DELayout Destroy Twice Test, ESMF_DELayoutUTest.F90, line 346
   PASS  Default DELayout Destroy Twice Test, ESMF_DELayoutUTest.F90, line 346
   PASS  Default DELayout Destroy Twice Test, ESMF_DELayoutUTest.F90, line 346
   PASS  DELayout Destroy again through shallow copy Test, ESMF_DELayoutUTest.F90
  , line 353
+  PASS  Default DELayout Destroy Twice Test, ESMF_DELayoutUTest.F90, line 346
   PASS  DELayout Destroy again through shallow copy Test, ESMF_DELayoutUTest.F90
  , line 353
   PASS  DELayout Destroy again through shallow copy Test, ESMF_DELayoutUTest.F90
@@ -210,8 +210,6 @@
   PASS  DELayout with deCount Destroy Test, ESMF_DELayoutUTest.F90, line 392
   PASS  DELayout with deCount Destroy Test, ESMF_DELayoutUTest.F90, line 392
   PASS  DELayout with deCount Destroy Test, ESMF_DELayoutUTest.F90, line 392
- deGrouping:            1           2           3           4           3
-           2           1           0
  deGrouping:            1           2           3           4           3
            2           1           0
  deGrouping:            1           2           3           4           3
@@ -222,6 +220,8 @@
            2           1           0
   PASS  DELayout with deCount and deGrouping Create Test, ESMF_DELayoutUTest.F90
  , line 406
+ deGrouping:            1           2           3           4           3
+           2           1           0
   PASS  DELayout with deCount and deGrouping Create Test, ESMF_DELayoutUTest.F90
  , line 406
   PASS  DELayout with deCount and deGrouping Create Test, ESMF_DELayoutUTest.F90
@@ -233,12 +233,12 @@
  petMap:            0           1           2           3           2
  petMap:            0           1           2           3           2
            1           0           0
- petMap:            0           1           2           3           2
            1           0           0
  petMap:            0           1           2           3           2
-           1           0           0
            1           0           0
 --- ESMCI::VM::print() start ---
+ petMap:            0           1           2           3           2
+           1           0           0
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
@@ -248,26 +248,38 @@
   vmKeyWidth = 
   vmKeyWidth = 1
 1
-1
   vmKey=0x1
   vmKey=0xF0000000
-  localID = 0
---- ESMCI::VMId::print() end ---  vmKey=0xF0000000
+  localID = 1
+  vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
+F0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+--- VMK::print() start ---
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-F0000000
-  localID = 0
+vm located at: 0x827230
+npets = 4, mypet=1
+  pth_mutex =		 0x867130
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 1
+0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
 vm located at: 0x827230
 npets = 4, mypet=2
   pth_mutex =		 0x867130
   pth_finish_count =	 (nil)
-
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 2
+MPI_Comm_rank in MPI_COMM_WORLD: 2
+MPI thread level support: 3
+mpi_mutex_flag: 0
 --- VMK::print() start ---
 vm located at: 0x827230
 npets = 4, mypet=3
@@ -275,8 +287,12 @@ npets = 4, mypet=3
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
---- VMK::print() start ---
-vm located at: 0x829250
+MPI_Comm_rank in MPI_COMM_WORLD: 3
+MPI thread level support: 3
+mpi_mutex_flag: 0
+mpionly: 1
+nothreadsflag: 1
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0vm located at: 0x829250
 npets = 4, mypet=0
   pth_mutex =		 0x869290
   pth_finish_count =	 (nil)
@@ -287,38 +303,21 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 nothreadsflag: 1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0vm located at: 0x827230
-npets = 4, mypet=1
-  pth_mutex =		 0x867130
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 1
-MPI_Comm_rank in MPI_COMM_WORLD: 1
-MPI thread level support: 3
-mpi_mutex_flag: 0
-mpionly: 1
-nothreadsflag: 1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 2
-MPI_Comm_rank in MPI_COMM_WORLD: 2
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0MPI_Comm_rank in MPI_COMM_WORLD: 1
 MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 nothreadsflag: 1
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-MPI_Comm_rank in MPI_COMM_WORLD: 3
-MPI thread level support: 3
-mpi_mutex_flag: 0
-mpionly: 1
-nothreadsflag: 1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2mpionly: 1
+nothreadsflag: 1
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
@@ -327,8 +326,7 @@ ncores = 4
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
-
+, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
 ncores = 4
@@ -338,16 +336,9 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
 ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
---- ESMCI::VM::print() end ---
---- ESMCI::VM::print() start ---
---- ESMCI::VMId::print() start ---ncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
@@ -356,7 +347,18 @@ ncores = 4
 --- ESMCI::VM::print() end ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1--- ESMCI::VM::print() end ---
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---
+--- ESMCI::VM::print() end ---
+--- ESMCI::VM::print() start ---
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0x--- VMK::print() end ---
+--- ESMCI::VM::print() end ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
@@ -365,13 +367,6 @@ ncores = 4
 --- ESMCI::VMId::print() end ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0xF0000000
-  localID = 0
---- ESMCI::VMId::print() end ---
---- VMK::print() start ---
-vm located at: 0x827230
-
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
@@ -383,7 +378,8 @@ npets = 4, mypet=0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
-
+MPI_Comm_rank in MPI_COMM_WORLD: 0
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
@@ -397,6 +393,10 @@ MPI_Comm_rank in local MPI communicator: 1
 MPI_Comm_rank in MPI_COMM_WORLD: 1
 MPI thread level support: 3
 mpi_mutex_flag: 0
+mpionly: 1
+F0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
 vm located at: 0x827230
 npets = 4, mypet=2
@@ -410,7 +410,8 @@ mpi_mutex_flag: 0
 mpionly: 1
 nothreadsflag: 1
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+--- VMK::print() start ---
+vm located at: 0x827230
 npets = 4, mypet=3
   pth_mutex =		 0x867130
   pth_finish_count =	 (nil)
@@ -423,15 +424,16 @@ mpionly: 1
 nothreadsflag: 1
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2MPI_Comm_rank in MPI_COMM_WORLD: 0
-MPI thread level support: 3
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 nothreadsflag: 1
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3mpionly: 1
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
 nothreadsflag: 1
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
@@ -439,6 +441,10 @@ nothreadsflag: 1
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
 ncores = 4
   cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
 ncores = 4
@@ -457,27 +463,21 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  PASS  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F9
+ 0, line 433
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---
+--- ESMCI::VM::print() end ---
+  PASS  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F9
+ 0, line 433
 
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
---- ESMCI::VM::print() end ---
-  PASS  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F9
- 0, line 433
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
 --- ESMCI::VM::print() end ---
   PASS  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F9
  0, line 433
   PASS  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F9
  0, line 433
-  PASS  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F9
- 0, line 433
   PASS  Destroy a destroyed DELayout Test, ESMF_DELayoutUTest.F90, line 441
   PASS  Destroy a destroyed DELayout Test, ESMF_DELayoutUTest.F90, line 441
   PASS  Destroy a destroyed DELayout Test, ESMF_DELayoutUTest.F90, line 441
@@ -542,7 +542,7 @@ ncores = 4
   Ending Test, file ESMF_DELayoutUTest.F90, line 545
   Ending Test, file ESMF_DELayoutUTest.F90, line 545
   Ending Test, file ESMF_DELayoutUTest.F90, line 545
-  PET           0  Test Elapsed Time    4.21099999999999       msec.
-  PET           1  Test Elapsed Time    4.21600000000000       msec.
-  PET           2  Test Elapsed Time    4.22800000000001       msec.
-  PET           3  Test Elapsed Time    4.21700000000000       msec.
+  PET           0  Test Elapsed Time    4.28800000000001       msec.
+  PET           1  Test Elapsed Time    4.27300000000000       msec.
+  PET           2  Test Elapsed Time    4.28799999999999       msec.
+  PET           3  Test Elapsed Time    4.29099999999999       msec.
