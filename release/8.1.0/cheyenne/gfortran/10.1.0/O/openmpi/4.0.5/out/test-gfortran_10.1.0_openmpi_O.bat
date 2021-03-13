@@ -15,6 +15,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
+export ESMF_F90COMPILER=mpif90
 export ESMF_DIR=/glade/scratch/mpotts/gfortran_10.1.0_openmpi_O
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
@@ -23,6 +24,10 @@ export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
+
+export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
+cd nuopc-app-prototypes
+./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
 
 ssh cheyenne6 /glade/scratch/mpotts/gfortran_10.1.0_openmpi_O/getres-test.sh
 

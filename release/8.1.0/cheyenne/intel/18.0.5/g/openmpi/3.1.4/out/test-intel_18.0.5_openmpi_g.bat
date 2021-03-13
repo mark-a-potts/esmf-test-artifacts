@@ -8,10 +8,10 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/intel_18.0.5_openmpi_g
+set -x
 module load intel/18.0.5 openmpi/3.1.4 netcdf/4.6.3
 module list >& module-test.log
 
-set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_openmpi_g
@@ -22,6 +22,4 @@ export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
-
-ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_openmpi_g/getres-test.sh
 

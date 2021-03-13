@@ -15,6 +15,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
+export ESMF_F90COMPILER=mpif90
 export ESMF_DIR=/glade/scratch/mpotts/gfortran_10.1.0_openmpi_O
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
