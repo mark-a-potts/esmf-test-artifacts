@@ -8,6 +8,8 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /p/work1/mpotts/intel_2019.4_mpt_g
+
+module unload compiler/intel mpt
 module load compiler/intel/2019.4.243 mpt/2.20 netcdf-c-parallel/intel/sgimpt/4.3.3.1
 module load netcdf-fortran-parallel/intel/sgimpt/4.4.2 
 module list
@@ -30,6 +32,10 @@ export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
+
+export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
+cd nuopc-app-prototypes
+./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
 
 ssh koehr01 /p/work1/mpotts/intel_2019.4_mpt_g/getres-test.sh
 
