@@ -510,7 +510,11 @@ ESMF_8_1_0_beta_snapshot_47-25-gf739bcb
 #	deleted:    src/Superstructure/AppDriver/seq_pairwise_fdriver_spmd/ParentGridCompTemplate.F90
 #	deleted:    src/Superstructure/AppDriver/seq_pairwise_fdriver_spmd/README
 #	deleted:    src/Superstructure/AppDriver/seq_pairwise_fdriver_spmd/sample.rc
+#	deleted:    src/Superstructure/AttributeAPI/tests/data/baseline_gridcomp_cim151grids.xml
 #	deleted:    src/Superstructure/AttributeAPI/tests/data/baseline_gridcomp_gridspec.xml
+#	deleted:    src/Superstructure/AttributeAPI/tests/data/baseline_gridded_comp_cim.xml
+#	deleted:    src/Superstructure/AttributeAPI/tests/data/baseline_gridded_comp_cim_rp.xml
+#	deleted:    src/Superstructure/AttributeAPI/tests/data/baseline_gridded_comp_cust_rp.xml
 #	deleted:    src/Superstructure/Component/doc/Coupler.bib
 #	deleted:    src/Superstructure/Component/doc/Coupler_background.tex
 #	deleted:    src/Superstructure/Mapper/include/ESMCI_CompInfo.h
@@ -2252,22 +2256,6 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
   #warning \
    ^
 
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(183): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
-      testByte = testByte >> 1;  // shift the set bit one to the right
-               ^
-
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(211): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
-          testByte = testByte >> 1;  // shift the set bit one to the right
-                   ^
-
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(900): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
-        vmID.vmKey[m] |= 0x80>>n;  // set the bits
-                      ^
-
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(3230): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
-    matchTable_vmID[matchTableBound].vmKey[vmKeyWidth-1] =
-                                                         ^
-
 /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VMKernel.C(7032): warning #2259: non-pointer conversion from "int" to "uint16_t={unsigned short}" may lose significant bits
       name.sin_port = htons(port);
                             ^
@@ -2292,6 +2280,22 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
       int waitMicro   = (timeout - waitSeconds)*1000000;
                         ^
 
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(183): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
+      testByte = testByte >> 1;  // shift the set bit one to the right
+               ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(211): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
+          testByte = testByte >> 1;  // shift the set bit one to the right
+                   ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(900): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
+        vmID.vmKey[m] |= 0x80>>n;  // set the bits
+                      ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/ESMCI_VM.C(3230): warning #2259: non-pointer conversion from "int" to "unsigned char" may lose significant bits
+    matchTable_vmID[matchTableBound].vmKey[vmKeyWidth-1] =
+                                                         ^
+
 make[8]: Leaving directory `/p/work1/mpotts/intel_2018.1_mpt_g/mod/modg/Linux.intel.64.mpt.default'
 make[7]: Leaving directory `/p/work1/mpotts/intel_2018.1_mpt_g/mod/modg/Linux.intel.64.mpt.default'
 tree_lib in: /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/src/acc
@@ -2311,7 +2315,7 @@ mpicxx -c -std=c++11 -g -traceback -Wcheck -fPIC -DMUST_NOTUSE_MALLOC_TRIM -m64 
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/../include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/../include/ESMCI_VM.h(41),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/ESMC_VM.C(32):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/ESMCI_VM_F.C(20):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -2319,7 +2323,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/../include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/../include/ESMCI_VM.h(41),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/ESMCI_VM_F.C(20):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/VM/interface/ESMC_VM.C(32):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -5026,7 +5030,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/../include/ESMCI_Base.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/ESMCI_Base.C(33):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/ESMC_InfoCDef.C(26):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -5050,6 +5054,12 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
   #warning \
    ^
 
+In file included from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/../include/ESMCI_Info.h(24),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/ESMCI_Info.C(27):
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/../include/ESMCI_Base.h(140): warning #457: delete of pointer to incomplete class
+      void ESMC_BaseDeleteInfo(void) {if (!infoalias) delete info;}
+                                                             ^
+
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
@@ -5058,12 +5068,6 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
-
-In file included from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/../include/ESMCI_Info.h(24),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/ESMCI_Info.C(27):
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/../include/ESMCI_Base.h(140): warning #457: delete of pointer to incomplete class
-      void ESMC_BaseDeleteInfo(void) {if (!infoalias) delete info;}
-                                                             ^
 
 /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Base/src/ESMCI_Info.C(766): warning #592: variable "ret" is used before its value is set
                 try { check_overflow(ret, at_index); }
@@ -9383,8 +9387,8 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/IO/src/../include/ESMCI_IO_Scrip.h(32),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/IO/src/ESMCI_IO_Scrip.C(24):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/IO/src/../include/ESMCI_IO_Handler.h(38),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/IO/src/ESMCI_IO_Handler.C(24):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9682,23 +9686,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MeshCXX.C(19):
-/usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
-  #warning \
-   ^
-
-In file included from /usr/include/c++/4.8.5/backward/strstream(51),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh.C(33):
-/usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
-  #warning \
-   ^
-
-In file included from /usr/include/c++/4.8.5/backward/strstream(51),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Dual.C(17):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9714,7 +9702,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Util.C(19):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Dual.C(17):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9725,6 +9713,14 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Grid.h(35),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_GToM_Glue.C(25):
+/usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
+  #warning \
+   ^
+
+In file included from /usr/include/c++/4.8.5/backward/strstream(51),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Util.C(19):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9743,6 +9739,17 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Search_EtoP.C(23):
+/usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
+  #warning \
+   ^
+
+In file included from /usr/include/c++/4.8.5/backward/strstream(51),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh.h(22),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh_Redist.h(17),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_Rendez_Nearest.C(18):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9816,9 +9823,11 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh.h(22),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh_Redist.h(17),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_Rendez_Nearest.C(18):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_RHandle.h(39),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Field/include/ESMCI_Field.h(42),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h(23),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshUtils.h(17),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MathUtil.C(15):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9854,8 +9863,8 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_RHandle.h(39),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Field/include/ESMCI_Field.h(42),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/../include/ESMCI_Mesh.h(23),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MeshCap.C(29):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h(23),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MeshDual.C(19):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9879,11 +9888,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh.h(22),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h(19),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Search_Nearest.h(20),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_Search_NearestNPnts.C(12):
-/usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
-  #warning \
-   ^
-
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_Regrid_Nearest.C(18):
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
@@ -9941,7 +9946,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h(19),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Search.h(22),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h(16),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Patch.C(16):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_XGridUtil.C(12):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -9984,7 +9989,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Field/include/ESMCI_Field.h(42),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h(23),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshUtils.h(17),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Conserve.C(18):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/ESMCI_MBMesh_Search_EtoE.C(18):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -10207,6 +10212,10 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
   #warning \
    ^
 
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshObjPack.C(185): warning #2259: non-pointer conversion from "ESMCI::UInt={unsigned int}" to "ESMCI::MeshObj::Relation::type_type={ESMCI::UChar={unsigned char}}" may lose significant bits
+            if ((r.type = MeshObjRelationConverse(r.type)) != 0) {
+                        ^
+
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
@@ -10249,6 +10258,34 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
   #warning \
    ^
 
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshDB.C(426): warning #2259: non-pointer conversion from "int" to "ESMCI::MeshObj::Relation::ordinal_type={ESMCI::UShort={unsigned short}}" may lose significant bits
+        rel.ordinal = ordinals[el];
+                    ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshDB.C(434): warning #2259: non-pointer conversion from "int" to "ESMCI::MeshObj::Relation::ordinal_type={ESMCI::UShort={unsigned short}}" may lose significant bits
+        rel.ordinal = ordinals[el];
+                    ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshDB.C(457): warning #2259: non-pointer conversion from "int" to "ESMCI::MeshObj::Relation::ordinal_type={ESMCI::UShort={unsigned short}}" may lose significant bits
+    rel.ordinal = ordinal;
+                ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshDB.C(492): warning #2259: non-pointer conversion from "int" to "ESMCI::MeshObj::Relation::ordinal_type={ESMCI::UShort={unsigned short}}" may lose significant bits
+      rel.ordinal = ord;
+                  ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshDB.C(494): warning #2259: non-pointer conversion from "int" to "ESMCI::MeshObj::Relation::rotation_type={ESMCI::UChar={unsigned char}}" may lose significant bits
+      rel.rotation = rot;
+                   ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshDB.C(500): warning #2259: non-pointer conversion from "int" to "ESMCI::MeshObj::Relation::ordinal_type={ESMCI::UShort={unsigned short}}" may lose significant bits
+      rel.ordinal = ord;
+                  ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshDB.C(502): warning #2259: non-pointer conversion from "int" to "ESMCI::MeshObj::Relation::rotation_type={ESMCI::UChar={unsigned char}}" may lose significant bits
+      rel.rotation = rot;
+                   ^
+
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
@@ -10269,8 +10306,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_RHandle.h(39),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Field/include/ESMCI_Field.h(42),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h(23),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshNC.h(16),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshNC.C(12):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshGen.C(14):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -10292,6 +10328,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
   #warning \
    ^
 
+mpicxx -c -std=c++11 -g -traceback -Wcheck -fPIC -DMUST_NOTUSE_MALLOC_TRIM -m64 -mcmodel=small -pthread  -qopenmp -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/../include -I/p/work1/mpotts/intel_2018.1_mpt_g/build_config/Linux.intel.default -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/stubs/pthread  -I/p/work1/mpotts/intel_2018.1_mpt_g/src/include  -I/app/CSE/CSEIntel.20200724/Datamodels/netcdf-4.7.4/include -I/p/work1/mpotts/intel_2018.1_mpt_g/src/prologue/yaml-cpp/include -DMPICH_IGNORE_CXX_SEEK -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-37-g8a4a23e"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/p/work1/mpotts/intel_2018.1_mpt_g -D__SDIR__='"src/Infrastructure/Mesh/src/Legacy"' -DESMF_CXXSTD=11 -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/.. -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/../Moab -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/../Moab/parallel -I/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/../Moab/LocalDiscretization /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_SM.C -o /p/work1/mpotts/intel_2018.1_mpt_g/obj/objg/Linux.intel.64.mpt.default/ESMCI_SM.o
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
@@ -10337,8 +10374,8 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_RHandle.h(39),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Field/include/ESMCI_Field.h(42),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h(23),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshUtils.h(17),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshRefine.C(18):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshNC.h(16),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Legacy/ESMCI_MeshNC.C(12):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -10568,7 +10605,8 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh.h(22),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h(19),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Search.h(22),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_CreepFill.C(12):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h(16),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_ExtrapolationPoleLGC.C(14):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -10679,9 +10717,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Field/include/ESMCI_Field.h(42),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h(23),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshUtils.h(17),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MEValues.h(17),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Integrate.h(16),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_Integrate.C(13):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_Conserve2ndInterp.C(15):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -10694,7 +10730,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Field/include/ESMCI_Field.h(42),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h(23),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_MeshRegrid.h(15),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_Extrap.C(13):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Regridding/ESMCI_MeshRegrid.C(13):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -11250,26 +11286,6 @@ mpicxx -c -std=c++11 -g -traceback -Wcheck -fPIC -DMUST_NOTUSE_MALLOC_TRIM -m64 
     rootn = sqrt((double)n)+1;
           ^
 
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(747): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
-      eps = (imb_tol - 1.0)*(cutoff[*part+1]-cutoff[*part])/2.0;
-          ^
-
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(785): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
-        eps = (imb_tol - 1.0)*(cutoff[*part]-cutoff[*part-1])/2.0;
-            ^
-
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(787): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
-        eps = (imb_tol - 1.0)*(cutoff[*part])/2.0;
-            ^
-
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(816): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
-          eps = (imb_tol - 1.0)*(cutoff[*part+1]-cutoff[*part])/2.0;
-              ^
-
-/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(823): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
-           eps = (imb_tol - 1.0)*(cutoff[*part+1]-cutoff[*part])/2.0;
-               ^
-
 /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/zz_util.c(59): warning #2259: non-pointer conversion from "int" to "char" may lose significant bits
   	*string2++ = toupper(string1[i]);
   	           ^
@@ -11289,6 +11305,26 @@ mpicxx -c -std=c++11 -g -traceback -Wcheck -fPIC -DMUST_NOTUSE_MALLOC_TRIM -m64 
 /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/zz_sort.c(105): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
        key1_next = val1 ? val1[next] : 1.0;
                  ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(747): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
+      eps = (imb_tol - 1.0)*(cutoff[*part+1]-cutoff[*part])/2.0;
+          ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(785): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
+        eps = (imb_tol - 1.0)*(cutoff[*part]-cutoff[*part-1])/2.0;
+            ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(787): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
+        eps = (imb_tol - 1.0)*(cutoff[*part])/2.0;
+            ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(816): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
+          eps = (imb_tol - 1.0)*(cutoff[*part+1]-cutoff[*part])/2.0;
+              ^
+
+/p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Mesh/src/Zoltan/reftree_part.c(823): warning #2259: non-pointer conversion from "double" to "float" may lose significant bits
+           eps = (imb_tol - 1.0)*(cutoff[*part+1]-cutoff[*part])/2.0;
+               ^
 
 make[9]: Leaving directory `/p/work1/mpotts/intel_2018.1_mpt_g/mod/modg/Linux.intel.64.mpt.default'
 make[8]: Leaving directory `/p/work1/mpotts/intel_2018.1_mpt_g/mod/modg/Linux.intel.64.mpt.default'
@@ -12630,7 +12666,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/Component/interface/../include/ESMCI_Comp.h(32),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/Component/interface/ESMCI_Comp.C(26):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/Component/interface/ESMC_Comp.C(33):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -12640,7 +12676,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/Component/interface/../include/ESMCI_Comp.h(32),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/Component/interface/ESMC_Comp.C(33):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/Component/interface/ESMCI_Comp.C(26):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -12722,7 +12758,7 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/InfoAPI/src/ESMC_InfoDescribeCDef.C(14):
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Superstructure/InfoAPI/src/ESMC_InfoCacheCDef.C(19):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -13537,7 +13573,6 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Comp.h(32),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Trace/preload/../include/ESMCI_Trace.h(17),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
                  from wrappers.C(8):
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Comp.h(32),
@@ -13547,6 +13582,13 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
   #warning \
    ^
 
+In file included from /usr/include/c++/4.8.5/backward/strstream(51),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Comp.h(32),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Trace/preload/../include/ESMCI_Trace.h(17),
+                 from wrappers.C(8):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
@@ -13569,17 +13611,6 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Comp.h(32),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Trace/preload/../include/ESMCI_Trace.h(17),
-                 from preload.C(8):
-/usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
-  #warning \
-   ^
-
-In file included from /usr/include/c++/4.8.5/backward/strstream(51),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Comp.h(32),
-                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Trace/preload/../include/ESMCI_Trace.h(17),
                  from preload_mpi.C(31):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
@@ -13592,6 +13623,17 @@ In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Comp.h(32),
                  from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Trace/preload/../include/ESMCI_Trace.h(17),
                  from preload_io.C(33):
+/usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
+  #warning \
+   ^
+
+In file included from /usr/include/c++/4.8.5/backward/strstream(51),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VMKernel.h(27),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_VM.h(41),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Base.h(27),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/include/ESMCI_Comp.h(32),
+                 from /p/work1/mpotts/intel_2018.1_mpt_g/src/Infrastructure/Trace/preload/../include/ESMCI_Trace.h(17),
+                 from preload.C(8):
 /usr/include/c++/4.8.5/backward/backward_warning.h(32): warning #1224: #warning directive: This file includes at least one deprecated or antiquated header which   may be removed without further notice at a future date. Please use a   non-deprecated interface with equivalent functionality instead. For a   listing of replacement headers and interfaces, consult the file   backward_warning.h. To disable this warning use -Wno-deprecated.
   #warning \
    ^
