@@ -8,6 +8,8 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /p/work1/mpotts/intel_2019.4_mpt_g
+
+module unload compiler/intel mpt
 module load compiler/intel/2019.4.243 mpt/2.20 netcdf-c-parallel/intel/sgimpt/4.3.3.1
 module load netcdf-fortran-parallel/intel/sgimpt/4.4.2 
 module list
