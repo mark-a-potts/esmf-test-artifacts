@@ -13,7 +13,7 @@
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.1.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_1_0_beta_snapshot_47-42-g4205de891b
+ESMF_VERSION_STRING_GIT=ESMF_8_1_0_beta_snapshot_47-43-g3582fd7879
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -33,7 +33,7 @@ ESMF_F90LINKER=mpifort
 
 ESMF_F90COMPILEOPTS=-g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer   -m64 -mcmodel=small -ffree-line-length-none  -fopenmp
 ESMF_F90COMPILEPATHS=-I/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g/mod/modg/Darwin.gfortran.64.openmpi.default -I/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g/src/include -I/project/esmf/stack/install/gcc/9.3.0/netcdf-c/4.7.4/include -I/project/esmf/stack/install/gcc/9.3.0/netcdf-fortran/4.5.3/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-42-g4205de891b' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-43-g3582fd7879' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=-ffree-form
 ESMF_F90COMPILEFIXCPP=-cpp -ffixed-form
@@ -52,7 +52,7 @@ ESMF_CXXLINKER=mpicxx
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -Wall -Wextra -Wno-unused  -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small  -fopenmp
 ESMF_CXXCOMPILEPATHS= -I/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g/src/include  -I/project/esmf/stack/install/gcc/9.3.0/netcdf-c/4.7.4/include -I/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-42-g4205de891b' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-43-g3582fd7879' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_PTHREADS -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small  -fopenmp
 ESMF_CXXLINKPATHS=-L/Volumes/esmf/rocky/et/gfortran_9.3.0_openmpi_g/lib/libg/Darwin.gfortran.64.openmpi.default -L/project/esmf/stack/install/gcc/9.3.0/netcdf-c/4.7.4/lib -L/project/esmf/stack/install/gcc/9.3.0/netcdf-fortran/4.5.3/lib -L/Volumes/esmf/stack/homebrew/Cellar/gcc@9/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.3.0/../../../
