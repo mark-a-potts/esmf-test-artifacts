@@ -37,5 +37,5 @@ export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
 
-ssh koehr01 /p/work1/mpotts/intel_2019.4_mpt_g/getres-test.sh
+ssh koehr06 /p/work1/mpotts/intel_2019.4_mpt_g/getres-test.sh
 
