@@ -1,0 +1,49 @@
+ 
+Installing ESMF:
+ 
+mkdir -p /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/include
+cp -f /glade/scratch/mpotts/intel_18.0.5_mpt_O/src/include/ESMC.h /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/include
+cp -f /glade/scratch/mpotts/intel_18.0.5_mpt_O/src/include/ESMC_*.h /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/include
+cp -f /glade/scratch/mpotts/intel_18.0.5_mpt_O/build_config/Linux.intel.default/ESMC_Conf.h /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/include
+mkdir -p /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.mpt.default
+cp -f /glade/scratch/mpotts/intel_18.0.5_mpt_O/mod/modO/Linux.intel.64.mpt.default/*.mod /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.mpt.default
+mkdir -p /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default
+cp -f /glade/scratch/mpotts/intel_18.0.5_mpt_O/lib/libO/Linux.intel.64.mpt.default/libesmf*.* /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default
+make ESMF_PRELOADDIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default build_preload_script
+make[1]: Entering directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O'
+chmod 755 /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default/preload.sh
+make[1]: Leaving directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O'
+ranlib /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default/libesmf*.a
+make install_apps
+make[1]: Entering directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O'
+mkdir -p /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.mpt.default
+make build_apps ESMF_APPSDIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.mpt.default ESMF_LDIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default ESMF_LIBDIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default ESMF_MODDIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.mpt.default
+make[2]: Entering directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O'
+cd /glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps; make ACTION=tree_build_apps tree
+make[3]: Entering directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps'
+tree_build_apps in: /glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo
+make[4]: Entering directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo'
+make chkdir_locobj
+make[5]: Entering directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo'
+Making directory /glade/scratch/mpotts/intel_18.0.5_mpt_O/obj/objO/Linux.intel.64.mpt.default/src/apps/ESMF_PrintInfo for apps output
+make[5]: Leaving directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo'
+mpif90 -c -O -fPIC -assume realloc_lhs -m64 -mcmodel=small -pthread -threads  -qopenmp -I/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo -I/glade/scratch/mpotts/intel_18.0.5_mpt_O/build_config/Linux.intel.default -I/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/Infrastructure -I/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/Superstructure -I/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.mpt.default -I/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/include -I/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/include -I/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_1_0_beta_snapshot_47-46-g9f6043bd84"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O ESMF_PrintInfo.F90 -o /glade/scratch/mpotts/intel_18.0.5_mpt_O/obj/objO/Linux.intel.64.mpt.default/src/apps/ESMF_PrintInfo/ESMF_PrintInfo.o
+make chkdir_apps
+make[5]: Entering directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo'
+make[5]: Leaving directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo'
+mpif90    -m64 -mcmodel=small -pthread -threads -Wl,--no-as-needed  -qopenmp -L/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib  -Wl,-rpath,/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.mpt.default -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib -o /glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.mpt.default/ESMF_PrintInfo /glade/scratch/mpotts/intel_18.0.5_mpt_O/obj/objO/Linux.intel.64.mpt.default/src/apps/ESMF_PrintInfo/ESMF_PrintInfo.o -lesmf  -lmpi++ -cxxlib -lrt -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
+/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../x86_64-suse-linux/bin/ld: cannot find -lmpi++
+/glade/scratch/mpotts/intel_18.0.5_mpt_O/build/common.mk:2441: recipe for target '/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.mpt.default/ESMF_PrintInfo' failed
+make[4]: *** [/glade/scratch/mpotts/intel_18.0.5_mpt_O/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.mpt.default/ESMF_PrintInfo] Error 1
+make[4]: Leaving directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps/ESMF_PrintInfo'
+/glade/scratch/mpotts/intel_18.0.5_mpt_O/build/common.mk:3661: recipe for target 'tree' failed
+make[3]: *** [tree] Error 1
+make[3]: Leaving directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O/src/apps'
+/glade/scratch/mpotts/intel_18.0.5_mpt_O/build/common.mk:2425: recipe for target 'build_apps' failed
+make[2]: *** [build_apps] Error 2
+make[2]: Leaving directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O'
+makefile:642: recipe for target 'install_apps' failed
+make[1]: *** [install_apps] Error 2
+make[1]: Leaving directory '/glade/scratch/mpotts/intel_18.0.5_mpt_O'
+makefile:668: recipe for target 'install' failed
+make: *** [install] Error 2
