@@ -3,21 +3,16 @@ NUMBER_OF_PROCESSORS 4
 PASS Create ESMC_Calendar object, ESMC_ComponentUTest.C, line 203
 PASS Set Start Time, ESMC_ComponentUTest.C, line 215
 PASS Set Stop Time, ESMC_ComponentUTest.C, line 224
-Beginning Test, file ESMC_ComponentUTest.C, line 192
-NUMBER_OF_PROCESSORS 4
 PASS Set a TimeInterval, ESMC_ComponentUTest.C, line 232
+PASS Create ESMC_Clock object, ESMC_ComponentUTest.C, line 241
 Beginning Test, file ESMC_ComponentUTest.C, line 192
-PASS Create ESMC_Calendar object, ESMC_ComponentUTest.C, line 203
 NUMBER_OF_PROCESSORS 4
 PASS Create ESMC_Calendar object, ESMC_ComponentUTest.C, line 203
 PASS Set Start Time, ESMC_ComponentUTest.C, line 215
-PASS Create ESMC_Clock object, ESMC_ComponentUTest.C, line 241
 PASS Set Stop Time, ESMC_ComponentUTest.C, line 224
-PASS Set Start Time, ESMC_ComponentUTest.C, line 215
+PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 249
 PASS Set a TimeInterval, ESMC_ComponentUTest.C, line 232
-PASS Set Stop Time, ESMC_ComponentUTest.C, line 224
-PASS Set a TimeInterval, ESMC_ComponentUTest.C, line 232
-PASS Create ESMC_Clock object, ESMC_ComponentUTest.C, line 241
+PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 257
 Beginning Test, file ESMC_ComponentUTest.C, line 192
 PASS Create ESMC_Clock object, ESMC_ComponentUTest.C, line 241
 NUMBER_OF_PROCESSORS 4
@@ -25,14 +20,19 @@ PASS Create ESMC_Calendar object, ESMC_ComponentUTest.C, line 203
 PASS Set Start Time, ESMC_ComponentUTest.C, line 215
 PASS Set Stop Time, ESMC_ComponentUTest.C, line 224
 PASS Set a TimeInterval, ESMC_ComponentUTest.C, line 232
+Beginning Test, file ESMC_ComponentUTest.C, line 192
+NUMBER_OF_PROCESSORS 4
+PASS Create ESMC_Clock object, ESMC_ComponentUTest.C, line 241
+PASS Create ESMC_Calendar object, ESMC_ComponentUTest.C, line 203
+PASS Set Start Time, ESMC_ComponentUTest.C, line 215
+PASS Set Stop Time, ESMC_ComponentUTest.C, line 224
+PASS Set a TimeInterval, ESMC_ComponentUTest.C, line 232
+PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 249
+PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 257
 PASS Create ESMC_Clock object, ESMC_ComponentUTest.C, line 241
 PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 249
 PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 257
 PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 249
-PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 249
-PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 257
-PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 257
-PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 249
 PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 257
 PASS Create ESMC_GridComp object, ESMC_ComponentUTest.C, line 268
 PASS Create ESMC_GridComp object, ESMC_ComponentUTest.C, line 268
@@ -56,8 +56,6 @@ PASS ESMC_GridCompInitialize() before callingESMC_GridCompSetServices(), ESMC_Co
 PASS ESMC_GridCompInitialize() before callingESMC_GridCompSetServices(), ESMC_ComponentUTest.C, line 285
 I am in myRegistrationInC()
  Gridded Component:
-I am in myRegistrationInC()
- Gridded Component:
   Component name = gridded component in C
 I am in myRegistrationInC()
  Gridded Component:
@@ -65,6 +63,8 @@ I am in myRegistrationInC()
 I am in myRegistrationInC()
  Gridded Component:
   Component name = gridded component in C
+I am in myRegistrationInC()
+ Gridded Component:
   Component name = gridded component in C
 PASS ESMC_GridCompSetServices() using myRegistrationInC(), ESMC_ComponentUTest.C, line 293
 PASS ESMC_GridCompSetServices() using myRegistrationInC(), ESMC_ComponentUTest.C, line 293
@@ -74,59 +74,59 @@ I am in myInitInC()
 I am in myInitInC()
 I am in myInitInC()
 I am in myInitInC()
+ ESMF_StatePrint: (pet 3):
+  State name: my import state
  ESMF_StatePrint: (pet 0):
   State name: my import state
  ESMF_StatePrint: (pet 1):
   State name: my import state
  ESMF_StatePrint: (pet 2):
   State name: my import state
- ESMF_StatePrint: (pet 3):
-  State name: my import state
      status: Unspecified intent direction, object count: 0
+     reconcile needed: F
      status: Unspecified intent direction, object count: 0
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
-     reconcile needed: F
      reconcile needed: F
      reconcile needed: F
  Base name    = my import state
  Base name    = my import state
  Base name    = my import state
- Base name    = my import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
  Root Info (Attributes):
-{}Clock ----------------------------------
 {}Clock ----------------------------------
 name = TEST_CLOCK
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
+{}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
+{}Clock ----------------------------------
+name = TEST_CLOCK
 timeStep = 
-TimeInterval ---------------------------
 TimeInterval ---------------------------
 P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
 startTime = 
 Time -----------------------------------
+timeStep = 
+TimeInterval ---------------------------
 P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
@@ -147,7 +147,17 @@ end Time -------------------------------
 
 stopTime = 
 Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
 2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
@@ -167,42 +177,7 @@ Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
-stopTime = 
-Time -----------------------------------
 2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
 end Time -------------------------------
 
 stopTimeEnabled = true
@@ -222,37 +197,25 @@ Time -----------------------------------
 end Time -------------------------------
 
 advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
 2006-01-01T00:00:00
 end Time -------------------------------
 
-prevTime = 
+stopTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-setting GridComp internal state to data: 0x17a2ef0
+currTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-setting GridComp internal state to data: 0x17a47b0
 prevTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
@@ -266,249 +229,80 @@ alarmList =
 end Clock ------------------------------
 
 setting GridComp internal state to data: 0x17a3030
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
 setting GridComp internal state to data: 0x17a46f0
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+setting GridComp internal state to data: 0x17a2ef0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+setting GridComp internal state to data: 0x17a47b0
+PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
+PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
 PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
 PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
 I am in myRunInC()
 I am in myRunInC()
-PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
-PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
-I am in myRunInC()
- ESMF_StatePrint: (pet 0):
-  State name: my import state
-     status: Unspecified intent direction, object count: 0
  ESMF_StatePrint: (pet 1):
   State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
+I am in myRunInC()
  ESMF_StatePrint: (pet 2):
   State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
- Status: Base = Ready,  object = Ready
 I am in myRunInC()
  ESMF_StatePrint: (pet 3):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
- Status: Base = Ready,  object = Ready
-     reconcile needed: F
- Base name    = my import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Proxy        = no
- Root Info (Attributes):
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
- Proxy        = no
- Root Info (Attributes):
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-getting GridComp internal state to data: 0x17a47b0
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-getting GridComp internal state to data: 0x17a3030
-2006-01-01T00:00:00
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-getting GridComp internal state to data: 0x17a46f0
-getting GridComp internal state to data: 0x17a2ef0
-PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
-PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
-PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
-I am in myFinalizeInC()
-I am in myFinalizeInC()
- ESMF_StatePrint: (pet 1):
-  State name: my import state
-I am in myFinalizeInC()
- ESMF_StatePrint: (pet 2):
-  State name: my import state
-I am in myFinalizeInC()
- ESMF_StatePrint: (pet 3):
-  State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
-PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
  ESMF_StatePrint: (pet 0):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
  Status: Base = Ready,  object = Ready
+ Proxy        = no
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
@@ -516,12 +310,18 @@ PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, l
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
+ Status: Base = Ready,  object = Ready
  Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
  Root Info (Attributes):
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -530,31 +330,6 @@ P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
 startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
 Time -----------------------------------
 P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
@@ -576,10 +351,24 @@ Time -----------------------------------
 end Time -------------------------------
 
 currTime = 
-Time -----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
 P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
+startTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
 startTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
@@ -602,6 +391,11 @@ Time -----------------------------------
 end Time -------------------------------
 
 prevTime = 
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
 2006-01-01T01:00:00
 end Time -------------------------------
 
@@ -622,33 +416,7 @@ Time -----------------------------------
 end Time -------------------------------
 
 advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
 Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-getting GridComp internal state to data: 0x17a47b0
 2006-01-01T00:00:00
 end Time -------------------------------
 
@@ -669,6 +437,239 @@ Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
+currTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+getting GridComp internal state to data: 0x17a46f0
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+getting GridComp internal state to data: 0x17a2ef0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+getting GridComp internal state to data: 0x17a47b0
+PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
+PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
+PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
+I am in myFinalizeInC()
+I am in myFinalizeInC()
+ ESMF_StatePrint: (pet 1):
+  State name: my import state
+I am in myFinalizeInC()
+ ESMF_StatePrint: (pet 2):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+I am in myFinalizeInC()
+ ESMF_StatePrint: (pet 3):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
+ Status: Base = Ready,  object = Ready
+PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
+ ESMF_StatePrint: (pet 0):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
+ Status: Base = Ready,  object = Ready
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+ Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+getting GridComp internal state to data: 0x17a2ef0
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+getting GridComp internal state to data: 0x17a47b0
+alarmList = 
+end Clock ------------------------------
+
+getting GridComp internal state to data: 0x17a3030
+end Time -------------------------------
+
 advanceCount = 0
 direction = 1
 userChangedDirection = false
@@ -677,7 +678,6 @@ alarmList =
 end Clock ------------------------------
 
 getting GridComp internal state to data: 0x17a46f0
-getting GridComp internal state to data: 0x17a2ef0
 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
@@ -705,77 +705,54 @@ PASS Create ESMC_GridComp object, ESMC_ComponentUTest.C, line 334
 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
- I am in myInitInFortran()
- I am in myInitInFortran()
 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
  I am in myInitInFortran()
  ESMF_StatePrint: (pet 0):
+  State name: my import state
  I am in myInitInFortran()
  ESMF_StatePrint: (pet 1):
   State name: my import state
+ I am in myInitInFortran()
  ESMF_StatePrint: (pet 2):
   State name: my import state
+     status: Unspecified intent direction, object count: 0
+ I am in myInitInFortran()
  ESMF_StatePrint: (pet 3):
   State name: my import state
-  State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+     reconcile needed: F
  Base name    = my import state
  Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Status: Base = Ready,  object = Ready
- Proxy        = no
  Root Info (Attributes):
  Proxy        = no
  Root Info (Attributes):
- Root Info (Attributes):
 {}Clock ----------------------------------
 name = TEST_CLOCK
-timeStep = 
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
 BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
 s = 3600
 sN = 0
 sD = 1
@@ -784,28 +761,43 @@ end BaseTime ---------------------------
 yy    = 0
 mm    = 0
 d     = 0
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
 sD = 1
 end BaseTime ---------------------------
 
 yy    = 0
 mm    = 0
 d     = 0
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 yy    = 0
 mm    = 0
-d     = 0
 d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
 startTime = 
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
 BaseTime -------------------------------
-s = 212002876800
+s = 3600
 sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
@@ -815,8 +807,6 @@ BaseTime -------------------------------
 s = 212002876800
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
 d_r8  = 0
 end TimeInterval -----------------------
 
@@ -828,37 +818,49 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+d_r8  = 0
+end TimeInterval -----------------------
+
+startTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
-sD = 1
-end BaseTime ---------------------------
-
 sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
+end BaseTime ---------------------------
+
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
+daysPerYeardD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -868,12 +870,15 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -888,6 +893,11 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 212002880400
 sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+daysPerYear = 365
+daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -902,18 +912,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-daysPerYeardD = 1
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 end Calendar ---------------------------
 
 timeZone = -6
@@ -927,31 +928,23 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+s = 212002880400
+sN = 0
 sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -961,12 +954,14 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -980,33 +975,14 @@ refTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -1022,6 +998,23 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -1029,24 +1022,31 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
-secondsPerDay = 86400
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
+daysPerYeardD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1057,6 +1057,10 @@ daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1066,6 +1070,18 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1081,7 +1097,11 @@ BaseTime -------------------------------
 s = 212002876800
 sN = 0
 sD = 1
-daysPerYeardD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 end Calendar ---------------------------
 
 timeZone = -6
@@ -1095,10 +1115,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
@@ -1107,27 +1126,10 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
 calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-calkindflag = Gregorian
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
@@ -1135,13 +1137,6 @@ monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1155,18 +1150,16 @@ timeZone = -6
 end Time -------------------------------
 
 prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
@@ -1182,6 +1175,13 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
@@ -1196,16 +1196,15 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
 prevTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -1217,9 +1216,9 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+end BaseTime ---------------------------
+
 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
@@ -1227,8 +1226,7 @@ monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1238,6 +1236,7 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+timeZone = -6
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1252,6 +1251,7 @@ end Time -------------------------------
 
 advanceCount = 0
 direction = 1
+userChangedDirection = false
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1259,12 +1259,6 @@ secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-advanceCount = 0
 end Calendar ---------------------------
 
 timeZone = -6
@@ -1277,6 +1271,10 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
 timeZone = -6
 end Time -------------------------------
 
@@ -1287,64 +1285,67 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
 userChangedDirection = false
 alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
-direction = 1
-userChangedDirection = false
 alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
 PASS ESMC_GridCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 350
-PASS ESMC_GridCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 350
- I am in myRunInFortran()
 PASS ESMC_GridCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 350
 PASS ESMC_GridCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 350
  I am in myRunInFortran()
- ESMF_StatePrint: (pet 0):
  I am in myRunInFortran()
  ESMF_StatePrint: (pet 1):
   State name: my import state
  I am in myRunInFortran()
  ESMF_StatePrint: (pet 2):
   State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ I am in myRunInFortran()
  ESMF_StatePrint: (pet 3):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
+ Base name    = my import state
+PASS ESMC_GridCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 350
+ ESMF_StatePrint: (pet 0):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
+ Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
- Base name    = my import state
  Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Proxy        = no
- Root Info (Attributes):
- Root Info (Attributes):
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -1355,18 +1356,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-yy    = 0
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
 TimeInterval ---------------------------
 BaseTime -------------------------------
 s = 3600
@@ -1380,6 +1372,13 @@ d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
+startTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+timeStep = 
+TimeInterval ---------------------------
 BaseTime -------------------------------
 s = 3600
 sN = 0
@@ -1387,11 +1386,6 @@ sD = 1
 end BaseTime ---------------------------
 
 yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
 mm    = 0
 d     = 0
 d_r8  = 0
@@ -1405,18 +1399,15 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
 mm    = 0
 d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
 
 startTime = 
 Time -----------------------------------
@@ -1427,6 +1418,14 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
 startTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -1437,19 +1436,22 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-Calendar -------------------------------
-name = Gregorian
 calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-calkindflag = Gregorian
+sD = 1
+end BaseTime ---------------------------
+
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1459,6 +1461,9 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+timeZone = -6
+end Time -------------------------------
+
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1468,6 +1473,11 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
@@ -1482,8 +1492,13 @@ stopTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002880400
-secondsPerDay = 86400
-secondsPerYear = 31536000
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -1496,9 +1511,13 @@ stopTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002880400
-timeZone = -6
-end Time -------------------------------
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 stopTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -1508,11 +1527,8 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
+name = Gregorian
+calkindflag = Gregorian
 BaseTime -------------------------------
 s = 212002880400
 sN = 0
@@ -1521,42 +1537,7 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
 calkindflag = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1570,6 +1551,26 @@ timeZone = -6
 end Time -------------------------------
 
 stopTimeEnabled = true
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -1584,6 +1585,12 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1598,7 +1605,11 @@ refTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
-stopTimeEnabled = true
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
 refTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -1609,9 +1620,7 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
+calkindflag = Gregorian
 s = 212002876800
 sN = 0
 sD = 1
@@ -1620,27 +1629,21 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-sD = 1
-end BaseTime ---------------------------
-
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
 Calendar -------------------------------
 name = Gregorian
-calkindflag = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1654,22 +1657,10 @@ timeZone = -6
 end Time -------------------------------
 
 currTime = 
-Time -----------------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -1686,6 +1677,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1700,6 +1694,19 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
@@ -1709,6 +1716,8 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+Time -----------------------------------
+BaseTime -------------------------------
 s = 212002876800
 sN = 0
 sD = 1
@@ -1717,28 +1726,31 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1753,6 +1765,13 @@ end Time -------------------------------
 prevTime = 
 Time -----------------------------------
 BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
@@ -1767,10 +1786,10 @@ prevTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
-daysPerYeardD = 1
-end Calendar ---------------------------
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
-timeZone = -6
 end Time -------------------------------
 
 prevTime = 
@@ -1781,6 +1800,37 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -1789,54 +1839,9 @@ end Calendar ---------------------------
 timeZone = -6
 end Time -------------------------------
 
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1851,6 +1856,10 @@ direction = 1
 userChangedDirection = false
 alarmCount = 0
 alarmList = 
+end Clock ------------------------------
+
+secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -1878,49 +1887,40 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
 advanceCount = 0
 direction = 1
 userChangedDirection = false
 alarmCount = 0
 alarmList = 
-end Clock ------------------------------
-
 end Clock ------------------------------
 
 PASS ESMC_GridCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 358
 PASS ESMC_GridCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 358
 PASS ESMC_GridCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 358
  I am in myFinalInFortran()
+ ESMF_StatePrint: (pet 1):
+  State name: my import state
  I am in myFinalInFortran()
+ ESMF_StatePrint: (pet 2):
+  State name: my import state
  I am in myFinalInFortran()
  ESMF_StatePrint: (pet 3):
   State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
 PASS ESMC_GridCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 358
  I am in myFinalInFortran()
  ESMF_StatePrint: (pet 0):
   State name: my import state
- ESMF_StatePrint: (pet 1):
-  State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- ESMF_StatePrint: (pet 2):
-  State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
- Status: Base = Ready,  object = Ready
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
+ Root Info (Attributes):
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
@@ -1930,30 +1930,14 @@ PASS ESMC_GridCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Proxy        = no
- Root Info (Attributes):
- Root Info (Attributes):
-{}Clock ----------------------------------
  Root Info (Attributes):
 {}Clock ----------------------------------
 name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
 name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -1968,6 +1952,11 @@ yy    = 0
 mm    = 0
 d     = 0
 d_r8  = 0
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+BaseTime -------------------------------
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -1981,6 +1970,20 @@ end BaseTime ---------------------------
 yy    = 0
 mm    = 0
 d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
 end BaseTime ---------------------------
 
 yy    = 0
@@ -1997,6 +2000,17 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Calendar -------------------------------
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
 d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
@@ -2009,23 +2023,6 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-BaseTime -------------------------------
 s = 212002876800
 sN = 0
 sD = 1
@@ -2034,41 +2031,30 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
+sD = 1
+end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -2083,6 +2069,16 @@ BaseTime -------------------------------
 s = 212002880400
 sN = 0
 sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
@@ -2096,6 +2092,13 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
 timeZone = -6
 end Time -------------------------------
 
@@ -2108,6 +2111,12 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
@@ -2121,25 +2130,10 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-end BaseTime ---------------------------
-
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
 calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -2162,6 +2156,7 @@ end Calendar ---------------------------
 timeZone = -6
 end Time -------------------------------
 
+stopTimeEnabled = true
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -2171,6 +2166,22 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -2183,33 +2194,6 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-timeZone = -6
 end Time -------------------------------
 
 stopTimeEnabled = true
@@ -2224,19 +2208,32 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-calkindflag = Gregorian
+end BaseTime ---------------------------
+
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -2244,32 +2241,6 @@ secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
 end Calendar ---------------------------
 
 timeZone = -6
@@ -2284,6 +2255,37 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
 currTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -2295,17 +2297,14 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
 
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 timeZone = -6
 end Time -------------------------------
 
@@ -2319,8 +2318,18 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
 name = Gregorian
 calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
@@ -2332,21 +2341,6 @@ daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -2373,6 +2367,7 @@ end Calendar ---------------------------
 timeZone = -6
 end Time -------------------------------
 
+timeZone = -6
 end Time -------------------------------
 
 prevTime = 
@@ -2385,6 +2380,12 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
 s = 212002876800
 sN = 0
 sD = 1
@@ -2413,24 +2414,9 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-advanceCount = 0
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -2445,6 +2431,7 @@ direction = 1
 userChangedDirection = false
 alarmCount = 0
 alarmList = 
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -2459,6 +2446,29 @@ end Time -------------------------------
 advanceCount = 0
 direction = 1
 userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -2480,16 +2490,6 @@ end Clock ------------------------------
 
 end Clock ------------------------------
 
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
 PASS ESMC_GridCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 366
 PASS ESMC_GridCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 366
 PASS ESMC_GridCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 366
@@ -2502,13 +2502,13 @@ PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 385
 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 385
 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 385
 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 385
- Coupler Component:
  Coupler Component:
   Component name = coupler component in C
  Coupler Component:
   Component name = coupler component in C
  Coupler Component:
   Component name = coupler component in C
+ Coupler Component:
   Component name = coupler component in C
 PASS Print ESMC_CplComp object, ESMC_ComponentUTest.C, line 393
 PASS Print ESMC_CplComp object, ESMC_ComponentUTest.C, line 393
@@ -2532,42 +2532,44 @@ PASS ESMC_CplCompSetServices() using myCplRegistrationInC(), ESMC_ComponentUTest
 PASS ESMC_CplCompSetServices() using myCplRegistrationInC(), ESMC_ComponentUTest.C, line 401
 I am in myInitInC()
 I am in myInitInC()
-I am in myInitInC()
-I am in myInitInC()
- ESMF_StatePrint: (pet 0):
- ESMF_StatePrint: (pet 1):
-  State name: my import state
- ESMF_StatePrint: (pet 2):
-  State name: my import state
  ESMF_StatePrint: (pet 3):
+ ESMF_StatePrint: (pet 0):
   State name: my import state
+I am in myInitInC()
+ ESMF_StatePrint: (pet 1):
+  State name: my import state
+I am in myInitInC()
+ ESMF_StatePrint: (pet 2):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
+  State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
  Base name    = my import state
  Status: Base = Ready,  object = Ready
- Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
  Proxy        = no
  Root Info (Attributes):
 {}Clock ----------------------------------
+{}Clock ----------------------------------
 name = TEST_CLOCK
+timeStep = 
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -2576,41 +2578,20 @@ TimeInterval ---------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-timeStep = 
-TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
 P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
 startTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
 P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
 startTime = 
 Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
 2006-01-01T00:00:00
 end Time -------------------------------
 
@@ -2619,8 +2600,11 @@ Time -----------------------------------
 2006-01-01T01:00:00
 end Time -------------------------------
 
-stopTimeEnabled = true
-refTime = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
@@ -2633,9 +2617,15 @@ end Time -------------------------------
 stopTimeEnabled = true
 refTime = 
 Time -----------------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
+stopTime = 
 Time -----------------------------------
 2006-01-01T01:00:00
 end Time -------------------------------
@@ -2648,26 +2638,16 @@ end Time -------------------------------
 
 currTime = 
 Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
 Time -----------------------------------
 2006-01-01T01:00:00
 end Time -------------------------------
 
 stopTimeEnabled = true
 refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
@@ -2682,8 +2662,14 @@ Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
-advanceCount = 0
-direction = 1
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
@@ -2696,6 +2682,14 @@ advanceCount = 0
 direction = 1
 userChangedDirection = false
 alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
@@ -2704,10 +2698,6 @@ Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
 advanceCount = 0
 direction = 1
 userChangedDirection = false
@@ -2716,60 +2706,71 @@ alarmList =
 end Clock ------------------------------
 
 setting CplComp internal state to data: 0x17a2ef0
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
 userChangedDirection = false
 alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
 setting CplComp internal state to data: 0x17a2f50
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
 setting CplComp internal state to data: 0x17a3030
-alarmList = 
-end Clock ------------------------------
-
 setting CplComp internal state to data: 0x17a2dd0
 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
 I am in myRunInC()
-I am in myRunInC()
-I am in myRunInC()
- ESMF_StatePrint: (pet 1):
-I am in myRunInC()
- ESMF_StatePrint: (pet 3):
  ESMF_StatePrint: (pet 0):
   State name: my import state
+I am in myRunInC()
+ ESMF_StatePrint: (pet 1):
   State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
+I am in myRunInC()
  ESMF_StatePrint: (pet 2):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
+I am in myRunInC()
+ ESMF_StatePrint: (pet 3):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
  Base name    = my import state
  Status: Base = Ready,  object = Ready
- Base name    = my import state
- Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Base name    = my import state
  Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+ Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Proxy        = no
- Root Info (Attributes):
- Proxy        = no
- Root Info (Attributes):
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -2778,27 +2779,6 @@ TimeInterval ---------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
 P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
@@ -2809,6 +2789,17 @@ end Time -------------------------------
 
 stopTime = 
 Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
@@ -2821,6 +2812,15 @@ end Time -------------------------------
 stopTimeEnabled = true
 refTime = 
 Time -----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
 end Time -------------------------------
 
 stopTime = 
@@ -2835,6 +2835,10 @@ Time -----------------------------------
 end Time -------------------------------
 
 currTime = 
+Time -----------------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
+
 startTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
@@ -2846,9 +2850,13 @@ Time -----------------------------------
 end Time -------------------------------
 
 stopTimeEnabled = true
-2006-01-01T01:00:00
+refTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
 end Time -------------------------------
 
+currTime = 
+Time -----------------------------------
 stopTimeEnabled = true
 refTime = 
 Time -----------------------------------
@@ -2858,45 +2866,6 @@ end Time -------------------------------
 currTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-refTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
 end Time -------------------------------
 
 prevTime = 
@@ -2911,6 +2880,17 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
 end Time -------------------------------
 
 advanceCount = 0
@@ -2921,10 +2901,30 @@ alarmList =
 end Clock ------------------------------
 
 getting CplComp internal state to data: 0x17a2ef0
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
 getting CplComp internal state to data: 0x17a2f50
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
 advanceCount = 0
 direction = 1
 userChangedDirection = false
@@ -2940,45 +2940,47 @@ PASS ESMC_CplCompRun() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C,
 PASS ESMC_CplCompRun() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 418
 I am in myFinalizeInC()
 I am in myFinalizeInC()
- ESMF_StatePrint: (pet 1):
-I am in myFinalizeInC()
  ESMF_StatePrint: (pet 2):
-  State name: my import state
+I am in myFinalizeInC()
  ESMF_StatePrint: (pet 0):
   State name: my import state
+ ESMF_StatePrint: (pet 1):
   State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
 I am in myFinalizeInC()
  ESMF_StatePrint: (pet 3):
   State name: my import state
      status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
  Base name    = my import state
  Status: Base = Ready,  object = Ready
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
- Status: Base = Ready,  object = Ready
-     reconcile needed: F
- Base name    = my import state
- Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+ Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Proxy        = no
- Root Info (Attributes):
-{}Clock ----------------------------------
- Proxy        = no
- Root Info (Attributes):
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -2988,15 +2990,6 @@ end TimeInterval -----------------------
 
 startTime = 
 Time -----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -3005,16 +2998,6 @@ P0Y0M0DT1H0M0S
 end TimeInterval -----------------------
 
 startTime = 
-Time -----------------------------------
-P0Y0M0DT1H0M0S
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-stopTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
@@ -3022,34 +3005,17 @@ end Time -------------------------------
 stopTime = 
 Time -----------------------------------
 2006-01-01T01:00:00
-end Time -------------------------------
+timeStep = 
+TimeInterval ---------------------------
+P0Y0M0DT1H0M0S
+end TimeInterval -----------------------
 
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
+startTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
-2006-01-01T00:00:00
-end Time -------------------------------
-
 stopTime = 
-Time -----------------------------------
-2006-01-01T01:00:00
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
 Time -----------------------------------
 2006-01-01T01:00:00
 end Time -------------------------------
@@ -3063,6 +3029,44 @@ end Time -------------------------------
 currTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
+end Time -------------------------------
+
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+2006-01-01T01:00:00
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
 2006-01-01T00:00:00
 end Time -------------------------------
 
@@ -3077,32 +3081,17 @@ Time -----------------------------------
 end Time -------------------------------
 
 advanceCount = 0
-currTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
 end Time -------------------------------
 
-prevTime = 
+stopTimeEnabled = true
+refTime = 
 Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
 2006-01-01T00:00:00
 end Time -------------------------------
 
 currTime = 
 Time -----------------------------------
 2006-01-01T00:00:00
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-2006-01-01T00:00:00
-end Time -------------------------------
-
 end Time -------------------------------
 
 prevTime = 
@@ -3117,6 +3106,13 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
+getting CplComp internal state to data: 0x17a2dd0
+prevTime = 
+Time -----------------------------------
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
 direction = 1
 userChangedDirection = false
 alarmCount = 0
@@ -3124,12 +3120,17 @@ alarmList =
 end Clock ------------------------------
 
 getting CplComp internal state to data: 0x17a2ef0
+2006-01-01T00:00:00
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
 alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
 getting CplComp internal state to data: 0x17a2f50
-advanceCount = 0
 direction = 1
 userChangedDirection = false
 alarmCount = 0
@@ -3137,7 +3138,6 @@ alarmList =
 end Clock ------------------------------
 
 getting CplComp internal state to data: 0x17a3030
-getting CplComp internal state to data: 0x17a2dd0
 PASS ESMC_CplCompFinalize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 426
 PASS ESMC_CplCompFinalize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 426
 PASS ESMC_CplCompFinalize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 426
@@ -3151,68 +3151,63 @@ PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
  I am in myRegistrationInFortran()
- Coupler Component:
  I am in myRegistrationInFortran()
  Coupler Component:
   Component name = coupler component in C with Fortran registration
  I am in myRegistrationInFortran()
  Coupler Component:
   Component name = coupler component in C with Fortran registration
+ Coupler Component:
+  Component name = coupler component in C with Fortran registration
  I am in myRegistrationInFortran()
  Coupler Component:
   Component name = coupler component in C with Fortran registration
-  Component name = coupler component in C with Fortran registration
-PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
 PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
 PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
 PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
  I am in myInitInFortran()
- I am in myInitInFortran()
- ESMF_StatePrint: (pet 1):
- I am in myInitInFortran()
- ESMF_StatePrint: (pet 2):
-  State name: my import state
- I am in myInitInFortran()
- ESMF_StatePrint: (pet 3):
-  State name: my import state
  ESMF_StatePrint: (pet 0):
+ I am in myInitInFortran()
+ ESMF_StatePrint: (pet 1):
   State name: my import state
+ I am in myInitInFortran()
+ ESMF_StatePrint: (pet 2):
+  State name: my import state
+ I am in myInitInFortran()
+ ESMF_StatePrint: (pet 3):
   State name: my import state
      status: Unspecified intent direction, object count: 0
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
-     reconcile needed: F
- Base name    = my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
+PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
+  State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
+ Status: Base = Ready,  object = Ready
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
+ Root Info (Attributes):
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+     reconcile needed: F
+ Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Root Info (Attributes):
-{}Clock ----------------------------------
-name = TEST_CLOCK
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
 BaseTime -------------------------------
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
+s = 3600
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -3221,8 +3216,8 @@ BaseTime -------------------------------
 s = 3600
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
+{}Clock ----------------------------------
+name = TEST_CLOCK
 timeStep = 
 TimeInterval ---------------------------
 BaseTime -------------------------------
@@ -3231,21 +3226,10 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-yy    = 0
-mm    = 0
-d     = 0
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
 BaseTime -------------------------------
 s = 3600
 sN = 0
@@ -3258,6 +3242,14 @@ d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
+startTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 yy    = 0
 mm    = 0
 d     = 0
@@ -3269,6 +3261,14 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
@@ -3280,12 +3280,11 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
 
 startTime = 
 Time -----------------------------------
@@ -3295,13 +3294,12 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+sN = 0
 sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-Calendar -------------------------------
-name = Gregorian
 calkindflag = Gregorian
 Calendar -------------------------------
 name = Gregorian
@@ -3309,33 +3307,16 @@ calkindflag = Gregorian
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+Calendar -------------------------------
+name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -3344,25 +3325,11 @@ end Calendar ---------------------------
 timeZone = -6
 end Time -------------------------------
 
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-sN = 0
-sD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
@@ -3378,6 +3345,15 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
 end Time -------------------------------
 
 stopTime = 
@@ -3390,6 +3366,34 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
@@ -3397,10 +3401,6 @@ name = Gregorian
 calkindflag = Gregorian
 Calendar -------------------------------
 name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
@@ -3412,14 +3412,13 @@ secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -3430,6 +3429,13 @@ daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -3444,19 +3450,12 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
 sN = 0
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-daysPerYeardN = 0
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -3470,6 +3469,14 @@ BaseTime -------------------------------
 s = 212002876800
 sN = 0
 sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+end Calendar ---------------------------
+
+timeZone = -6
 end Time -------------------------------
 
 stopTimeEnabled = true
@@ -3482,27 +3489,15 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+sN = 0
 sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -3510,13 +3505,6 @@ secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
-end Calendar ---------------------------
-
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -3527,6 +3515,25 @@ daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
+end Time -------------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
@@ -3542,20 +3549,6 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-daysPerYeardN = 0
-daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = -6
@@ -3569,8 +3562,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-end Time -------------------------------
-
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 currTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -3581,24 +3575,26 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 Calendar -------------------------------
 name = Gregorian
-calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -3612,6 +3608,8 @@ timeZone = -6
 end Time -------------------------------
 
 prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -3620,18 +3618,6 @@ daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
-
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
 
 timeZone = -6
 end Time -------------------------------
@@ -3645,42 +3631,6 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-timeZone = -6
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
@@ -3695,10 +3645,17 @@ end Calendar ---------------------------
 timeZone = -6
 end Time -------------------------------
 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
+prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
@@ -3706,9 +3663,25 @@ end Calendar ---------------------------
 timeZone = -6
 end Time -------------------------------
 
-advanceCount = 0
-direction = 1
-userChangedDirection = false
+prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -3732,13 +3705,35 @@ timeZone = -6
 end Time -------------------------------
 
 advanceCount = 0
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
 advanceCount = 0
 direction = 1
 userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
 alarmCount = 0
 alarmList = 
 end Clock ------------------------------
@@ -3758,616 +3753,26 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
 PASS ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 461
 PASS ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 461
-PASS ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 461
-PASS ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 461
+ I am in myRunInFortran()
  I am in myRunInFortran()
  ESMF_StatePrint: (pet 1):
   State name: my import state
  I am in myRunInFortran()
  ESMF_StatePrint: (pet 2):
   State name: my import state
+     status: Unspecified intent direction, object count: 0
  I am in myRunInFortran()
  ESMF_StatePrint: (pet 3):
   State name: my import state
- I am in myRunInFortran()
- ESMF_StatePrint: (pet 0):
-  State name: my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
- Base name    = my import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Base name    = my import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Root Info (Attributes):
- Root Info (Attributes):
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-sN = 0
-sD = 1
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-sN = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-timeZone = -6
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-name = Gregorian
-calkindflag = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-advanceCount = 0
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
-PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
- I am in myFinalInFortran()
- ESMF_StatePrint: (pet 1):
-  State name: my import state
- I am in myFinalInFortran()
- ESMF_StatePrint: (pet 2):
-  State name: my import state
- I am in myFinalInFortran()
- ESMF_StatePrint: (pet 3):
-  State name: my import state
-PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
-PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
- I am in myFinalInFortran()
+PASS ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 461
+PASS ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 461
  ESMF_StatePrint: (pet 0):
   State name: my import state
      status: Unspecified intent direction, object count: 0
@@ -4378,6 +3783,10 @@ PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
+     reconcile needed: F
+ Base name    = my import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
  Root Info (Attributes):
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
@@ -4385,17 +3794,630 @@ PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Root Info (Attributes):
 {}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+startTime = 
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+startTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+d_r8  = 0
+end TimeInterval -----------------------
+
+startTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+calkindflag = Gregorian
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+prevTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+calkindflag = Gregorian
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+timeZone = -6
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
+PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
+PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
+ I am in myFinalInFortran()
+ ESMF_StatePrint: (pet 0):
+ I am in myFinalInFortran()
+ ESMF_StatePrint: (pet 1):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ I am in myFinalInFortran()
+ ESMF_StatePrint: (pet 2):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
+ I am in myFinalInFortran()
+ ESMF_StatePrint: (pet 3):
+  State name: my import state
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
+ Base name    = my import state
+PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
+  State name: my import state
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Root Info (Attributes):
+ Base name    = my import state
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Clock ----------------------------------
+name = TEST_CLOCK
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+ Root Info (Attributes):
 {}Clock ----------------------------------
 name = TEST_CLOCK
 timeStep = 
@@ -4407,16 +4429,6 @@ sD = 1
 end BaseTime ---------------------------
 
 yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-startTime = 
-Time -----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
 BaseTime -------------------------------
 s = 3600
 sN = 0
@@ -4433,12 +4445,6 @@ startTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
-{}Clock ----------------------------------
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -4450,35 +4456,6 @@ d_r8  = 0
 end TimeInterval -----------------------
 
 startTime = 
-name = TEST_CLOCK
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
@@ -4489,6 +4466,10 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
 end TimeInterval -----------------------
 
 startTime = 
@@ -4500,68 +4481,17 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
 name = Gregorian
 calkindflag = Gregorian
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
 
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
+startTime = 
 Time -----------------------------------
 BaseTime -------------------------------
-s = 212002880400
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002880400
-sN = 0
-sD = 1
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
+s = 212002876800
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -4569,11 +4499,57 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-end BaseTime ---------------------------
-
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
 BaseTime -------------------------------
 s = 212002880400
 sN = 0
@@ -4596,13 +4572,39 @@ name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002880400
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
 secondsPerDay = 86400
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -4617,21 +4619,10 @@ refTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
 sN = 0
 sD = 1
-monthsPerYear = 12
+end BaseTime ---------------------------
+
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
@@ -4646,6 +4637,69 @@ stopTimeEnabled = true
 refTime = 
 Time -----------------------------------
 BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+stopTimeEnabled = true
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -4658,43 +4712,10 @@ end Calendar ---------------------------
 timeZone = -6
 end Time -------------------------------
 
-stopTimeEnabled = true
-refTime = 
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
+currTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -4702,9 +4723,22 @@ secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+currTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
@@ -4720,9 +4754,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-end Calendar ---------------------------
-
-timeZone = -6
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 end Time -------------------------------
 
 currTime = 
@@ -4733,48 +4767,14 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-currTime = 
-Time -----------------------------------
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-BaseTime -------------------------------
-s = 212002876800
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -4791,46 +4791,42 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 timeZone = -6
 end Time -------------------------------
 
 prevTime = 
 Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-sN = 0
-sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+prevTime = 
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+prevTime = 
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
@@ -4846,27 +4842,11 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-prevTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 212002876800
-name = Gregorian
-calkindflag = Gregorian
-calkindflag = Gregorian
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+BaseTime -------------------------------
+s = 212002876800
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -4877,50 +4857,36 @@ calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
-timeZone = -6
-end Time -------------------------------
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+Time -----------------------------------
+BaseTime -------------------------------
+s = 212002876800
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = -6
-end Time -------------------------------
-
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
-advanceCount = 0
-direction = 1
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
-
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -4950,6 +4916,40 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = -6
+end Time -------------------------------
+
+advanceCount = 0
+direction = 1
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
+
 PASS ESMC_CplCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 477
 PASS ESMC_CplCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 477
 PASS ESMC_CplCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 477
@@ -4961,15 +4961,15 @@ PASS Destroy ESMC_CplComp object, ESMC_ComponentUTest.C, line 485
 PASS Create ESMC_SciComp object, ESMC_ComponentUTest.C, line 496
 PASS Create ESMC_SciComp object, ESMC_ComponentUTest.C, line 496
 PASS Create ESMC_SciComp object, ESMC_ComponentUTest.C, line 496
+ Science Component:
+  Component name = science component in C
+ Science Component:
+  Component name = science component in C
+ Science Component:
+  Component name = science component in C
+ Science Component:
+  Component name = science component in C
 PASS Create ESMC_SciComp object, ESMC_ComponentUTest.C, line 496
- Science Component:
- Science Component:
-  Component name = science component in C
- Science Component:
-  Component name = science component in C
-  Component name = science component in C
- Science Component:
-  Component name = science component in C
 PASS Print ESMC_SciComp object, ESMC_ComponentUTest.C, line 504
 PASS Print ESMC_SciComp object, ESMC_ComponentUTest.C, line 504
 PASS Print ESMC_SciComp object, ESMC_ComponentUTest.C, line 504
@@ -4998,7 +4998,7 @@ Ending Test, file ESMC_ComponentUTest.C, line 551
 Ending Test, file ESMC_ComponentUTest.C, line 551
 Ending Test, file ESMC_ComponentUTest.C, line 551
 Ending Test, file ESMC_ComponentUTest.C, line 551
- PET 3 Test Elapsed Time  9.057000 msec.
- PET 0 Test Elapsed Time  8.818000 msec.
- PET 2 Test Elapsed Time  9.032000 msec.
- PET 1 Test Elapsed Time  9.232000 msec.
+ PET 3 Test Elapsed Time  9.781000 msec.
+ PET 0 Test Elapsed Time  9.278000 msec.
+ PET 2 Test Elapsed Time  8.886000 msec.
+ PET 1 Test Elapsed Time  9.075000 msec.
