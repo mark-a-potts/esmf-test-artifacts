@@ -36,18 +36,18 @@
  Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
- Comp1 SetVM finished, rc=            0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
  Comp1 SetVM finished, rc=            0
  Comp1 SetVM finished, rc=            0
  Comp1 SetVM finished, rc=            0
- Created component user one-way coupler, rc =           0
- Comp Creates finished
  Comp1 SetVM finished, rc=            0
  Comp1 SetVM finished, rc=            0
  Comp1 SetServices finished, rc=            0
  Comp2 SetVM finished, rc=            0
+ Comp1 SetVM finished, rc=            0
  Comp1 SetServices finished, rc=            0
  Comp2 SetVM finished, rc=            0
  User Comp1 Register starting
@@ -76,18 +76,18 @@
  Comp1 SetServices finished, rc=            0
  Comp2 SetVM finished, rc=            0
  Comp2 SetServices finished, rc=            0
- Cpl SetVM finished, rc=            0
- User Comp2 Register starting
- Registered Initialize, Run, and Finalize routines
- User Comp2 Register returning
- Comp2 SetServices finished, rc=            0
- Cpl SetVM finished, rc=            0
  User Comp2 Register starting
  Registered Initialize, Run, and Finalize routines
  User Comp2 Register returning
  Comp2 SetServices finished, rc=            0
  Cpl SetVM finished, rc=            0
  Cpl SetVM finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ User Comp2 Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Comp2 Register returning
+ Comp2 SetServices finished, rc=            0
+ Cpl SetVM finished, rc=            0
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
@@ -112,23 +112,20 @@
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ User Comp2 Init phase=1 starting
  User Comp1 Init phase=1 starting
  User Comp1 Init phase=1 starting
  User Comp1 Init phase=1 starting
  User Comp1 Init phase=1 starting
+ User Comp2 Init phase=1 returning
+ Comp 2 Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 starting
  Comp 1 Initialize phase=1 finished, rc =           0           0
  User Comp2 Init phase=1 starting
  User Comp2 Init phase=1 returning
  Comp 2 Initialize phase=1 finished, rc =           0           0
- Comp 1 Initialize phase=1 finished, rc =           0           0
- User Comp2 Init phase=1 starting
- User Comp2 Init phase=1 returning
- Comp 2 Initialize phase=1 finished, rc =           0           0
  User Coupler Init phase=1 starting
- User Coupler Init phase=1 starting
- User Comp1 Init phase=1 returning
- Comp 1 Initialize phase=1 finished, rc =           0           0
- Comp 2 Initialize phase=1 finished, rc =           0           0
  User Comp1 Init phase=1 returning
  Comp 1 Initialize phase=1 finished, rc =           0           0
  Comp 2 Initialize phase=1 finished, rc =           0           0
@@ -140,6 +137,9 @@
  Comp 1 Initialize phase=1 finished, rc =           0           0
  Comp 2 Initialize phase=1 finished, rc =           0           0
  User Coupler Init phase=1 starting
+ User Comp1 Init phase=1 returning
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ Comp 2 Initialize phase=1 finished, rc =           0           0
  User Coupler Init phase=1 starting
  User Coupler Init phase=1 starting
  User Coupler Init phase=1 returning
@@ -162,13 +162,6 @@
  Coupler Initialize phase=1 finished, rc =           0           0
  Comp 1 Initialize phase=2 finished, rc =           0           0
  User Comp2 Init phase=2 starting
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 1
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 1
-tileCount = 1
  User Comp1 Init phase=2 returning
  Comp 1 Initialize phase=2 finished, rc =           0           0
  Comp 2 Initialize phase=2 finished, rc =           0           0
@@ -177,6 +170,17 @@ tileCount = 1
  Comp 1 Initialize phase=2 finished, rc =           0           0
  Comp 2 Initialize phase=2 finished, rc =           0           0
  User Coupler Init phase=2 starting
+ User Comp1 Init phase=2 returning
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
+ User Comp1 Init phase=2 returning
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
 tileCount = 1
 elementCountPTile: 4 
 regDecomp = NO
@@ -208,8 +212,11 @@ DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
 --- ESMCI::DistGrid::print end ---
  User Comp2 Init phase=2 returning
- Comp 2 Initialize phase=2 finished, rc =           0           0
- User Coupler InitelementCountPTile: 4 
+ Comp 2 Initial--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 4 
 regDecomp = NO
 tileListPDe: 1 1 1 1 
 elementCountPDe: 1 1 1 1 
@@ -229,6 +236,8 @@ indexListPDimPLocalDe (dims separated by / ):
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
+ize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
  for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 1: (2)
  for collocation 1, localDE 1 - DE 3 -  elementCountPCollPLocalDe 1: (4)
 connectionCount = 0
@@ -240,16 +249,10 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
 --- ESMCI::DistGrid::print end ---
  User Comp2 Init phase=2 returning
  Comp 2 Initialize phase=2 finished, rc =           0           0
- User Coupler Init phase=2 start User Comp1 Init phase=2 returning
- Comp 1 Initialize phase=2 finished, rc =           0           0
- Comp 2 Initialize phase=2 finished, rc =           0           0
  User Coupler Init phase=2 starting
- phase=2 starting
-ing
- User Comp1 Init phase=2 returning
- Comp 1 Initialize phase=2 finished, rc =           0           0
- Comp 2 Initialize phase=2 finished, rc =           0           0
- User Coupler Init phase=2 starting
+ User Coupler Init phase=2 returning
+ Coupler Initialize phase=2 finished, rc =           0           0
+ User Comp1 Init phase=3 starting
  User Coupler Init phase=2 returning
  Coupler Initialize phase=2 finished, rc =           0           0
  User Comp1 Init phase=3 starting
@@ -267,12 +270,6 @@ ing
  User Coupler Init phase=2 returning
  Coupler Initialize phase=2 finished, rc =           0           0
  User Comp1 Init phase=3 starting
- User Coupler Init phase=2 returning
- Coupler Initialize phase=2 finished, rc =           0           0
- User Comp1 Init phase=3 starting
- User Comp2 Init phase=3 returning
- Comp 2 Initialize phase=3 finished, rc =           0           0
- User Coupler Init phase=3 starting
  User Comp2 Init phase=3 returning
  Comp 2 Initialize phase=3 finished, rc =           0           0
  User Coupler Init phase=3 starting
@@ -292,35 +289,40 @@ ing
  Comp 1 Initialize phase=3 finished, rc =           0           0
  Comp 2 Initialize phase=3 finished, rc =           0           0
  User Coupler Init phase=3 starting
+ User Comp2 Init phase=3 returning
+ Comp 2 Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 starting
  User Coupler Init phase=3 returning
  Coupler Initialize phase=3 finished, rc =           0           0
  User Comp1 Run starting
  User Coupler Init phase=3 returning
  Coupler Initialize phase=3 finished, rc =           0           0
  User Comp1 Run starting
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ User Comp1 Run starting
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ User Comp1 Run starting
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
  User Comp1 Run returning
- User Coupler Init phase=3 returning
- Coupler Initialize phase=3 finished, rc =           0           0
- User Comp1 Run starting
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
  User Comp1 Run returning
- User Coupler Init phase=3 returning
- Coupler Initialize phase=3 finished, rc =           0           0
- User Comp1 Run starting
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
  User Comp1 Run returning
- User Coupler Init phase=3 returning
- Coupler Initialize phase=3 finished, rc =           0           0
  Comp 1 Run finished, rc =           0           0
  User Coupler Run starting
- User Coupler Init phase=3 returning
- Coupler Initialize phase=3 finished, rc =           0           0
- Comp 1 Run finished, rc =           0           0
- User Coupler Run starting
- Comp 1 Run finished, rc =           0           0
- User Coupler Run starting
- Comp 1 Run finished, rc =           0           0
- User Coupler Run starting
- Comp 1 Run finished, rc =           0           0
- User Coupler Run starting
+ User Coupler Run returning
+ Coupler Run finished, rc =           0           0
  User Comp1 Run returning
  Comp 1 Run finished, rc =           0           0
  User Coupler Run starting
@@ -334,18 +336,6 @@ ing
  User Comp1 Final returning
  Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
- User Coupler Run returning
- Coupler Run finished, rc =           0           0
- Comp 2 Run returned, rc =           0
- User Coupler Final starting
- User Coupler Final returning
- Coupler Finalize finished, rc =           0           0
- User Comp1 Final starting
- User Comp1 Final returning
- Comp 1 Finalize finished, rc =           0           0
- Comp 2 Finalize finished, rc =           0           0
- User Coupler Run returning
- Coupler Run finished, rc =           0           0
  Comp 2 Run returned, rc =           0
  User Coupler Final starting
  User Coupler Final returning
@@ -385,6 +375,12 @@ ing
 ~ lower class' values ~
 DistGrid dimCount = 1
 deCount = 6
+localDeCount = 1
+~ local data in LocalArray for DE 4 ~
+LocalArrayPrint: Array at address 0x7f92e8d06680:
+            rank = 1, typekind = 6, base_addr = 0x7f92e8d06290
+            dim[0] = 6  
+  Real, *8, Dim 1, Data values:
  User Coupler Run returning
  Coupler Run finished, rc =           0           0
  User Comp2 Run starting
@@ -396,12 +392,29 @@ deCount = 6
  Proxy        = no
  Root Info (Attributes):
 {} Field status =            4
+ gridrank =            1
+--- ESMCI::Array::print start ---
+ Base name    = Array005
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Real*8 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 6
 localDeCount = 1
-~ local data in LocalArray for DE 4 ~
-LocalArrayPrint: Array at address 0x7f7f334065e0:
-            rank = 1, typekind = 6, base_addr = 0x7f7f33406910
-            dim[0] = 6  
-  Real, *8, Dim 1, Data values:
+ User Coupler Run returning
+ Coupler Run finished, rc =           0           0
+ Comp 2 Run returned, rc =           0
+ User Coupler Final starting
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ User Comp1 Final starting
+ User Comp1 Final returning
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ All Destroy routines done
+  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
 ( 1) =  2
 ( 2) =  3
 ( 3) =  4
@@ -414,70 +427,6 @@ dim 1: [0]: [1 [1 [1, 6] 6] 6]
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
            1          -1          -1               -1          -1
            2          -1          -1               -1          -1
- gridrank =            1
---- ESMCI::Array::print start ---
- Base name    = Array005
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}Array typekind/rank: Real*8 / 1 
-~ lower class' values ~
-DistGrid dimCount = 1
-deCount = 6
-localDeCount = 1
-~ local data in LocalArray for DE 5 ~
-LocalArrayPrint: Array at address 0x7fcdd4b0a010:
-            rank = 1, typekind = 6, base_addr = 0x7fcdd4b09c70
-            dim[0] = 3  
-  Real, *8, Dim 1, Data values:
- 
-  System Test ESMF_TransferMeshSTest
-  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
- 
- 
-  System Test ESMF_TransferMeshSTest
-  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
- 
- 
-  System Test ESMF_TransferMeshSTest
-  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
- 
- 
-  System Test ESMF_TransferMeshSTest
-  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
- 
- All Destroy routines done
-  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, localPet =            0
- ------------------------------------------------------------
- ------------------------------------------------------------
- All Destroy routines done
-  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, localPet =            1
- ------------------------------------------------------------
- ------------------------------------------------------------
- All Destroy routines done
-  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, localPet =            2
- ------------------------------------------------------------
- ------------------------------------------------------------
- All Destroy routines done
-  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, localPet =            3
- ------------------------------------------------------------
- ------------------------------------------------------------
- 
-  System Test ESMF_TransferMeshSTest
-  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
- 
            3          -1          -1               -1          -1
            4          -1          -1               -1          -1
            5          -1          -1               -1          -1
@@ -486,13 +435,27 @@ LocalArrayPrint: Array at address 0x7fcdd4b0a010:
  Field Print Ends   ====>
  User Comp2 Run returning
  Comp 2 Run returned, rc =           0
- User Coupler Final starting
- User Coupler Final returning
- Coupler Finalize finished, rc =           0           0
- Comp 1 Finalize finished, rc =           0           0
- User Comp2 Final starting
- User Comp2 Final returning
- Comp 2 Finalize finished, rc =           0           0
+ 
+  System Test ESMF_TransferMeshSTest
+  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
+ 
+ 
+  System Test ESMF_TransferMeshSTest
+  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
+ 
+ 
+  System Test ESMF_TransferMeshSTest
+  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
+ 
+ 
+  System Test ESMF_TransferMeshSTest
+  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
+ 
+~ local data in LocalArray for DE 5 ~
+LocalArrayPrint: Array at address 0x7f837a40a1f0:
+            rank = 1, typekind = 6, base_addr = 0x7f837a409f10
+            dim[0] = 3  
+  Real, *8, Dim 1, Data values:
 ( 1) =  2
 ( 2) =  1
 ( 3) =  1
@@ -507,14 +470,30 @@ dim 1: [0]: [1 [1 [1, 3] 3] 3]
            5          -1          -1               -1          -1
            6          -1          -1               -1          -1
            7          -1          -1               -1          -1
+ All Destroy routines done
+  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            1
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            2
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
+ User Coupler Final starting
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ Comp 1 Finalize finished, rc =           0           0
+ User Comp2 Final starting
+ User Comp2 Final returning
+ Comp 2 Finalize finished, rc =           0           0
  Field Print Ends   ====>
  User Comp2 Run returning
  Comp 2 Run returned, rc =           0
  User Coupler Final starting
-  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
-  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
-  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
-  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
  Comp 1 Finalize finished, rc =           0           0
@@ -525,13 +504,34 @@ dim 1: [0]: [1 [1 [1, 3] 3] 3]
   System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
  ------------------------------------------------------------
  ------------------------------------------------------------
- Test finished, localPet =            4
+ Test finished, localPet =            0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
+  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
+ All Destroy routines done
+  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            3
  ------------------------------------------------------------
  ------------------------------------------------------------
  
   System Test ESMF_TransferMeshSTest
   SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
  
+ 
+  System Test ESMF_TransferMeshSTest
+  SUCCESS:  System Test ESMF_TransferMeshSTest finished correctly.
+ 
+  PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
+ All Destroy routines done
+  System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            4
+ ------------------------------------------------------------
+ ------------------------------------------------------------
   PASS  System Test ESMF_TransferMeshSTest, ESMF_TransferMeshSTest.F90, line 447
  All Destroy routines done
   System Test ESMF_TransferMeshSTest                                                                                                                                                                                                                              complete.
