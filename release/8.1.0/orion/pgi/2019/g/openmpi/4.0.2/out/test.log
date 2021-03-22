@@ -12,7 +12,7 @@ ESMF_8_1_0_beta_snapshot_47-55-g845ba43
 #	getres-test.sh
 #	nuopc-app-prototypes/
 #	test-pgi_2019_openmpi_g.bat
-#	test-pgi_2019_openmpi_g.bat_1618653.o
+#	test-pgi_2019_openmpi_g.bat_1625463.o
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
  
@@ -192,8 +192,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Sat Mar 20 03:07:53 CDT 2021 on Orion-01-07.HPC.MsState.Edu
-Machine characteristics: Linux Orion-01-07.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Sun Mar 21 03:06:28 CDT 2021 on Orion-08-04.HPC.MsState.Edu
+Machine characteristics: Linux Orion-08-04.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g'
@@ -3247,3 +3247,123 @@ make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/
 make TNAME=ArrayIO NP=6 ftest
 make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
 mpirun -np 6 ./ESMF_ArrayIOUTest 1> ./ESMF_ArrayIOUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TNAME=ArraySMM NP=6 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 6 ./ESMF_ArraySMMUTest 1> ./ESMF_ArraySMMUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mkdir -p /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/test/testg/Linux.pgi.64.openmpi.default/data
+cp -f ../../IO/tests/T42_grid.nc /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/test/testg/Linux.pgi.64.openmpi.default/data
+chmod u+rw /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/test/testg/Linux.pgi.64.openmpi.default/data/*
+make TNAME=ArraySMMFromFile NP=4 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 4 ./ESMF_ArraySMMFromFileUTest 1> ./ESMF_ArraySMMFromFileUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TNAME=ArrayArbIdxSMM NP=6 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 6 ./ESMF_ArrayArbIdxSMMUTest 1> ./ESMF_ArrayArbIdxSMMUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TNAME=ArrayRedist NP=6 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 6 ./ESMF_ArrayRedistUTest 1> ./ESMF_ArrayRedistUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TNAME=ArrayRedistPerf NP=6 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 6 ./ESMF_ArrayRedistPerfUTest 1> ./ESMF_ArrayRedistPerfUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TNAME=ArrayHalo NP=4 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 4 ./ESMF_ArrayHaloUTest 1> ./ESMF_ArrayHaloUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TNAME=Array NP=4 ctest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 4 ./ESMC_ArrayUTest 1> ./ESMC_ArrayUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TESTHARNESSCASE=array_default NP=4 run_test_harness
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make TNAME=TestHarness HNAME=array_default_NP4 run_test_harness_sec
+make[8]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make[9]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+mpirun -np 4 ./ESMF_TestHarnessUTest -case array_default_test.rc -xml array_default.xml
+xsltproc -o array_default.html /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/test_harness/src/HarnessHttp.xslt array_default.xml
+make[9]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make[8]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/tests'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/examples
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/examples'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/examples'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/doc
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/doc'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array/doc'
+make[5]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/Array'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle
+make[5]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/src
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/src'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/src'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/interface
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/interface'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/interface'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+make TNAME=ArrayBundleCreate NP=4 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+mpirun -np 4 ./ESMF_ArrayBundleCreateUTest 1> ./ESMF_ArrayBundleCreateUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+make TNAME=ArrayBundleRedist NP=4 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+mpirun -np 4 ./ESMF_ArrayBundleRedistUTest 1> ./ESMF_ArrayBundleRedistUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+make TNAME=ArrayBundleIO NP=4 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+mpirun -np 4 ./ESMF_ArrayBundleIOUTest 1> ./ESMF_ArrayBundleIOUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/tests'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/examples
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/examples'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/examples'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/doc
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/doc'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle/doc'
+make[5]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/ArrayBundle'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO
+make[5]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/PIO
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/PIO'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/PIO'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/src
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/src'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/src'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/interface
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/interface'
+make[6]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/interface'
+tree_run_unit_tests in: /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests
+make[6]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+cp -f ./io_netcdf_testdata.nc /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/test/testg/Linux.pgi.64.openmpi.default
+make TNAME=IO_NetCDF NP=4 citest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+mpirun -np 4 ./ESMCI_IO_NetCDFUTest 1> ./ESMCI_IO_NetCDFUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+make TNAME=IO_PIO NP=1 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+mpirun -np 1 ./ESMF_IO_PIOUTest 1> ./ESMF_IO_PIOUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+make TNAME=IO_PIO NP=1 citest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+mpirun -np 1 ./ESMCI_IO_PIOUTest 1> ./ESMCI_IO_PIOUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+cp -f T42_grid.nc /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/test/testg/Linux.pgi.64.openmpi.default
+cp -f GRIDSPEC_320x160.nc /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/test/testg/Linux.pgi.64.openmpi.default
+make TNAME=IO_Inq NP=1 ctest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+mpirun -np 1 ./ESMC_IO_InqUTest 1> ./ESMC_IO_InqUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+cp -f fd.yaml /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/test/testg/Linux.pgi.64.openmpi.default
+make TNAME=IO_YAML NP=4 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+mpirun -np 4 ./ESMF_IO_YAMLUTest 1> ./ESMF_IO_YAMLUTest.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+make TNAME=IO NP=4 ftest
+make[7]: Entering directory `/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_g/src/Infrastructure/IO/tests'
+mpirun -np 4 ./ESMF_IOUTest 1> ./ESMF_IOUTest.stdout 2>&1
