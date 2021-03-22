@@ -70,7 +70,7 @@ mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenm
 mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-55-g845ba43dcd' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O esmApp.F90
 mpifc -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default  -L/usr/local/other/gcc/8.3.0/lib64/../lib64/ -Wl,-rpath,/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default  -Wl,-rpath,/usr/local/other/gcc/8.3.0/lib64/../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=1
 + set +x
 FINISHED: AtmOcnCplListProto
 ---------------------------------------------------------------------------
@@ -578,7 +578,7 @@ mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenm
 mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_0_beta_snapshot_47-55-g845ba43dcd' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O esmApp.F90
 mpifc -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default  -L/usr/local/other/gcc/8.3.0/lib64/../lib64/ -Wl,-rpath,/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default  -Wl,-rpath,/usr/local/other/gcc/8.3.0/lib64/../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=1
 + set +x
 FINISHED: AtmOcnTransferMeshProto
 ---------------------------------------------------------------------------
@@ -862,63 +862,63 @@ PASS: SingleModelOpenMPProto
 == TEST SUMMARY STOP ==
 
 ---------------------------------------------------------------------------
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.893 ERROR            PET0 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.893 ERROR            PET0 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.894 ERROR            PET0 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.894 ERROR            PET0 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.894 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.894 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.894 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET0.ESMF_LogFile:20210321 013035.894 ERROR            PET0 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.893 ERROR            PET1 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.893 ERROR            PET1 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.893 ERROR            PET1 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.893 ERROR            PET1 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.894 ERROR            PET1 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.894 ERROR            PET1 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.894 ERROR            PET1 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET1.ESMF_LogFile:20210321 013035.894 ERROR            PET1 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET2.ESMF_LogFile:20210321 013035.893 ERROR            PET2 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnCplListProto/PET3.ESMF_LogFile:20210321 013035.893 ERROR            PET3 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 ESMCI_IO.C:464 ESMCI::IO::write()       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 ESMCI_Array.C:4066 ESMCI::Array::write()       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 ESMCI_Array_F.C:801 c_esmc_arraywrite()       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 ESMF_Array.F90:3983 ESMF_ArrayWrite       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 ocn.F90:352       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210321 013303.087 ERROR            PET2 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 ESMF_IOScrip.F90:4114 ESMF_EsmfInq       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 ESMF_Mesh.F90:2336 ESMF_MeshCreateFromUnstruct()       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 ESMF_Mesh.F90:2061 ESMF_MeshCreateFromFile()       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 ocn.F90:156       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210321 013311.697 ERROR            PET2 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 ESMF_IOScrip.F90:4114 ESMF_EsmfInq       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 ESMF_Mesh.F90:2336 ESMF_MeshCreateFromUnstruct()       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 ESMF_Mesh.F90:2061 ESMF_MeshCreateFromFile()       Library needed by ESMF not present  - Internal subroutine call returned Error
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 ocn.F90:156       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210321 013311.697 ERROR            PET3 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET0.ESMF_LogFile:20210322 013623.207 ERROR            PET0 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET1.ESMF_LogFile:20210322 013623.207 ERROR            PET1 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET2.ESMF_LogFile:20210322 013623.207 ERROR            PET2 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 ESMF_IOScrip.F90:3857 ESMF_OutputSimpleWeightFile       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 src/addon/NUOPC/src/NUOPC_Auxiliary.F90:102       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:7906       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 ATM-TO-OCN:src/addon/NUOPC/src/NUOPC_Connector.F90:5314       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2723       Library needed by ESMF not present  - Phase 'IPDv05p6b' Initialize for connectorComp 1 -> 2: ATM-TO-OCN did not return ESMF_SUCCESS
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1946       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
+AtmOcnCplListProto/PET3.ESMF_LogFile:20210322 013623.207 ERROR            PET3 esmApp.F90:63       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 ESMCI_IO.C:464 ESMCI::IO::write()       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 ESMCI_Array.C:4066 ESMCI::Array::write()       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 ESMCI_Array_F.C:801 c_esmc_arraywrite()       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 ESMF_Array.F90:3983 ESMF_ArrayWrite       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 ocn.F90:352       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferGridProto/PET2.ESMF_LogFile:20210322 013903.361 ERROR            PET2 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 ESMF_IOScrip.F90:4114 ESMF_EsmfInq       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 ESMF_Mesh.F90:2336 ESMF_MeshCreateFromUnstruct()       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 ESMF_Mesh.F90:2061 ESMF_MeshCreateFromFile()       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 ocn.F90:156       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET2.ESMF_LogFile:20210322 013912.645 ERROR            PET2 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 ESMF_IOScrip.F90:4114 ESMF_EsmfInq       Library needed by ESMF not present  - - ESMF_NETCDF not defined when lib was compiled
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 ESMF_Mesh.F90:2336 ESMF_MeshCreateFromUnstruct()       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 ESMF_Mesh.F90:2061 ESMF_MeshCreateFromFile()       Library needed by ESMF not present  - Internal subroutine call returned Error
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 ocn.F90:156       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
+AtmOcnTransferMeshProto/PET3.ESMF_LogFile:20210322 013912.645 ERROR            PET3 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
