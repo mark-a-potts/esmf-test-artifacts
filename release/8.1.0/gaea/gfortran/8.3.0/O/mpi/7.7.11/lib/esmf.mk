@@ -12,14 +12,14 @@
 #
 
 #----------------------------------------------
-ESMF_VERSION_STRING=8.1.0 beta snapshot
+ESMF_VERSION_STRING=8.1.0
 
 ESMF_VERSION_MAJOR=8
 ESMF_VERSION_MINOR=1
 ESMF_VERSION_REVISION=0
 ESMF_VERSION_PATCHLEVEL=0
-ESMF_VERSION_PUBLIC='F'
-ESMF_VERSION_BETASNAPSHOT='T'
+ESMF_VERSION_PUBLIC='T'
+ESMF_VERSION_BETASNAPSHOT='F'
 
 
 ESMF_APPSDIR=/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O/apps/appsO/Unicos.gfortran.64.mpi.default

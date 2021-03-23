@@ -1,8 +1,8 @@
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
-  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
+  NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
@@ -48,26 +48,28 @@
  Object has been CREATED
  Base name    = Grid002 Base name    = Grid002 Base name    = Grid002 Base name    = Grid002
  Status: Base = 
- Status: Base = Ready,  object = Ready
-
+ Status: Base = 
  Status: Base = Ready,  object = Ready
  Proxy        = no
+ Base ID = 
  Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Base ID = Ready,  object = Ready
  Proxy        = no
  Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---Ready,  object = Ready
  Proxy        = no
  Base ID = 2, vmID:
---- ESMCI::VMId::print() start --- Proxy        = no
- Base ID = 2, vmID:
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0x
- Base ID = 2, vmID:
+--- ESMCI::VMId::print() start ---2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
-  localID = 
+  localID = 2, vmID:
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0xF0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
@@ -79,12 +81,10 @@
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
-F0000000
-  localID = 0
---- ESMCI::VMId::print() end ---
- Root Info (Attributes):
 0
 --- ESMCI::VMId::print() end ---
+ Root Info (Attributes):
+
  Root Info (Attributes):
 {}{}{}{}  PASS  Print Grid info, ESMF_GridCreateUTest.F90, line 159
   PASS  Print Grid info, ESMF_GridCreateUTest.F90, line 159
@@ -129,12 +129,10 @@ F0000000
   PASS  Grid equality after destroy Test, ESMF_GridCreateUTest.F90, line 222
   PASS  Grid equality after destroy Test, ESMF_GridCreateUTest.F90, line 222
   PASS  Grid equality after destroy Test, ESMF_GridCreateUTest.F90, line 222
-  PASS  Grid non-equality after destroy Test, ESMF_GridCreateUTest.F90, line 230
   PASS  Grid equality after destroy Test, ESMF_GridCreateUTest.F90, line 222
   PASS  Grid non-equality after destroy Test, ESMF_GridCreateUTest.F90, line 230
   PASS  Grid non-equality after destroy Test, ESMF_GridCreateUTest.F90, line 230
-  PASS  Double GridDestroy through alias Test, ESMF_GridCreateUTest.F90, line 23
- 7
+  PASS  Grid non-equality after destroy Test, ESMF_GridCreateUTest.F90, line 230
   PASS  Grid non-equality after destroy Test, ESMF_GridCreateUTest.F90, line 230
   PASS  Double GridDestroy through alias Test, ESMF_GridCreateUTest.F90, line 23
  7
@@ -142,6 +140,8 @@ F0000000
  7
   PASS  Double GridDestroy through alias Test, ESMF_GridCreateUTest.F90, line 23
  7
+  PASS  Double GridDestroy through alias Test, ESMF_GridCreateUTest.F90, line 23
+ 7
   PASS  Testing Grid Validate, ESMF_GridCreateUTest.F90, line 265
   PASS  Testing Grid Validate, ESMF_GridCreateUTest.F90, line 265
   PASS  Testing Grid Validate, ESMF_GridCreateUTest.F90, line 265
@@ -212,9 +212,6 @@ F0000000
  omp Test, ESMF_GridCreateUTest.F90, line 403
   PASS  Supergrid creation from file ESMF_FILEFORMAT_GRIDSPEC with custom regDec
  omp < petCount Test, ESMF_GridCreateUTest.F90, line 424
-  PASS  Supergrid creation from file ESMF_FILEFORMAT_GRIDSPEC with custom regDec
- omp < petCount Test, ESMF_GridCreateUTest.F90, line 424
-  PASS  Testing Grid Match, ESMF_GridCreateUTest.F90, line 481
   PASS  Testing Grid Match, ESMF_GridCreateUTest.F90, line 481
   PASS  Supergrid creation from file ESMF_FILEFORMAT_GRIDSPEC with custom regDec
  omp < petCount Test, ESMF_GridCreateUTest.F90, line 424
@@ -222,6 +219,9 @@ F0000000
   PASS  Supergrid creation from file ESMF_FILEFORMAT_GRIDSPEC with custom regDec
  omp < petCount Test, ESMF_GridCreateUTest.F90, line 424
   PASS  Testing Grid Match, ESMF_GridCreateUTest.F90, line 481
+  PASS  Supergrid creation from file ESMF_FILEFORMAT_GRIDSPEC with custom regDec
+ omp < petCount Test, ESMF_GridCreateUTest.F90, line 424
+  PASS  Testing Grid Match, ESMF_GridCreateUTest.F90, line 481
   PASS  Testing Grid copy from grid and distgrid, ESMF_GridCreateUTest.F90, line
   638
   PASS  Testing Grid copy from grid and distgrid, ESMF_GridCreateUTest.F90, line
@@ -242,7 +242,6 @@ F0000000
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
- StaggerLoc Print Begins =====>
  StaggerLoc Print Begins =====>
     staggerloc =           40
  StaggerLoc Print Ends   =====>
@@ -254,6 +253,7 @@ F0000000
  StaggerLoc Print Ends   =====>
   PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
  ne 693
+ StaggerLoc Print Begins =====>
     staggerloc =           40
  StaggerLoc Print Ends   =====>
   PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
@@ -476,30 +476,30 @@ F0000000
  SMF_GridCreateUTest.F90, line 1543
   PASS  Creating a 2D  Grid with sphere edge connections with GridCreateReg(), E
  SMF_GridCreateUTest.F90, line 1543
+  PASS  Creating a 2D  Grid with all defaults with CreateShapeTileReg, ESMF_Grid
+ CreateUTest.F90, line 1571
   PASS  Creating a 2D  Grid with sphere edge connections with GridCreateReg(), E
  SMF_GridCreateUTest.F90, line 1543
   PASS  Creating a 2D  Grid with all defaults with CreateShapeTileReg, ESMF_Grid
  CreateUTest.F90, line 1571
   PASS  Creating a 2D  Grid with all defaults with CreateShapeTileReg, ESMF_Grid
  CreateUTest.F90, line 1571
+  PASS  Creating a 2D  Grid with non-default regDecomp with CreateShapeTileReg, 
+ ESMF_GridCreateUTest.F90, line 1600
+  PASS  Creating a 2D  Grid with non-default regDecomp with CreateShapeTileReg, 
+ ESMF_GridCreateUTest.F90, line 1600
   PASS  Creating a 2D  Grid with all defaults with CreateShapeTileReg, ESMF_Grid
  CreateUTest.F90, line 1571
   PASS  Creating a 2D  Grid with non-default regDecomp with CreateShapeTileReg, 
  ESMF_GridCreateUTest.F90, line 1600
-  PASS  Creating a 2D  Grid with all defaults with CreateShapeTileReg, ESMF_Grid
- CreateUTest.F90, line 1571
-  PASS  Creating a 2D  Grid with non-default regDecomp with CreateShapeTileReg, 
- ESMF_GridCreateUTest.F90, line 1600
-  PASS  Creating a 2D  Grid with non-default regDecomp with CreateShapeTileReg, 
- ESMF_GridCreateUTest.F90, line 1600
+  PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
+ g, ESMF_GridCreateUTest.F90, line 1627
   PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
  g, ESMF_GridCreateUTest.F90, line 1627
   PASS  Creating a 2D  Grid with non-default regDecomp with CreateShapeTileReg, 
  ESMF_GridCreateUTest.F90, line 1600
   PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
  g, ESMF_GridCreateUTest.F90, line 1627
-  PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
- g, ESMF_GridCreateUTest.F90, line 1627
   PASS  Creating a 2D  1 DE Grid with CreateShapeTileReg, ESMF_GridCreateUTest.F
  90, line 1654
   PASS  Creating a 2D  1 DE Grid with CreateShapeTileReg, ESMF_GridCreateUTest.F
@@ -710,11 +710,11 @@ F0000000
  est.F90, line 3045
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
-  Ending Test, file ESMF_GridCreateUTest.F90, line 3120
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
   Ending Test, file ESMF_GridCreateUTest.F90, line 3120
-  PET           2  Test Elapsed Time    91.4010000000000       msec.
-  PET           3  Test Elapsed Time    91.1230000000000       msec.
-  PET           0  Test Elapsed Time    91.4530000000000       msec.
-  PET           1  Test Elapsed Time    91.7140000000000       msec.
+  Ending Test, file ESMF_GridCreateUTest.F90, line 3120
+  PET           2  Test Elapsed Time    92.9190000000000       msec.
+  PET           3  Test Elapsed Time    92.8700000000000       msec.
+  PET           0  Test Elapsed Time    92.7240000000000       msec.
+  PET           1  Test Elapsed Time    93.1680000000000       msec.
