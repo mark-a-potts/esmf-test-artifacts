@@ -20,7 +20,7 @@ export ESMF_COMM=openmpi
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make info 2>&1 | tee info.log
+make info 2>&1| tee info.log 
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
 
