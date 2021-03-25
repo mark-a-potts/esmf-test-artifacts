@@ -1,0 +1,65 @@
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+  Beginning Test, file ESMF_IO_PIOUTest.F90, line 83
+  NUMBER_OF_PROCESSORS           1
+  PASS  Checking sizeof(iosystem_desc_t) vs PIO_SIZE_IOSYSTEM_DESC, ESMF_IO_PIOUTest.F90, line 119
+  PASS  Checking sizeof(file_desc_t) vs PIO_SIZE_FILE_DESC, ESMF_IO_PIOUTest.F90, line 137
+  PASS  Checking sizeof(io_desc_t) vs PIO_SIZE_IO_DESC, ESMF_IO_PIOUTest.F90, line 155
+  PASS  Checking sizeof(var_desc_t) vs PIO_SIZE_VAR_DESC, ESMF_IO_PIOUTest.F90, line 173
+  PASS  Initialize a PIO instance, ESMF_IO_PIOUTest.F90, line 196
+[h11c51:235267:0:235267] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2b1dfd306924)
+==== backtrace (tid: 235267) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003baa1 NC_create()  ???:0
+ 9 0x000000000003b0a2 nc__create()  ???:0
+10 0x000000000003b05b nc_create()  ???:0
+11 0x00000000000113ae nf_create_()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:64
+12 0x000000000006e8fe __netcdf_MOD_nf90_create()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:134
+13 0x00000000012543bc __esmfionf_mod_MOD_create_nf()  ???:0
+14 0x00000000012cc3de __esmfpiolib_mod_MOD_createfile()  ???:0
+15 0x00000000004023de MAIN__()  ESMF_IO_PIOUTest.F90:0
+16 0x0000000000404c3e main()  ???:0
+17 0x0000000000022555 __libc_start_main()  ???:0
+18 0x0000000000401639 _start()  ???:0
+=================================
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x2b1a83e1162f in ???
+#1  0x2b1a82e2cb76 in PMPI_Comm_set_attr
+	at ../../src/mpi/attr/comm_set_attr.c:244
+#2  0x2b1a822a9965 in H5_init_library
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+#3  0x2b1a823531c2 in H5Eset_auto2
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+#4  0x2b1a81c7a3fd in ???
+#5  0x2b1a81c7a412 in ???
+#6  0x2b1a81c85e26 in ???
+#7  0x2b1a81c1787e in ???
+#8  0x2b1a81c1baa0 in ???
+#9  0x2b1a81c1b0a1 in ???
+#10  0x2b1a81c1b05a in ???
+#11  0x2b1a819753ad in nf_create_
+	at /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:64
+#12  0x2b1a819d28fd in __netcdf_MOD_nf90_create
+	at /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:134
+#13  0x2b1a807f63bb in ???
+#14  0x2b1a8086e3dd in ???
+#15  0x4023dd in ???
+#16  0x404c3d in ???
+#17  0x2b1a84e66554 in ???
+#18  0x401638 in ???
+#19  0xffffffffffffffff in ???
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 235267 RUNNING AT h11c51
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
