@@ -30,6 +30,7 @@ export ESMF_COMM=intelmpi
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
+make info 2>&1| tee info.log 
 make install 2>&1|tee install_$JOBID.log 
 make all_tests 2>&1|tee test_$JOBID.log 
 
