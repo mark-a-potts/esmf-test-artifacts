@@ -225,10 +225,10 @@
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 31 Calendar -------------------------------
+daysPerMonth = Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
@@ -238,7 +238,15 @@ calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-30 31 30 31 31 30 31 30 31 
+secondsPerYear = 31536000
+31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -247,7 +255,7 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-31 30 31 30 31 
+  PASS  Initialized Gregorian Calendar Print Test, ESMF_CalendarUTest.F90, line 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -258,9 +266,6 @@ end Calendar ---------------------------
 
   PASS  Initialized Gregorian Calendar Print Test, ESMF_CalendarUTest.F90, line 
  474
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -268,15 +273,10 @@ end Calendar ---------------------------
 
   PASS  Initialized Gregorian Calendar Print Test, ESMF_CalendarUTest.F90, line 
  474
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
 end Calendar ---------------------------
 
   PASS  Initialized Gregorian Calendar Print Test, ESMF_CalendarUTest.F90, line 
  474
-  PASS  Initialized Gregorian Calendar Print Test, ESMF_CalendarUTest.F90, line 
  474
   PASS  Validate Gregorian Calendar Test, ESMF_CalendarUTest.F90, line 485
   PASS  Validate Gregorian Calendar Test, ESMF_CalendarUTest.F90, line 485
@@ -356,18 +356,19 @@ end Calendar ---------------------------
   PASS  Get Calendar kind Test, ESMF_CalendarUTest.F90, line 647
 Calendar -------------------------------
 name = JulianDay
-calkindflag = Julian Day
-daysPerMonth = 0 Calendar -------------------------------
+Calendar -------------------------------
 name = JulianDay
 calkindflag = Julian Day
-daysPerMonth = 0 0 Calendar -------------------------------
+daysPerMonth = 0 0 0 Calendar -------------------------------
 name = JulianDay
 calkindflag = Julian Day
-daysPerMonth = 0 0 0 0 0 0 0 0 0 Calendar -------------------------------
+daysPerMonth = 0 0 0 0 0 0 0 0 0 0 Calendar -------------------------------
 name = JulianDay
 calkindflag = Julian Day
 daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 
+monthsPerYear = 12
+calkindflag = Julian Day
+daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 0
@@ -376,26 +377,7 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-0 0 0 0 0 0 0 0 0 0 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 0
-daysPerYear = 0
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-0 0 0 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 0
-daysPerYear = 0
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-  PASS  Initialized Julian Day Calendar Print Test, ESMF_CalendarUTest.F90, line
-  658
+0 0 0 0 0 0 0 0 0 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 0
@@ -406,6 +388,24 @@ end Calendar ---------------------------
 
   PASS  Initialized Julian Day Calendar Print Test, ESMF_CalendarUTest.F90, line
   658
+0 0 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 0
+daysPerYear = 0
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+  PASS  Initialized Julian Day Calendar Print Test, ESMF_CalendarUTest.F90, line
+  658
+secondsPerDay = 86400
+secondsPerYear = 0
+daysPerYear = 0
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
   PASS  Initialized Julian Day Calendar Print Test, ESMF_CalendarUTest.F90, line
   658
   PASS  Initialized Julian Day Calendar Print Test, ESMF_CalendarUTest.F90, line
@@ -479,11 +479,15 @@ calkindflag = No Leap
 daysPerMonth = 31 28 31 30 31 30 Calendar -------------------------------
 name = No_Leap
 calkindflag = No Leap
-daysPerMonth = 31 28 31 30 31 30 31 Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+Calendar -------------------------------
 name = No_Leap
 calkindflag = No Leap
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -503,8 +507,6 @@ daysPerYeardD = 1
 end Calendar ---------------------------
 
   PASS  Initialized No Leap Calendar Print Test, ESMF_CalendarUTest.F90, line 82
-31 30 31 30 31 
-monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
@@ -514,8 +516,6 @@ end Calendar ---------------------------
 
   PASS  Initialized No Leap Calendar Print Test, ESMF_CalendarUTest.F90, line 82
  4
-secondsPerDay = 86400
-secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -523,8 +523,8 @@ end Calendar ---------------------------
 
   PASS  Initialized No Leap Calendar Print Test, ESMF_CalendarUTest.F90, line 82
  4
-  PASS  Initialized No Leap Calendar Print Test, ESMF_CalendarUTest.F90, line 82
  4
+  PASS  Initialized No Leap Calendar Print Test, ESMF_CalendarUTest.F90, line 82
  4
   PASS  Validate No Leap Calendar Test, ESMF_CalendarUTest.F90, line 835
   PASS  Validate No Leap Calendar Test, ESMF_CalendarUTest.F90, line 835
@@ -540,29 +540,17 @@ end Calendar ---------------------------
   846
 Calendar -------------------------------
 name = 360Day
-calkindflag = 360 Day
 Calendar -------------------------------
 name = 360Day
 calkindflag = 360 Day
 daysPerMonth = 30 30 30 30 Calendar -------------------------------
 name = 360Day
 calkindflag = 360 Day
-daysPerMonth = 30 30 30 30 30 30 30 Calendar -------------------------------
-name = 360Day
-calkindflag = 360 Day
+daysPerMonth = 30 30 30 30 30 30 30 30 30 30 calkindflag = 360 Day
 daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31104000
-daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31104000
-daysPerYear = 360
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
 30 30 30 30 30 30 30 30 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -572,9 +560,7 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-  PASS  Initialized 360 Day  Calendar Print Test, ESMF_CalendarUTest.F90, line 8
- 57
-30 30 30 30 30 
+30 30 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31104000
@@ -585,38 +571,9 @@ end Calendar ---------------------------
 
   PASS  Initialized 360 Day  Calendar Print Test, ESMF_CalendarUTest.F90, line 8
  57
-daysPerYear = 360
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-  PASS  Initialized 360 Day  Calendar Print Test, ESMF_CalendarUTest.F90, line 8
- 57
-  PASS  Initialized 360 Day  Calendar Print Test, ESMF_CalendarUTest.F90, line 8
- 57
-  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
-  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
-  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
-  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
-  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
-  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
-  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
-  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
 Calendar -------------------------------
-name = CustomCalendar
-calkindflag = Custom
-Calendar -------------------------------
-name = CustomCalendar
-calkindflag = Custom
-daysPerMonth = 30 30 30 30 30 Calendar -------------------------------
-name = CustomCalendar
-calkindflag = Custom
-daysPerMonth = 30 30 30 30 30 30 30 30 30 Calendar -------------------------------
-name = CustomCalendar
-calkindflag = Custom
-daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
-monthsPerYear = 12
-secondsPerDay = 86400
+name = 360Day
+calkindflag = 360 Day
 daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -626,7 +583,50 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-30 30 30 30 30 30 30 
+  PASS  Initialized 360 Day  Calendar Print Test, ESMF_CalendarUTest.F90, line 8
+ 57
+daysPerYear = 360
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+  PASS  Initialized 360 Day  Calendar Print Test, ESMF_CalendarUTest.F90, line 8
+ 57
+  PASS  Initialized 360 Day  Calendar Print Test, ESMF_CalendarUTest.F90, line 8
+ 57
+  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
+  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
+  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
+  PASS  Validate 360 Day Calendar Test, ESMF_CalendarUTest.F90, line 868
+  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
+  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
+  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
+  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 880
+Calendar -------------------------------
+name = CustomCalendar
+calkindflag = Custom
+daysPerMonth = 30 Calendar -------------------------------
+name = CustomCalendar
+calkindflag = Custom
+daysPerMonth = 30 30 30 30 30 30 Calendar -------------------------------
+name = CustomCalendar
+calkindflag = Custom
+daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 Calendar -------------------------------
+name = CustomCalendar
+calkindflag = Custom
+daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
+monthsPerYear = 12
+secondsPerDay = 86400
+30 30 30 30 30 30 30 30 30 30 30 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31104000
+daysPerYear = 360
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+30 30 30 30 30 30 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31104000
@@ -637,7 +637,7 @@ end Calendar ---------------------------
 
   PASS  Initialized Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90, lin
  e 891
-30 30 30 
+30 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31104000
@@ -768,7 +768,12 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = -2768601600
 sN = 0
+BaseTime -------------------------------
+s = -2768601600
+sN = 0
 sD = 1
+end BaseTime ---------------------------
+
 Time -----------------------------------
 BaseTime -------------------------------
 s = -2768601600
@@ -782,24 +787,25 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-BaseTime -------------------------------
-s = -2768601600
-sN = 0
 sD = 1
-end BaseTime ---------------------------
-
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 29 31 30 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 29 31 30 31 30 31 31 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 29 31 30 31 30 31 31 30 31 30 31 
+daysPerMonth = 31 29 31 30 31 30 31 31 30 31 29 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
@@ -809,6 +815,9 @@ secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -821,8 +830,7 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1073
-30 31 30 31 
+30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -835,24 +843,16 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1073
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = 0
 end Time -------------------------------
 
   PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1073
-daysPerYeardD = 1
-end Calendar ---------------------------
-
 timeZone = 0
 end Time -------------------------------
 
+  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1073
   PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1073
   PASS  Set Start Time at lower limit minus 1 second of Gregorian Calendar Test,
   ESMF_CalendarUTest.F90, line 1084
@@ -862,6 +862,9 @@ end Time -------------------------------
   ESMF_CalendarUTest.F90, line 1084
   PASS  Set Start Time at lower limit minus 1 second of Gregorian Calendar Test,
   ESMF_CalendarUTest.F90, line 1084
+Time -----------------------------------
+BaseTime -------------------------------
+s = -2768601600
 Time -----------------------------------
 BaseTime -------------------------------
 s = -2768601600
@@ -876,9 +879,6 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-Time -----------------------------------
-BaseTime -------------------------------
-s = -2768601600
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -893,7 +893,7 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 29 31 Calendar -------------------------------
+daysPerMonth = 31 29 31 30 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 29 31 30 31 30 31 31 30 31 Calendar -------------------------------
@@ -911,7 +911,7 @@ secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
-30 31 30 31 31 30 31 30 31 
+31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -923,6 +923,7 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
+  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1093
 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -953,7 +954,6 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1093
-  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1093
   PASS  Set Stop Time at upper limit of Gregorian Calendar Test, ESMF_CalendarUT
  est.F90, line 1105
   PASS  Set Stop Time at upper limit of Gregorian Calendar Test, ESMF_CalendarUT
@@ -978,6 +978,7 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
 Time -----------------------------------
 BaseTime -------------------------------
 s = 9223372036854720000
@@ -998,12 +999,12 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
-calkindflag = Gregorian
+secondsPerDay = 86400
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1011,6 +1012,8 @@ secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
+end Calendar ---------------------------
+
 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1023,7 +1026,7 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-31 30 31 30 31 
+30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1035,7 +1038,7 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-secondsPerDay = 86400
+  PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1114
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1045,15 +1048,12 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-end Calendar ---------------------------
-
+  PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1114
 timeZone = 0
 end Time -------------------------------
 
   PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1114
   PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1114
-  PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1114
-  PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1114
   PASS  Set Stop Time at upper limit plus 86400 second of Gregorian Calendar Tes
  t, ESMF_CalendarUTest.F90, line 1126
   PASS  Set Stop Time at upper limit plus 86400 second of Gregorian Calendar Tes
@@ -1062,14 +1062,11 @@ end Time -------------------------------
  t, ESMF_CalendarUTest.F90, line 1126
   PASS  Set Stop Time at upper limit plus 86400 second of Gregorian Calendar Tes
  t, ESMF_CalendarUTest.F90, line 1126
-Time -----------------------------------
 Time -----------------------------------
 BaseTime -------------------------------
 s = 9223372036854720000
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
 Time -----------------------------------
 BaseTime -------------------------------
 s = 9223372036854720000
@@ -1080,7 +1077,7 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = Time -----------------------------------
+Time -----------------------------------
 BaseTime -------------------------------
 s = 9223372036854720000
 sN = 0
@@ -1090,7 +1087,8 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 BaseTime -------------------------------
+daysPerMonth = 31 Time -----------------------------------
+BaseTime -------------------------------
 s = 9223372036854720000
 sN = 0
 sD = 1
@@ -1099,21 +1097,15 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 end BaseTime ---------------------------
+
+Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
-31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
 secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-31 30 31 31 30 31 30 31 
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1125,7 +1117,19 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-31 30 31 30 31 
+28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1138,7 +1142,6 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1135
-secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1149,9 +1152,6 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1135
-timeZone = 0
-end Time -------------------------------
-
   PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1135
   PASS  Stop Time Print Test, ESMF_CalendarUTest.F90, line 1135
   PASS  Set Start Time at lower limit of Julian Day Calendar Test, ESMF_Calendar
@@ -1166,7 +1166,6 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = -2768601600
 sN = 0
-sD = 1
 Time -----------------------------------
 BaseTime -------------------------------
 s = -2768601600
@@ -1174,8 +1173,6 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-Calendar -------------------------------
-name = JulianDay
 Time -----------------------------------
 BaseTime -------------------------------
 s = -2768601600
@@ -1196,12 +1193,14 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = JulianDay
 calkindflag = Julian Day
-daysPerMonth = 0 0 0 0 0 0 0 end BaseTime ---------------------------
+daysPerMonth = 0 0 0 0 0 sD = 1
+end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = JulianDay
 calkindflag = Julian Day
-daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
+daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 Calendar -------------------------------
+name = JulianDay
 calkindflag = Julian Day
 daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
 monthsPerYear = 12
@@ -1222,7 +1221,7 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-0 0 0 0 0 
+0 0 0 0 0 0 0 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 0
@@ -1235,6 +1234,7 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1155
+
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 0
@@ -1272,9 +1272,13 @@ end Time -------------------------------
  ine 1181
 Time -----------------------------------
 BaseTime -------------------------------
-s = -2768688000
 Time -----------------------------------
 BaseTime -------------------------------
+s = -2768688000
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 s = -2768688000
 sN = 0
 sD = 1
@@ -1290,10 +1294,6 @@ end BaseTime ---------------------------
 Time -----------------------------------
 BaseTime -------------------------------
 s = -2768688000
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -1301,28 +1301,23 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 29 31 Calendar -------------------------------
+daysPerMonth = 31 29 31 30 31 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 29 31 30 31 30 31 31 30 31 Calendar -------------------------------
+daysPerMonth = 31 29 31 30 31 30 31 31 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 29 31 30 31 30 31 31 30 31 30 31 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 29 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 29 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
-end Calendar ---------------------------
-
-30 31 30 31 31 30 31 30 31 
+30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1334,7 +1329,7 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-30 31 
+30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1347,6 +1342,9 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1190
+
+monthsPerYear = 12
+secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1357,6 +1355,19 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1190
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1190
+  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1190
+  PASS  Set Stop Time at upper limit of Julian Day Calendar Test, ESMF_CalendarU
+ Test.F90, line 1202
+  PASS  Set Stop Time at upper limit of Julian Day Calendar Test, ESMF_CalendarU
+ Test.F90, line 1202
+  PASS  Set Stop Time at upper limit of Julian Day Calendar Test, ESMF_CalendarU
+ Test.F90, line 1202
   PASS  Set Stop Time at upper limit of Julian Day Calendar Test, ESMF_CalendarU
  Test.F90, line 1202
 Time -----------------------------------
@@ -1367,9 +1378,46 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+Time -----------------------------------
+BaseTime -------------------------------
+s = 8640000000000000000
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = JulianDay
+calkindflag = Julian Day
+daysPerMonth = 0 0 Time -----------------------------------
+BaseTime -------------------------------
+s = 8640000000000000000
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = JulianDay
+calkindflag = Julian Day
+daysPerMonth = 0 0 0 0 0 0 0 0 Time -----------------------------------
+BaseTime -------------------------------
+s = 8640000000000000000
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
 name = JulianDay
 calkindflag = Julian Day
 daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
+name = JulianDay
+calkindflag = Julian Day
+daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 0
+daysPerYear = 0
+daysPerYeardN = 0
+0 0 0 0 0 0 0 0 0 0 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 0
@@ -1414,23 +1462,7 @@ end Time -------------------------------
   PASS  Set Time Interval Test, ESMF_CalendarUTest.F90, line 1262
   PASS  Clock Initialization with Gregorian CalendarTest, ESMF_CalendarUTest.F90
  , line 1274
-timeZone = 0
-end Time -------------------------------
-
-  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1190
-  PASS  Set Stop Time at upper limit of Julian Day Calendar Test, ESMF_CalendarU
- Test.F90, line 1202
-Time -----------------------------------
-BaseTime -------------------------------
-s = 8640000000000000000
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = JulianDay
-calkindflag = Julian Day
-daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 0
@@ -1475,20 +1507,6 @@ end Time -------------------------------
   PASS  Set Time Interval Test, ESMF_CalendarUTest.F90, line 1262
   PASS  Clock Initialization with Gregorian CalendarTest, ESMF_CalendarUTest.F90
  , line 1274
-  PASS  Start Time Print Test, ESMF_CalendarUTest.F90, line 1190
-  PASS  Set Stop Time at upper limit of Julian Day Calendar Test, ESMF_CalendarU
- Test.F90, line 1202
-Time -----------------------------------
-BaseTime -------------------------------
-s = 8640000000000000000
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = JulianDay
-calkindflag = Julian Day
-daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 0
@@ -1533,24 +1551,6 @@ end Time -------------------------------
   PASS  Set Time Interval Test, ESMF_CalendarUTest.F90, line 1262
   PASS  Clock Initialization with Gregorian CalendarTest, ESMF_CalendarUTest.F90
  , line 1274
-  PASS  Set Stop Time at upper limit of Julian Day Calendar Test, ESMF_CalendarU
- Test.F90, line 1202
-Time -----------------------------------
-BaseTime -------------------------------
-s = 8640000000000000000
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = JulianDay
-calkindflag = Julian Day
-daysPerMonth = 0 0 0 0 0 0 0 0 0 0 0 0 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 0
-daysPerYear = 0
-daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -1594,14 +1594,14 @@ end Time -------------------------------
  lendarUTest.F90, line 1298
   PASS  No Leap Cal. Start Time init with year = -100 Test, ESMF_CalendarUTest.F
  90, line 1309
-  PASS  Total days 73049 from -100 to +100 years in Gregorian Cal. Test, ESMF_Ca
- lendarUTest.F90, line 1298
   PASS  No Leap Cal. Stop Time init with year = 100 Test, ESMF_CalendarUTest.F90
  , line 1319
-  PASS  No Leap Cal. Start Time init with year = -100 Test, ESMF_CalendarUTest.F
- 90, line 1309
   PASS  Clock initialization with above settings Test, ESMF_CalendarUTest.F90, l
  ine 1330
+  PASS  Total days 73049 from -100 to +100 years in Gregorian Cal. Test, ESMF_Ca
+ lendarUTest.F90, line 1298
+  PASS  No Leap Cal. Start Time init with year = -100 Test, ESMF_CalendarUTest.F
+ 90, line 1309
   PASS  No Leap Cal. Stop Time init with year = 100 Test, ESMF_CalendarUTest.F90
  , line 1319
   PASS  Clock initialization with above settings Test, ESMF_CalendarUTest.F90, l
@@ -1628,12 +1628,12 @@ end Time -------------------------------
  90, line 1363
   PASS  360 Day Cal. Stop Time init with year = 100 Test, ESMF_CalendarUTest.F90
  , line 1373
-  PASS  Clock initialization with above settings Test, ESMF_CalendarUTest.F90, l
- ine 1383
   PASS  Total days 73000 from -100 to +100 years in No Leap Cal. Test, ESMF_Cale
  ndarUTest.F90, line 1352
   PASS  360 Day Cal. Start Time init with year = -100 Test, ESMF_CalendarUTest.F
  90, line 1363
+  PASS  Clock initialization with above settings Test, ESMF_CalendarUTest.F90, l
+ ine 1383
   PASS  360 Day Cal. Stop Time init with year = 100 Test, ESMF_CalendarUTest.F90
  , line 1373
   PASS  Clock initialization with above settings Test, ESMF_CalendarUTest.F90, l
@@ -1664,116 +1664,62 @@ end Time -------------------------------
  3
   PASS  Create Julian Kind Calendar Test, ESMF_CalendarUTest.F90, line 1453
   PASS  Convert Julian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 1466
-  PASS  Total days 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Cale
- ndarUTest.F90, line 1405
   PASS  Julian Time Get day of the week test, ESMF_CalendarUTest.F90, line 1479
-  PASS  Total Counts 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Ca
- lendarUTest.F90, line 1414
   PASS  Convert Julian Day to Julian Date Test 1, ESMF_CalendarUTest.F90, line 1
  490
   PASS  Convert Julian Date to Gregorian Date Test 1, ESMF_CalendarUTest.F90, li
  ne 1504
-  PASS  Convert Gregorian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 142
- 8
-  PASS  Total days 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Cale
- ndarUTest.F90, line 1405
-  PASS  Convert Gregorian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 144
- 3
   PASS  Convert Gregorian Date to Proleptic Julian Date Test 1, ESMF_CalendarUTe
  st.F90, line 1521
-  PASS  Total Counts 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Ca
- lendarUTest.F90, line 1414
-  PASS  Create Julian Kind Calendar Test, ESMF_CalendarUTest.F90, line 1453
   PASS  Gregorian Time Get day of the week test, ESMF_CalendarUTest.F90, line 15
  37
-  PASS  Convert Gregorian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 142
- 8
-  PASS  Convert Julian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 1466
   PASS  Convert Julian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 1551
-  PASS  Convert Gregorian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 144
- 3
   PASS  Convert Julian Day to Julian Date Test 2, ESMF_CalendarUTest.F90, line 1
  566
-  PASS  Julian Time Get day of the week test, ESMF_CalendarUTest.F90, line 1479
-  PASS  Create Julian Kind Calendar Test, ESMF_CalendarUTest.F90, line 1453
   PASS  Negative Leap Year Test, ESMF_CalendarUTest.F90, line 1579
-  PASS  Convert Julian Day to Julian Date Test 1, ESMF_CalendarUTest.F90, line 1
- 490
-  PASS  Convert Julian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 1466
   PASS  Convert Julian to Julian Day Test 3, ESMF_CalendarUTest.F90, line 1594
-  PASS  Convert Julian Date to Gregorian Date Test 1, ESMF_CalendarUTest.F90, li
- ne 1504
   PASS  Convert Julian to Julian Day Test 4, ESMF_CalendarUTest.F90, line 1609
-  PASS  Julian Time Get day of the week test, ESMF_CalendarUTest.F90, line 1479
-  PASS  Convert Gregorian Date to Proleptic Julian Date Test 1, ESMF_CalendarUTe
- st.F90, line 1521
   PASS  Initialize Modified Julian Day Kind Calendar Test, ESMF_CalendarUTest.F9
  0, line 1622
-  PASS  Convert Julian Day to Julian Date Test 1, ESMF_CalendarUTest.F90, line 1
- 490
-  PASS  Gregorian Time Get day of the week test, ESMF_CalendarUTest.F90, line 15
- 37
   PASS  Convert Gregorian to Modified Julian Day Test 1, ESMF_CalendarUTest.F90,
   line 1636
-  PASS  Convert Julian Date to Gregorian Date Test 1, ESMF_CalendarUTest.F90, li
- ne 1504
-  PASS  Convert Julian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 1551
   PASS  Convert Modified Julian Day to Gregorian day-of-week Test, ESMF_Calendar
  UTest.F90, line 1652
-  PASS  Convert Gregorian Date to Proleptic Julian Date Test 1, ESMF_CalendarUTe
- st.F90, line 1521
-  PASS  Convert Julian Day to Julian Date Test 2, ESMF_CalendarUTest.F90, line 1
- 566
+  PASS  Total days 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Cale
+ ndarUTest.F90, line 1405
   PASS  Convert Gregorian to Modified Julian Day Test 2 (i8), ESMF_CalendarUTest
  .F90, line 1666
-  PASS  Gregorian Time Get day of the week test, ESMF_CalendarUTest.F90, line 15
- 37
-  PASS  Negative Leap Year Test, ESMF_CalendarUTest.F90, line 1579
   PASS  Convert Modified Julian Day to Gregorian Test 1, ESMF_CalendarUTest.F90,
   line 1681
-  PASS  Convert Julian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 1551
-  PASS  Convert Julian to Julian Day Test 3, ESMF_CalendarUTest.F90, line 1594
+  PASS  Total Counts 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Ca
+ lendarUTest.F90, line 1414
   PASS  IsLeapYear test 1, ESMF_CalendarUTest.F90, line 1692
-  PASS  Convert Julian Day to Julian Date Test 2, ESMF_CalendarUTest.F90, line 1
- 566
-  PASS  Convert Julian to Julian Day Test 4, ESMF_CalendarUTest.F90, line 1609
+  PASS  Convert Gregorian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 142
+ 8
   PASS  IsLeapYear test 2, ESMF_CalendarUTest.F90, line 1702
-  PASS  Initialize Modified Julian Day Kind Calendar Test, ESMF_CalendarUTest.F9
- 0, line 1622
-  PASS  Negative Leap Year Test, ESMF_CalendarUTest.F90, line 1579
+  PASS  Convert Gregorian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 144
+ 3
   PASS  IsLeapYear test 3, ESMF_CalendarUTest.F90, line 1713
-  PASS  Convert Julian to Julian Day Test 3, ESMF_CalendarUTest.F90, line 1594
-  PASS  Convert Gregorian to Modified Julian Day Test 1, ESMF_CalendarUTest.F90,
-  line 1636
+  PASS  Create Julian Kind Calendar Test, ESMF_CalendarUTest.F90, line 1453
   PASS  IsLeapYear test 4, ESMF_CalendarUTest.F90, line 1724
-  PASS  Convert Julian to Julian Day Test 4, ESMF_CalendarUTest.F90, line 1609
-  PASS  Convert Modified Julian Day to Gregorian day-of-week Test, ESMF_Calendar
- UTest.F90, line 1652
+  PASS  Convert Julian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 1466
   PASS  IsLeapYear test 5, ESMF_CalendarUTest.F90, line 1734
-  PASS  Initialize Modified Julian Day Kind Calendar Test, ESMF_CalendarUTest.F9
- 0, line 1622
-  PASS  Convert Gregorian to Modified Julian Day Test 2 (i8), ESMF_CalendarUTest
- .F90, line 1666
   PASS  IsLeapYear test 6, ESMF_CalendarUTest.F90, line 1744
+  PASS  Julian Time Get day of the week test, ESMF_CalendarUTest.F90, line 1479
   PASS  IsLeapYear test 7, ESMF_CalendarUTest.F90, line 1755
-  PASS  Convert Gregorian to Modified Julian Day Test 1, ESMF_CalendarUTest.F90,
-  line 1636
-  PASS  Convert Modified Julian Day to Gregorian Test 1, ESMF_CalendarUTest.F90,
-  line 1681
+  PASS  Convert Julian Day to Julian Date Test 1, ESMF_CalendarUTest.F90, line 1
+ 490
   PASS  IsLeapYear test 8, ESMF_CalendarUTest.F90, line 1766
-  PASS  IsLeapYear test 1, ESMF_CalendarUTest.F90, line 1692
-  PASS  Convert Modified Julian Day to Gregorian day-of-week Test, ESMF_Calendar
- UTest.F90, line 1652
   PASS  Initialize Custom Kind Calendar for Mars Test, ESMF_CalendarUTest.F90, l
  ine 1783
-  PASS  IsLeapYear test 2, ESMF_CalendarUTest.F90, line 1702
-  PASS  Convert Gregorian to Modified Julian Day Test 2 (i8), ESMF_CalendarUTest
- .F90, line 1666
+  PASS  Convert Julian Date to Gregorian Date Test 1, ESMF_CalendarUTest.F90, li
+ ne 1504
 Calendar -------------------------------
 name = MarsCalendar
 calkindflag = Custom
 daysPerMonth = 
-  PASS  IsLeapYear test 3, ESMF_CalendarUTest.F90, line 1713
+  PASS  Convert Gregorian Date to Proleptic Julian Date Test 1, ESMF_CalendarUTe
+ st.F90, line 1521
 monthsPerYear = 0
 secondsPerDay = 88775
 secondsPerYear = 59354263
@@ -1782,118 +1728,60 @@ daysPerYeardN = 5921
 daysPerYeardD = 10000
 end Calendar ---------------------------
 
-  PASS  Convert Modified Julian Day to Gregorian Test 1, ESMF_CalendarUTest.F90,
-  line 1681
   PASS  Initialized Mars Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90
  , line 1794
-  PASS  IsLeapYear test 4, ESMF_CalendarUTest.F90, line 1724
-  PASS  IsLeapYear test 1, ESMF_CalendarUTest.F90, line 1692
-  PASS  IsLeapYear test 5, ESMF_CalendarUTest.F90, line 1734
+  PASS  Gregorian Time Get day of the week test, ESMF_CalendarUTest.F90, line 15
+ 37
   PASS  Validate Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 18
  05
-  PASS  IsLeapYear test 2, ESMF_CalendarUTest.F90, line 1702
-  PASS  IsLeapYear test 6, ESMF_CalendarUTest.F90, line 1744
   PASS  Calendar equality of Mars vs. Earth Gregorian Calendars Test, ESMF_Calen
  darUTest.F90, line 1814
-  PASS  IsLeapYear test 3, ESMF_CalendarUTest.F90, line 1713
-  PASS  IsLeapYear test 7, ESMF_CalendarUTest.F90, line 1755
+  PASS  Convert Julian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 1551
   PASS  Calendar inequality of Mars vs. Earth Julian Day Calendars Test, ESMF_Ca
  lendarUTest.F90, line 1823
-  PASS  IsLeapYear test 4, ESMF_CalendarUTest.F90, line 1724
-  PASS  IsLeapYear test 8, ESMF_CalendarUTest.F90, line 1766
+  PASS  Convert Julian Day to Julian Date Test 2, ESMF_CalendarUTest.F90, line 1
+ 566
   PASS  Set Time at arbitrary Mars solar year 0, ESMF_CalendarUTest.F90, line 18
  32
-  PASS  IsLeapYear test 5, ESMF_CalendarUTest.F90, line 1734
-  PASS  Initialize Custom Kind Calendar for Mars Test, ESMF_CalendarUTest.F90, l
- ine 1783
+  PASS  Negative Leap Year Test, ESMF_CalendarUTest.F90, line 1579
+  PASS  Convert Julian to Julian Day Test 3, ESMF_CalendarUTest.F90, line 1594
   PASS  Set Time Interval (sols) for Mars Test, ESMF_CalendarUTest.F90, line 184
  1
-  PASS  IsLeapYear test 6, ESMF_CalendarUTest.F90, line 1744
-Calendar -------------------------------
-name = MarsCalendar
-calkindflag = Custom
-daysPerMonth = 
-monthsPerYear = 0
-secondsPerDay = 88775
-secondsPerYear = 59354263
-daysPerYear = 668
-daysPerYeardN = 5921
-daysPerYeardD = 10000
-end Calendar ---------------------------
-
-  PASS  Initialized Mars Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90
- , line 1794
-  PASS  IsLeapYear test 7, ESMF_CalendarUTest.F90, line 1755
+  PASS  Convert Julian to Julian Day Test 4, ESMF_CalendarUTest.F90, line 1609
   PASS  Mars Calendar Interval increment yy=0 by 40 sols Test, ESMF_CalendarUTes
  t.F90, line 1853
-  PASS  IsLeapYear test 8, ESMF_CalendarUTest.F90, line 1766
-  PASS  Validate Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 18
- 05
+  PASS  Initialize Modified Julian Day Kind Calendar Test, ESMF_CalendarUTest.F9
+ 0, line 1622
   PASS  Set Time Interval (solar year) for Mars Test, ESMF_CalendarUTest.F90, li
  ne 1862
-  PASS  Initialize Custom Kind Calendar for Mars Test, ESMF_CalendarUTest.F90, l
- ine 1783
-  PASS  Calendar equality of Mars vs. Earth Gregorian Calendars Test, ESMF_Calen
- darUTest.F90, line 1814
-Calendar -------------------------------
-name = MarsCalendar
-calkindflag = Custom
-daysPerMonth = 
-monthsPerYear = 0
-  PASS  Calendar inequality of Mars vs. Earth Julian Day Calendars Test, ESMF_Ca
- lendarUTest.F90, line 1823
+  PASS  Convert Gregorian to Modified Julian Day Test 1, ESMF_CalendarUTest.F90,
+  line 1636
   PASS  Mars Calendar Interval increment 1 solar year Test, ESMF_CalendarUTest.F
  90, line 1874
-secondsPerDay = 88775
-secondsPerYear = 59354263
-daysPerYear = 668
-daysPerYeardN = 5921
-daysPerYeardD = 10000
-end Calendar ---------------------------
-
-  PASS  Initialized Mars Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90
- , line 1794
+  PASS  Convert Modified Julian Day to Gregorian day-of-week Test, ESMF_Calendar
+ UTest.F90, line 1652
   PASS  Mars Calendar Time Get seconds, ESMF_CalendarUTest.F90, line 1883
-  PASS  Set Time at arbitrary Mars solar year 0, ESMF_CalendarUTest.F90, line 18
- 32
-  PASS  Validate Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 18
- 05
+  PASS  Convert Gregorian to Modified Julian Day Test 2 (i8), ESMF_CalendarUTest
+ .F90, line 1666
   PASS  Mars Calendar Time Get sols (solar days) and seconds, ESMF_CalendarUTest
  .F90, line 1895
-  PASS  Set Time Interval (sols) for Mars Test, ESMF_CalendarUTest.F90, line 184
- 1
-  PASS  Calendar equality of Mars vs. Earth Gregorian Calendars Test, ESMF_Calen
- darUTest.F90, line 1814
+  PASS  Convert Modified Julian Day to Gregorian Test 1, ESMF_CalendarUTest.F90,
+  line 1681
   PASS  Mars Calendar Time Get sols,h,m,s, ESMF_CalendarUTest.F90, line 1906
-  PASS  Calendar inequality of Mars vs. Earth Julian Day Calendars Test, ESMF_Ca
- lendarUTest.F90, line 1823
-  PASS  Mars Calendar Interval increment yy=0 by 40 sols Test, ESMF_CalendarUTes
- t.F90, line 1853
+  PASS  IsLeapYear test 1, ESMF_CalendarUTest.F90, line 1692
   PASS  Mars Calendar Time Get unbounded h,m, ESMF_CalendarUTest.F90, line 1917
-  PASS  Set Time at arbitrary Mars solar year 0, ESMF_CalendarUTest.F90, line 18
- 32
-  PASS  Set Time Interval (solar year) for Mars Test, ESMF_CalendarUTest.F90, li
- ne 1862
+  PASS  IsLeapYear test 2, ESMF_CalendarUTest.F90, line 1702
   PASS  Set Time Interval (1 solar year + 40 sols) for Mars Test, ESMF_CalendarU
  Test.F90, line 1928
-  PASS  Set Time Interval (sols) for Mars Test, ESMF_CalendarUTest.F90, line 184
- 1
-  PASS  Mars Calendar Interval increment 1 solar year Test, ESMF_CalendarUTest.F
- 90, line 1874
+  PASS  IsLeapYear test 3, ESMF_CalendarUTest.F90, line 1713
+  PASS  IsLeapYear test 4, ESMF_CalendarUTest.F90, line 1724
   PASS  Mars Calendar Interval decrement 1 solar year, 40 sols Test, ESMF_Calend
  arUTest.F90, line 1940
-  PASS  Mars Calendar Interval increment yy=0 by 40 sols Test, ESMF_CalendarUTes
- t.F90, line 1853
-  PASS  Mars Calendar Time Get seconds, ESMF_CalendarUTest.F90, line 1883
-  PASS  Set Time Interval (solar year) for Mars Test, ESMF_CalendarUTest.F90, li
- ne 1862
-  PASS  Mars Calendar Time Get sols (solar days) and seconds, ESMF_CalendarUTest
- .F90, line 1895
+  PASS  IsLeapYear test 5, ESMF_CalendarUTest.F90, line 1734
+  PASS  IsLeapYear test 6, ESMF_CalendarUTest.F90, line 1744
   PASS  Set Time at arbitrary Mars solar year 4 + 668.5921 sols, ESMF_CalendarUT
  est.F90, line 1950
-  PASS  Mars Calendar Time Get sols,h,m,s, ESMF_CalendarUTest.F90, line 1906
-  PASS  Mars Calendar Interval increment 1 solar year Test, ESMF_CalendarUTest.F
- 90, line 1874
+  PASS  IsLeapYear test 7, ESMF_CalendarUTest.F90, line 1755
 Time -----------------------------------
 BaseTime -------------------------------
 s = 296771315
@@ -1903,11 +1791,10 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = MarsCalendar
+  PASS  IsLeapYear test 8, ESMF_CalendarUTest.F90, line 1766
 calkindflag = Custom
 daysPerMonth = 
 monthsPerYear = 0
-  PASS  Mars Calendar Time Get seconds, ESMF_CalendarUTest.F90, line 1883
-  PASS  Mars Calendar Time Get unbounded h,m, ESMF_CalendarUTest.F90, line 1917
 secondsPerDay = 88775
 secondsPerYear = 59354263
 daysPerYear = 668
@@ -1918,47 +1805,38 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
+  PASS  Initialize Custom Kind Calendar for Mars Test, ESMF_CalendarUTest.F90, l
+ ine 1783
   PASS  Mars Calendar Time Get solar years, ESMF_CalendarUTest.F90, line 1960
-  PASS  Set Time Interval (1 solar year + 40 sols) for Mars Test, ESMF_CalendarU
- Test.F90, line 1928
-  PASS  Mars Calendar Time Get sols (solar days) and seconds, ESMF_CalendarUTest
- .F90, line 1895
+Calendar -------------------------------
+name = MarsCalendar
+calkindflag = Custom
+daysPerMonth = 
   PASS  Mars CalendarSet/Get for Mars calendar, ESMF_CalendarUTest.F90, line 197
  1
-  PASS  Mars Calendar Time Get sols,h,m,s, ESMF_CalendarUTest.F90, line 1906
-  PASS  Mars Calendar Interval decrement 1 solar year, 40 sols Test, ESMF_Calend
- arUTest.F90, line 1940
+monthsPerYear = 0
+secondsPerDay = 88775
+secondsPerYear = 59354263
+daysPerYear = 668
+daysPerYeardN = 5921
+daysPerYeardD = 10000
+end Calendar ---------------------------
+
+  PASS  Initialized Mars Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90
+ , line 1794
   PASS  Destroy Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 198
  1
-  PASS  Mars Calendar Time Get unbounded h,m, ESMF_CalendarUTest.F90, line 1917
-  PASS  Set Time Interval (1 solar year + 40 sols) for Mars Test, ESMF_CalendarU
- Test.F90, line 1928
-  PASS  Set Time at arbitrary Mars solar year 4 + 668.5921 sols, ESMF_CalendarUT
- est.F90, line 1950
+  PASS  Validate Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 18
+ 05
   PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 1994
-Time -----------------------------------
-BaseTime -------------------------------
-s = 296771315
-sN = 271
-sD = 400
+  PASS  Calendar equality of Mars vs. Earth Gregorian Calendars Test, ESMF_Calen
+ darUTest.F90, line 1814
 Calendar -------------------------------
 name = CustomCalendar
 calkindflag = Custom
-daysPerMonth = 10 20 30 40 50 60   PASS  Mars Calendar Interval decrement 1 solar year, 40 sols Test, ESMF_Calend
- arUTest.F90, line 1940
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = MarsCalendar
-calkindflag = Custom
-daysPerMonth = 
-monthsPerYear = 0
-secondsPerDay = 88775
-secondsPerYear = 59354263
-daysPerYear = 668
-daysPerYeardN = 5921
-daysPerYeardD = 10000
-55 45 35 25 15 5 
+daysPerMonth = 10 20 30 40 50 60 55 45 35   PASS  Calendar inequality of Mars vs. Earth Julian Day Calendars Test, ESMF_Ca
+ lendarUTest.F90, line 1823
+25 15 5 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 33696000
@@ -1967,21 +1845,243 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+  PASS  Initialized Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90, lin
+ e 2005
+  PASS  Set Time at arbitrary Mars solar year 0, ESMF_CalendarUTest.F90, line 18
+ 32
+  PASS  Validate Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2016
+  PASS  Set Time Interval (sols) for Mars Test, ESMF_CalendarUTest.F90, line 184
+ 1
+  PASS  Calendar equality of Custom vs. Earth Gregorian Calendars Test, ESMF_Cal
+ endarUTest.F90, line 2025
+  PASS  Calendar inequality of Custom vs. Earth Julian Day Calendars Test, ESMF_
+ CalendarUTest.F90, line 2034
+  PASS  Mars Calendar Interval increment yy=0 by 40 sols Test, ESMF_CalendarUTes
+ t.F90, line 1853
+  PASS  Set Time in Custom Calendar at 2/15/100, ESMF_CalendarUTest.F90, line 20
+ 44
+  PASS  Set Time Interval (solar year) for Mars Test, ESMF_CalendarUTest.F90, li
+ ne 1862
+  PASS  Get Time in Custom Calendar, should return 2/15/100, ESMF_CalendarUTest.
+ F90, line 2054
+  PASS  Mars Calendar Interval increment 1 solar year Test, ESMF_CalendarUTest.F
+ 90, line 1874
+  PASS  Custom Calendar Interval increment 5 days to end-of-month, ESMF_Calendar
+ UTest.F90, line 2067
+  PASS  Mars Calendar Time Get seconds, ESMF_CalendarUTest.F90, line 1883
+  PASS  Custom Calendar Interval increment 1 days to 1st-of-next-month, ESMF_Cal
+ endarUTest.F90, line 2080
+  PASS  Mars Calendar Time Get sols (solar days) and seconds, ESMF_CalendarUTest
+ .F90, line 1895
+  PASS  Mars Calendar Time Get sols,h,m,s, ESMF_CalendarUTest.F90, line 1906
+  PASS  Custom Calendar Interval decrement 1 month to 1st-of-previous-month, ESM
+ F_CalendarUTest.F90, line 2093
+  PASS  Mars Calendar Time Get unbounded h,m, ESMF_CalendarUTest.F90, line 1917
+  PASS  Custom Calendar Interval increment 2 months, 40 days to 1st-of-5th-month
+ , ESMF_CalendarUTest.F90, line 2106
+  PASS  Set Time Interval (1 solar year + 40 sols) for Mars Test, ESMF_CalendarU
+ Test.F90, line 1928
+  PASS  Custom Calendar Interval decrement 1 year, 1 month, 31 days to end-of-2n
+ d-month, ESMF_CalendarUTest.F90, line 2119
+  PASS  Mars Calendar Interval decrement 1 solar year, 40 sols Test, ESMF_Calend
+ arUTest.F90, line 1940
+  PASS  Custom Calendar Interval decrement 1 month, to end-of-1st-month, ESMF_Ca
+ lendarUTest.F90, line 2132
+  PASS  Custom Calendar Interval increment 1 month, ESMF_CalendarUTest.F90, line
+  2145
+  PASS  Set Time at arbitrary Mars solar year 4 + 668.5921 sols, ESMF_CalendarUT
+ est.F90, line 1950
+Time -----------------------------------
+BaseTime -------------------------------
+s = 296771315
+sN = 271
+sD = 400
+  PASS  Custom Calendar Interval increment 3 months, 40 days, ESMF_CalendarUTest
+ .F90, line 2158
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = MarsCalendar
+calkindflag = Custom
+daysPerMonth = 
+monthsPerYear = 0
+secondsPerDay = 88775
+secondsPerYear = 59354263
+daysPerYear = 668
+daysPerYeardN = 5921
+daysPerYeardD = 10000
 end Calendar ---------------------------
 
 timeZone = 0
 end Time -------------------------------
 
   PASS  Mars Calendar Time Get solar years, ESMF_CalendarUTest.F90, line 1960
-  PASS  Initialized Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90, lin
- e 2005
-  PASS  Set Time at arbitrary Mars solar year 4 + 668.5921 sols, ESMF_CalendarUT
- est.F90, line 1950
-  PASS  Validate Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2016
+  PASS  Custom Calendar Interval increment 3 months, ESMF_CalendarUTest.F90, lin
+ e 2171
   PASS  Mars CalendarSet/Get for Mars calendar, ESMF_CalendarUTest.F90, line 197
  1
+  PASS  Test CalendarSet() daysPerMonth array for Custom calendar, ESMF_Calendar
+ UTest.F90, line 2180
+  PASS  Destroy Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 198
+ 1
+Calendar -------------------------------
+name = CustomCalendar
+calkindflag = Custom
+daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31104000
+daysPerYear = 360
+  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 1994
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+  PASS  Destroy Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2191
+Calendar -------------------------------
+name = CustomCalendar
+calkindflag = Custom
+daysPerMonth = 10 20 30 40 50 60 55 45 35 25 15 5   Ending Test, file ESMF_CalendarUTest.F90, line 2207
+
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 33696000
+daysPerYear = 390
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+  PASS  Initialized Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90, lin
+ e 2005
+  PASS  Validate Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2016
   PASS  Calendar equality of Custom vs. Earth Gregorian Calendars Test, ESMF_Cal
  endarUTest.F90, line 2025
+  PASS  Calendar inequality of Custom vs. Earth Julian Day Calendars Test, ESMF_
+ CalendarUTest.F90, line 2034
+  PASS  Set Time in Custom Calendar at 2/15/100, ESMF_CalendarUTest.F90, line 20
+ 44
+  PASS  Get Time in Custom Calendar, should return 2/15/100, ESMF_CalendarUTest.
+ F90, line 2054
+  PASS  Custom Calendar Interval increment 5 days to end-of-month, ESMF_Calendar
+ UTest.F90, line 2067
+  PASS  Custom Calendar Interval increment 1 days to 1st-of-next-month, ESMF_Cal
+ endarUTest.F90, line 2080
+  PASS  Custom Calendar Interval decrement 1 month to 1st-of-previous-month, ESM
+ F_CalendarUTest.F90, line 2093
+  PASS  Custom Calendar Interval increment 2 months, 40 days to 1st-of-5th-month
+ , ESMF_CalendarUTest.F90, line 2106
+  PASS  Custom Calendar Interval decrement 1 year, 1 month, 31 days to end-of-2n
+ d-month, ESMF_CalendarUTest.F90, line 2119
+  PASS  Custom Calendar Interval decrement 1 month, to end-of-1st-month, ESMF_Ca
+ lendarUTest.F90, line 2132
+  PASS  Total days 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Cale
+ ndarUTest.F90, line 1405
+  PASS  Custom Calendar Interval increment 1 month, ESMF_CalendarUTest.F90, line
+  2145
+  PASS  Total Counts 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Ca
+ lendarUTest.F90, line 1414
+  PASS  Custom Calendar Interval increment 3 months, 40 days, ESMF_CalendarUTest
+ .F90, line 2158
+  PASS  Convert Gregorian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 142
+ 8
+  PASS  Custom Calendar Interval increment 3 months, ESMF_CalendarUTest.F90, lin
+ e 2171
+  PASS  Convert Gregorian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 144
+ 3
+  PASS  Test CalendarSet() daysPerMonth array for Custom calendar, ESMF_Calendar
+ UTest.F90, line 2180
+  PASS  Create Julian Kind Calendar Test, ESMF_CalendarUTest.F90, line 1453
+Calendar -------------------------------
+name = CustomCalendar
+calkindflag = Custom
+daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31104000
+daysPerYear = 360
+daysPerYeardN = 0
+daysPerYeardD = 1
+  PASS  Convert Julian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 1466
+end Calendar ---------------------------
+
+  PASS  Destroy Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2191
+  PASS  Julian Time Get day of the week test, ESMF_CalendarUTest.F90, line 1479
+  Ending Test, file ESMF_CalendarUTest.F90, line 2207
+  PASS  Convert Julian Day to Julian Date Test 1, ESMF_CalendarUTest.F90, line 1
+ 490
+  PASS  Convert Julian Date to Gregorian Date Test 1, ESMF_CalendarUTest.F90, li
+ ne 1504
+  PASS  Convert Gregorian Date to Proleptic Julian Date Test 1, ESMF_CalendarUTe
+ st.F90, line 1521
+  PASS  Gregorian Time Get day of the week test, ESMF_CalendarUTest.F90, line 15
+ 37
+  PASS  Convert Julian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 1551
+  PASS  Convert Julian Day to Julian Date Test 2, ESMF_CalendarUTest.F90, line 1
+ 566
+  PASS  Negative Leap Year Test, ESMF_CalendarUTest.F90, line 1579
+  PASS  Convert Julian to Julian Day Test 3, ESMF_CalendarUTest.F90, line 1594
+  PASS  Convert Julian to Julian Day Test 4, ESMF_CalendarUTest.F90, line 1609
+  PASS  Initialize Modified Julian Day Kind Calendar Test, ESMF_CalendarUTest.F9
+ 0, line 1622
+  PASS  Convert Gregorian to Modified Julian Day Test 1, ESMF_CalendarUTest.F90,
+  line 1636
+  PASS  Convert Modified Julian Day to Gregorian day-of-week Test, ESMF_Calendar
+ UTest.F90, line 1652
+  PASS  Convert Gregorian to Modified Julian Day Test 2 (i8), ESMF_CalendarUTest
+ .F90, line 1666
+  PASS  Convert Modified Julian Day to Gregorian Test 1, ESMF_CalendarUTest.F90,
+  line 1681
+  PASS  IsLeapYear test 1, ESMF_CalendarUTest.F90, line 1692
+  PASS  IsLeapYear test 2, ESMF_CalendarUTest.F90, line 1702
+  PASS  IsLeapYear test 3, ESMF_CalendarUTest.F90, line 1713
+  PASS  IsLeapYear test 4, ESMF_CalendarUTest.F90, line 1724
+  PASS  IsLeapYear test 5, ESMF_CalendarUTest.F90, line 1734
+  PASS  IsLeapYear test 6, ESMF_CalendarUTest.F90, line 1744
+  PASS  IsLeapYear test 7, ESMF_CalendarUTest.F90, line 1755
+  PASS  IsLeapYear test 8, ESMF_CalendarUTest.F90, line 1766
+  PASS  Initialize Custom Kind Calendar for Mars Test, ESMF_CalendarUTest.F90, l
+ ine 1783
+Calendar -------------------------------
+name = MarsCalendar
+calkindflag = Custom
+daysPerMonth = 
+monthsPerYear = 0
+secondsPerDay = 88775
+secondsPerYear = 59354263
+daysPerYear = 668
+daysPerYeardN = 5921
+daysPerYeardD = 10000
+end Calendar ---------------------------
+
+  PASS  Initialized Mars Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90
+ , line 1794
+  PASS  Validate Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 18
+ 05
+  PASS  Calendar equality of Mars vs. Earth Gregorian Calendars Test, ESMF_Calen
+ darUTest.F90, line 1814
+  PASS  Calendar inequality of Mars vs. Earth Julian Day Calendars Test, ESMF_Ca
+ lendarUTest.F90, line 1823
+  PASS  Set Time at arbitrary Mars solar year 0, ESMF_CalendarUTest.F90, line 18
+ 32
+  PASS  Set Time Interval (sols) for Mars Test, ESMF_CalendarUTest.F90, line 184
+ 1
+  PASS  Mars Calendar Interval increment yy=0 by 40 sols Test, ESMF_CalendarUTes
+ t.F90, line 1853
+  PASS  Set Time Interval (solar year) for Mars Test, ESMF_CalendarUTest.F90, li
+ ne 1862
+  PASS  Mars Calendar Interval increment 1 solar year Test, ESMF_CalendarUTest.F
+ 90, line 1874
+  PASS  Mars Calendar Time Get seconds, ESMF_CalendarUTest.F90, line 1883
+  PASS  Mars Calendar Time Get sols (solar days) and seconds, ESMF_CalendarUTest
+ .F90, line 1895
+  PASS  Mars Calendar Time Get sols,h,m,s, ESMF_CalendarUTest.F90, line 1906
+  PASS  Mars Calendar Time Get unbounded h,m, ESMF_CalendarUTest.F90, line 1917
+  PASS  Set Time Interval (1 solar year + 40 sols) for Mars Test, ESMF_CalendarU
+ Test.F90, line 1928
+  PASS  Mars Calendar Interval decrement 1 solar year, 40 sols Test, ESMF_Calend
+ arUTest.F90, line 1940
+  PASS  Set Time at arbitrary Mars solar year 4 + 668.5921 sols, ESMF_CalendarUT
+ est.F90, line 1950
 Time -----------------------------------
 BaseTime -------------------------------
 s = 296771315
@@ -1997,10 +2097,6 @@ monthsPerYear = 0
 secondsPerDay = 88775
 secondsPerYear = 59354263
 daysPerYear = 668
-  PASS  Destroy Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 198
- 1
-  PASS  Calendar inequality of Custom vs. Earth Julian Day Calendars Test, ESMF_
- CalendarUTest.F90, line 2034
 daysPerYeardN = 5921
 daysPerYeardD = 10000
 end Calendar ---------------------------
@@ -2009,19 +2105,17 @@ timeZone = 0
 end Time -------------------------------
 
   PASS  Mars Calendar Time Get solar years, ESMF_CalendarUTest.F90, line 1960
-  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 1994
-  PASS  Set Time in Custom Calendar at 2/15/100, ESMF_CalendarUTest.F90, line 20
- 44
   PASS  Mars CalendarSet/Get for Mars calendar, ESMF_CalendarUTest.F90, line 197
  1
+  PASS  Destroy Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 198
+ 1
+  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 1994
 Calendar -------------------------------
 name = CustomCalendar
 calkindflag = Custom
 daysPerMonth = 10 20 30 40 50 60 55 45 35 25 15 5 
 monthsPerYear = 12
 secondsPerDay = 86400
-  PASS  Get Time in Custom Calendar, should return 2/15/100, ESMF_CalendarUTest.
- F90, line 2054
 secondsPerYear = 33696000
 daysPerYear = 390
 daysPerYeardN = 0
@@ -2029,87 +2123,54 @@ daysPerYeardD = 1
 end Calendar ---------------------------
 
   PASS  Initialized Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90, lin
-  PASS  Destroy Mars Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 198
- 1
  e 2005
-  PASS  Custom Calendar Interval increment 5 days to end-of-month, ESMF_Calendar
- UTest.F90, line 2067
-  PASS  Initialize Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 1994
   PASS  Validate Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2016
-Calendar -------------------------------
-name = CustomCalendar
-calkindflag = Custom
-daysPerMonth = 10 20 30   PASS  Calendar equality of Custom vs. Earth Gregorian Calendars Test, ESMF_Cal
- endarUTest.F90, line 2025
-  PASS  Custom Calendar Interval increment 1 days to 1st-of-next-month, ESMF_Cal
- endarUTest.F90, line 2080
-40 50 60 55 45 35 25 15 5 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 33696000
-daysPerYear = 390
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-  PASS  Initialized Custom Kind Calendar Print Test, ESMF_CalendarUTest.F90, lin
-  PASS  Calendar inequality of Custom vs. Earth Julian Day Calendars Test, ESMF_
- CalendarUTest.F90, line 2034
- e 2005
-  PASS  Custom Calendar Interval decrement 1 month to 1st-of-previous-month, ESM
- F_CalendarUTest.F90, line 2093
-  PASS  Set Time in Custom Calendar at 2/15/100, ESMF_CalendarUTest.F90, line 20
- 44
-  PASS  Validate Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2016
-  PASS  Custom Calendar Interval increment 2 months, 40 days to 1st-of-5th-month
- , ESMF_CalendarUTest.F90, line 2106
   PASS  Calendar equality of Custom vs. Earth Gregorian Calendars Test, ESMF_Cal
  endarUTest.F90, line 2025
-  PASS  Get Time in Custom Calendar, should return 2/15/100, ESMF_CalendarUTest.
- F90, line 2054
   PASS  Calendar inequality of Custom vs. Earth Julian Day Calendars Test, ESMF_
  CalendarUTest.F90, line 2034
-  PASS  Custom Calendar Interval decrement 1 year, 1 month, 31 days to end-of-2n
- d-month, ESMF_CalendarUTest.F90, line 2119
-  PASS  Custom Calendar Interval increment 5 days to end-of-month, ESMF_Calendar
- UTest.F90, line 2067
   PASS  Set Time in Custom Calendar at 2/15/100, ESMF_CalendarUTest.F90, line 20
  44
-  PASS  Custom Calendar Interval decrement 1 month, to end-of-1st-month, ESMF_Ca
- lendarUTest.F90, line 2132
-  PASS  Custom Calendar Interval increment 1 days to 1st-of-next-month, ESMF_Cal
- endarUTest.F90, line 2080
   PASS  Get Time in Custom Calendar, should return 2/15/100, ESMF_CalendarUTest.
  F90, line 2054
-  PASS  Custom Calendar Interval decrement 1 month to 1st-of-previous-month, ESM
- F_CalendarUTest.F90, line 2093
-  PASS  Custom Calendar Interval increment 1 month, ESMF_CalendarUTest.F90, line
-  2145
   PASS  Custom Calendar Interval increment 5 days to end-of-month, ESMF_Calendar
  UTest.F90, line 2067
-  PASS  Custom Calendar Interval increment 2 months, 40 days to 1st-of-5th-month
- , ESMF_CalendarUTest.F90, line 2106
-  PASS  Custom Calendar Interval increment 3 months, 40 days, ESMF_CalendarUTest
- .F90, line 2158
   PASS  Custom Calendar Interval increment 1 days to 1st-of-next-month, ESMF_Cal
  endarUTest.F90, line 2080
-  PASS  Custom Calendar Interval increment 3 months, ESMF_CalendarUTest.F90, lin
- e 2171
-  PASS  Custom Calendar Interval decrement 1 year, 1 month, 31 days to end-of-2n
- d-month, ESMF_CalendarUTest.F90, line 2119
+  PASS  Total days 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Cale
+ ndarUTest.F90, line 1405
   PASS  Custom Calendar Interval decrement 1 month to 1st-of-previous-month, ESM
  F_CalendarUTest.F90, line 2093
-  PASS  Custom Calendar Interval decrement 1 month, to end-of-1st-month, ESMF_Ca
- lendarUTest.F90, line 2132
-  PASS  Test CalendarSet() daysPerMonth array for Custom calendar, ESMF_Calendar
- UTest.F90, line 2180
   PASS  Custom Calendar Interval increment 2 months, 40 days to 1st-of-5th-month
  , ESMF_CalendarUTest.F90, line 2106
+  PASS  Total Counts 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Ca
+ lendarUTest.F90, line 1414
+  PASS  Custom Calendar Interval decrement 1 year, 1 month, 31 days to end-of-2n
+ d-month, ESMF_CalendarUTest.F90, line 2119
+  PASS  Convert Gregorian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 142
+ 8
+  PASS  Custom Calendar Interval decrement 1 month, to end-of-1st-month, ESMF_Ca
+ lendarUTest.F90, line 2132
+  PASS  Convert Gregorian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 144
+ 3
+  PASS  Custom Calendar Interval increment 1 month, ESMF_CalendarUTest.F90, line
+  2145
+  PASS  Create Julian Kind Calendar Test, ESMF_CalendarUTest.F90, line 1453
+  PASS  Convert Julian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 1466
+  PASS  Custom Calendar Interval increment 3 months, 40 days, ESMF_CalendarUTest
+ .F90, line 2158
+  PASS  Custom Calendar Interval increment 3 months, ESMF_CalendarUTest.F90, lin
+ e 2171
+  PASS  Julian Time Get day of the week test, ESMF_CalendarUTest.F90, line 1479
+  PASS  Test CalendarSet() daysPerMonth array for Custom calendar, ESMF_Calendar
+ UTest.F90, line 2180
+  PASS  Convert Julian Day to Julian Date Test 1, ESMF_CalendarUTest.F90, line 1
+ 490
 Calendar -------------------------------
 name = CustomCalendar
 calkindflag = Custom
-daysPerMonth = 30 30   PASS  Custom Calendar Interval increment 1 month, ESMF_CalendarUTest.F90, line
-  2145
+daysPerMonth = 30 30   PASS  Convert Julian Date to Gregorian Date Test 1, ESMF_CalendarUTest.F90, li
+ ne 1504
 30 30 30 30 30 30 30 30 30 30 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -2119,71 +2180,10 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-  PASS  Custom Calendar Interval decrement 1 year, 1 month, 31 days to end-of-2n
- d-month, ESMF_CalendarUTest.F90, line 2119
   PASS  Destroy Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2191
-  PASS  Custom Calendar Interval increment 3 months, 40 days, ESMF_CalendarUTest
- .F90, line 2158
-  Ending Test, file ESMF_CalendarUTest.F90, line 2207
-  PASS  Custom Calendar Interval decrement 1 month, to end-of-1st-month, ESMF_Ca
- lendarUTest.F90, line 2132
-  PASS  Custom Calendar Interval increment 3 months, ESMF_CalendarUTest.F90, lin
- e 2171
-  PASS  Custom Calendar Interval increment 1 month, ESMF_CalendarUTest.F90, line
-  2145
-  PASS  Test CalendarSet() daysPerMonth array for Custom calendar, ESMF_Calendar
- UTest.F90, line 2180
-  PASS  Custom Calendar Interval increment 3 months, 40 days, ESMF_CalendarUTest
- .F90, line 2158
-Calendar -------------------------------
-name = CustomCalendar
-calkindflag = Custom
-daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31104000
-daysPerYear = 360
-daysPerYeardN = 0
-  PASS  Custom Calendar Interval increment 3 months, ESMF_CalendarUTest.F90, lin
- e 2171
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-  PASS  Destroy Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2191
-  PASS  Test CalendarSet() daysPerMonth array for Custom calendar, ESMF_Calendar
- UTest.F90, line 2180
-  Ending Test, file ESMF_CalendarUTest.F90, line 2207
-Calendar -------------------------------
-name = CustomCalendar
-calkindflag = Custom
-daysPerMonth = 30 30 30 30 30 30 30 30 30 30 30 30 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31104000
-daysPerYear = 360
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-  PASS  Destroy Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2191
-  Ending Test, file ESMF_CalendarUTest.F90, line 2207
-  PASS  Total days 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Cale
- ndarUTest.F90, line 1405
-  PASS  Total Counts 72000 from -100 to +100 years in 360 Day Cal. Test, ESMF_Ca
- lendarUTest.F90, line 1414
-  PASS  Convert Gregorian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 142
- 8
-  PASS  Convert Gregorian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 144
- 3
-  PASS  Create Julian Kind Calendar Test, ESMF_CalendarUTest.F90, line 1453
-  PASS  Convert Julian to Julian Day Test 1, ESMF_CalendarUTest.F90, line 1466
-  PASS  Julian Time Get day of the week test, ESMF_CalendarUTest.F90, line 1479
-  PASS  Convert Julian Day to Julian Date Test 1, ESMF_CalendarUTest.F90, line 1
- 490
-  PASS  Convert Julian Date to Gregorian Date Test 1, ESMF_CalendarUTest.F90, li
- ne 1504
   PASS  Convert Gregorian Date to Proleptic Julian Date Test 1, ESMF_CalendarUTe
  st.F90, line 1521
+  Ending Test, file ESMF_CalendarUTest.F90, line 2207
   PASS  Gregorian Time Get day of the week test, ESMF_CalendarUTest.F90, line 15
  37
   PASS  Convert Julian to Julian Day Test 2, ESMF_CalendarUTest.F90, line 1551
@@ -2338,7 +2338,7 @@ end Calendar ---------------------------
 
   PASS  Destroy Custom Kind Calendar Test, ESMF_CalendarUTest.F90, line 2191
   Ending Test, file ESMF_CalendarUTest.F90, line 2207
-  PET           2  Test Elapsed Time    556.397000000000       msec.
-  PET           1  Test Elapsed Time    556.486000000000       msec.
-  PET           3  Test Elapsed Time    556.469000000000       msec.
-  PET           0  Test Elapsed Time    556.722000000000       msec.
+  PET           0  Test Elapsed Time    556.632000000000       msec.
+  PET           2  Test Elapsed Time    556.538000000000       msec.
+  PET           1  Test Elapsed Time    556.715000000000       msec.
+  PET           3  Test Elapsed Time    556.935000000000       msec.
