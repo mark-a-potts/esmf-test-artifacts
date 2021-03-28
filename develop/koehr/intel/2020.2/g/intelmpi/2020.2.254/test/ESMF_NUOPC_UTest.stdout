@@ -80,20 +80,19 @@
  NUOPC_DriverPrint for PET:           1
    Model, Mediator, and Driver components, in the order
    that they were added to the Driver:
-           1 :  testComp1
  NUOPC_DriverPrint for PET:           2
    Model, Mediator, and Driver components, in the order
    that they were added to the Driver:
            1 :  testComp1
-           2 :  testComp2
-   Connector components, in the order
-   that they were added to the Driver:
  NUOPC_DriverPrint for PET:           3
    Model, Mediator, and Driver components, in the order
    that they were added to the Driver:
            1 :  testComp1
            2 :  testComp2
    Connector components, in the order
+           1 :  testComp1
+           2 :  testComp2
+   Connector components, in the order
    that they were added to the Driver:
            1 :  testComp1-TO-testComp2
            1 :  testComp1
@@ -105,21 +104,21 @@
    Connector components, in the order
    that they were added to the Driver:
            1 :  testComp1-TO-testComp2
-NUOPC_RunSequenceArrayPrint: element     1 out of      1
+   that they were added to the Driver:
            1 :  testComp1-TO-testComp2
 NUOPC_RunSequenceArrayPrint: element     1 out of      1
 NUOPC_RunSequenceArrayPrint: element     1 out of      1
 runSeq::
-runSeq::
- runElementPrint:      1     2     1
-runSeq::
- runElementPrint:      1     2     1
- runElementPrint:      2     1     1
- runElementPrint:      1    -1     1
 NUOPC_RunSequenceArrayPrint: element     1 out of      1
 runSeq::
  runElementPrint:      1     2     1
  runElementPrint:      2     1     1
+NUOPC_RunSequenceArrayPrint: element     1 out of      1
+runSeq::
+ runElementPrint:      1     2     1
+runSeq::
+ runElementPrint:      1     2     1
+ runElementPrint:      2     1     1
  runElementPrint:      1    -1     1
  runElementPrint:      2    -1     1
  runElementPrint:     -1    -1     0
@@ -129,6 +128,10 @@ runSeq::
  runElementPrint:      2    -1     1
  runElementPrint:     -1    -1     0
 ::
+ runElementPrint:      1    -1     1
+ runElementPrint:      2    -1     1
+ runElementPrint:     -1    -1     0
+::
   PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
  runElementPrint:      2     1     1
  runElementPrint:      1    -1     1
@@ -136,11 +139,8 @@ runSeq::
  runElementPrint:     -1    -1     0
 ::
   PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
- runElementPrint:      2    -1     1
- runElementPrint:     -1    -1     0
 ::
   PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
-::
   PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 343
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 343
@@ -263,13 +263,13 @@ runSeq::
   PASS  NUOPC_AdjustClock() - adjust clockB - Test, ESMF_NUOPC_UTest.F90, line 5
  26
 Printing currTime to stdout:    0  1  1  0  0  0   0
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 535
 Printing currTime to stdout:    0  1  1  0  0  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 535
 Printing currTime to stdout:    0  1  1  0  0  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 535
 Printing currTime to stdout:    0  1  1  0  0  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 535
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 535
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 544
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 544
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 544
@@ -547,6 +547,7 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  FinalizePhaseMap
  HierarchyProtocol
  IPDvX
+ InitializeDataComplete = false
  CompLabel = _uninitialized
  Diagnostic = 0
  FinalizePhaseMap
@@ -554,17 +555,11 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  IPDvX
  InitializeDataComplete = false
  InitializeDataProgress = false
- InitializePhaseMap
  CompLabel = _uninitialized
  Diagnostic = 0
  FinalizePhaseMap
  HierarchyProtocol
  IPDvX
- InitializeDataComplete = false
- InitializeDataProgress = false
- InitializePhaseMap
- InternalFinalizePhaseMap
- InternalInitializePhaseMap
  InitializeDataComplete = false
  InitializeDataProgress = false
  InitializePhaseMap
@@ -572,12 +567,6 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  InternalInitializePhaseMap
  InternalRunPhaseMap
  Kind = Model
- NestingGeneration =            0
- Nestling =            0
- Profiling = 0
- RunPhaseMap
- Verbosity = 0
- myAttribute = test
  CompLabel = _uninitialized
  Diagnostic = 0
  FinalizePhaseMap
@@ -595,8 +584,8 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  Profiling = 0
  RunPhaseMap
  Verbosity = 0
- myAttribute = test
-  PASS  NUOPC_FreeFormatPrint() for attrFF Test, ESMF_NUOPC_UTest.F90, line 913
+ InitializeDataProgress = false
+ InitializePhaseMap
  InternalFinalizePhaseMap
  InternalInitializePhaseMap
  InternalRunPhaseMap
@@ -608,6 +597,9 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  Verbosity = 0
  myAttribute = test
   PASS  NUOPC_FreeFormatPrint() for attrFF Test, ESMF_NUOPC_UTest.F90, line 913
+ InitializePhaseMap
+ InternalFinalizePhaseMap
+ InternalInitializePhaseMap
  InternalRunPhaseMap
  Kind = Model
  NestingGeneration =            0
@@ -617,6 +609,14 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  Verbosity = 0
  myAttribute = test
   PASS  NUOPC_FreeFormatPrint() for attrFF Test, ESMF_NUOPC_UTest.F90, line 913
+ NestingGeneration =            0
+ Nestling =            0
+ Profiling = 0
+ RunPhaseMap
+ Verbosity = 0
+ myAttribute = test
+  PASS  NUOPC_FreeFormatPrint() for attrFF Test, ESMF_NUOPC_UTest.F90, line 913
+ myAttribute = test
   PASS  NUOPC_FreeFormatPrint() for attrFF Test, ESMF_NUOPC_UTest.F90, line 913
   PASS  NUOPC_CompAttributeIngest() for GridComp w/o addFlag Test, ESMF_NUOPC_UT
  est.F90, line 921
@@ -826,7 +826,7 @@ Printing time to stdout:    0  1  1  0  0  0   0
   Ending Test, file ESMF_NUOPC_UTest.F90, line 1270
   Ending Test, file ESMF_NUOPC_UTest.F90, line 1270
   Ending Test, file ESMF_NUOPC_UTest.F90, line 1270
-  PET           0  Test Elapsed Time    189.293000000000       msec.
-  PET           1  Test Elapsed Time    192.030000000000       msec.
-  PET           3  Test Elapsed Time    191.810000000000       msec.
-  PET           2  Test Elapsed Time    191.992000000000       msec.
+  PET           0  Test Elapsed Time    189.443000000000       msec.
+  PET           1  Test Elapsed Time    192.096000000000       msec.
+  PET           2  Test Elapsed Time    192.082000000000       msec.
+  PET           3  Test Elapsed Time    191.891000000000       msec.
