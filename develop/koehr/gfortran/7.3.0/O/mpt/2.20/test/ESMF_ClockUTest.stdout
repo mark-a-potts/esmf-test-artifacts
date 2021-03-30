@@ -248,6 +248,11 @@ Calendar -------------------------------
   PASS  Clock Initialization Test with uninitialized startTime, ESMF_ClockUTest.F90, line 813
   PASS  Set Start Time Initialization Test, ESMF_ClockUTest.F90, line 836
 Calendar -------------------------------
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+name = Gregorian
+calkindflag = Gregorian
   PASS  Get Uninitialized StopTime Year Test, ESMF_ClockUTest.F90, line 704
   PASS  Stop Time Initialization to illegitimate month (0) Test, ESMF_ClockUTest.F90, line 715
   PASS  Stop Time Initialization to illegitimate month (13) Test, ESMF_ClockUTest.F90, line 726
@@ -263,19 +268,18 @@ Calendar -------------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -285,6 +289,8 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
@@ -300,12 +306,7 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
+  PASS  Calendar Print Test, ESMF_ClockUTest.F90, line 848
   PASS  Calendar Print Test, ESMF_ClockUTest.F90, line 848
 TimeInterval ---------------------------
 BaseTime -------------------------------
@@ -316,6 +317,10 @@ sD = 1
 TimeInterval ---------------------------
 BaseTime -------------------------------
 s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
   PASS  Calendar Print Test, ESMF_ClockUTest.F90, line 848
 TimeInterval ---------------------------
 BaseTime -------------------------------
@@ -327,7 +332,11 @@ end BaseTime ---------------------------
 yy    = 0
 mm    = 0
 d     = 0
-  PASS  Calendar Print Test, ESMF_ClockUTest.F90, line 848
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
 TimeInterval ---------------------------
 BaseTime -------------------------------
 s = 3600
@@ -335,6 +344,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+yy    = 0
+mm    = 0
+d     = 0
 yy    = 0
 mm    = 0
 d     = 0
@@ -342,25 +354,11 @@ d_r8  = 0
 Calendar = 
 Calendar -------------------------------
 name = InternalGregorian002
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
 d_r8  = 0
 Calendar = 
 Calendar -------------------------------
 name = InternalGregorian002
 calkindflag = Gregorian
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-Calendar = 
 d_r8  = 0
 Calendar = 
 Calendar -------------------------------
@@ -370,11 +368,28 @@ calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
+d_r8  = 0
+Calendar = 
+Calendar -------------------------------
+name = InternalGregorian002
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
+
+end TimeInterval -----------------------
 
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
@@ -387,15 +402,6 @@ end Calendar ---------------------------
 
 end TimeInterval -----------------------
 
-Calendar -------------------------------
-name = InternalGregorian002
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -403,6 +409,8 @@ daysPerYeardD = 1
 end Calendar ---------------------------
 
 end TimeInterval -----------------------
+
+end Calendar ---------------------------
 
 end TimeInterval -----------------------
 
@@ -419,24 +427,6 @@ BaseTime -------------------------------
 s = 211914384327
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-end TimeInterval -----------------------
-
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
   PASS  Time Interval Print Test, ESMF_ClockUTest.F90, line 857
 Time -----------------------------------
 BaseTime -------------------------------
@@ -457,6 +447,32 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -469,25 +485,6 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -500,10 +497,13 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
+daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = 0
+end Time -------------------------------
+
 end Time -------------------------------
 
   PASS  Start Time Print Test, ESMF_ClockUTest.F90, line 866
@@ -533,8 +533,36 @@ BaseTime -------------------------------
 s = 211914403200
 sN = 0
 sD = 1
+  PASS  Start Time Print Test, ESMF_ClockUTest.F90, line 866
+  PASS  Clock Initialization Test, ESMF_ClockUTest.F90, line 876
+  PASS  Clock Initialization Test, ESMF_ClockUTest.F90, line 886
+  PASS  Set Clock Name Test, ESMF_ClockUTest.F90, line 895
+  PASS  Create Clock copy Test, ESMF_ClockUTest.F90, line 904
+  PASS  Clock Assignment Test, ESMF_ClockUTest.F90, line 918
+  PASS  Clocks Equal Test, ESMF_ClockUTest.F90, line 928
+  PASS  Clocks Not Equal Test, ESMF_ClockUTest.F90, line 938
+  PASS  Clocks Not Equal Test, ESMF_ClockUTest.F90, line 948
+  PASS  Clocks Equal Test, ESMF_ClockUTest.F90, line 958
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914403200
+sN = 0
+sD = 1
 end BaseTime ---------------------------
 
+s = 211914403200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
   PASS  Start Time Print Test, ESMF_ClockUTest.F90, line 866
   PASS  Clock Initialization Test, ESMF_ClockUTest.F90, line 876
   PASS  Clock Initialization Test, ESMF_ClockUTest.F90, line 886
@@ -553,40 +581,9 @@ sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
-s = 211914403200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-  PASS  Start Time Print Test, ESMF_ClockUTest.F90, line 866
-  PASS  Clock Initialization Test, ESMF_ClockUTest.F90, line 876
-  PASS  Clock Initialization Test, ESMF_ClockUTest.F90, line 886
-  PASS  Set Clock Name Test, ESMF_ClockUTest.F90, line 895
-  PASS  Create Clock copy Test, ESMF_ClockUTest.F90, line 904
-  PASS  Clock Assignment Test, ESMF_ClockUTest.F90, line 918
-  PASS  Clocks Equal Test, ESMF_ClockUTest.F90, line 928
-  PASS  Clocks Not Equal Test, ESMF_ClockUTest.F90, line 938
-  PASS  Clocks Not Equal Test, ESMF_ClockUTest.F90, line 948
-  PASS  Clocks Equal Test, ESMF_ClockUTest.F90, line 958
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914403200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
@@ -594,8 +591,6 @@ monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -620,101 +615,6 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
-  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
-  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
-Clock ----------------------------------
-  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
-Clock ----------------------------------
-name = Clock 1
-timeStep = 
-TimeInterval ---------------------------
-Clock ----------------------------------
-name = Clock 1
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-Clock ----------------------------------
-name = Clock 1
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-name = Clock 1
-timeStep = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-Calendar = 
-Calendar -------------------------------
-BaseTime -------------------------------
-s = 3600
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-Calendar = 
-Calendar -------------------------------
-name = InternalGregorian002
-calkindflag = Gregorian
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-Calendar = 
-Calendar -------------------------------
-name = InternalGregorian002
-calkindflag = Gregorian
-mm    = 0
-d     = 0
-d_r8  = 0
-Calendar = 
-Calendar -------------------------------
-name = InternalGregorian002
-calkindflag = Gregorian
-name = InternalGregorian002
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -724,8 +624,108 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-end TimeInterval -----------------------
+timeZone = 0
+end Time -------------------------------
 
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
+Clock ----------------------------------
+  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
+Clock ----------------------------------
+  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
+Clock ----------------------------------
+name = Clock 1
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+  PASS  Stop Time Print Test, ESMF_ClockUTest.F90, line 968
+Clock ----------------------------------
+name = Clock 1
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+name = Clock 1
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+Calendar = 
+Calendar -------------------------------
+name = InternalGregorian002
+name = Clock 1
+timeStep = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 3600
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+Calendar = 
+Calendar -------------------------------
+name = InternalGregorian002
+calkindflag = Gregorian
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+Calendar = 
+Calendar -------------------------------
+name = InternalGregorian002
+calkindflag = Gregorian
+d     = 0
+d_r8  = 0
+Calendar = 
+Calendar -------------------------------
+name = InternalGregorian002
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -739,8 +739,6 @@ end TimeInterval -----------------------
 
 startTime = 
 Time -----------------------------------
-BaseTime -------------------------------
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -759,8 +757,6 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-daysPerYeardN = 0
-daysPerYeardD = 1
 end Calendar ---------------------------
 
 end TimeInterval -----------------------
@@ -775,6 +771,10 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
+
+end TimeInterval -----------------------
+
 startTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -786,6 +786,7 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+BaseTime -------------------------------
 s = 211914384327
 sN = 0
 sD = 1
@@ -799,7 +800,8 @@ name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
-calkindflag = Gregorian
+secondsPerDay = 86400
+secondsPerYear = 31536000
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -807,6 +809,9 @@ secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -819,22 +824,8 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-stopTime = 
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
@@ -849,10 +840,9 @@ stopTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211914403200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
 end Calendar ---------------------------
 
 timeZone = 0
@@ -866,9 +856,9 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
+end Time -------------------------------
+
+stopTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211914403200
@@ -879,7 +869,17 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
 s = 211914403200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -893,14 +893,8 @@ calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -912,9 +906,6 @@ end Calendar ---------------------------
 
 timeZone = 0
 end Time -------------------------------
-
-stopTimeEnabled = true
-refTime = 
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -930,7 +921,9 @@ end Time -------------------------------
 stopTimeEnabled = true
 refTime = 
 Time -----------------------------------
-BaseTime -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -948,7 +941,9 @@ s = 211914384327
 sN = 0
 sD = 1
 end BaseTime ---------------------------
-
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
 
 timeZone = 0
 end Time -------------------------------
@@ -964,7 +959,9 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-calkindflag = Gregorian
+
+stopTimeEnabled = true
+refTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211914384327
@@ -975,6 +972,7 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+BaseTime -------------------------------
 s = 211914384327
 sN = 0
 sD = 1
@@ -983,13 +981,18 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+
 Calendar -------------------------------
 name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -998,6 +1001,10 @@ daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1012,7 +1019,6 @@ end Time -------------------------------
 
 currTime = 
 Time -----------------------------------
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1029,8 +1035,9 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 211914384327
 sN = 0
-daysPerYear = 365
-daysPerYeardN = 0
+sD = 1
+end BaseTime ---------------------------
+
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -1047,10 +1054,7 @@ end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-
-timeZone = 0
-end Time -------------------------------
-
+calkindflag = Gregorian
 currTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -1071,15 +1075,12 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-sD = 1
-end BaseTime ---------------------------
-
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
-calkindflag = Gregorian
+secondsPerDay = 86400
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1088,7 +1089,6 @@ daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
-
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1118,7 +1118,6 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 211914384327
 sN = 0
-secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
@@ -1135,6 +1134,8 @@ s = 211914384327
 sN = 0
 sD = 1
 end BaseTime ---------------------------
+
+Calendar -------------------------------
 
 timeZone = 0
 end Time -------------------------------
@@ -1168,13 +1169,25 @@ Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1188,7 +1201,8 @@ timeZone = 0
 end Time -------------------------------
 
 advanceCount = 0
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+direction = 1
+userChangedDirection = false
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1202,11 +1216,10 @@ end Time -------------------------------
 
 advanceCount = 0
 direction = 1
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
+userChangedDirection = false
+alarmCount = 0
+alarmList = 
+end Clock ------------------------------
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -1220,13 +1233,6 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
 
 advanceCount = 0
 direction = 1
@@ -1235,16 +1241,10 @@ alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
-direction = 1
-userChangedDirection = false
 alarmCount = 0
 alarmList = 
 end Clock ------------------------------
 
-userChangedDirection = false
-alarmCount = 0
-alarmList = 
-end Clock ------------------------------
 
   PASS  Clock Print Test, ESMF_ClockUTest.F90, line 977
   PASS  ClockIsStopTime Test, ESMF_ClockUTest.F90, line 986
@@ -1460,7 +1460,7 @@ end Clock ------------------------------
   PASS  Get Sync Time Year Test, ESMF_ClockUTest.F90, line 1724
 Time -----------------------------------
 BaseTime -------------------------------
-s = 212483805712
+s = 212483890737
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -1498,7 +1498,7 @@ end Time -------------------------------
   PASS  Get Sync Time Year Test, ESMF_ClockUTest.F90, line 1724
 Time -----------------------------------
 BaseTime -------------------------------
-s = 212483805712
+s = 212483890737
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -1536,26 +1536,10 @@ end Time -------------------------------
   PASS  Get Sync Time Year Test, ESMF_ClockUTest.F90, line 1724
 Time -----------------------------------
 BaseTime -------------------------------
-s = 212483805712
+s = 212483890737
 sN = 0
 sD = 1
 end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
   PASS  Stop Time initialization with year = 100 Test, ESMF_ClockUTest.F90, line 1496
   PASS  Clock initialization with above settings Test, ESMF_ClockUTest.F90, line 1507
   PASS  Current Time minus PreviousTime = timeStep for Gregorian Cal. Test, ESMF_ClockUTest.F90, line 1554
@@ -1574,7 +1558,11 @@ end Time -------------------------------
   PASS  Get Sync Time Year Test, ESMF_ClockUTest.F90, line 1724
 Time -----------------------------------
 BaseTime -------------------------------
-s = 212483805712
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+s = 212483890737
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -1588,6 +1576,18 @@ secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+end Time -------------------------------
+
 daysPerYeardD = 1
 end Calendar ---------------------------
 
@@ -1814,7 +1814,7 @@ end Time -------------------------------
   PASS  Set runTimeStepCount test 1, ESMF_ClockUTest.F90, line 2591
   PASS  Set runTimeStepCount test 2, ESMF_ClockUTest.F90, line 2611
   Ending Test, file ESMF_ClockUTest.F90, line 2627
-  PET           0  Test Elapsed Time    251.97799999999998       msec.
-  PET           1  Test Elapsed Time    251.97199999999998       msec.
-  PET           2  Test Elapsed Time    251.97499999999999       msec.
-  PET           3  Test Elapsed Time    251.97399999999999       msec.
+  PET           0  Test Elapsed Time    251.81299999999996       msec.
+  PET           1  Test Elapsed Time    251.80999999999997       msec.
+  PET           2  Test Elapsed Time    251.80500000000001       msec.
+  PET           3  Test Elapsed Time    251.81199999999998       msec.
