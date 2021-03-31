@@ -14,8 +14,8 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r2i7n23
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i7n23_0/2812/1/1/vader_segment.r2i7n23.1
+  Local host: r3i0n15
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r3i0n15_0/20959/1/1/vader_segment.r3i0n15.1
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
@@ -28,51 +28,45 @@ disable this message.
   ints=         102         204         409         819
   rc=           0
  -- exiting f90ints subroutine
+  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
  -- exiting f90ints subroutine
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
-  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          60
   fstr=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string2 subroutine
+  PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          60
-  PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
- -- entering f90string3 subroutine
-  fstr=0123456789abcdefghijklmnopqrstuvwxyz
- -- leaving f90string2 subroutine
-  PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
-  ints=         102         204         409         819
-  strlen =         120
-  fstr=abcdefghijklmnopqrstuvwxyz0123456789
-  strlen2 =          60
-  fstr2=0123456789abcdefghijklmnopqrstuvwxyz
- -- leaving f90string3 subroutine
  -- entering f90string3 subroutine
   ints=         102         204         409         819
   strlen =         120
   fstr=abcdefghijklmnopqrstuvwxyz0123456789
   strlen2 =          60
   fstr2=0123456789abcdefghijklmnopqrstuvwxyz
+ -- leaving f90string3 subroutine
+  fstr=0123456789abcdefghijklmnopqrstuvwxyz
+ -- leaving f90string2 subroutine
+  PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
   PASS  Calling f90string3() directly from F90, ESMF_StringUTest.F90, line 83
-
-
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =         120
+  fstr=abcdefghijklmnopqrstuvwxyz0123456789
+  strlen2 =          60
+  fstr2=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string3 subroutine
   PASS  Calling f90string3() directly from F90, ESMF_StringUTest.F90, line 83
+
+
+
+
 -- entering c_strings, slen = 120
-102 204 409 819
- strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
-
-
-
-
--- ready to call f90int by callback with passed ints
- -- entering f90ints subroutine
 -- entering c_strings, slen = 120
 102 204 409 819
  strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
@@ -82,15 +76,11 @@ disable this message.
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
+102 204 409 819
+ strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
 
 
--- returned from call of f90int by callback with passed ints
-
-
--- ready to call f90int by callback with local ints
+-- ready to call f90int by callback with passed ints
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
@@ -102,6 +92,21 @@ disable this message.
 
 -- ready to call f90int by callback with local ints
  -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
+
+
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with passed ints
+
+
+-- ready to call f90int by callback with local ints
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
  -- exiting f90ints subroutine
 
 
@@ -119,11 +124,6 @@ disable this message.
 -- returned from call f90string2 by callback
 
 
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
-
-
 -- returned from call of f90int by callback with local ints
 
 
@@ -133,6 +133,9 @@ disable this message.
   strlen =          15
   fstr=ABCDEFGHIJKLMNO
  -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
 -- ready to call f90string2 by callback, passing 25
  -- entering f90string2 subroutine
   ints=         102         204         409         819
@@ -142,6 +145,19 @@ disable this message.
 
 
 -- returned from call f90string2 by callback
+
+
+-- ready to call f90string2 by callback, passing 25
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          25
+  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
+
+
 
 
 -- ready to call f90string3 by callback, passing 14, 24
@@ -149,48 +165,40 @@ disable this message.
   ints=         102         204         409         819
   strlen =          14
   fstr=ABCDEFGHIJKLMN
-
-
--- returned from call f90string2 by callback
-
-
--- ready to call f90string2 by callback, passing 25
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          25
-  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
- -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
-
-
--- ready to call f90string3 by callback, passing 14, 24
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
  -- leaving f90string3 subroutine
 
 
+-- returned from call f90string3 by callback
+-- ready to call f90string3 by callback, passing 14, 24
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =          14
+  fstr=ABCDEFGHIJKLMN
+  strlen2 =          24
+  fstr2=0123456789abcdefghijklmn
+ -- leaving f90string3 subroutine
+
+
+
+
+-- leaving c_strings
+  PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
 -- returned from call f90string3 by callback
 
 
 -- leaving c_strings
   PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
- -- entering f90string3 subroutine
-  ints=         102         204         409         819
-  strlen =          14
-  fstr=ABCDEFGHIJKLMN
-  strlen2 =          24
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
   PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
 
 
--- returned from call f90string3 by callback
+-- entering c_strings, slen = 60
+  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
+102 204 409 819
+ strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
 
 
--- leaving c_strings
-  PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
 
 
 -- entering c_strings, slen = 60
@@ -199,22 +207,22 @@ disable this message.
 
 
 -- ready to call f90int by callback with passed ints
-  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
  -- entering f90ints subroutine
   ints=         102         204         409         819
-
-
--- entering c_strings, slen = 60
-102 204 409 819
- strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
-
-
+  rc=           0
+ -- exiting f90ints subroutine
 -- ready to call f90int by callback with passed ints
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
-  rc=           0
  -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with passed ints
+
+
+-- ready to call f90int by callback with local ints
+ -- entering f90ints subroutine
 
 
 -- returned from call of f90int by callback with passed ints
@@ -227,26 +235,6 @@ disable this message.
  -- exiting f90ints subroutine
 
 
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with passed ints
-
-
--- ready to call f90int by callback with local ints
--- returned from call of f90int by callback with local ints
-
-
--- ready to call f90string2 by callback, passing 15
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          15
-  fstr=ABCDEFGHIJKLMNO
- -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
- -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
  -- exiting f90ints subroutine
@@ -257,22 +245,17 @@ disable this message.
 
 -- ready to call f90string2 by callback, passing 15
  -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          15
+-- returned from call of f90int by callback with local ints
 
 
--- ready to call f90string2 by callback, passing 25
+-- ready to call f90string2 by callback, passing 15
  -- entering f90string2 subroutine
   ints=         102         204         409         819
-  strlen =          25
-  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
+  strlen =          15
+  fstr=ABCDEFGHIJKLMNO
  -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
-
-
--- ready to call f90string3 by callback, passing 14, 24
+  ints=         102         204         409         819
+  strlen =          15
   fstr=ABCDEFGHIJKLMNO
  -- leaving f90string2 subroutine
 
@@ -280,22 +263,23 @@ disable this message.
 -- returned from call f90string2 by callback
 
 
+
+
+-- returned from call f90string2 by callback
+
+
 -- ready to call f90string2 by callback, passing 25
  -- entering f90string2 subroutine
   ints=         102         204         409         819
- -- entering f90string3 subroutine
-  ints=         102         204         409         819
-  strlen =          14
-  fstr=ABCDEFGHIJKLMN
-  strlen2 =          24
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
-
-
--- returned from call f90string3 by callback
-
-
   strlen =          25
+-- ready to call f90string2 by callback, passing 25
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          25
+  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
+ -- leaving f90string2 subroutine
+
+
   fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
  -- leaving f90string2 subroutine
 
@@ -306,9 +290,17 @@ disable this message.
 -- ready to call f90string3 by callback, passing 14, 24
  -- entering f90string3 subroutine
   ints=         102         204         409         819
--- leaving c_strings
-  PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   strlen =          14
+-- returned from call f90string2 by callback
+
+
+-- ready to call f90string3 by callback, passing 14, 24
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =          14
+  fstr=ABCDEFGHIJKLMN
+  strlen2 =          24
+  fstr2=0123456789abcdefghijklmn
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
@@ -316,13 +308,21 @@ disable this message.
 
 
 -- returned from call f90string3 by callback
-  Ending Test, file ESMF_StringUTest.F90, line 120
+
+
+-- leaving c_strings
+ -- leaving f90string3 subroutine
+
+
+-- returned from call f90string3 by callback
 
 
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
+  PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time    4.4919999999999956       msec.
-  PET           1  Test Elapsed Time    4.4880000000000058       msec.
-[r2i7n23:37163] 3 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r2i7n23:37163] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+  Ending Test, file ESMF_StringUTest.F90, line 120
+  PET           1  Test Elapsed Time    5.0859999999999932       msec.
+  PET           0  Test Elapsed Time    4.6679999999999913       msec.
+[r3i0n15:111194] 3 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r3i0n15:111194] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
