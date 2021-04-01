@@ -139,9 +139,9 @@
   PASS  Test of creating a LocStream FieldBundle, ESMF_FieldBundleUTest.F90, lin
  e 427
   PASS  Test of creating a LocStream FieldBundle, ESMF_FieldBundleUTest.F90, lin
- e 427
   PASS  Test of creating a LocStream FieldBundle, ESMF_FieldBundleUTest.F90, lin
  e 427
+ e 427
   PASS  Test of creating a FieldBundle on fields built on the same Mesh, ESMF_Fi
  eldBundleUTest.F90, line 689
   PASS  Test of creating a FieldBundle on fields built on the same Mesh, ESMF_Fi
@@ -155,8 +155,8 @@
   PASS  Make sure FieldBundleCreate works when fields created on different Meshe
  s, ESMF_FieldBundleUTest.F90, line 1170
   PASS  Make sure FieldBundleCreate works when fields created on different Meshe
- s, ESMF_FieldBundleUTest.F90, line 1170
   PASS  Make sure FieldBundleCreate works when fields created on different Meshe
+ s, ESMF_FieldBundleUTest.F90, line 1170
  s, ESMF_FieldBundleUTest.F90, line 1170
   PASS  Test of creating a Mesh FieldBundle, ESMF_FieldBundleUTest.F90, line 143
  1
@@ -190,13 +190,13 @@
  e 1457
   PASS  Getting name of deleted FieldBundle Test, ESMF_FieldBundleUTest.F90, lin
  e 1457
+  PASS  Getting name of non-create FieldBundle Test, ESMF_FieldBundleUTest.F90, 
   PASS  Getting name of non-create FieldBundle Test, ESMF_FieldBundleUTest.F90, 
  line 1465
   PASS  Getting name of non-create FieldBundle Test, ESMF_FieldBundleUTest.F90, 
  line 1465
   PASS  Getting name of non-create FieldBundle Test, ESMF_FieldBundleUTest.F90, 
  line 1465
-  PASS  Getting name of non-create FieldBundle Test, ESMF_FieldBundleUTest.F90, 
  line 1465
   PASS  Getting Attribute Count from a deleted FieldBundle Test, ESMF_FieldBundl
  eUTest.F90, line 1473
@@ -289,6 +289,9 @@
  The Field names are:
  heat flux                                                                      
                                                                                 
+                                                                                
+                    
+ pressure                                                                       
  The Field names are:
  heat flux                                                                      
                                                                                 
@@ -328,9 +331,6 @@
   PASS  Verifying Field count from a FieldBundle Test, ESMF_FieldBundleUTest.F90
  , line 1578
                                                                                 
-                    
- pressure                                                                       
-                                                                                
                                                                                 
                     
  temperature                                                                    
@@ -415,6 +415,8 @@
   PASS  Verifying Field name from a FieldBundle Test, ESMF_FieldBundleUTest.F90,
   line 1663
  The Field names is:
+ rh                                                                             
+                                                                                
  The Field names is:
  rh                                                                             
                                                                                 
@@ -425,15 +427,13 @@
                                                                                 
                                                                                 
                     
+                                                                                
+                    
  The Field names is:
  rh                                                                             
                                                                                 
                                                                                 
                     
- rh                                                                             
-                                                                                
-                                                                                
-                    
   PASS  Creating a FieldBundle that has already been created Test, ESMF_FieldBun
  dleUTest.F90, line 1677
   PASS  Creating a FieldBundle that has already been created Test, ESMF_FieldBun
@@ -442,21 +442,21 @@
  dleUTest.F90, line 1677
   PASS  Creating a FieldBundle that has already been created Test, ESMF_FieldBun
  dleUTest.F90, line 1677
+ fieldcount =            1
  fieldcount =            1
  fieldcount =            1
  fieldcount =            0
- fieldcount =            1
- fieldcount =            0
+  PASS  Getting Field count from an empty FieldBundle Test, ESMF_FieldBundleUTes
  fieldcount =            1
  fieldcount =            0
   PASS  Getting Field count from an empty FieldBundle Test, ESMF_FieldBundleUTes
  t.F90, line 1688
-  PASS  Getting Field count from an empty FieldBundle Test, ESMF_FieldBundleUTes
- t.F90, line 1688
+ fieldcount =            0
   PASS  Getting Field count from an empty FieldBundle Test, ESMF_FieldBundleUTes
  t.F90, line 1688
  fieldcount =            0
   PASS  Getting Field count from an empty FieldBundle Test, ESMF_FieldBundleUTes
+ t.F90, line 1688
  t.F90, line 1688
  Field count of empty FieldBundle =            0
  Field count of empty FieldBundle =            0
@@ -607,34 +607,37 @@
  Field Print Starts ====>
  Field base status = Ready
    Name = 'heat flux'
- Field base status = Ready
-   Name = 'heat flux'
- Field base status = Ready
-   Name = 'heat flux'
  Field Print Starts ====>
  Field base status = Ready
+ Field base status = Ready
    Name = 'heat flux'
- Base name    = heat flux Base name    = heat flux
- Status: Base =  Base name    = heat flux
- Status: Base = Ready,  object =  Base name    = heat flux
+ Field base status = Ready
+   Name = 'heat flux'
+   Name = 'heat flux'
+ Base name    = heat flux Base name    = heat flux Base name    = heat flux
+
+ Status: Base = Ready,  object = 
  Status: Base = Ready,  object = Ready
  Proxy        = no
-
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-Ready,  object = Ready
+ Base name    = heat flux
+ Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 Ready
  Proxy        = no
  Root Info (Attributes):
  Root Info (Attributes):
-{}{} Field status =            2
+{}{}{} Field status =            2
 {} Field status =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-{} Field status =            2
+          -1          -1          -1               -1          -1
+ Field status =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -646,6 +649,8 @@ Ready
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -662,124 +667,112 @@ Ready
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'pressure'
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
  Field Print Starts ====>
  Field base status = Ready
    Name = 'pressure'
+ Base name    = pressure
+ Status: Base =  Field Print Starts ====>
+ Field base status = Ready
+   Name = 'pressure'
+ Base name    = pressure
+ Status: Base = Ready,  object = Ready
+ Field base status = Ready
+   Name = 'pressure'
+ Base name    = pressure
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes): Base name    = pressure
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+
+{} Field status =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+{} Field status =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'temperature'
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'temperature'
  Base name    =           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'pressure'
- Base name    = pressure
- Status: Base = Ready,           -1          -1          -1               -1          -1
- Field Print Ends   ====>
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'pressure'
- Base name    = pressure
- Status: Base = Ready,  object = Ready
- Field base status = Ready
-   Name = 'pressure'
- Base name    = pressure
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-pressure
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
- object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
- Field Print Starts ====>
- Field base status = Ready
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
  Field Print Ends   ====>
  Field Print Starts ====>
  Field base status = Ready
    Name = 'temperature'
  Base name    = temperature
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'temperature'
- Base name    = temperature
- Status: Base = Ready,           -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
- Field Print Starts ====>
+ Status: Base = Ready,  object =  Field Print Starts ====>
  Field base status = Ready
    Name = 'temperature'
  Base name    = temperature
  Status: Base = Ready,  object = Ready
- Proxy        = no   Name = 'temperature'
- Base name    = temperature
+ Proxy        = no
+ Root Info (Attributes): Base name    = temperature
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}temperature
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {} Field status =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
- Status: Base = Ready,  object = Ready
+Ready
  Proxy        = no
  Root Info (Attributes):
 {} Field status =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
 
- Root Info (Attributes):
 {} Field status =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
           -1          -1          -1               -1          -1
@@ -789,6 +782,17 @@ pressure
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+ Field status =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -803,12 +807,8 @@ pressure
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
   PASS  Printing a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1862
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
  Field Print Ends   ====>
   PASS  Printing a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1862
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
   PASS  Printing a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1862
   PASS  Validating a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1871
   PASS  Validating a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1871
@@ -833,11 +833,11 @@ pressure
   PASS  Query FieldBundle Name Test, ESMF_FieldBundleUTest.F90, line 1899
   PASS  Query FieldBundle Name Test, ESMF_FieldBundleUTest.F90, line 1899
   PASS  Query FieldBundle Name Test, ESMF_FieldBundleUTest.F90, line 1899
- FieldBundle name = atmosphere data
- FieldBundle name = atmosphere data
- FieldBundle name = atmosphere data
   PASS  Query FieldBundle Name Test, ESMF_FieldBundleUTest.F90, line 1899
  FieldBundle name = atmosphere data
+ FieldBundle name = atmosphere data
+ FieldBundle name = atmosphere data
+ FieldBundle name = atmosphere data
   PASS  FieldBundle Destroy Test, ESMF_FieldBundleUTest.F90, line 1911
   PASS  FieldBundle Destroy Test, ESMF_FieldBundleUTest.F90, line 1911
   PASS  FieldBundle Destroy Test, ESMF_FieldBundleUTest.F90, line 1911
@@ -855,22 +855,22 @@ pressure
   PASS  Destroying a Destroyed FieldBundle Test, ESMF_FieldBundleUTest.F90, line
   1921
  rc =           52
- rc =           52
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1930
  rc =           52
-  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1930
+ rc =           52
  rc =           52
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1930
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1930
+  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1930
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1938
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1938
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1938
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1938
-  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1946
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1946
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1946
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1946
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1954
+  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1946
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1954
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1954
   PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1954
@@ -1021,11 +1021,11 @@ pressure
   PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2155
   PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2155
   PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2155
+  PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2162
   PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2155
   PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2162
   PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2162
   PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2162
-  PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2162
   PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2169
   PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2169
   PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2169
@@ -1043,30 +1043,30 @@ pressure
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2192
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2192
   PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2205
+  PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2216
   PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2205
   PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2205
   PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2205
   PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2216
   PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2216
   PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2216
-  PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2216
-  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
-  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
-  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
   PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2231
+  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
+  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
+  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
+  PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2239
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2231
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2231
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2231
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2239
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2239
   PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2239
-  PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2239
-  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
-  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
-  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
   PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
   PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2266
+  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
+  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
+  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
   PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2266
   PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2266
   PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2266
@@ -1075,14 +1075,14 @@ pressure
   PASS  Test serialization, inquire only, ESMF_FieldBundleUTest.F90, line 2284
   PASS  Test serialization, inquire only, ESMF_FieldBundleUTest.F90, line 2284
   PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
-  PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
-  PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
-  PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
- offset_inq, offset =        4040        3768
- offset_inq, offset =        4040        3768
- offset_inq, offset =        4040        3768
  offset_inq, offset =        4040        3768
   PASS  Destroy FieldBundle, ESMF_FieldBundleUTest.F90, line 2312
+  PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
+  PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
+  PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
+ offset_inq, offset =        4040        3768
+ offset_inq, offset =        4040        3768
+ offset_inq, offset =        4040        3768
   PASS  Destroy FieldBundle, ESMF_FieldBundleUTest.F90, line 2312
   PASS  Destroy FieldBundle, ESMF_FieldBundleUTest.F90, line 2312
   PASS  Destroy FieldBundle, ESMF_FieldBundleUTest.F90, line 2312
@@ -1134,7 +1134,7 @@ pressure
   Ending Test, file ESMF_FieldBundleUTest.F90, line 2423
   Ending Test, file ESMF_FieldBundleUTest.F90, line 2423
   Ending Test, file ESMF_FieldBundleUTest.F90, line 2423
-  PET           1  Test Elapsed Time    35.7220000000000       msec.
-  PET           2  Test Elapsed Time    35.7300000000000       msec.
-  PET           3  Test Elapsed Time    35.6700000000000       msec.
-  PET           0  Test Elapsed Time    35.9970000000000       msec.
+  PET           0  Test Elapsed Time    35.3160000000000       msec.
+  PET           1  Test Elapsed Time    35.3750000000000       msec.
+  PET           2  Test Elapsed Time    35.3300000000000       msec.
+  PET           3  Test Elapsed Time    35.6420000000000       msec.
