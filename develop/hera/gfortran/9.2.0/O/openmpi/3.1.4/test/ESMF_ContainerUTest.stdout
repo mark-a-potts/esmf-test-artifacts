@@ -7,13 +7,13 @@
 [1616825819.168626] [h8c56:139298:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
 [1616825819.169210] [h8c56:139300:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
   Beginning Test, file ESMF_ContainerUTest.F90, line 95
-  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_ContainerUTest.F90, line 95
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_ContainerUTest.F90, line 95
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_ContainerUTest.F90, line 95
   NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
   PASS  Container Create Test, ESMF_ContainerUTest.F90, line 104
   PASS  Container Create Test, ESMF_ContainerUTest.F90, line 104
   PASS  Container Create Test, ESMF_ContainerUTest.F90, line 104
@@ -38,6 +38,7 @@
   PASS  Container turn garbage feature ON Test, ESMF_ContainerUTest.F90, line 143
   PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
   PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
+  PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
   PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
   PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
   PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
@@ -387,6 +388,7 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Container Get isPresent from multiple item container Test, ESMF_ContainerUTest.F90, line 565
   PASS  Container Remove item from multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 573
   PASS  Container Remove item from multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 573
+  PASS  Container Remove item from multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 573
   PASS  Container Remove item from multiple item container Test, ESMF_ContainerUTest.F90, line 580
   PASS  Container Remove item from multiple item container Test, ESMF_ContainerUTest.F90, line 580
   PASS  Container Remove item from multiple item container multi Test, ESMF_ContainerUTest.F90, line 588
@@ -403,7 +405,10 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Container Add same Field two more times with multiflag Test, ESMF_ContainerUTest.F90, line 603
   PASS  Container Remove item from multiple item container multi Test, ESMF_ContainerUTest.F90, line 588
   PASS  Container Add Field after multi Remove Test, ESMF_ContainerUTest.F90, line 595
+  PASS  Container Add Field after multi Remove Test, ESMF_ContainerUTest.F90, line 595
   PASS  Container Add same Field two more times with multiflag Test, ESMF_ContainerUTest.F90, line 603
+  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
+  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
   PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
   PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
   PASS  Container Replace Field in multiple item container strict Test, ESMF_ContainerUTest.F90, line 618
@@ -419,6 +424,7 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, line 642
   PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, line 642
   PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line 651
+  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 657
   PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line 651
   PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 657
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
@@ -427,6 +433,7 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
   PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 680
   PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 657
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
   PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 680
   PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line 651
@@ -451,7 +458,8 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 703
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 719
   PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 729
-  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 735
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 696
+  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 703
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 719
   PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 729
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 735
@@ -465,11 +473,9 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 735
   PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 742
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 758
-  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 742
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 758
   PASS  Container Replace Field in multiple item container multi Test, ESMF_ContainerUTest.F90, line 766
   PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
-  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 783
   PASS  Container Replace Field in multiple item container multi Test, ESMF_ContainerUTest.F90, line 766
   PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
   PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 783
@@ -502,10 +508,13 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 823
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 829
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 836
+  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 854
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 854
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 864
   PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 854
   PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 864
+  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 864
+  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 870
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 870
   PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 870
   PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 877
@@ -550,6 +559,7 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, line 991
   PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
   PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
+  PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
   PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
   PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, line 985
   PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, line 991
@@ -565,7 +575,6 @@ tOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
   PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, line 997
   PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
   PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
-  PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1027
   PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1027
   PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1033
   PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1039
@@ -617,6 +626,7 @@ Container::print()      list:item=0 key=myUDT2 value=0x1560d40
   PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
   PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1078
  after Clear() garbageCount=           3
+  PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
   PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
  after Clear() itemCount=           0
  after Clear() itemCount=           0

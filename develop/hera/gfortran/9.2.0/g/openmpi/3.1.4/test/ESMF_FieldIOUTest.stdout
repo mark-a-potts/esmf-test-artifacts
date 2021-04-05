@@ -55,12 +55,12 @@
   PASS  Write multiple Fields with same dimensions to a file, ESMF_FieldIOUTest.F90, line 279
   PASS  Write multiple Fields with same dimensions to a file, ESMF_FieldIOUTest.F90, line 279
   PASS  Write Farray_tw at different time t in a loop, ESMF_FieldIOUTest.F90, line 385
-  PASS  Array Spec Set, ESMF_FieldIOUTest.F90, line 400
+  PASS  Write Farray_tw at different time t in a loop, ESMF_FieldIOUTest.F90, line 385
+  PASS  Write Farray_tw at different time t in a loop, ESMF_FieldIOUTest.F90, line 385
   PASS  Write Farray_tw at different time t in a loop, ESMF_FieldIOUTest.F90, line 385
   PASS  Array Spec Set, ESMF_FieldIOUTest.F90, line 400
-  PASS  Write Farray_tw at different time t in a loop, ESMF_FieldIOUTest.F90, line 385
   PASS  Array Spec Set, ESMF_FieldIOUTest.F90, line 400
-  PASS  Write Farray_tw at different time t in a loop, ESMF_FieldIOUTest.F90, line 385
+  PASS  Array Spec Set, ESMF_FieldIOUTest.F90, line 400
   PASS  Array Spec Set, ESMF_FieldIOUTest.F90, line 400
   PASS  Create new Field_r, ESMF_FieldIOUTest.F90, line 410
   PASS  Create new Field_r, ESMF_FieldIOUTest.F90, line 410
@@ -95,7 +95,6 @@
   PASS  Read data time=t to object field_r per slice, ESMF_FieldIOUTest.F90, line 517
   PASS  Read data time=t to object field_r per slice, ESMF_FieldIOUTest.F90, line 517
   PASS  Point data to Fortran pointer Farray_tr, ESMF_FieldIOUTest.F90, line 530
-  PASS  Point data to Fortran pointer Farray_tr, ESMF_FieldIOUTest.F90, line 530
  Maximum Error with Halos (read-write) =    0.0000000000000000     
   PASS  Compare readin data to the existing data, ESMF_FieldIOUTest.F90, line 552
   PASS  Point data to Fortran pointer Farray_tr, ESMF_FieldIOUTest.F90, line 530
@@ -104,6 +103,7 @@
   PASS  Point data to Fortran pointer Farray_tr, ESMF_FieldIOUTest.F90, line 530
  Maximum Error with Halos (read-write) =    0.0000000000000000     
   PASS  Compare readin data to the existing data, ESMF_FieldIOUTest.F90, line 552
+  PASS  Point data to Fortran pointer Farray_tr, ESMF_FieldIOUTest.F90, line 530
  Maximum Error with Halos (read-write) =    0.0000000000000000     
   PASS  Compare readin data to the existing data, ESMF_FieldIOUTest.F90, line 552
   PASS  Create new Field_s for without Halo, ESMF_FieldIOUTest.F90, line 567
@@ -131,12 +131,12 @@
   PASS  Destroy Grid, ESMF_FieldIOUTest.F90, line 628
   PASS  Destroy Grid, ESMF_FieldIOUTest.F90, line 628
   PASS  Write Field, ESMF_FieldIOUTest.F90, line 690
-  PASS  Write Field, ESMF_FieldIOUTest.F90, line 690
-  PASS  Write Field, ESMF_FieldIOUTest.F90, line 690
+  PASS  Destroy Grid, ESMF_FieldIOUTest.F90, line 697
   PASS  Write Field, ESMF_FieldIOUTest.F90, line 690
   PASS  Destroy Grid, ESMF_FieldIOUTest.F90, line 697
+  PASS  Write Field, ESMF_FieldIOUTest.F90, line 690
   PASS  Destroy Grid, ESMF_FieldIOUTest.F90, line 697
-  PASS  Destroy Grid, ESMF_FieldIOUTest.F90, line 697
+  PASS  Write Field, ESMF_FieldIOUTest.F90, line 690
   PASS  Destroy Grid, ESMF_FieldIOUTest.F90, line 697
   PASS  Create a gloablly indexed grid, ESMF_FieldIOUTest.F90, line 711
   PASS  Create a gloablly indexed grid, ESMF_FieldIOUTest.F90, line 711
@@ -217,10 +217,9 @@
   PASS  Get Farray_r from field DE 0, ESMF_FieldIOUTest.F90, line 956
   PASS  DE 0 Array comparison test, ESMF_FieldIOUTest.F90, line 969
   PASS  DE 0 Array comparison test, ESMF_FieldIOUTest.F90, line 969
-  PASS  DE 0 Array comparison test, ESMF_FieldIOUTest.F90, line 969
   PASS  Get Farray_r from field DE 0, ESMF_FieldIOUTest.F90, line 956
   PASS  DE 0 Array comparison test, ESMF_FieldIOUTest.F90, line 969
-  PASS  Get Farray_r from field DE 1, ESMF_FieldIOUTest.F90, line 980
+  PASS  DE 0 Array comparison test, ESMF_FieldIOUTest.F90, line 969
   PASS  Get Farray_r from field DE 1, ESMF_FieldIOUTest.F90, line 980
   PASS  Get Farray_r from field DE 1, ESMF_FieldIOUTest.F90, line 980
   PASS  DE 1 Array comparison test, ESMF_FieldIOUTest.F90, line 993
@@ -281,7 +280,9 @@
 {} Field status =            4
 {} Field status =            4
  gridrank =            1
+ Field status =            4
  gridrank =            1
+ Field status =            4
  gridrank =            1
  gridrank =            1
 --- ESMCI::Array::print start ---
@@ -362,6 +363,8 @@ LocalArrayPrint: Array at address 0xced480:
 ( 5, 1) =  0
 ( 6, 1) =  0
 ( 7, 1) =  0
+( 8, 1) =  1.08646e-311
+( 9, 1) =  0
 ( 8, 1) =  0
 ( 9, 1) =  0
 (10, 1) =  0
@@ -470,11 +473,11 @@ dim 2: [0]: [1 [1 [1, 8] 8] 8]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
- Field Print Ends   ====>
-          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
           -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -537,12 +540,12 @@ dim 2: [0]: [1 [1 [1, 8] 8] 8]
   PASS  Read Fortran array in Field with 1 ungridded dimension, ESMF_FieldIOUTest.F90, line 1266
   PASS  Read Fortran array in Field with 1 ungridded dimension, ESMF_FieldIOUTest.F90, line 1266
   PASS  Access comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1280
-  PASS  Access comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1280
-  PASS  Access comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1280
+  PASS  Comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1303
   PASS  Access comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1280
   PASS  Comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1303
+  PASS  Access comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1280
   PASS  Comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1303
-  PASS  Comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1303
+  PASS  Access comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1280
   PASS  Comparison field data with 1 ungridded dim, ESMF_FieldIOUTest.F90, line 1303
   PASS  Array Spec 3D Set, ESMF_FieldIOUTest.F90, line 1312
   PASS  Array Spec 3D Set, ESMF_FieldIOUTest.F90, line 1312
