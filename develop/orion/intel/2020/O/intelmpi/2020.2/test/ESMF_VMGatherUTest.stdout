@@ -3,7 +3,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
   Beginning Test, file ESMF_VMGatherUTest.F90, line 67
-  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMGatherUTest.F90, line 67
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMGatherUTest.F90, line 67
@@ -14,11 +13,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   Beginning Test, file ESMF_VMGatherUTest.F90, line 67
   NUMBER_OF_PROCESSORS           4
   PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
-  PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTes
- t.F90, line 126
+  NUMBER_OF_PROCESSORS           4
   PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
-  PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTes
- t.F90, line 126
   PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
   PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTes
  t.F90, line 126
@@ -51,6 +47,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  erUTest.F90, line 171
  contents after gather (should be 1.,2.,... at 
  localPet=petCount-1 , 0. elsewhere), :
+  PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTes
+ t.F90, line 126
  Contents after gather (should be 1,2,... at 
  localPet=petCount-1 , 0 elsewhere), :
            3  array1:            1
@@ -63,6 +61,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            3  array1:            8
   PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTes
  t.F90, line 143
+  PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTes
+ t.F90, line 126
  Contents after gather (should be 1,2,... at 
  localPet=petCount-1 , 0 elsewhere), :
            0  array1:            0
@@ -88,6 +88,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            1  farray1:   0.000000000000000E+000
            1  farray1:   0.000000000000000E+000
            1  farray1:   0.000000000000000E+000
+ contents after gather (should be localPet*2+1, localPet*2+2):
            2  farray1:   0.000000000000000E+000
            2  farray1:   0.000000000000000E+000
            2  farray1:   0.000000000000000E+000
@@ -104,17 +105,18 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
   PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGat
  herUTest.F90, line 221
- contents after gather (should be 1.,2.,... at 
- localPet=petCount-1 , 0. elsewhere), :
   PASS  Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 154
   PASS  Verifying farray1 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGath
  erUTest.F90, line 171
- contents after gather (should be localPet*2+1, localPet*2+2):
            1  farray2:    3.00000000000000     
            1  farray2:    4.00000000000000     
   PASS  Verifying farray2 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGath
  erUTest.F90, line 193
   PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
+  PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGat
+ herUTest.F90, line 221
+ contents after gather (should be 1.,2.,... at 
+ localPet=petCount-1 , 0. elsewhere), :
            2  f4array1:   0.0000000E+00
            2  f4array1:   0.0000000E+00
            2  f4array1:   0.0000000E+00
@@ -153,8 +155,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            0  farray1:   0.000000000000000E+000
            0  farray1:   0.000000000000000E+000
            0  farray1:   0.000000000000000E+000
-  PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGat
- herUTest.F90, line 221
+           0  farray1:   0.000000000000000E+000
+           0  farray1:   0.000000000000000E+000
  contents after gather (should be 1.,2.,... at 
  localPet=petCount-1 , 0. elsewhere), :
            1  f4array1:   0.0000000E+00
@@ -171,8 +173,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Verifying f4array2 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGat
  herUTest.F90, line 243
            0  farray1:   0.000000000000000E+000
-           0  farray1:   0.000000000000000E+000
-           0  farray1:   0.000000000000000E+000
  contents after gather (should be localPet*2+1, localPet*2+2):
            0  farray2:    1.00000000000000     
            0  farray2:    2.00000000000000     
@@ -183,8 +183,10 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGat
  herUTest.F90, line 221
  contents after gather (should be 1.,2.,... at 
+ localPet=petCount-1 , 0. elsewhere), :
   PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGat
  herUTest.F90, line 221
+ contents after gather (should be 1.,2.,... at 
  localPet=petCount-1 , 0. elsewhere), :
            3  f4array1:    1.000000    
            3  f4array1:    2.000000    
@@ -197,16 +199,14 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  contents after gather (should be localPet*2+1, localPet*2+2):
            3  f4array2:    7.000000    
            3  f4array2:    8.000000    
- contents after gather (should be 1.,2.,... at 
- localPet=petCount-1 , 0. elsewhere), :
-           0  f4array1:   0.0000000E+00
-           0  f4array1:   0.0000000E+00
-           0  f4array1:   0.0000000E+00
-           0  f4array1:   0.0000000E+00
-           0  f4array1:   0.0000000E+00
-           0  f4array1:   0.0000000E+00
   PASS  Verifying f4array2 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGat
  herUTest.F90, line 243
+           0  f4array1:   0.0000000E+00
+           0  f4array1:   0.0000000E+00
+           0  f4array1:   0.0000000E+00
+           0  f4array1:   0.0000000E+00
+           0  f4array1:   0.0000000E+00
+           0  f4array1:   0.0000000E+00
            0  f4array1:   0.0000000E+00
            0  f4array1:   0.0000000E+00
  contents after gather (should be localPet*2+1, localPet*2+2):
@@ -218,8 +218,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 285
   PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTe
  st.F90, line 302
- Contents after gather (should be 1,2,... at 
- localPet=petCount-1 , 0 elsewhere), :
   PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTe
  st.F90, line 302
  Contents after gather (should be 1,2,... at 
@@ -232,7 +230,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            1  array1:            0
            1  array1:            0
            1  array1:            0
-  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTe
+ Contents after gather (should be 1,2,... at 
+ localPet=petCount-1 , 0 elsewhere), :
            2  array1:            0
            2  array1:            0
            2  array1:            0
@@ -253,6 +252,10 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            3  array1:            3
            3  array1:            4
            3  array1:            5
+           3  array1:            6
+           3  array1:            7
+           3  array1:            8
+  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTe
   PASS  GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 285
   PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTe
  st.F90, line 302
@@ -261,20 +264,17 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            0  array1:            0
            0  array1:            0
            0  array1:            0
-           0  array1:            0
- st.F90, line 319
-           3  array1:            6
-           3  array1:            7
-           3  array1:            8
-  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTe
- st.F90, line 319
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
   PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTe
  st.F90, line 319
   PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
+ st.F90, line 319
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTe
+ st.F90, line 319
   PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGat
  herUTest.F90, line 347
  contents after gather (should be 1.,2.,... at 
@@ -285,6 +285,9 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            1  farray1:   0.000000000000000E+000
            1  farray1:   0.000000000000000E+000
            1  farray1:   0.000000000000000E+000
+           1  farray1:   0.000000000000000E+000
+           1  farray1:   0.000000000000000E+000
+ contents after gather (should be localPet*2+1, localPet*2+2):
   PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
   PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGat
  herUTest.F90, line 347
@@ -306,9 +309,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
   PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGat
  herUTest.F90, line 347
-           1  farray1:   0.000000000000000E+000
-           1  farray1:   0.000000000000000E+000
- contents after gather (should be localPet*2+1, localPet*2+2):
            1  farray2:    3.00000000000000     
            1  farray2:    4.00000000000000     
   PASS  Verifying farray2 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGat
@@ -360,10 +360,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            1  f4array1:   0.0000000E+00
            1  f4array1:   0.0000000E+00
  contents after gather (should be localPet*2+1, localPet*2+2):
-           1  f4array2:    3.000000    
-           1  f4array2:    4.000000    
-  PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
- therUTest.F90, line 419
   PASS  GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 380
   PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
  therUTest.F90, line 397
@@ -384,6 +380,10 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  therUTest.F90, line 419
   Ending Test, file ESMF_VMGatherUTest.F90, line 432
   PASS  GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 380
+           1  f4array2:    3.000000    
+           1  f4array2:    4.000000    
+  PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
+ therUTest.F90, line 419
   Ending Test, file ESMF_VMGatherUTest.F90, line 432
   PASS  GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 380
   PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
@@ -401,6 +401,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  contents after gather (should be localPet*2+1, localPet*2+2):
            3  f4array2:    7.000000    
            3  f4array2:    8.000000    
+  PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
+ therUTest.F90, line 419
   PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
  therUTest.F90, line 397
  contents after gather (should be 1.,2.,... at 
@@ -410,11 +412,9 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
            0  f4array1:   0.0000000E+00
            0  f4array1:   0.0000000E+00
            0  f4array1:   0.0000000E+00
-  PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
- therUTest.F90, line 419
+           0  f4array1:   0.0000000E+00
+           0  f4array1:   0.0000000E+00
   Ending Test, file ESMF_VMGatherUTest.F90, line 432
-           0  f4array1:   0.0000000E+00
-           0  f4array1:   0.0000000E+00
            0  f4array1:   0.0000000E+00
  contents after gather (should be localPet*2+1, localPet*2+2):
            0  f4array2:    1.000000    
@@ -422,7 +422,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGa
  therUTest.F90, line 419
   Ending Test, file ESMF_VMGatherUTest.F90, line 432
-  PET           0  Test Elapsed Time    8.58900000000001       msec.
-  PET           2  Test Elapsed Time    8.70899999999997       msec.
-  PET           1  Test Elapsed Time    7.98000000000004       msec.
-  PET           3  Test Elapsed Time    8.73699999999999       msec.
+  PET           0  Test Elapsed Time    9.06399999999996       msec.
+  PET           2  Test Elapsed Time    9.17400000000002       msec.
+  PET           1  Test Elapsed Time    8.92000000000004       msec.
+  PET           3  Test Elapsed Time    8.67099999999999       msec.
