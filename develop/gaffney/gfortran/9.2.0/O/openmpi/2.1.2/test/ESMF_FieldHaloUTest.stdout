@@ -14,20 +14,20 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r2i7n33
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i7n33_0/43070/1/2/vader_segment.r2i7n33.2
+  Local host: r3i3n33
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r3i3n33_0/19437/1/shared_mem_pool.r3i3n33
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
 --------------------------------------------------------------------------
   Beginning Test, file ESMF_FieldHaloUTest.F90, line 71
   Beginning Test, file ESMF_FieldHaloUTest.F90, line 71
+  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_FieldHaloUTest.F90, line 71
+  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_FieldHaloUTest.F90, line 71
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
   PASS  grid Create Test-1, ESMF_FieldHaloUTest.F90, line 96
   PASS  grid Create Test-1, ESMF_FieldHaloUTest.F90, line 96
   PASS  grid Create Test-1, ESMF_FieldHaloUTest.F90, line 96
@@ -56,27 +56,27 @@ disable this message.
   PASS  FieldHalo Test-1, ESMF_FieldHaloUTest.F90, line 176
   PASS  FieldHalo Test-1, ESMF_FieldHaloUTest.F90, line 176
   PASS  FieldHalo Test-1, ESMF_FieldHaloUTest.F90, line 176
- Field Print Starts ====>
- Field Print Starts ====>
- Field Print Starts ====>
- Field base status = Ready
  Field Print Starts ====>
  Field base status = Ready
    Name = 'Field004'
- Base name    = Field004
+ Field Print Starts ====>
  Field base status = Ready
    Name = 'Field004'
- Base name    = Field004
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'Field004'
+ Field Print Starts ====>
  Field base status = Ready
    Name = 'Field004'
  Base name    = Field004
-   Name = 'Field004'
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Base name    = Field004
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Base name    = Field004
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
@@ -85,22 +85,9 @@ disable this message.
  Proxy        = no
  Root Info (Attributes):
 {}{}{}{} Field status =            4
+ gridrank =            2
  Field status =            4
  gridrank =            2
---- ESMCI::Array::print start ---
- Base name    = Array006
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            4
- gridrank =            2
---- ESMCI::Array::print start ---
- Base name    = Array006
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}Array typekind/rank: Integer*4 / 2 
-~ lower class' values ~
  Field status =            4
  gridrank =            2
 --- ESMCI::Array::print start ---
@@ -113,7 +100,42 @@ disable this message.
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x85d0d0:
+            rank = 2, typekind = 3, base_addr = 0x85d400
+--- ESMCI::Array::print start ---
+ Base name    = Array006
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Integer*4 / 2 
+~ lower class' values ~
+DistGrid dimCount = 2
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 1 ~
+LocalArrayPrint: Array at address 0x860d00:
+            rank = 2, typekind = 3, base_addr = 0x861030
+            dim[0] = 14  dim[1] = 9  
+  Integer, *4, Dim 2, Data values:
+ Field status =            4
  gridrank =            2
+--- ESMCI::Array::print start ---
+ Base name    = Array006
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Integer*4 / 2 
+~ lower class' values ~
+DistGrid dimCount = 2
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 3 ~
+LocalArrayPrint: Array at address 0x860cd0:
+            rank = 2, typekind = 3, base_addr = 0x861000
+            dim[0] = 14  dim[1] = 9  
+  Integer, *4, Dim 2, Data values:
+(-1,-1) =  3
 --- ESMCI::Array::print start ---
  Base name    = Array006
  Status: Base = Ready,  object = Ready
@@ -125,24 +147,6 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 2 ~
-~ local data in LocalArray for DE 3 ~
-LocalArrayPrint: Array at address 0x860cb0:
-            rank = 2, typekind = 3, base_addr = 0x860fe0
-Array typekind/rank: Integer*4 / 2 
-~ lower class' values ~
-DistGrid dimCount = 2
-deCount = 4
-localDeCount = 1
-~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x85d030:
-            rank = 2, typekind = 3, base_addr = 0x85d360
-DistGrid dimCount = 2
-deCount = 4
-localDeCount = 1
-~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x860ce0:
-            rank = 2, typekind = 3, base_addr = 0x861010
-            dim[0] = 14  dim[1] = 9  
 LocalArrayPrint: Array at address 0x85bf80:
             rank = 2, typekind = 3, base_addr = 0x85c2b0
             dim[0] = 14  dim[1] = 9  
@@ -151,6 +155,21 @@ LocalArrayPrint: Array at address 0x85bf80:
 ( 0,-1) =  2
 ( 1,-1) =  1
 ( 2,-1) =  1
+            dim[0] = 14  dim[1] = 9  
+  Integer, *4, Dim 2, Data values:
+(-1,-1) =  0
+( 0,-1) =  0
+( 1,-1) =  0
+( 2,-1) =  0
+( 3,-1) =  0
+( 4,-1) =  0
+( 5,-1) =  0
+( 6,-1) =  0
+( 7,-1) =  0
+( 8,-1) =  0
+  skipping to end ...
+( 3, 7) =  1
+( 4, 7) =  1
 ( 3,-1) =  1
 ( 4,-1) =  1
 ( 5,-1) =  1
@@ -167,8 +186,6 @@ LocalArrayPrint: Array at address 0x85bf80:
 ( 9, 7) =  3
 (10, 7) =  3
 (11, 7) =  2
-(12, 7) =  2
-  Integer, *4, Dim 2, Data values:
 (-1,-1) =  1
 ( 0,-1) =  1
 ( 1,-1) =  0
@@ -189,12 +206,6 @@ LocalArrayPrint: Array at address 0x85bf80:
 ( 9, 7) =  2
 (10, 7) =  2
 (11, 7) =  1
-(12, 7) =  1
-dim 1: [0]: [-1 [1 [1, 10] 10] 12]
-dim 2: [1]: [-1 [1 [1, 5] 5] 7]
-            dim[0] = 14  dim[1] = 9  
-  Integer, *4, Dim 2, Data values:
-(-1,-1) =  3
 ( 0,-1) =  3
 ( 1,-1) =  2
 ( 2,-1) =  2
@@ -214,25 +225,6 @@ dim 2: [1]: [-1 [1 [1, 5] 5] 7]
 ( 9, 7) =  3
 (10, 7) =  3
 (11, 7) =  3
-(12, 7) =  3
-dim 1: [0]: [-1 [1 [1, 10] 10] 12]
-dim 2: [1]: [-1 [1 [1, 5] 5] 7]
---- ESMCI::Array::print end ---
-            dim[0] = 14  dim[1] = 9  
-  Integer, *4, Dim 2, Data values:
-(-1,-1) =  0
-( 0,-1) =  0
-( 1,-1) =  0
-( 2,-1) =  0
-( 3,-1) =  0
-( 4,-1) =  0
-( 5,-1) =  0
-( 6,-1) =  0
-( 7,-1) =  0
-( 8,-1) =  0
-  skipping to end ...
-( 3, 7) =  1
-( 4, 7) =  1
 ( 5, 7) =  1
 ( 6, 7) =  1
 ( 7, 7) =  1
@@ -244,6 +236,17 @@ dim 2: [1]: [-1 [1 [1, 5] 5] 7]
 dim 1: [0]: [-1 [1 [1, 10] 10] 12]
 dim 2: [1]: [-1 [1 [1, 5] 5] 7]
 --- ESMCI::Array::print end ---
+ arrayrank =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+(12, 7) =  3
+dim 1: [0]: [-1 [1 [1, 10] 10] 12]
+dim 2: [1]: [-1 [1 [1, 5] 5] 7]
+--- ESMCI::Array::print end ---
+ arrayrank =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                2           2
+           2          -1          -1                2           2
+(12, 7) =  2
 dim 1: [0]: [-1 [1 [1, 10] 10] 12]
 dim 2: [1]: [-1 [1 [1, 5] 5] 7]
 --- ESMCI::Array::print end ---
@@ -253,14 +256,10 @@ dim 2: [1]: [-1 [1 [1, 5] 5] 7]
            2          -1          -1                2           2
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
- arrayrank =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-           1          -1          -1                2           2
-           2          -1          -1                2           2
           -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
+(12, 7) =  1
+dim 1: [0]: [-1 [1 [1, 10] 10] 12]
+dim 2: [1]: [-1 [1 [1, 5] 5] 7]
 --- ESMCI::Array::print end ---
  arrayrank =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
@@ -269,11 +268,6 @@ dim 2: [1]: [-1 [1 [1, 5] 5] 7]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
- arrayrank =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
            1          -1          -1                2           2
            2          -1          -1                2           2
           -1          -1          -1               -1          -1
@@ -285,13 +279,19 @@ dim 2: [1]: [-1 [1 [1, 5] 5] 7]
   PASS  Verify Field elemens after Halo() Test-1, ESMF_FieldHaloUTest.F90, line 332
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+  PASS  Verify Field elemens after Halo() Test-1, ESMF_FieldHaloUTest.F90, line 332
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
   PASS  Verify Field elemens after Halo() Test-1, ESMF_FieldHaloUTest.F90, line 332
           -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
  Field Print Ends   ====>
   PASS  Verify Field elemens after Halo() Test-1, ESMF_FieldHaloUTest.F90, line 332
-  PASS  Verify Field elemens after Halo() Test-1, ESMF_FieldHaloUTest.F90, line 332
   PASS  routehandle Release Test-1, ESMF_FieldHaloUTest.F90, line 339
   PASS  routehandle Release Test-1, ESMF_FieldHaloUTest.F90, line 339
   PASS  routehandle Release Test-1, ESMF_FieldHaloUTest.F90, line 339
@@ -332,20 +332,6 @@ dim 2: [1]: [-1 [1 [1, 5] 5] 7]
   PASS  FieldHalo Test-2, ESMF_FieldHaloUTest.F90, line 459
   PASS  FieldHalo Test-2, ESMF_FieldHaloUTest.F90, line 459
   PASS  FieldHalo Test-2, ESMF_FieldHaloUTest.F90, line 459
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'Field011'
- Base name    = Field011
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'Field011'
- Base name    = Field011
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
  Field Print Starts ====>
  Field base status = Ready
    Name = 'Field011'
@@ -361,22 +347,43 @@ dim 2: [1]: [-1 [1 [1, 5] 5] 7]
  Proxy        = no
  Root Info (Attributes):
 {} Field status =            4
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'Field011'
+ Base name    = Field011
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            4
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'Field011'
+ Base name    = Field011
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            4
  Field status =            4
  gridrank =            2
 --- ESMCI::Array::print start ---
- Base name    = Array013
- Status: Base = Ready,  object = Ready
-{} Field status =            4
  gridrank =            2
 --- ESMCI::Array::print start ---
  Base name    = Array013
- Status: Base = Ready,  object = Ready
-{} Field status =            4
  gridrank =            2
 --- ESMCI::Array::print start ---
  Base name    = Array013
  Status: Base = Ready,  object = Ready
  Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Integer*4 / 2 
+~ lower class' values ~
+DistGrid dimCount = 2
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 3 ~
+LocalArrayPrint: Array at address 0x863f10:
+            rank = 2, typekind = 3, base_addr = 0x864240
+            dim[0] = 9  dim[1] = 14  
  gridrank =            2
 --- ESMCI::Array::print start ---
  Base name    = Array013
@@ -389,31 +396,12 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x8608e0:
-            rank = 2, typekind = 3, base_addr = 0x863440
+LocalArrayPrint: Array at address 0x860900:
+            rank = 2, typekind = 3, base_addr = 0x863460
             dim[0] = 9  dim[1] = 14  
   Integer, *4, Dim 2, Data values:
 (-1,-1) =  1
-( 0,-1) =  1
-( 1,-1) =  1
- Root Info (Attributes):
-{}Array typekind/rank: Integer*4 / 2 
-~ lower class' values ~
-DistGrid dimCount = 2
-deCount = 4
-localDeCount = 1
-~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x85f2f0:
-            rank = 2, typekind = 3, base_addr = 0x8605f0
-            dim[0] = 9  dim[1] = 14  
-  Integer, *4, Dim 2, Data values:
-(-1,-1) =  0
-( 0,-1) =  0
-( 1,-1) =  0
-( 2,-1) =  0
-( 3,-1) =  0
-( 4,-1) =  0
-( 5,-1) =  0
+ Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {}Array typekind/rank: Integer*4 / 2 
@@ -421,22 +409,17 @@ LocalArrayPrint: Array at address 0x85f2f0:
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
-~ local data in LocalArray for DE 3 ~
-LocalArrayPrint: Array at address 0x863ef0:
-            rank = 2, typekind = 3, base_addr = 0x864220
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x85f390:
+            rank = 2, typekind = 3, base_addr = 0x860690
             dim[0] = 9  dim[1] = 14  
   Integer, *4, Dim 2, Data values:
 (-1,-1) =  0
 ( 0,-1) =  0
-( 1,-1) =  1
-( 2,-1) =  1
-( 3,-1) =  1
-( 4,-1) =  1
-( 5,-1) =  1
-( 6,-1) =  3
-( 7,-1) =  3
-(-1, 0) =  0
-  skipping to end ...
+( 1,-1) =  0
+( 2,-1) =  0
+ Base name    = Array013
+ Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {}Array typekind/rank: Integer*4 / 2 
@@ -454,6 +437,24 @@ LocalArrayPrint: Array at address 0x85e980:
 ( 1,-1) =  0
 ( 2,-1) =  0
 ( 3,-1) =  0
+  Integer, *4, Dim 2, Data values:
+(-1,-1) =  0
+( 0,-1) =  0
+( 1,-1) =  1
+( 2,-1) =  1
+( 3,-1) =  1
+( 4,-1) =  1
+( 5,-1) =  1
+( 6,-1) =  3
+( 7,-1) =  3
+(-1, 0) =  0
+  skipping to end ...
+( 7,11) =  3
+(-1,12) =  3
+( 0,12) =  3
+( 1,12) =  3
+( 2,12) =  3
+( 3,12) =  3
 ( 4,-1) =  0
 ( 5,-1) =  0
 ( 6,-1) =  1
@@ -461,6 +462,17 @@ LocalArrayPrint: Array at address 0x85e980:
 (-1, 0) =  2
   skipping to end ...
 ( 7,11) =  2
+(-1,12) =  2
+( 0,12) =  2
+( 1,12) =  2
+( 2,12) =  2
+( 3,12) =  2
+( 4,12) =  2
+( 5,12) =  2
+( 6,12) =  2
+( 7,12) =  2
+( 0,-1) =  1
+( 1,-1) =  1
 ( 2,-1) =  1
 ( 3,-1) =  1
 ( 4,-1) =  1
@@ -475,22 +487,9 @@ LocalArrayPrint: Array at address 0x85e980:
 ( 1,12) =  3
 ( 2,12) =  3
 ( 3,12) =  3
-( 4,12) =  3
-( 5,12) =  3
-( 6,12) =  1
-( 7,12) =  1
-(-1,12) =  2
-( 0,12) =  2
-( 1,12) =  2
-( 2,12) =  2
-( 3,12) =  2
-( 4,12) =  2
-( 5,12) =  2
-( 6,12) =  2
-( 7,12) =  2
-dim 1: [0]: [-1 [1 [1, 5] 5] 7]
-dim 2: [1]: [-1 [1 [1, 10] 10] 12]
---- ESMCI::Array::print end ---
+( 3,-1) =  0
+( 4,-1) =  0
+( 5,-1) =  0
 ( 6,-1) =  0
 ( 7,-1) =  0
 (-1, 0) =  0
@@ -508,12 +507,6 @@ dim 2: [1]: [-1 [1 [1, 10] 10] 12]
 dim 1: [0]: [-1 [1 [1, 5] 5] 7]
 dim 2: [1]: [-1 [1 [1, 10] 10] 12]
 --- ESMCI::Array::print end ---
-( 7,11) =  3
-(-1,12) =  3
-( 0,12) =  3
-( 1,12) =  3
-( 2,12) =  3
-( 3,12) =  3
 ( 4,12) =  3
 ( 5,12) =  3
 ( 6,12) =  3
@@ -521,6 +514,23 @@ dim 2: [1]: [-1 [1 [1, 10] 10] 12]
 dim 1: [0]: [-1 [1 [1, 5] 5] 7]
 dim 2: [1]: [-1 [1 [1, 10] 10] 12]
 --- ESMCI::Array::print end ---
+ arrayrank =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                2           2
+           2          -1          -1                2           2
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ arrayrank =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                2           2
+           2          -1          -1                2           2
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+  PASS  Verify Field elemens after Halo() Test-2, ESMF_FieldHaloUTest.F90, line 663
 dim 1: [0]: [-1 [1 [1, 5] 5] 7]
 dim 2: [1]: [-1 [1 [1, 10] 10] 12]
 --- ESMCI::Array::print end ---
@@ -533,6 +543,15 @@ dim 2: [1]: [-1 [1 [1, 10] 10] 12]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+  PASS  Verify Field elemens after Halo() Test-2, ESMF_FieldHaloUTest.F90, line 663
+( 4,12) =  3
+( 5,12) =  3
+( 6,12) =  1
+( 7,12) =  1
+dim 1: [0]: [-1 [1 [1, 5] 5] 7]
+dim 2: [1]: [-1 [1 [1, 10] 10] 12]
+--- ESMCI::Array::print end ---
  arrayrank =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
            1          -1          -1                2           2
@@ -542,51 +561,32 @@ dim 2: [1]: [-1 [1 [1, 10] 10] 12]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
- Field Print Ends   ====>
- arrayrank =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-           1          -1          -1                2           2
-           2          -1          -1                2           2
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
-  PASS  Verify Field elemens after Halo() Test-2, ESMF_FieldHaloUTest.F90, line 663
- arrayrank =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-           1          -1          -1                2           2
-           2          -1          -1                2           2
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
  Field Print Ends   ====>
   PASS  Verify Field elemens after Halo() Test-2, ESMF_FieldHaloUTest.F90, line 663
   PASS  routehandle Release Test-2, ESMF_FieldHaloUTest.F90, line 670
-  PASS  Verify Field elemens after Halo() Test-2, ESMF_FieldHaloUTest.F90, line 663
-  PASS  routehandle Release Test-2, ESMF_FieldHaloUTest.F90, line 670
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
   PASS  Verify Field elemens after Halo() Test-2, ESMF_FieldHaloUTest.F90, line 663
   PASS  routehandle Release Test-2, ESMF_FieldHaloUTest.F90, line 670
   PASS  routehandle Release Test-2, ESMF_FieldHaloUTest.F90, line 670
   PASS  Field Destroy Test-2, ESMF_FieldHaloUTest.F90, line 677
   PASS  Grid Destroy Test-2, ESMF_FieldHaloUTest.F90, line 684
+  PASS  routehandle Release Test-2, ESMF_FieldHaloUTest.F90, line 670
   PASS  Field Destroy Test-2, ESMF_FieldHaloUTest.F90, line 677
   PASS  Field Destroy Test-2, ESMF_FieldHaloUTest.F90, line 677
   PASS  Grid Destroy Test-2, ESMF_FieldHaloUTest.F90, line 684
   PASS  Field Destroy Test-2, ESMF_FieldHaloUTest.F90, line 677
   PASS  Grid Destroy Test-2, ESMF_FieldHaloUTest.F90, line 684
+  Ending Test, file ESMF_FieldHaloUTest.F90, line 692
+  Ending Test, file ESMF_FieldHaloUTest.F90, line 692
   PASS  Grid Destroy Test-2, ESMF_FieldHaloUTest.F90, line 684
   Ending Test, file ESMF_FieldHaloUTest.F90, line 692
   Ending Test, file ESMF_FieldHaloUTest.F90, line 692
-  Ending Test, file ESMF_FieldHaloUTest.F90, line 692
-  Ending Test, file ESMF_FieldHaloUTest.F90, line 692
-  PET           2  Test Elapsed Time    8.1219999999999910       msec.
-  PET           0  Test Elapsed Time    7.7879999999999896       msec.
-  PET           3  Test Elapsed Time    8.9039999999999946       msec.
-  PET           1  Test Elapsed Time    8.7669999999999835       msec.
-[r2i7n33:295648] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r2i7n33:295648] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+  PET           0  Test Elapsed Time    8.0290000000000088       msec.
+  PET           2  Test Elapsed Time    7.6420000000000101       msec.
+  PET           1  Test Elapsed Time    8.5099999999999891       msec.
+  PET           3  Test Elapsed Time    8.5790000000000042       msec.
+[r3i3n33:177643] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r3i3n33:177643] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
