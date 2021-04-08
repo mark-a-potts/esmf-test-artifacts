@@ -32,8 +32,11 @@ cd nuopc-app-prototypes
 cd ../src/addon/ESMPy
 python3 setup.py build 
 
-ssh cheyenne6 "module load python/3.6.8;cd $PWD; python3 setup.py test_examples_dryrun"
-ssh cheyenne6 "module load python/3.6.7;cd $PWD; python3 setup.py test_regrid_from_file_dryrun"
+export PATH=$PATH:$HOME/.local/bin
+ssh cheyenne6 "export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_examples_dryrun"
+ssh cheyenne6 "export PATH=$PATH:$HOME/.local/bin;module load python/3.6.7;cd $PWD; python3 setup.py test_regrid_from_file_dryrun"
+#python3 setup.py test_examples_dryrun
+#python3 setup.py test_regrid_from_file_dryrun
 
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
