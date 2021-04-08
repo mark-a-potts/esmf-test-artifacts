@@ -20,8 +20,8 @@ export ESMF_COMM=mpt
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make -j 36 clean 2>&1|tee clean_$JOBID.log 
-make -j 36 2>&1|tee build_$JOBID.log
+make -j 36 clean 2>&1| tee clean_$JOBID.log 
+make -j 36 2>&1| tee build_$JOBID.log
 
 ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_mpt_O/getres-build.sh
 
