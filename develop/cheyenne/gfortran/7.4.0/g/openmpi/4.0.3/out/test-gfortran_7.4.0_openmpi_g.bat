@@ -27,7 +27,7 @@ export ESMF_TESTWITHTHREADS='ON'
 
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
-./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
+#./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
 
 cd ../src/addon/ESMPy
 python3 setup.py build 
