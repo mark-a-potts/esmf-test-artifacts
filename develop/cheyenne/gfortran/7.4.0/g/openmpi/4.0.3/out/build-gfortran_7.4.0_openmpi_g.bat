@@ -24,5 +24,7 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 36 clean 2>&1|tee clean_$JOBID.log 
 make -j 36 2>&1|tee build_$JOBID.log
 
+cd src/addon/ESMPy
+python3 setup.py build --ESMFMKFILE=$PWD/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/esmf.mk
 ssh cheyenne6 /glade/scratch/mpotts/gfortran_7.4.0_openmpi_g/getres-build.sh
 

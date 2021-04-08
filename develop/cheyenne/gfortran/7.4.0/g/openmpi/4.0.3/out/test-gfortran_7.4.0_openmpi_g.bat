@@ -21,13 +21,23 @@ export ESMF_COMM=openmpi
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make info 2>&1| tee info.log 
-make install 2>&1|tee install_$JOBID.log 
-make all_tests 2>&1|tee test_$JOBID.log 
+#make info 2>&1| tee info.log 
+#make install 2>&1|tee install_$JOBID.log 
+#make all_tests 2>&1|tee test_$JOBID.log 
 
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
+
+cd ../src/addon/ESMPy
+python3 setup.py build 
+
+ssh cheyenne6 "cd $PWD; python3 setup.py test_examples_dryrun"
+ssh cheyenne6 "cd $PWD; python3 setup.py test_regrid_from_file_dryrun"
+
+python3 setup.py test 2>&1 | tee python_test.log
+python3 setup.py test_examples 2>&1 | tee python_examples.log
+python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
 
 ssh cheyenne6 /glade/scratch/mpotts/gfortran_7.4.0_openmpi_g/getres-test.sh
 
