@@ -11,7 +11,7 @@ cd /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O
 
 module unload PrgEnv-cray PrgEnv-gnu
 
-module load PrgEnv-intel
+module load PrgEnv-intel cray-pals
 module load intel/19.1.3.304 cray-mpich/8.1.4 cray-netcdf/4.7.4.3
 module load cray-hdf5/1.12.0.3 
 module list
