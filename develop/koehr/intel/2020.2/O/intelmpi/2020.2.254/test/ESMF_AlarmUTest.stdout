@@ -68,12 +68,12 @@
   PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 23
  6
  6
+  PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
   PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 23
  6
   PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
   PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
   PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
-  PASS  Destroy test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 244
   PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 
  252
   PASS  Testing Alarm IsCreated for destroyed object, ESMF_AlarmUTest.F90, line 
@@ -279,13 +279,13 @@
   PASS  Clock Get Alarm List Test 2 - only alarmList specified, ESMF_AlarmUTest.
  F90, line 610
   PASS  Clock Get Alarm List Test 3 - only alarmCount specified, ESMF_AlarmUTest
- .F90, line 620
   PASS  Clock Get Alarm List Test 3 - only alarmCount specified, ESMF_AlarmUTest
  .F90, line 620
   PASS  Clock Get Alarm List Test 3 - only alarmCount specified, ESMF_AlarmUTest
  .F90, line 620
   PASS  Clock Get Alarm List Test 3 - only alarmCount specified, ESMF_AlarmUTest
  .F90, line 620
+ .F90, line 620
   PASS  Clock Get Alarm List Test 4 - single-element length alarmList specified,
   ESMF_AlarmUTest.F90, line 632
   PASS  Clock Get Alarm List Test 4 - single-element length alarmList specified,
@@ -414,11 +414,11 @@
   PASS  Set Alarm name Test, ESMF_AlarmUTest.F90, line 859
   PASS  Set Alarm name Test, ESMF_AlarmUTest.F90, line 859
   PASS  Set Alarm name Test, ESMF_AlarmUTest.F90, line 859
-  PASS  Get Alarm name Test, ESMF_AlarmUTest.F90, line 868
   PASS  Get Alarm name Test, ESMF_AlarmUTest.F90, line 868
   PASS  Get Alarm name Test, ESMF_AlarmUTest.F90, line 868
   PASS  Get Alarm name Test, ESMF_AlarmUTest.F90, line 868
   PASS  Check if Alarm is not sticky Test, ESMF_AlarmUTest.F90, line 878
+  PASS  Get Alarm name Test, ESMF_AlarmUTest.F90, line 868
   PASS  Check if Alarm is not sticky Test, ESMF_AlarmUTest.F90, line 878
   PASS  Check if Alarm is not sticky Test, ESMF_AlarmUTest.F90, line 878
   PASS  Check if Alarm is not sticky Test, ESMF_AlarmUTest.F90, line 878
@@ -462,25 +462,23 @@ Alarm ----------------------------------
 Alarm ----------------------------------
 name = ALARM1
 ringInterval = 
+TimeInterval ---------------------------name = ALARM1
+ringInterval = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
 Alarm ----------------------------------
 name = ALARM1
 ringInterval = 
-TimeInterval ---------------------------Alarm ----------------------------------
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+Alarm ----------------------------------
 name = ALARM1
 ringInterval = 
 TimeInterval ---------------------------
 BaseTime -------------------------------
-name = ALARM1
-ringInterval = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-TimeInterval ---------------------------
-BaseTime -------------------------------
 s = 0
 sN = 0
 sD = 1
@@ -488,7 +486,6 @@ end BaseTime ---------------------------
 
 yy    = 0
 mm    = 0
-d     = 0
 
 BaseTime -------------------------------
 s = 0
@@ -508,7 +505,8 @@ yy    = 0
 mm    = 0
 d     = 0
 d_r8  = 0
-end TimeInterval -----------------------
+end BaseTime ---------------------------
+
 yy    = 0
 mm    = 0
 d     = 0
@@ -516,15 +514,14 @@ d_r8  = 0
 end TimeInterval -----------------------
 
 ringDuration = 
-TimeInterval ---------------------------d_r8  = 0
+d     = 0
+d_r8  = 0
 end TimeInterval -----------------------
 
 ringDuration = 
 TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
+BaseTime -------------------------------d_r8  = 0
+end TimeInterval -----------------------
 
 ringDuration = 
 TimeInterval ---------------------------
@@ -536,20 +533,7 @@ end BaseTime ---------------------------
 
 yy    = 0
 mm    = 0
-
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
 d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-ringTime = d_r8  = 0
 end TimeInterval -----------------------
 
 ringDuration = 
@@ -567,8 +551,25 @@ d_r8  = 0
 end TimeInterval -----------------------
 
 ringTime = 
-Time -----------------------------------
-BaseTime -------------------------------end BaseTime ---------------------------
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+ringTime = 
+
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
 yy    = 0
 mm    = 0
@@ -579,12 +580,6 @@ end TimeInterval -----------------------
 ringTime = 
 Time -----------------------------------
 BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
@@ -596,6 +591,12 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -604,136 +605,24 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-
-s = 211930387200
+Calendar -------------------------------s = 211930387200
 sN = 0
 sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 31 28 31 30 31 30 31 31 30 31 30 31 
-30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 
 name = Gregorian
 calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -743,10 +632,64 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
 timeZone = 0
 end Time -------------------------------
 
-prevRingTime = 
+firstRingTime = 
+
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+firstRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+firstRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+timeZone = 0
+end Time -------------------------------
+
+firstRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211930387200
@@ -761,249 +704,6 @@ daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringBegin = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringEnd = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914387927
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringTimeStepCount = 1
-timeStepRingingCount = 0
-ringing = false
-ringingOnPrevTimeStep = false
-enabled = true
-sticky = true
-end Alarm ------------------------------
-
-  PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
-  PASS  Disable Alarm Test, ESMF_AlarmUTest.F90, line 977
-  PASS  Check if Alarm is disabled Test, ESMF_AlarmUTest.F90, line 986
-  PASS  Destroy Alarm Test, ESMF_AlarmUTest.F90, line 995
-  PASS  Destroy Clock Test, ESMF_AlarmUTest.F90, line 1004
-  PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 1014
-  PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 1026
-  PASS  Set Stop Time Initialization Test, ESMF_AlarmUTest.F90, line 1038
-  PASS  Set Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1049
-  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1060
-  PASS  Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1069
-  PASS  Get Alarm Test, ESMF_AlarmUTest.F90, line 1078
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1090
-  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1100
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1111
-  PASS  Get Clock Current Time Test, ESMF_AlarmUTest.F90, line 1121
-  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1132
-  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1143
-  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1154
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1164
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1177
-  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1195
-  PASS  Turn off Ringing Alarm, ESMF_AlarmUTest.F90, line 1204
-  PASS  Check if Alarm is not ringing Test, ESMF_AlarmUTest.F90, line 1213
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1223
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1234
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1245
-  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1258
-  PASS  Non-Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 126
- 8
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1279
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1290
-  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1301
-  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1312
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1322
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1335
-  PASS  Destroying alarm test, ESMF_AlarmUTest.F90, line 1345
-  PASS  Destroying clock after alarm test, ESMF_AlarmUTest.F90, line 1354
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-prevRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-stopTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringBegin = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringEnd = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914387927
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringTimeStepCount = 1
-timeStepRingingCount = 0
-ringing = false
-ringingOnPrevTimeStep = false
-enabled = true
-sticky = true
-end Alarm ------------------------------
-
-  PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
-  PASS  Disable Alarm Test, ESMF_AlarmUTest.F90, line 977
-  PASS  Check if Alarm is disabled Test, ESMF_AlarmUTest.F90, line 986
-  PASS  Destroy Alarm Test, ESMF_AlarmUTest.F90, line 995
-  PASS  Destroy Clock Test, ESMF_AlarmUTest.F90, line 1004
-  PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 1014
-  PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 1026
-  PASS  Set Stop Time Initialization Test, ESMF_AlarmUTest.F90, line 1038
-  PASS  Set Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1049
-  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1060
-  PASS  Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1069
-  PASS  Get Alarm Test, ESMF_AlarmUTest.F90, line 1078
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1090
-  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1100
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1111
-  PASS  Get Clock Current Time Test, ESMF_AlarmUTest.F90, line 1121
-  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1132
-  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1143
-  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1154
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1164
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1177
-  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1195
-  PASS  Turn off Ringing Alarm, ESMF_AlarmUTest.F90, line 1204
-  PASS  Check if Alarm is not ringing Test, ESMF_AlarmUTest.F90, line 1213
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1223
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1234
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1245
-  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1258
-  PASS  Non-Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 126
- 8
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1279
-  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1290
-  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1301
-  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1312
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1322
-  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1335
-  PASS  Destroying alarm test, ESMF_AlarmUTest.F90, line 1345
-  PASS  Destroying clock after alarm test, ESMF_AlarmUTest.F90, line 1354
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -1137,6 +837,306 @@ end Alarm ------------------------------
   PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1335
   PASS  Destroying alarm test, ESMF_AlarmUTest.F90, line 1345
   PASS  Destroying clock after alarm test, ESMF_AlarmUTest.F90, line 1354
+
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+prevRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringBegin = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringEnd = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914387927
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringTimeStepCount = 1
+timeStepRingingCount = 0
+ringing = false
+ringingOnPrevTimeStep = false
+enabled = true
+sticky = true
+end Alarm ------------------------------
+
+  PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
+  PASS  Disable Alarm Test, ESMF_AlarmUTest.F90, line 977
+  PASS  Check if Alarm is disabled Test, ESMF_AlarmUTest.F90, line 986
+  PASS  Destroy Alarm Test, ESMF_AlarmUTest.F90, line 995
+  PASS  Destroy Clock Test, ESMF_AlarmUTest.F90, line 1004
+  PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 1014
+  PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 1026
+  PASS  Set Stop Time Initialization Test, ESMF_AlarmUTest.F90, line 1038
+  PASS  Set Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1049
+  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1060
+  PASS  Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1069
+  PASS  Get Alarm Test, ESMF_AlarmUTest.F90, line 1078
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1090
+  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1100
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1111
+  PASS  Get Clock Current Time Test, ESMF_AlarmUTest.F90, line 1121
+  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1132
+  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1143
+  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1154
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1164
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1177
+  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1195
+  PASS  Turn off Ringing Alarm, ESMF_AlarmUTest.F90, line 1204
+  PASS  Check if Alarm is not ringing Test, ESMF_AlarmUTest.F90, line 1213
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1223
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1234
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1245
+  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1258
+  PASS  Non-Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 126
+ 8
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1279
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1290
+  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1301
+  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1312
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1322
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1335
+  PASS  Destroying alarm test, ESMF_AlarmUTest.F90, line 1345
+  PASS  Destroying clock after alarm test, ESMF_AlarmUTest.F90, line 1354
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+prevRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringBegin = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringEnd = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914387927
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringTimeStepCount = 1
+timeStepRingingCount = 0
+ringing = false
+ringingOnPrevTimeStep = false
+enabled = true
+sticky = true
+end Alarm ------------------------------
+
+  PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
+  PASS  Disable Alarm Test, ESMF_AlarmUTest.F90, line 977
+  PASS  Check if Alarm is disabled Test, ESMF_AlarmUTest.F90, line 986
+  PASS  Destroy Alarm Test, ESMF_AlarmUTest.F90, line 995
+  PASS  Destroy Clock Test, ESMF_AlarmUTest.F90, line 1004
+  PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 1014
+  PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 1026
+  PASS  Set Stop Time Initialization Test, ESMF_AlarmUTest.F90, line 1038
+  PASS  Set Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1049
+  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1060
+  PASS  Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 1069
+  PASS  Get Alarm Test, ESMF_AlarmUTest.F90, line 1078
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1090
+  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1100
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1111
+  PASS  Get Clock Current Time Test, ESMF_AlarmUTest.F90, line 1121
+  PASS  Get Clock Next Time Test, ESMF_AlarmUTest.F90, line 1132
+  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1143
+  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1154
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1164
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1177
+  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1195
+  PASS  Turn off Ringing Alarm, ESMF_AlarmUTest.F90, line 1204
+  PASS  Check if Alarm is not ringing Test, ESMF_AlarmUTest.F90, line 1213
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1223
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1234
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1245
+  PASS  Clock Initialization Test, ESMF_AlarmUTest.F90, line 1258
+  PASS  Non-Sticky Alarm Time Initialization Test, ESMF_AlarmUTest.F90, line 126
+ 8
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1279
+  PASS  Alarm will ring next Test, ESMF_AlarmUTest.F90, line 1290
+  PASS  Alarm is ringing Test, ESMF_AlarmUTest.F90, line 1301
+  PASS  Alarm is still ringing Test, ESMF_AlarmUTest.F90, line 1312
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1322
+  PASS  Alarm Was Previously ringing Test, ESMF_AlarmUTest.F90, line 1335
+  PASS  Destroying alarm test, ESMF_AlarmUTest.F90, line 1345
+  PASS  Destroying clock after alarm test, ESMF_AlarmUTest.F90, line 1354
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
 prevRingTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -1364,7 +1364,6 @@ end Alarm ------------------------------
   PASS  Alarm list reallocation Test 1, ESMF_AlarmUTest.F90, line 2746
  rc=           0
  rc=           0
-  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
  rc=           0
  rc=           0
   PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
@@ -1373,6 +1372,7 @@ end Alarm ------------------------------
   PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
  rc=           0
  rc=           0
+  PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
   PASS  Alarm list reallocation Test 2, ESMF_AlarmUTest.F90, line 2767
   PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
   PASS  Alarm list reallocation Test 3, ESMF_AlarmUTest.F90, line 2791
@@ -1430,7 +1430,7 @@ end Alarm ------------------------------
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
-  PET           0  Test Elapsed Time    17.3230000000000       msec.
-  PET           1  Test Elapsed Time    17.3130000000000       msec.
-  PET           2  Test Elapsed Time    17.3290000000000       msec.
-  PET           3  Test Elapsed Time    17.3540000000000       msec.
+  PET           0  Test Elapsed Time    17.3580000000000       msec.
+  PET           1  Test Elapsed Time    17.3710000000000       msec.
+  PET           2  Test Elapsed Time    17.3860000000000       msec.
+  PET           3  Test Elapsed Time    17.3840000000000       msec.

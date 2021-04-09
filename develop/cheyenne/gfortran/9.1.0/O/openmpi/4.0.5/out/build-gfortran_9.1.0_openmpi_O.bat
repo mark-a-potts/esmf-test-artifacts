@@ -21,8 +21,8 @@ export ESMF_COMM=openmpi
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make -j 36 clean 2>&1|tee clean_$JOBID.log 
-make -j 36 2>&1|tee build_$JOBID.log
+make -j 36 clean 2>&1| tee clean_$JOBID.log 
+make -j 36 2>&1| tee build_$JOBID.log
 
 ssh cheyenne6 /glade/scratch/mpotts/gfortran_9.1.0_openmpi_O/getres-build.sh
 
