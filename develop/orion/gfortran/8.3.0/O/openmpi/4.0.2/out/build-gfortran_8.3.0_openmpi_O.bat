@@ -21,6 +21,6 @@ export ESMF_COMM=openmpi
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make -j 40 clean 2>&1|tee clean_$JOBID.log 
-make -j 40 2>&1|tee build_$JOBID.log
+make -j 40 clean 2>&1| tee clean_$JOBID.log 
+make -j 40 2>&1| tee build_$JOBID.log
 
