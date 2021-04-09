@@ -27,12 +27,12 @@ export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
-make install 2>&1|tee install_$JOBID.log 
-make all_tests 2>&1|tee test_$JOBID.log 
+make install 2>&1| tee install_$JOBID.log 
+make all_tests 2>&1| tee test_$JOBID.log 
 
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
-./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log 
+./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
 ssh onyx08 /p/work/mpotts/intel_2017.5_mpi_O/getres-test.sh
 
