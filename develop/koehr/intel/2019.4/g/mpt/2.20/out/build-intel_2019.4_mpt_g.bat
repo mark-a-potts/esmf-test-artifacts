@@ -30,8 +30,8 @@ export ESMF_COMM=mpt
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make -j 48 clean 2>&1|tee clean_$JOBID.log 
-make -j 48 2>&1|tee build_$JOBID.log
+make -j 48 clean 2>&1| tee clean_$JOBID.log 
+make -j 48 2>&1| tee build_$JOBID.log
 
 ssh koehr03 /p/work1/mpotts/intel_2019.4_mpt_g/getres-build.sh
 
