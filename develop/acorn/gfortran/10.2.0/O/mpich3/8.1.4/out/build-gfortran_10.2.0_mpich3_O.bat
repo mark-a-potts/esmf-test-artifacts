@@ -17,7 +17,7 @@ module list >& module-build.log
 
 set -x
 export ESMF_NETCDF=nc-config
-
+export ESMF_NFCONFIG=nf-config
 export ESMF_OS=Linux
 export ESMF_CXXCOMPILER=CC
 export ESMF_F90COMPILER=ftn
