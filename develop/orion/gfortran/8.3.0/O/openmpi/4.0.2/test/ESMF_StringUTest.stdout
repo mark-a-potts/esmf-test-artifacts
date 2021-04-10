@@ -5,6 +5,10 @@
  -- entering f90ints subroutine
  -- entering f90ints subroutine
   ints=         102         204         409         819
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
+  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
   rc=           0
  -- exiting f90ints subroutine
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
@@ -122,13 +126,6 @@
  -- leaving f90string2 subroutine
 
 
--- returned from call f90string2 by callback
-
-
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
-  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          60
@@ -247,20 +244,9 @@
 
 
 -- ready to call f90string2 by callback, passing 25
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          25
-  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
- -- leaving f90string2 subroutine
-
-
 -- returned from call f90string2 by callback
 
 
--- ready to call f90string3 by callback, passing 14, 24
- -- entering f90string3 subroutine
-  ints=         102         204         409         819
-  strlen =          14
 -- ready to call f90string2 by callback, passing 25
  -- entering f90string2 subroutine
   ints=         102         204         409         819
@@ -272,25 +258,27 @@
 -- returned from call f90string2 by callback
 
 
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          25
+  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
+
+
 -- ready to call f90string3 by callback, passing 14, 24
-  fstr=ABCDEFGHIJKLMN
-  strlen2 =          24
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
-
-
--- returned from call f90string3 by callback
-
-
--- leaving c_strings
-  PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
  -- entering f90string3 subroutine
   ints=         102         204         409         819
   strlen =          14
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
-  Ending Test, file ESMF_StringUTest.F90, line 120
+-- ready to call f90string3 by callback, passing 14, 24
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =          14
  -- leaving f90string3 subroutine
 
 
@@ -299,6 +287,18 @@
 
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
+  fstr=ABCDEFGHIJKLMN
+  strlen2 =          24
+  fstr2=0123456789abcdefghijklmn
+ -- leaving f90string3 subroutine
+
+
+-- returned from call f90string3 by callback
+
+
+-- leaving c_strings
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time    3.4070000000000213       msec.
-  PET           1  Test Elapsed Time    4.2529999999999788       msec.
+  PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
+  Ending Test, file ESMF_StringUTest.F90, line 120
+  PET           0  Test Elapsed Time    3.3220000000000054       msec.
+  PET           1  Test Elapsed Time    4.2510000000000048       msec.
