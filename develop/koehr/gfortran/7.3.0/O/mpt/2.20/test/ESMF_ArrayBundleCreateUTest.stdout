@@ -33,7 +33,6 @@
   PASS  Testing ArrayBundle IsCreated for destroyed object, ESMF_ArrayBundleCreateUTest.F90, line 146
   PASS  empty ArrayBundleCreate Test, ESMF_ArrayBundleCreateUTest.F90, line 154
 --- ESMCI::ArrayBundle::print start ---
---- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyEmptyArrayBundle
 arrayCount = 0
 --- ESMCI::ArrayBundle::print end ---
@@ -52,6 +51,7 @@ arrayCount = 0
 ArrayBundle: MyEmptyArrayBundle
 arrayCount = 0
 --- ESMCI::ArrayBundle::print end ---
+--- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyEmptyArrayBundle
 arrayCount = 0
 --- ESMCI::ArrayBundle::print end ---
@@ -71,6 +71,7 @@ arrayCount = 0
   PASS  Double ArrayBundleDestroy through alias Test, ESMF_ArrayBundleCreateUTest.F90, line 248
   PASS  ArrayBundleCreate Test, ESMF_ArrayBundleCreateUTest.F90, line 256
 --- ESMCI::ArrayBundle::print start ---
+ArrayBundle: MyArrayBundle
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 161
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 168
   PASS  ArrayCreate Allocate 2D ESMF_TYPEKIND_R8 Test, ESMF_ArrayBundleCreateUTest.F90, line 184
@@ -116,26 +117,25 @@ arrayCount = 2
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
 arrayCount = 2
-ArrayBundle: MyArrayBundle
 arrayCount = 2
-Container::print() multipmap:item=0 key=MyArray value=0x17a7530
 Container::print() multipmap:item=0 key=MyArray value=0x17a75a0
 Container::print() multipmap:item=0 key=MyArray value=0x17a7460
+Container::print() multipmap:item=1 key=MyArray2 value=0x17a82c0
 Container::print() multipmap:item=0 key=MyArray value=0x17a7450
-Container::print() multipmap:item=1 key=MyArray2 value=0x17a8250
+Container::print() multipmap:item=0 key=MyArray value=0x17a7530
 Container::print() multipmap:item=1 key=MyArray2 value=0x17a8350
-Container::print()      list:item=0 key=MyArray value=0x17a7530
 Container::print() multipmap:item=1 key=MyArray2 value=0x17a8360
 Container::print()      list:item=0 key=MyArray value=0x17a75a0
 Container::print()      list:item=1 key=MyArray2 value=0x17a8360
 --- ESMCI::ArrayBundle::print end ---
-Container::print() multipmap:item=1 key=MyArray2 value=0x17a82c0
 Container::print()      list:item=0 key=MyArray value=0x17a7460
 Container::print()      list:item=1 key=MyArray2 value=0x17a82c0
 --- ESMCI::ArrayBundle::print end ---
+Container::print() multipmap:item=1 key=MyArray2 value=0x17a8250
 Container::print()      list:item=0 key=MyArray value=0x17a7450
 Container::print()      list:item=1 key=MyArray2 value=0x17a8250
 --- ESMCI::ArrayBundle::print end ---
+Container::print()      list:item=0 key=MyArray value=0x17a7530
 Container::print()      list:item=1 key=MyArray2 value=0x17a8350
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
@@ -166,8 +166,21 @@ Container::print()      list:item=1 key=MyArray2 value=0x17a8350
   PASS  Validate isPresent flag, ESMF_ArrayBundleCreateUTest.F90, line 330
   PASS  ArrayBundleAdd with arrayList size 1 Test, ESMF_ArrayBundleCreateUTest.F90, line 342
   PASS  ArrayBundleGet with arrayName Test, ESMF_ArrayBundleCreateUTest.F90, line 351
+  PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
+  PASS  ArrayBundleGet with arrayList Test, ESMF_ArrayBundleCreateUTest.F90, line 271
+ arrayCount=           2
+  PASS  ArrayBundleGet with arrayNameList Test, ESMF_ArrayBundleCreateUTest.F90, line 281
+ arrayNameList(           1 )=MyArray
+ arrayNameList(           2 )=MyArray2
+  PASS  ArrayBundleAdd with existing Array Test, ESMF_ArrayBundleCreateUTest.F90, line 292
+  PASS  ArrayBundleAdd with existing Array but relaxed Test, ESMF_ArrayBundleCreateUTest.F90, line 300
+  PASS  ArrayBundleAdd with zero size arrayList Test, ESMF_ArrayBundleCreateUTest.F90, line 308
+  PASS  ArrayBundleGet with arrayName not exist Test, ESMF_ArrayBundleCreateUTest.F90, line 317
+  PASS  ArrayBundleGet with arrayName not exist isPresent Test, ESMF_ArrayBundleCreateUTest.F90, line 325
+  PASS  Validate isPresent flag, ESMF_ArrayBundleCreateUTest.F90, line 330
+  PASS  ArrayBundleAdd with arrayList size 1 Test, ESMF_ArrayBundleCreateUTest.F90, line 342
+  PASS  ArrayBundleGet with arrayName Test, ESMF_ArrayBundleCreateUTest.F90, line 351
 --- ESMCI::Array::print start ---
- Base name    = MyArray3
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
   PASS  ArrayBundleGet with arrayList Test, ESMF_ArrayBundleCreateUTest.F90, line 271
  arrayCount=           2
@@ -186,30 +199,17 @@ Container::print()      list:item=1 key=MyArray2 value=0x17a8350
  Base name    = MyArray3
 --- ESMCI::Array::print start ---
  Base name    = MyArray3
-  PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
-  PASS  ArrayBundleGet with arrayList Test, ESMF_ArrayBundleCreateUTest.F90, line 271
- arrayCount=           2
-  PASS  ArrayBundleGet with arrayNameList Test, ESMF_ArrayBundleCreateUTest.F90, line 281
- arrayNameList(           1 )=MyArray
- arrayNameList(           2 )=MyArray2
-  PASS  ArrayBundleAdd with existing Array Test, ESMF_ArrayBundleCreateUTest.F90, line 292
-  PASS  ArrayBundleAdd with existing Array but relaxed Test, ESMF_ArrayBundleCreateUTest.F90, line 300
-  PASS  ArrayBundleAdd with zero size arrayList Test, ESMF_ArrayBundleCreateUTest.F90, line 308
-  PASS  ArrayBundleGet with arrayName not exist Test, ESMF_ArrayBundleCreateUTest.F90, line 317
-  PASS  ArrayBundleGet with arrayName not exist isPresent Test, ESMF_ArrayBundleCreateUTest.F90, line 325
-  PASS  Validate isPresent flag, ESMF_ArrayBundleCreateUTest.F90, line 330
-  PASS  ArrayBundleAdd with arrayList size 1 Test, ESMF_ArrayBundleCreateUTest.F90, line 342
-  PASS  ArrayBundleGet with arrayName Test, ESMF_ArrayBundleCreateUTest.F90, line 351
+ Status: Base = Ready,  object = Ready
 --- ESMCI::Array::print start ---
  Base name    = MyArray3
  Status: Base = Ready,  object = Ready
+ Base name    = MyArray3
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Proxy        = no
@@ -217,16 +217,12 @@ Container::print()      list:item=1 key=MyArray2 value=0x17a8350
 {}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
-deCount = 4
-localDeCount = 1
 {}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x17aa7d0:
-            rank = 2, typekind = 6, base_addr = 0x17aab00
 {}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
@@ -244,19 +240,25 @@ localDeCount = 1
 LocalArrayPrint: Array at address 0x17aa860:
             rank = 2, typekind = 6, base_addr = 0x17aab90
             dim[0] = 8  dim[1] = 11  
-  Real, *8, Dim 2, Data values:
+deCount = 4
+localDeCount = 1
 ~ local data in LocalArray for DE 3 ~
 LocalArrayPrint: Array at address 0x17aa870:
             rank = 2, typekind = 6, base_addr = 0x17aaba0
             dim[0] = 7  dim[1] = 11  
   Real, *8, Dim 2, Data values:
+LocalArrayPrint: Array at address 0x17aa7d0:
+            rank = 2, typekind = 6, base_addr = 0x17aab00
             dim[0] = 8  dim[1] = 12  
   Real, *8, Dim 2, Data values:
-( 1, 1) =  0
             dim[0] = 7  dim[1] = 12  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  0
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  0
 ( 2, 1) =  0
+( 3, 1) =  0
+( 4, 1) =  0
 ( 1, 1) =  0
 ( 2, 1) =  0
 ( 3, 1) =  0
@@ -266,15 +268,6 @@ LocalArrayPrint: Array at address 0x17aa870:
 ( 7, 1) =  0
 ( 8, 1) =  0
 ( 2, 1) =  0
-( 3, 1) =  0
-( 4, 1) =  0
-( 5, 1) =  0
-( 6, 1) =  0
-( 7, 1) =  0
-( 8, 1) =  0
-( 1, 2) =  0
-( 2, 2) =  0
-  skipping to end ...
 ( 3, 1) =  0
 ( 4, 1) =  0
 ( 5, 1) =  0
@@ -284,17 +277,16 @@ LocalArrayPrint: Array at address 0x17aa870:
 ( 2, 2) =  0
 ( 3, 2) =  0
   skipping to end ...
-( 5,11) =  0
+( 5, 1) =  0
+( 6, 1) =  0
+( 7, 1) =  0
+( 8, 1) =  0
 ( 1, 2) =  0
 ( 2, 2) =  0
   skipping to end ...
 ( 7,10) =  0
 ( 8,10) =  0
 ( 1,11) =  0
-( 2,11) =  0
-( 3,11) =  0
-( 4,11) =  0
-( 5,11) =  0
 ( 1, 1) =  0
 ( 2, 1) =  0
 ( 3, 1) =  0
@@ -311,9 +303,9 @@ LocalArrayPrint: Array at address 0x17aa870:
 ( 7,10) =  0
 ( 1,11) =  0
 ( 2,11) =  0
-( 3,11) =  0
-( 4,11) =  0
-( 5,11) =  0
+( 1, 2) =  0
+( 2, 2) =  0
+  skipping to end ...
 ( 7,11) =  0
 ( 8,11) =  0
 ( 1,12) =  0
@@ -324,7 +316,7 @@ LocalArrayPrint: Array at address 0x17aa870:
 ( 6,12) =  0
 ( 7,12) =  0
 ( 8,12) =  0
-dim 1: [0]: [1 [1 [1, 8] 8] 8]
+( 5,11) =  0
 ( 6,11) =  0
 ( 7,11) =  0
 ( 1,12) =  0
@@ -335,18 +327,26 @@ dim 1: [0]: [1 [1 [1, 8] 8] 8]
 ( 6,12) =  0
 ( 7,12) =  0
 dim 1: [0]: [1 [1 [1, 7] 7] 7]
-dim 2: [1]: [1 [1 [1, 12] 12] 12]
---- ESMCI::Array::print end ---
+( 2,11) =  0
+( 3,11) =  0
+( 4,11) =  0
+( 5,11) =  0
 ( 6,11) =  0
 ( 7,11) =  0
 ( 8,11) =  0
 dim 1: [0]: [1 [1 [1, 8] 8] 8]
 dim 2: [1]: [1 [1 [1, 11] 11] 11]
 --- ESMCI::Array::print end ---
+( 3,11) =  0
+( 4,11) =  0
+( 5,11) =  0
 ( 6,11) =  0
 ( 7,11) =  0
 dim 1: [0]: [1 [1 [1, 7] 7] 7]
 dim 2: [1]: [1 [1 [1, 11] 11] 11]
+--- ESMCI::Array::print end ---
+dim 1: [0]: [1 [1 [1, 8] 8] 8]
+dim 2: [1]: [1 [1 [1, 12] 12] 12]
 --- ESMCI::Array::print end ---
 dim 2: [1]: [1 [1 [1, 12] 12] 12]
 --- ESMCI::Array::print end ---
@@ -363,8 +363,6 @@ dim 2: [1]: [1 [1 [1, 12] 12] 12]
   PASS  ArrayBundleAdd with multiflag #2 Test, ESMF_ArrayBundleCreateUTest.F90, line 448
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
-arrayCount = 9
-Container::print() multipmap:item=0 key=MyArray2 value=0x17a8350
   PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBundleCreateUTest.F90, line 361
   PASS  ArrayBundleRemove with arrayNameList size 1 not-existing Test, ESMF_ArrayBundleCreateUTest.F90, line 368
   PASS  ArrayBundleRemove with arrayNameList size 1 not-existing but relaxed Test, ESMF_ArrayBundleCreateUTest.F90, line 376
@@ -379,6 +377,22 @@ Container::print() multipmap:item=0 key=MyArray2 value=0x17a8350
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
 arrayCount = 9
+  PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBundleCreateUTest.F90, line 361
+  PASS  ArrayBundleRemove with arrayNameList size 1 not-existing Test, ESMF_ArrayBundleCreateUTest.F90, line 368
+  PASS  ArrayBundleRemove with arrayNameList size 1 not-existing but relaxed Test, ESMF_ArrayBundleCreateUTest.F90, line 376
+  PASS  ArrayBundleAdd with arrayList size 3 Test, ESMF_ArrayBundleCreateUTest.F90, line 394
+  PASS  ArrayBundleRemove with arrayNameList size 2 existing Test, ESMF_ArrayBundleCreateUTest.F90, line 402
+  PASS  ArrayBundleReplace with arrayList 1exist+2notexist relaxed Test, ESMF_ArrayBundleCreateUTest.F90, line 410
+  PASS  ArrayBundleReplace with arrayList 1exist+2notexist strict Test, ESMF_ArrayBundleCreateUTest.F90, line 417
+  PASS  ArrayBundleAddReplace with arrayList 1exist+2notexist Test, ESMF_ArrayBundleCreateUTest.F90, line 424
+  PASS  ArrayBundleRemove with arrayNameList size 2 existing Test, ESMF_ArrayBundleCreateUTest.F90, line 432
+  PASS  ArrayBundleAdd with multiflag #1 Test, ESMF_ArrayBundleCreateUTest.F90, line 440
+  PASS  ArrayBundleAdd with multiflag #2 Test, ESMF_ArrayBundleCreateUTest.F90, line 448
+--- ESMCI::ArrayBundle::print start ---
+ArrayBundle: MyArrayBundle
+arrayCount = 9
+arrayCount = 9
+Container::print() multipmap:item=0 key=MyArray2 value=0x17a8350
 Container::print() multipmap:item=1 key=MyArray4 value=0x17abb60
 Container::print() multipmap:item=2 key=MyArray4 value=0x17abb60
   PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBundleCreateUTest.F90, line 361
@@ -396,91 +410,77 @@ Container::print() multipmap:item=2 key=MyArray4 value=0x17abb60
 ArrayBundle: MyArrayBundle
 arrayCount = 9
 Container::print() multipmap:item=0 key=MyArray2 value=0x17a8360
-  PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBundleCreateUTest.F90, line 361
-  PASS  ArrayBundleRemove with arrayNameList size 1 not-existing Test, ESMF_ArrayBundleCreateUTest.F90, line 368
-  PASS  ArrayBundleRemove with arrayNameList size 1 not-existing but relaxed Test, ESMF_ArrayBundleCreateUTest.F90, line 376
-  PASS  ArrayBundleAdd with arrayList size 3 Test, ESMF_ArrayBundleCreateUTest.F90, line 394
-  PASS  ArrayBundleRemove with arrayNameList size 2 existing Test, ESMF_ArrayBundleCreateUTest.F90, line 402
-  PASS  ArrayBundleReplace with arrayList 1exist+2notexist relaxed Test, ESMF_ArrayBundleCreateUTest.F90, line 410
-  PASS  ArrayBundleReplace with arrayList 1exist+2notexist strict Test, ESMF_ArrayBundleCreateUTest.F90, line 417
-  PASS  ArrayBundleAddReplace with arrayList 1exist+2notexist Test, ESMF_ArrayBundleCreateUTest.F90, line 424
-  PASS  ArrayBundleRemove with arrayNameList size 2 existing Test, ESMF_ArrayBundleCreateUTest.F90, line 432
-  PASS  ArrayBundleAdd with multiflag #1 Test, ESMF_ArrayBundleCreateUTest.F90, line 440
-  PASS  ArrayBundleAdd with multiflag #2 Test, ESMF_ArrayBundleCreateUTest.F90, line 448
---- ESMCI::ArrayBundle::print start ---
-ArrayBundle: MyArrayBundle
-arrayCount = 9
-Container::print() multipmap:item=0 key=MyArray2 value=0x17a82c0
-Container::print() multipmap:item=0 key=MyArray2 value=0x17a8250
-Container::print() multipmap:item=1 key=MyArray4 value=0x17aba20
-Container::print() multipmap:item=3 key=MyArray4 value=0x17abb60
-Container::print() multipmap:item=4 key=MyArray5 value=0x17ad860
-Container::print() multipmap:item=5 key=MyArray5 value=0x17ad860
 Container::print() multipmap:item=1 key=MyArray4 value=0x17abab0
 Container::print() multipmap:item=2 key=MyArray4 value=0x17abab0
-Container::print() multipmap:item=3 key=MyArray4 value=0x17abab0
+Container::print() multipmap:item=0 key=MyArray2 value=0x17a82c0
 Container::print() multipmap:item=1 key=MyArray4 value=0x17abb50
 Container::print() multipmap:item=2 key=MyArray4 value=0x17abb50
 Container::print() multipmap:item=3 key=MyArray4 value=0x17abb50
+Container::print() multipmap:item=0 key=MyArray2 value=0x17a8250
+Container::print() multipmap:item=1 key=MyArray4 value=0x17aba20
 Container::print() multipmap:item=2 key=MyArray4 value=0x17aba20
 Container::print() multipmap:item=3 key=MyArray4 value=0x17aba20
-Container::print() multipmap:item=4 key=MyArray5 value=0x17ad6e0
-Container::print() multipmap:item=5 key=MyArray5 value=0x17ad6e0
-Container::print() multipmap:item=6 key=MyArray6 value=0x17aca20
-Container::print() multipmap:item=7 key=MyArray6 value=0x17aca20
-Container::print() multipmap:item=8 key=MyArray6 value=0x17aca20
+Container::print() multipmap:item=3 key=MyArray4 value=0x17abb60
+Container::print() multipmap:item=4 key=MyArray5 value=0x17ad860
+Container::print() multipmap:item=5 key=MyArray5 value=0x17ad860
+Container::print() multipmap:item=3 key=MyArray4 value=0x17abab0
 Container::print() multipmap:item=4 key=MyArray5 value=0x17ad6f0
 Container::print() multipmap:item=5 key=MyArray5 value=0x17ad6f0
-Container::print() multipmap:item=6 key=MyArray6 value=0x17ac910
 Container::print() multipmap:item=4 key=MyArray5 value=0x17ad8d0
 Container::print() multipmap:item=5 key=MyArray5 value=0x17ad8d0
 Container::print() multipmap:item=6 key=MyArray6 value=0x17aca50
-Container::print() multipmap:item=7 key=MyArray6 value=0x17aca50
+Container::print() multipmap:item=4 key=MyArray5 value=0x17ad6e0
+Container::print() multipmap:item=5 key=MyArray5 value=0x17ad6e0
 Container::print() multipmap:item=6 key=MyArray6 value=0x17ac8c0
-Container::print() multipmap:item=7 key=MyArray6 value=0x17ac8c0
-Container::print() multipmap:item=8 key=MyArray6 value=0x17ac8c0
-Container::print()      list:item=0 key=MyArray2 value=0x17a8350
-Container::print()      list:item=1 key=MyArray6 value=0x17aca20
-Container::print()      list:item=2 key=MyArray4 value=0x17abb60
+Container::print() multipmap:item=6 key=MyArray6 value=0x17aca20
+Container::print() multipmap:item=7 key=MyArray6 value=0x17aca20
+Container::print() multipmap:item=8 key=MyArray6 value=0x17aca20
+Container::print() multipmap:item=6 key=MyArray6 value=0x17ac910
 Container::print() multipmap:item=7 key=MyArray6 value=0x17ac910
 Container::print() multipmap:item=8 key=MyArray6 value=0x17ac910
 Container::print()      list:item=0 key=MyArray2 value=0x17a8360
-Container::print()      list:item=1 key=MyArray6 value=0x17ac910
+Container::print() multipmap:item=7 key=MyArray6 value=0x17aca50
 Container::print() multipmap:item=8 key=MyArray6 value=0x17aca50
 Container::print()      list:item=0 key=MyArray2 value=0x17a82c0
-Container::print()      list:item=1 key=MyArray6 value=0x17aca50
+Container::print() multipmap:item=7 key=MyArray6 value=0x17ac8c0
+Container::print() multipmap:item=8 key=MyArray6 value=0x17ac8c0
 Container::print()      list:item=0 key=MyArray2 value=0x17a8250
 Container::print()      list:item=1 key=MyArray6 value=0x17ac8c0
-Container::print()      list:item=2 key=MyArray4 value=0x17aba20
+Container::print()      list:item=0 key=MyArray2 value=0x17a8350
+Container::print()      list:item=1 key=MyArray6 value=0x17aca20
+Container::print()      list:item=2 key=MyArray4 value=0x17abb60
 Container::print()      list:item=3 key=MyArray4 value=0x17abb60
-Container::print()      list:item=4 key=MyArray6 value=0x17aca20
-Container::print()      list:item=5 key=MyArray5 value=0x17ad860
+Container::print()      list:item=1 key=MyArray6 value=0x17ac910
 Container::print()      list:item=2 key=MyArray4 value=0x17abab0
 Container::print()      list:item=3 key=MyArray4 value=0x17abab0
-Container::print()      list:item=4 key=MyArray6 value=0x17ac910
+Container::print()      list:item=1 key=MyArray6 value=0x17aca50
 Container::print()      list:item=2 key=MyArray4 value=0x17abb50
 Container::print()      list:item=3 key=MyArray4 value=0x17abb50
-Container::print()      list:item=4 key=MyArray6 value=0x17aca50
+Container::print()      list:item=2 key=MyArray4 value=0x17aba20
 Container::print()      list:item=3 key=MyArray4 value=0x17aba20
 Container::print()      list:item=4 key=MyArray6 value=0x17ac8c0
+Container::print()      list:item=4 key=MyArray6 value=0x17aca20
+Container::print()      list:item=5 key=MyArray5 value=0x17ad860
+Container::print()      list:item=6 key=MyArray4 value=0x17abb60
+Container::print()      list:item=4 key=MyArray6 value=0x17ac910
+Container::print()      list:item=5 key=MyArray5 value=0x17ad6f0
+Container::print()      list:item=6 key=MyArray4 value=0x17abab0
+Container::print()      list:item=4 key=MyArray6 value=0x17aca50
+Container::print()      list:item=5 key=MyArray5 value=0x17ad8d0
+Container::print()      list:item=6 key=MyArray4 value=0x17abb50
 Container::print()      list:item=5 key=MyArray5 value=0x17ad6e0
 Container::print()      list:item=6 key=MyArray4 value=0x17aba20
-Container::print()      list:item=6 key=MyArray4 value=0x17abb60
+Container::print()      list:item=7 key=MyArray6 value=0x17ac8c0
+Container::print()      list:item=8 key=MyArray5 value=0x17ad6e0
 Container::print()      list:item=7 key=MyArray6 value=0x17aca20
 Container::print()      list:item=8 key=MyArray5 value=0x17ad860
 --- ESMCI::ArrayBundle::print end ---
-Container::print()      list:item=5 key=MyArray5 value=0x17ad6f0
-Container::print()      list:item=6 key=MyArray4 value=0x17abab0
 Container::print()      list:item=7 key=MyArray6 value=0x17ac910
-Container::print()      list:item=5 key=MyArray5 value=0x17ad8d0
-Container::print()      list:item=6 key=MyArray4 value=0x17abb50
-Container::print()      list:item=7 key=MyArray6 value=0x17aca50
-Container::print()      list:item=7 key=MyArray6 value=0x17ac8c0
-Container::print()      list:item=8 key=MyArray5 value=0x17ad6e0
---- ESMCI::ArrayBundle::print end ---
 Container::print()      list:item=8 key=MyArray5 value=0x17ad6f0
 --- ESMCI::ArrayBundle::print end ---
+Container::print()      list:item=7 key=MyArray6 value=0x17aca50
 Container::print()      list:item=8 key=MyArray5 value=0x17ad8d0
+--- ESMCI::ArrayBundle::print end ---
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundleGet with arrayName to get count Test, ESMF_ArrayBundleCreateUTest.F90, line 460
   PASS  Check arrayCount Test, ESMF_ArrayBundleCreateUTest.F90, line 466
@@ -697,7 +697,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x17ad8d0
   PASS  Serialization Arraybundle data, ESMF_ArrayBundleCreateUTest.F90, line 690
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
-  PET           0  Test Elapsed Time    2.8119999999999994       msec.
+  PET           2  Test Elapsed Time    2.9630000000000005       msec.
   PASS  Verify Container Get arrayNameList for arrayname ESMF_ITEMORDER_ADDORDER Test, ESMF_ArrayBundleCreateUTest.F90, line 636
  computed serialization buffer length =       27948  bytes
   PASS  Computing space for serialization buffer, ESMF_ArrayBundleCreateUTest.F90, line 664
@@ -705,7 +705,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x17ad8d0
   PASS  Serialization Arraybundle data, ESMF_ArrayBundleCreateUTest.F90, line 690
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
-  PET           1  Test Elapsed Time    2.8229999999999991       msec.
+  PET           0  Test Elapsed Time    2.9809999999999994       msec.
   PASS  Verify Container Get arrayNameList for arrayname ESMF_ITEMORDER_ADDORDER Test, ESMF_ArrayBundleCreateUTest.F90, line 636
  computed serialization buffer length =       27948  bytes
   PASS  Computing space for serialization buffer, ESMF_ArrayBundleCreateUTest.F90, line 664
@@ -713,7 +713,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x17ad8d0
   PASS  Serialization Arraybundle data, ESMF_ArrayBundleCreateUTest.F90, line 690
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
-  PET           2  Test Elapsed Time    2.8289999999999997       msec.
+  PET           1  Test Elapsed Time    2.9720000000000009       msec.
   PASS  Verify Container Get arrayNameList for arrayname ESMF_ITEMORDER_ADDORDER Test, ESMF_ArrayBundleCreateUTest.F90, line 636
  computed serialization buffer length =       27948  bytes
   PASS  Computing space for serialization buffer, ESMF_ArrayBundleCreateUTest.F90, line 664
@@ -721,4 +721,4 @@ Container::print()      list:item=8 key=MyArray5 value=0x17ad8d0
   PASS  Serialization Arraybundle data, ESMF_ArrayBundleCreateUTest.F90, line 690
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
-  PET           3  Test Elapsed Time    2.8269999999999986       msec.
+  PET           3  Test Elapsed Time    2.9790000000000005       msec.
