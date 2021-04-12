@@ -26,5 +26,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 48 clean 2>&1| tee clean_$JOBID.log 
 make -j 48 2>&1| tee build_$JOBID.log
 
-ssh koehr03 /p/work1/mpotts/gfortran_10.1.0_mpt_O/getres-build.sh
+ssh koehr06 /p/work1/mpotts/gfortran_10.1.0_mpt_O/getres-build.sh
 
