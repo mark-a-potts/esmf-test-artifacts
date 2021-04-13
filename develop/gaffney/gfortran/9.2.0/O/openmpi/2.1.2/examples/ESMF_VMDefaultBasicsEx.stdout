@@ -14,8 +14,8 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r2i2n15
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i2n15_0/37890/1/1/vader_segment.r2i2n15.1
+  Local host: r3i0n18
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r3i0n18_0/42298/1/shared_mem_pool.r3i0n18
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
@@ -23,7 +23,6 @@ disable this message.
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
---- ESMCI::VMId::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
 --- ESMCI::VMId::print() start ---
@@ -31,7 +30,6 @@ disable this message.
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
---- VMK::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
@@ -39,6 +37,11 @@ disable this message.
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
 vm located at: 0x61c530
+npets = 4, mypet=1
+  pth_mutex =		 0x84a300
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+--- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
@@ -46,14 +49,18 @@ vm located at: 0x61c530
 --- VMK::print() start ---
 vm located at: 0x61c530
 npets = 4, mypet=2
-  pth_mutex =  vmKeyWidth = 1
+  pth_mutex =		 0x845610
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 2
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
 vm located at: 0x61c530
 npets = 4, mypet=3
-  pth_mutex =		 0x84a350
+  pth_mutex =		 0x84a300
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
@@ -72,10 +79,7 @@ ncores = 4
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
-		 0x8455b0
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 2
+--- ESMCI::VM::print() end ---
 MPI_Comm_rank in MPI_COMM_WORLD: 2
 MPI thread level support: 2
 mpi_mutex_flag: 1
@@ -93,9 +97,13 @@ ncores = 4
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
  This PET is localPet:            2
+ of a total of            4  PETs in this VM.
+ There are            4  PEs referenced by this VM
+ This PET is executing in virtual address space (VAS)            2
+--- VMK::print() start ---
 vm located at: 0x61c530
 npets = 4, mypet=0
-  pth_mutex =		 0x8459e0
+  pth_mutex =		 0x8459c0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -115,13 +123,6 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
- This PET is localPet:            0
- of a total of            4  PETs in this VM.
- There are            4  PEs referenced by this VM
-npets = 4, mypet=1
-  pth_mutex =		 0x84a360
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
 MPI_Comm_rank in MPI_COMM_WORLD: 1
 MPI thread level support: 2
@@ -140,7 +141,11 @@ ncores = 4
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
  This PET is localPet:            1
---- ESMCI::VM::print() end ---
+ of a total of            4  PETs in this VM.
+ There are            4  PEs referenced by this VM
+ This PET is executing in virtual address space (VAS)            1
+ located on single system image (SSI)            0
+ and is associated with            1  PEs.
  This PET is localPet:            3
  of a total of            4  PETs in this VM.
  There are            4  PEs referenced by this VM
@@ -148,18 +153,13 @@ ncores = 4
  located on single system image (SSI)            0
  and is associated with            1  PEs.
   PASS  Example ESMF_VMDefaultBasicsEx, ESMF_VMDefaultBasicsEx.F90, line 107
- of a total of            4  PETs in this VM.
- There are            4  PEs referenced by this VM
- This PET is executing in virtual address space (VAS)            1
+  PASS  Example ESMF_VMDefaultBasicsEx, ESMF_VMDefaultBasicsEx.F90, line 107
  located on single system image (SSI)            0
  and is associated with            1  PEs.
   PASS  Example ESMF_VMDefaultBasicsEx, ESMF_VMDefaultBasicsEx.F90, line 107
+ This PET is localPet:            0
  of a total of            4  PETs in this VM.
  There are            4  PEs referenced by this VM
- This PET is executing in virtual address space (VAS)            2
- located on single system image (SSI)            0
- and is associated with            1  PEs.
-  PASS  Example ESMF_VMDefaultBasicsEx, ESMF_VMDefaultBasicsEx.F90, line 107
  This PET is executing in virtual address space (VAS)            0
  located on single system image (SSI)            0
  and is associated with            1  PEs.
@@ -168,5 +168,5 @@ ncores = 4
  PASS: ESMF_VMDefaultBasicsEx.F90
  PASS: ESMF_VMDefaultBasicsEx.F90
  PASS: ESMF_VMDefaultBasicsEx.F90
-[r2i2n15:23590] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r2i2n15:23590] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[r3i0n18:362540] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r3i0n18:362540] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
