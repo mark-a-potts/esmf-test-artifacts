@@ -1,0 +1,83 @@
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+  Beginning Test, file ESMF_FieldBundleSMMUTest.F90, line 57
+  Beginning Test, file ESMF_FieldBundleSMMUTest.F90, line 57
+  Beginning Test, file ESMF_FieldBundleSMMUTest.F90, line 57
+  Beginning Test, file ESMF_FieldBundleSMMUTest.F90, line 57
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+[h6c55:112108:0:112108] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2ac28cba0ce4)
+==== backtrace (tid: 112108) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003baa1 NC_create()  ???:0
+ 9 0x000000000003b0a2 nc__create()  ???:0
+10 0x000000000003b05b nc_create()  ???:0
+11 0x00000000007c5be4 c_nc_create_()  ???:0
+12 0x0000000000c9221c __esmf_ioscripmod_MOD_esmf_outputsimpleweightfile()  ???:0
+13 0x0000000000402ab4 test_field_bundle_smm_store_from_file.4175()  ESMF_FieldBundleSMMUTest.F90:0
+14 0x0000000000404daa MAIN__()  ESMF_FieldBundleSMMUTest.F90:0
+15 0x0000000000408f2e main()  ???:0
+16 0x0000000000022555 __libc_start_main()  ???:0
+17 0x0000000000401f09 _start()  ???:0
+=================================
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x2aba45d3262f in ???
+#1  0x2aba44d4db76 in PMPI_Comm_set_attr
+	at ../../src/mpi/attr/comm_set_attr.c:244
+#2  0x2aba441ca965 in H5_init_library
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+#3  0x2aba442741c2 in H5Eset_auto2
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+#4  0x2aba43b9b3fd in ???
+#5  0x2aba43b9b412 in ???
+#6  0x2aba43ba6e26 in ???
+#7  0x2aba43b3887e in ???
+#8  0x2aba43b3caa0 in ???
+#9  0x2aba43b3c0a1 in ???
+#10  0x2aba43b3c05a in ???
+#11  0x2aba41c88be3 in ???
+#12  0x2aba4215521b in ???
+#13  0x402ab3 in ???
+#14  0x404da9 in ???
+#15  0x408f2d in ???
+#16  0x2aba46d87554 in ???
+#17  0x401f08 in ???
+#18  0xffffffffffffffff in ???
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 112108 RUNNING AT h6c55
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 112109 RUNNING AT h6c55
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 2 PID 112110 RUNNING AT h6c55
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 3 PID 112111 RUNNING AT h6c55
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
