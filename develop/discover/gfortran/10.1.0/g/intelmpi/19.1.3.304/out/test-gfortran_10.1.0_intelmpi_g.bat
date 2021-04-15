@@ -15,7 +15,7 @@ module list >& module-test.log
 set -x
 
 export ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_g
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='g'
