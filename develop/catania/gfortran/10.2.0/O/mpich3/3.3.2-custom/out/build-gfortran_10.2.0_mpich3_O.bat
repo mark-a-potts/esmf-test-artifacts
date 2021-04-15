@@ -11,7 +11,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
-export ESMF_DIR=/Volumes/esmf/mpotts/gfortran_10.2.0_mpich3_O
+export ESMF_DIR=/Volumes/esmf/mpotts/gfortran_10.2.0_mpich3_O_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpich3
 export ESMF_BOPT='O'
