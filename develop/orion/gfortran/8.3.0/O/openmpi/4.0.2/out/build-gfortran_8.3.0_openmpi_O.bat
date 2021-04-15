@@ -15,7 +15,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
-export ESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O
+export ESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_BOPT='O'
