@@ -14,7 +14,7 @@ module list >& module-build.log
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_g
+export ESMF_DIR=/work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='g'
