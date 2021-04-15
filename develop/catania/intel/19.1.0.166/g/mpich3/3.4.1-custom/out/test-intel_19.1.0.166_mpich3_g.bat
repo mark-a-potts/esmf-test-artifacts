@@ -9,7 +9,7 @@ module list >& module-test.log
 set -x
 
 export ESMF_MOAB=OFF
-export ESMF_DIR=/Volumes/esmf/mpotts/intel_19.1.0.166_mpich3_g
+export ESMF_DIR=/Volumes/esmf/mpotts/intel_19.1.0.166_mpich3_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpich3
 export ESMF_BOPT='g'
