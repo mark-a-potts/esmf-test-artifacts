@@ -7,14 +7,14 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /glade/scratch/mpotts/intel_18.0.5_mpt_g
+cd /glade/scratch/mpotts/intel_18.0.5_mpt_g_develop
 module load intel/18.0.5 mpt/2.19 netcdf/4.6.3
 module list >& module-test.log
 
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_mpt_g
+export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_mpt_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpt
 export ESMF_BOPT='g'
@@ -28,5 +28,5 @@ export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_mpt_g/getres-test.sh
+ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_mpt_g_develop/getres-test.sh
 

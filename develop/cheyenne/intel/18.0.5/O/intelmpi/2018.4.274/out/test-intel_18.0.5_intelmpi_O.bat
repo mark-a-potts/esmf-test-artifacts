@@ -7,14 +7,14 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /glade/scratch/mpotts/intel_18.0.5_intelmpi_O
+cd /glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop
 module load intel/18.0.5 impi/2018.4.274 netcdf/4.6.3
 module list >& module-test.log
 
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_intelmpi_O
+export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'
@@ -39,5 +39,5 @@ ssh cheyenne6 "export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $P
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
-ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_intelmpi_O/getres-test.sh
+ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop/getres-test.sh
 
