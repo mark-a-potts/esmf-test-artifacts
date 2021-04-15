@@ -7,7 +7,7 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /p/work1/mpotts/gfortran_10.1.0_mpt_g
+cd /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop
 
 module unload compiler/intel mpt
 module load gcc/10.1.0 mpt/2.20 
@@ -17,7 +17,7 @@ module list >& module-test.log
 set -x
 
 export ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
-export ESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g
+export ESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpt
 export ESMF_BOPT='g'
@@ -31,5 +31,5 @@ export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh koehr06 /p/work1/mpotts/gfortran_10.1.0_mpt_g/getres-test.sh
+ssh koehr06 /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/getres-test.sh
 
