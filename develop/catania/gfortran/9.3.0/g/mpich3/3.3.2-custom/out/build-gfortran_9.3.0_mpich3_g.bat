@@ -10,7 +10,7 @@ module list >& module-build.log
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/Volumes/esmf/mpotts/gfortran_9.3.0_mpich3_g
+export ESMF_DIR=/Volumes/esmf/mpotts/gfortran_9.3.0_mpich3_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpich3
 export ESMF_BOPT='g'
