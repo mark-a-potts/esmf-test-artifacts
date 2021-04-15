@@ -14,7 +14,7 @@ module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/pgi_18.1_intelmpi_g
+export ESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/pgi_18.1_intelmpi_g_develop
 export ESMF_COMPILER=pgi
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='g'
