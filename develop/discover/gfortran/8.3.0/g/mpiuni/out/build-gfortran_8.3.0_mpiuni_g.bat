@@ -14,7 +14,7 @@ module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpiuni_g
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpiuni_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
