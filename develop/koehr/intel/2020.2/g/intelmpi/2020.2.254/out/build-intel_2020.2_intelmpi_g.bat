@@ -7,7 +7,7 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /p/work1/mpotts/intel_2020.2_intelmpi_g
+cd /p/work1/mpotts/intel_2020.2_intelmpi_g_develop
 
 module unload compiler/intel mpt
 module load compiler/intel/2020.2.254 compiler/intelmpi/2020.2.254 netcdf-c/intel/4.3.3.1
@@ -24,7 +24,7 @@ export ESMF_NETCDF_LIBPATH=/app/COST/netcdf-c/4.3.3.1/intel//lib
 export ESMF_NETCDF_INCLUDE=/app/COST/netcdf-c/4.3.3.1/intel/include
 export ESMF_NETCDFF_INCLUDE="/app/COST/netcdf-fortran/4.4.2/intel/include /app/COST/netcdf-c/4.3.3.1/intel//include /app/COST/hdf5/1.8.15/intel//include"
 export ESMF_NETCDFF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/intel/lib /app/COST/netcdf-c/4.3.3.1/intel//lib /app/COST/hdf5/1.8.15/intel//lib"
-export ESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g
+export ESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='g'
@@ -33,5 +33,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 48 clean 2>&1| tee clean_$JOBID.log 
 make -j 48 2>&1| tee build_$JOBID.log
 
-ssh koehr06 /p/work1/mpotts/intel_2020.2_intelmpi_g/getres-build.sh
+ssh koehr06 /p/work1/mpotts/intel_2020.2_intelmpi_g_develop/getres-build.sh
 
