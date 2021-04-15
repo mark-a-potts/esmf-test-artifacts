@@ -14,7 +14,7 @@ module list >& module-test.log
 
 set -x
 
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_g
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_g_develop
 export ESMF_COMPILER=pgi
 export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
