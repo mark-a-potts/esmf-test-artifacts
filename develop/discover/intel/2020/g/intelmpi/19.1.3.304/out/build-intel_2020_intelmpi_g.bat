@@ -17,7 +17,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/intel_2020_intelmpi_g
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/intel_2020_intelmpi_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='g'
