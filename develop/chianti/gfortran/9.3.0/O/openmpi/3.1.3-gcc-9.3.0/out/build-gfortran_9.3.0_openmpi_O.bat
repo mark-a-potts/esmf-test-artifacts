@@ -1,16 +1,12 @@
 #!/bin/bash -l
-export JOBID=$1
+export JOBID=12345
 
 module use /home/mpotts/spack/share/spack/modules/linux-linuxmint19-skylake
 
 module load python
 module load gcc/9.3.0-gcc-7.5.0 openmpi/3.1.3-gcc-9.3.0 netcdf-c/4.7.4-gcc-9.3.0-openmpi
 module load hdf5/1.10.7-gcc-9.3.0-openmpi 
-module list
 module load netcdf-fortran/4.5.3-gcc-9.3.0-openmpi 
-module list
-module list >& module-build.log
-
 set -x
 export ESMF_NETCDF=nc-config
 
