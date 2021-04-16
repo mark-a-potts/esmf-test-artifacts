@@ -2,7 +2,7 @@
 #SBATCH --account=nggps_emc
 #SBATCH -o test-gfortran_8.3.0_mpiuni_O.bat_%j.o
 #SBATCH -e test-gfortran_8.3.0_mpiuni_O.bat_%j.e
-#SBATCH --time=1:00:00
+#SBATCH --time=2:00:00
 #SBATCH --cluster=c4
 #SBATCH --qos=normal
 #SBATCH --nodes=1
@@ -14,6 +14,8 @@ module unload PrgEnv-intel
 
 module load PrgEnv-gnu
 module load gcc/8.3.0  cray-netcdf/4.6.3.2
+module list >& module-test.log
+
 set -x
 export ESMF_NETCDF=nc-config
 
