@@ -15,6 +15,8 @@ module unload PrgEnv-intel
 module load PrgEnv-gnu
 export ESMF_MPIRUN=/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load gcc/8.3.0  cray-netcdf/4.6.3.2
+module list >& module-build.log
+
 set -x
 export ESMF_NETCDF=nc-config
 
