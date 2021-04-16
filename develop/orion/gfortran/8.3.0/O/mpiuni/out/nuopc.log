@@ -8,7 +8,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI asyncIOApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o asyncIOApp asyncIOApp.o asyncIODriver.o model.o io.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./asyncIOApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AsyncIOBlockingProto
 ---------------------------------------------------------------------------
@@ -24,7 +24,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI asyncIOApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o asyncIOApp asyncIOApp.o asyncIODriver.o model.o io.o conn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./asyncIOApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AsyncIONonblockingProto
 ---------------------------------------------------------------------------
@@ -39,7 +39,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnConOptsProto
 ---------------------------------------------------------------------------
@@ -55,7 +55,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o conn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnConProto
 ---------------------------------------------------------------------------
@@ -70,7 +70,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnCplListProto
 ---------------------------------------------------------------------------
@@ -85,7 +85,7 @@ gfortran -g -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -
 gfortran -g -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnCplSetProto
 ---------------------------------------------------------------------------
@@ -100,7 +100,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnFDSynoProto
 ---------------------------------------------------------------------------
@@ -116,7 +116,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o ice.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnIceSimpleImplicitProto
 ---------------------------------------------------------------------------
@@ -131,7 +131,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnImplicitProto
 ---------------------------------------------------------------------------
@@ -147,7 +147,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o lnd.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnLndProto
 ---------------------------------------------------------------------------
@@ -162,7 +162,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnLogNoneProto
 ---------------------------------------------------------------------------
@@ -178,7 +178,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnMedIngestFromConfigProto
 ---------------------------------------------------------------------------
@@ -194,7 +194,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnMedIngestFromInternalProto
 ---------------------------------------------------------------------------
@@ -210,7 +210,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AtmOcnMedPetListProto
 ---------------------------------------------------------------------------
@@ -226,7 +226,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AtmOcnMedPetListTimescalesProto
 ---------------------------------------------------------------------------
@@ -242,7 +242,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AtmOcnMedPetListTimescalesSplitFastProto
 ---------------------------------------------------------------------------
@@ -258,7 +258,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnMedProto
 ---------------------------------------------------------------------------
@@ -273,7 +273,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnMirrorFieldsProto
 ---------------------------------------------------------------------------
@@ -293,7 +293,7 @@ Fatal Error: Can't open module file ‘mpi.mod’ for reading at (1): No such fi
 compilation terminated.
 gmake: *** [esm.o] Error 1
 + mpirun -np 4 ./esmApp
-+ local result=141
++ local result=127
 + set +x
 FINISHED: AtmOcnPetListProto
 ---------------------------------------------------------------------------
@@ -308,7 +308,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnProto
 ---------------------------------------------------------------------------
@@ -324,7 +324,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o rtm.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AtmOcnRtmTwoTimescalesProto
 ---------------------------------------------------------------------------
@@ -339,7 +339,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AtmOcnScalarProto
 ---------------------------------------------------------------------------
@@ -512,7 +512,7 @@ Makefile:108: OcnModelB/ocn.mk: No such file or directory
 Makefile:117: OcnModelC/ocn.mk: No such file or directory
 gmake: *** No rule to make target `OcnModelC/ocn.mk'.  Stop.
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=127
 + set +x
 
 rm -f esmApp *.o *.mod
@@ -522,7 +522,7 @@ Makefile:108: OcnModelB/ocn.mk: No such file or directory
 Makefile:117: OcnModelC/ocn.mk: No such file or directory
 gmake: *** No rule to make target `OcnModelC/ocn.mk'.  Stop.
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=127
 + set +x
 
 rm -f esmApp *.o *.mod
@@ -532,7 +532,7 @@ Makefile:108: OcnModelB/ocn.mk: No such file or directory
 Makefile:117: OcnModelC/ocn.mk: No such file or directory
 gmake: *** No rule to make target `OcnModelC/ocn.mk'.  Stop.
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=127
 + set +x
 
 rm -f esmApp *.o *.mod
@@ -542,7 +542,7 @@ Makefile:108: OcnModelB/ocn.mk: No such file or directory
 Makefile:117: OcnModelC/ocn.mk: No such file or directory
 gmake: *** No rule to make target `OcnModelC/ocn.mk'.  Stop.
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=127
 + set +x
 FINISHED: AtmOcnSelectExternalProto
 
@@ -553,7 +553,7 @@ Makefile:108: OcnModelB/ocn.mk: No such file or directory
 Makefile:117: OcnModelC/ocn.mk: No such file or directory
 gmake: *** No rule to make target `OcnModelC/ocn.mk'.  Stop.
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=127
 + set +x
 
 rm -f esmApp *.o *.mod
@@ -576,7 +576,7 @@ gfortran -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -O -fPIC  -m64 -mcmodel=small
 gfortran -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atmA.o atmB.o ocnA.o ocnB.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 
 rm -f esmApp *.o *.mod
@@ -588,7 +588,7 @@ gfortran -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -O -fPIC  -m64 -mcmodel=small
 gfortran -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atmA.o atmB.o ocnA.o ocnB.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 
 rm -f esmApp *.o *.mod
@@ -600,7 +600,7 @@ gfortran -c -DWITH_ATM_A -DWITH_OCN_B -O -fPIC  -m64 -mcmodel=small -pthread -ff
 gfortran -c -DWITH_ATM_A -DWITH_OCN_B -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atmA.o atmB.o ocnA.o ocnB.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnSelectProto
 ---------------------------------------------------------------------------
@@ -615,7 +615,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=255
++ local result=127
 + set +x
 FINISHED: AtmOcnSimpleImplicitProto
 ---------------------------------------------------------------------------
@@ -630,7 +630,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: AtmOcnTransferGridProto
 ---------------------------------------------------------------------------
@@ -645,7 +645,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnTransferLocStreamProto
 ---------------------------------------------------------------------------
@@ -660,7 +660,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: AtmOcnTransferMeshProto
 ---------------------------------------------------------------------------
@@ -677,7 +677,7 @@ The argument does not appear to be a regular file!
 Exiting with error.
 
 + mpirun -np 4 ./nuopcExplorerApp
-+ local result=255
++ local result=127
 + set +x
 FINISHED: ComponentExplorer
 ---------------------------------------------------------------------------
@@ -692,7 +692,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driver.o model.o util.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: CustomFieldDictionaryProto
 ---------------------------------------------------------------------------
@@ -708,7 +708,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driverParentComp.o driverChildComp.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: DriverInDriverDataDepProto
 ---------------------------------------------------------------------------
@@ -724,7 +724,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driverParentComp.o driverChildComp.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: DriverInDriverProto
 ---------------------------------------------------------------------------
@@ -739,7 +739,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o atm.o dyn.o phy.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: DynPhyProto
 ---------------------------------------------------------------------------
@@ -754,7 +754,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI externalApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o externalApp externalApp.o esm.o atm.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./externalApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: ExternalDriverAPIProto
 ---------------------------------------------------------------------------
@@ -770,7 +770,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI app.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o app app.o driver.o mediator.o modelA.o modelB.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./app
-+ local result=0
++ local result=127
 + set +x
 FINISHED: GenericMediatorProto
 ---------------------------------------------------------------------------
@@ -787,7 +787,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI esmApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o dyn.o phy.o ocn.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./esmApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: HierarchyProto
 ---------------------------------------------------------------------------
@@ -802,7 +802,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driver.o atm.o med.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: NamespaceProto
 ---------------------------------------------------------------------------
@@ -816,7 +816,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driverComp.o advectDiffComp.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: NestingMultipleProto
 ---------------------------------------------------------------------------
@@ -830,7 +830,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driverComp.o advectDiffComp.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: NestingSingleProto
 ---------------------------------------------------------------------------
@@ -844,7 +844,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driverComp.o advectDiffComp.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=1
++ local result=127
 + set +x
 FINISHED: NestingTelescopeMultipleProto
 ---------------------------------------------------------------------------
@@ -858,7 +858,7 @@ gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fop
 gfortran -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI -DESMF_VERSION_MAJOR=8 mainApp.F90
 gfortran -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -Wl,-rpath,/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mpiuni.default -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/apps/gcc-8/hdf5-1.10.5/lib -Wl,-rpath,/apps/gcc-8/netcdf-4.7.2/lib -Wl,-rpath,/usr/lib64 -Wl,-rpath,/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/ -o mainApp mainApp.o driver.o model.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
 + mpirun -np 4 ./mainApp
-+ local result=0
++ local result=127
 + set +x
 FINISHED: SingleModelProto
 ---------------------------------------------------------------------------
@@ -877,7 +877,7 @@ Fatal Error: Can't open module file ‘mpi.mod’ for reading at (1): No such fi
 compilation terminated.
 gmake: *** [driver.o] Error 1
 + mpirun -np 4 ./mainApp
-+ local result=255
++ local result=127
 + set +x
 FINISHED: SingleModelOpenMPProto
 ---------------------------------------------------------------------------
@@ -885,24 +885,24 @@ FINISHED: SingleModelOpenMPProto
 == TEST SUMMARY START ==
 FAIL: AsyncIOBlockingProto
 FAIL: AsyncIONonblockingProto
-PASS: AtmOcnConOptsProto
-PASS: AtmOcnConProto
-PASS: AtmOcnCplListProto
-PASS: AtmOcnCplSetProto
-PASS: AtmOcnFDSynoProto
-PASS: AtmOcnIceSimpleImplicitProto
-PASS: AtmOcnImplicitProto
-PASS: AtmOcnLndProto
-PASS: AtmOcnLogNoneProto
-PASS: AtmOcnMedIngestFromConfigProto
-PASS: AtmOcnMedIngestFromInternalProto
+FAIL: AtmOcnConOptsProto
+FAIL: AtmOcnConProto
+FAIL: AtmOcnCplListProto
+FAIL: AtmOcnCplSetProto
+FAIL: AtmOcnFDSynoProto
+FAIL: AtmOcnIceSimpleImplicitProto
+FAIL: AtmOcnImplicitProto
+FAIL: AtmOcnLndProto
+FAIL: AtmOcnLogNoneProto
+FAIL: AtmOcnMedIngestFromConfigProto
+FAIL: AtmOcnMedIngestFromInternalProto
 FAIL: AtmOcnMedPetListProto
 FAIL: AtmOcnMedPetListTimescalesProto
 FAIL: AtmOcnMedPetListTimescalesSplitFastProto
-PASS: AtmOcnMedProto
-PASS: AtmOcnMirrorFieldsProto
+FAIL: AtmOcnMedProto
+FAIL: AtmOcnMirrorFieldsProto
 FAIL: AtmOcnPetListProto
-PASS: AtmOcnProto
+FAIL: AtmOcnProto
 FAIL: AtmOcnRtmTwoTimescalesProto
 FAIL: AtmOcnScalarProto
 FAIL: AtmOcnSelectExternalProto
@@ -910,255 +910,28 @@ FAIL: AtmOcnSelectExternalProto
 FAIL: AtmOcnSelectExternalProto
 FAIL: AtmOcnSelectExternalProto
 FAIL: AtmOcnSelectExternalProto
-PASS: AtmOcnSelectProto
-PASS: AtmOcnSelectProto
-PASS: AtmOcnSelectProto
+FAIL: AtmOcnSelectProto
+FAIL: AtmOcnSelectProto
+FAIL: AtmOcnSelectProto
 FAIL: AtmOcnSimpleImplicitProto
 FAIL: AtmOcnTransferGridProto
-PASS: AtmOcnTransferLocStreamProto
-PASS: AtmOcnTransferMeshProto
+FAIL: AtmOcnTransferLocStreamProto
+FAIL: AtmOcnTransferMeshProto
 FAIL: ComponentExplorer
-PASS: CustomFieldDictionaryProto
-PASS: DriverInDriverDataDepProto
-PASS: DriverInDriverProto
-PASS: DynPhyProto
+FAIL: CustomFieldDictionaryProto
+FAIL: DriverInDriverDataDepProto
+FAIL: DriverInDriverProto
+FAIL: DynPhyProto
 FAIL: ExternalDriverAPIProto
-PASS: GenericMediatorProto
+FAIL: GenericMediatorProto
 FAIL: HierarchyProto
-PASS: NamespaceProto
+FAIL: NamespaceProto
 FAIL: NestingMultipleProto
 FAIL: NestingSingleProto
 FAIL: NestingTelescopeMultipleProto
-PASS: SingleModelProto
+FAIL: SingleModelProto
 FAIL: SingleModelOpenMPProto
 == TEST SUMMARY STOP ==
 
 ---------------------------------------------------------------------------
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.646 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.646 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.646 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.646 ERROR            PET0 asyncIODriver.F90:133     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.646 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.646 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.646 ERROR            PET0 asyncIOApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.647 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.647 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.647 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.647 ERROR            PET0 asyncIODriver.F90:133     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.647 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.648 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AsyncIOBlockingProto/PET0.ESMF_LogFile:20210415 085041.648 ERROR            PET0 asyncIOApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.186 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.186 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.186 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.186 ERROR            PET0 asyncIODriver.F90:161     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.186 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.186 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in20210415 085045.161 INFO             PET0 asyncIOApp STARTING
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.188 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.188 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.188 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.188 ERROR            PET0 asyncIODriver.F90:161     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.188 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.188 ERROR            PET0 asyncIODriver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AsyncIONonblockingProto/PET0.ESMF_LogFile:20210415 085045.188 ERROR            PET0 asyncIOApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.194 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.194 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.194 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.194 ERROR            PET0 esm.F90:151     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.194 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.194 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.194 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.201 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.201 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.201 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.201 ERROR            PET0 esm.F90:151     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.201 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.201 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListProto/PET0.ESMF_LogFile:20210415 085140.201 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.200 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.200 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.200 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.200 ERROR            PET0 esm:esm.F90:135     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.200 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.200 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.200 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.194 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.194 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.194 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.194 ERROR            PET0 esm:esm.F90:135     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.194 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.194 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.194 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.198 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.198 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.198 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.198 ERROR            PET0 esm:esm.F90:135     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.198 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.198 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.198 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.206 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.206 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.206 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.206 ERROR            PET0 esm:esm.F90:135     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.206 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.206 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesProto/PET0.ESMF_LogFile:20210415 085145.206 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.204 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.204 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.204 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.204 ERROR            PET0 esm.F90:142     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.204 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.205 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.205 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.209 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.209 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.209 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.209 ERROR            PET0 esm.F90:142     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.209 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.209 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnMedPetListTimescalesSplitFastProto/PET0.ESMF_LogFile:20210415 085150.209 ERROR            PET0 esmApp.F90:64     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.225 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.225 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.225 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.225 ERROR            PET0 esm.F90:102     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.225 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.225 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.225 ERROR            PET0 esmApp.F90:81     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.228 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.228 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.228 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.228 ERROR            PET0 esm.F90:102     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.228 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.228 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.228 ERROR            PET0 esmApp.F90:81     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.230 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct     Value unrecognized or out of range  - Conflict between petlist and global pet count
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.230 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate     Value unrecognized or out of range  - Internal subroutine call returned Error
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.230 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:4260     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.230 ERROR            PET0 esm.F90:102     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.230 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:765     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.230 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Value unrecognized or out of range  - Passing error in return code
-AtmOcnRtmTwoTimescalesProto/PET0.ESMF_LogFile:20210415 085210.231 ERROR            PET0 esmApp.F90:81     Value unrecognized or out of range  - Passing error in return code
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.058 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.058 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.058 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.058 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.058 ERROR            PET0 esmApp.F90:76     Invalid argument  - Passing error in return code
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.065 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.066 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.066 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.066 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-AtmOcnScalarProto/PET0.ESMF_LogFile:20210415 085213.066 ERROR            PET0 esmApp.F90:76     Invalid argument  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.882 ERROR            PET0 ESMF_Array.F90:3992 ESMF_ArrayWrite       Library needed by ESMF not present  - ESMF must be compiled with PIO support to support I/O methods
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.882 ERROR            PET0 ocn.F90:353       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.882 ERROR            PET0 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.882 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.882 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.883 ERROR            PET0 esm:src/ad20210415 085233.881 INFO             PET0     <<<esm: leaving Initialize (phase=<none>) with current time: 2010  6  1  0  0  0   0
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.888 ERROR            PET0 ESMF_Array.F90:3992 ESMF_ArrayWrite       Library needed by ESMF not present  - ESMF must be compiled with PIO support to support I/O methods
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.888 ERROR            PET0 ocn.F90:353       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.888 ERROR            PET0 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.887 ERROR            PET0 ESMF_Array.F90:3992 ESMF_ArrayWrite       Library needed by ESMF not present  - ESMF must be compiled with PIO support to support I/O methods
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.887 ERROR            PET0 ocn.F90:353       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.887 ERROR            PET0 OCN:src/addon/NUOPC/src/NUOPC_ModelBase.F90:1267       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Library needed by ESMF not present  - Phase 'IPDvXp04' Initialize for modelComp 2: OCN did not return ESMF_SUCCESS
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1835       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:469       Library needed by ESMF not present  - Passing error in return code
-AtmOcnTransferGridProto/PET0.ESMF_LogFile:20210415 085233.889 ERROR            PET0 esmApp.F90:64       Library needed by ESMF not present  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.689 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.689 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.689 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.689 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:574     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.689 ERROR            PET0 externalApp.F90:149     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.701 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.701 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.701 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.701 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:574     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.701 ERROR            PET0 externalApp.F90:149     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.694 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.694 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.694 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.694 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:574     Invalid argument  - Passing error in return code
-ExternalDriverAPIProto/PET0.ESMF_LogFile:20210415 085354.694 ERROR            PET0 externalApp.F90:149     Invalid argument  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.776 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct       Value unrecognized or out of range  - Conflict between petlist and global pet count
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.776 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate       Value unrecognized or out of range  - Internal subroutine call returned Error
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.776 ERROR            PET0 ATM:src/addon/NUOPC/src/NUOPC_Driver.F90:4260       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.776 ERROR            PET0 atm.F90:114       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.776 ERROR            PET0 ATM:src/addon/NUOPC/src/NUOPC_Driver.F90:765       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.776 ERROR  20210415 085404.785 INFO             PET0     esm - Creating connector component ATM-TO-OCN with petList of size 1 :
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct       Value unrecognized or out of range  - Conflict between petlist and global pet count
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate       Value unrecognized or out of range  - Internal subroutine call returned Error
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 ATM:src/addon/NUOPC/src/NUOPC_Driver.F90:4260       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 atm.F90:114       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 ATM:src/addon/NUOPC/src/NUOPC_Driver.F90:765       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Value unrecognized or out of range  - Phase 'IPDv02p1' Initialize for modelComp 1: ATM did not return ESMF_SUCCESS
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1271       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.791 ERROR            PET0 esmApp.F90:82       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct       Value unrecognized or out of range  - Conflict between petlist and global pet count
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate       Value unrecognized or out of range  - Internal subroutine call returned Error
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 ATM:src/addon/NUOPC/src/NUOPC_Driver.F90:4260       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 atm.F90:114       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 ATM:src/addon/NUOPC/src/NUOPC_Driver.F90:765       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:2570       Value unrecognized or out of range  - Phase 'IPDv02p1' Initialize for modelComp 1: ATM did not return ESMF_SUCCESS
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:1271       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 esm:src/addon/NUOPC/src/NUOPC_Driver.F90:466       Value unrecognized or out of range  - Passing error in return code
-HierarchyProto/PET0.ESMF_LogFile:20210415 085404.784 ERROR            PET0 esmApp.F90:82       Value unrecognized or out of range  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.310 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.310 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.310 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.310 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.310 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.335 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.335 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.335 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.335 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.335 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.329 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.329 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.329 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.329 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingMultipleProto/PET0.ESMF_LogFile:20210415 085410.329 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.592 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.592 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.592 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.592 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.592 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.599 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.599 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.599 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.599 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.599 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.604 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.604 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.604 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.604 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.604 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.610 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.610 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.610 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.610 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingSingleProto/PET0.ESMF_LogFile:20210415 085412.610 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.922 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.922 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.922 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.922 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.922 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.914 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.914 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.914 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.914 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.914 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.920 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.920 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.920 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.920 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.920 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.929 ERROR            PET0 ESMCI_VM_F.C:659 c_esmc_vmgetpetlocalinfo()     Invalid argument  - - provided pet id is out of range
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.929 ERROR            PET0 ESMF_VM.F90:5420 ESMF_VMGetPetSpecific()     Invalid argument  - Internal subroutine call returned Error
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.929 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:898     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.929 ERROR            PET0 advection diffusion driver:src/addon/NUOPC/src/NUOPC_Driver.F90:466     Invalid argument  - Passing error in return code
-NestingTelescopeMultipleProto/PET0.ESMF_LogFile:20210415 085414.929 ERROR            PET0 mainApp.F90:77     Invalid argument  - Passing error in return code
+grep: */PET*.ESMF_LogFile: No such file or directory
