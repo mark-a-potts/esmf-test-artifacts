@@ -7,7 +7,7 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /lfs/h1/emc/ptmp/Mark.Potts/gfortran_10.2.0_mpich3_O
+cd /lfs/h1/emc/ptmp/Mark.Potts/gfortran_10.2.0_mpich3_O_develop
 
 module unload PrgEnv-cray PrgEnv-intel
 
@@ -30,7 +30,7 @@ export ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
 export ESMF_NFCONFIG=nf-config
 export ESMF_CXXLINKOPTS="-fPIC -lnetcdff -lnetcdff"
 sed -i 's/aprun/mpiexec/' scripts/mpirun.unicos
-export ESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/gfortran_10.2.0_mpich3_O
+export ESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/gfortran_10.2.0_mpich3_O_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpich3
 export ESMF_BOPT='O'
@@ -44,5 +44,5 @@ export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh alogin01 /lfs/h1/emc/ptmp/Mark.Potts/gfortran_10.2.0_mpich3_O/getres-test.sh
+ssh alogin02 /lfs/h1/emc/ptmp/Mark.Potts/gfortran_10.2.0_mpich3_O_develop/getres-test.sh
 
