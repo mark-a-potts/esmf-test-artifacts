@@ -8,6 +8,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=24
 #SBATCH --exclusive
+export JOBID=$SLURM_JOBID
 
 module unload PrgEnv-intel
 
