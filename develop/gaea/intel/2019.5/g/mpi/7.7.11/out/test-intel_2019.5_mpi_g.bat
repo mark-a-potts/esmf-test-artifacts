@@ -8,6 +8,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=24
 #SBATCH --exclusive
+export JOBID=$SLURM_JOBID
 module load intel/19.0.5.281 cray-mpich/7.7.11 cray-netcdf/4.6.3.2
 set -x
 export ESMF_NETCDF=nc-config
