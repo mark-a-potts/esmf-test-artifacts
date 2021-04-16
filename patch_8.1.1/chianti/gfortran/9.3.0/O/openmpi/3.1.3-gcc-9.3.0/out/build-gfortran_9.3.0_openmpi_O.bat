@@ -12,7 +12,7 @@ export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF=nc-config
 export ESMF_NFCONFIG=nf-config
-export ESMF_DIR=/home/mpotts/tmp/gfortran_9.3.0_openmpi_O_patch_8.1.1
+export ESMF_DIR=/home/mpotts/gfortran_9.3.0_openmpi_O_patch_8.1.1
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_BOPT='O'

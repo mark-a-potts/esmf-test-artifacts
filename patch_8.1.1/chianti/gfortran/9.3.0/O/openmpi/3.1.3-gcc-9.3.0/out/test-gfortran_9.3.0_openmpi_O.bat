@@ -12,7 +12,7 @@ export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF=nc-config
 export ESMF_NFCONFIG=nf-config
-export ESMF_DIR=/home/mpotts/tmp/gfortran_9.3.0_openmpi_O_patch_8.1.1
+export ESMF_DIR=/home/mpotts/gfortran_9.3.0_openmpi_O_patch_8.1.1
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_BOPT='O'
@@ -31,7 +31,7 @@ cd ../src/addon/ESMPy
 
 export PATH=$PATH:$HOME/.local/bin
 python3 setup.py build 2>&1 | tee python_build.log
-ssh chianti /home/mpotts/tmp/gfortran_9.3.0_openmpi_O_patch_8.1.1/runpython.sh 2>&1 | tee python_build.log
+ssh chianti /home/mpotts/gfortran_9.3.0_openmpi_O_patch_8.1.1/runpython.sh 2>&1 | tee python_build.log
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
