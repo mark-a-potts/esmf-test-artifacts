@@ -14,6 +14,8 @@ module unload PrgEnv-intel
 
 module load PrgEnv-gnu
 module load gcc/8.3.0  cray-netcdf/4.6.3.2
+module list >& module-build.log
+
 set -x
 export ESMF_NETCDF=nc-config
 
