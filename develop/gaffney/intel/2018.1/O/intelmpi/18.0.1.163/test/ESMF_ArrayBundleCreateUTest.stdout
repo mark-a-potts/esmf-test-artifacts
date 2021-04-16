@@ -83,17 +83,17 @@ arrayCount = 0
 ArrayBundle: MyEmptyArrayBundle
 arrayCount = 0
 --- ESMCI::ArrayBundle::print end ---
-ArrayBundle: MyEmptyArrayBundle
-arrayCount = 0
---- ESMCI::ArrayBundle::print end ---
-  PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 161
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyEmptyArrayBundle
 arrayCount = 0
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 161
+ArrayBundle: MyEmptyArrayBundle
+arrayCount = 0
+--- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 161
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 161
+  PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 161
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 168
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 168
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 168
@@ -168,8 +168,6 @@ arrayCount = 0
   PASS  ArrayBundleCreate Test, ESMF_ArrayBundleCreateUTest.F90, line 256
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
---- ESMCI::ArrayBundle::print start ---
-ArrayBundle: MyArrayBundle
 arrayCount = 2
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
@@ -177,17 +175,18 @@ arrayCount = 2
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
 arrayCount = 2
+Container::print() multipmap:item=--- ESMCI::ArrayBundle::print start ---
+ArrayBundle: MyArrayBundle
 arrayCount = 2
-Container::print() multipmap:item=Container::print() multipmap:item=Container::print() multipmap:item=0 key=Container::print() multipmap:item=0 key=0 key=MyArray value=0x862b500 key=MyArray value=0x860ac0MyArray value=0x860ac0
-Container::print() multipmap:item=1 key=MyArray2MyArray value=0x860ac0
+Container::print() multipmap:item=Container::print() multipmap:item=Container::print() multipmap:item=0 key=0 key=MyArray value=MyArray value=0x862b500 key=MyArray value=0x860ac0
+Container::print() multipmap:item=0x860ac0
 Container::print() multipmap:item=1 key=MyArray2 value=0x861540
-Container::print()      list:item=0
+Container::print()      list:item=00 key=MyArray value=0x860ac0
+Container::print() multipmap:item=1 key=MyArray2 value=0x861540
+Container::print()      list:item=0 key=
 Container::print() multipmap:item=1 key=MyArray2 value=0x8635d0
 Container::print()      list:item=0 key=MyArray value=0x862b50
-Container::print()      list:item=1
-Container::print() multipmap:item=1 key=MyArray2 value=0x861540
-Container::print()      list:item=0 key=MyArray value=0x860ac0
-Container::print()      list:item=1 key=MyArray2 value= value=0x861540
+Container::print()      list:item=1 key=MyArray2 value=1 key=MyArray2 value=0x861540
 Container::print()      list:item=0 key=MyArray value=0x860ac0
 Container::print()      list:item=1 key=MyArray2 value=0x861540
 --- ESMCI::ArrayBundle::print end ---
@@ -195,10 +194,11 @@ Container::print()      list:item=1 key=MyArray2 value=0x861540
 Container::print()      list:item=1 key=MyArray2 value=0x861540
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
- key=MyArray2 value=0x8635d0
+MyArray value=0x860ac0
+Container::print()      list:item=1 key=MyArray2 value=0x861540
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
-0x861540
+0x8635d0
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
   PASS  ArrayBundlePrint Test, ESMF_ArrayBundleCreateUTest.F90, line 263
@@ -210,12 +210,12 @@ Container::print()      list:item=1 key=MyArray2 value=0x861540
  e 271
   PASS  ArrayBundleGet with arrayList Test, ESMF_ArrayBundleCreateUTest.F90, lin
  e 271
- arrayCount=           2
  arrayCount=           2
  arrayCount=           2
  arrayCount=           2
   PASS  ArrayBundleGet with arrayNameList Test, ESMF_ArrayBundleCreateUTest.F90,
   line 281
+ arrayCount=           2
   PASS  ArrayBundleGet with arrayNameList Test, ESMF_ArrayBundleCreateUTest.F90,
   line 281
   PASS  ArrayBundleGet with arrayNameList Test, ESMF_ArrayBundleCreateUTest.F90,
@@ -295,7 +295,7 @@ Container::print()      list:item=1 key=MyArray2 value=0x861540
  Base name    = MyArray3
 --- ESMCI::Array::print start ---
  Base name    = MyArray3
- Status: Base = Ready,  object = --- ESMCI::Array::print start ---
+ Status: Base = Ready, --- ESMCI::Array::print start ---
  Base name    = MyArray3
  Status: Base = Ready,  object = Ready
  Proxy        = 
@@ -305,13 +305,12 @@ Container::print()      list:item=1 key=MyArray2 value=0x861540
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-Ready
+ object = Ready
  Proxy        = no
  Root Info (Attributes):
 no
  Root Info (Attributes):
-{}{}Array typekind/rank: Real*8 / 2 
-~ lower class' values ~{}Array typekind/rank: Real*8 / 2 
+{}{}{}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
@@ -328,51 +327,36 @@ deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
 LocalArrayPrint: Array at address 0x864b00:
-            rank = 2, typekind = 6, base_addr = 0x2aaaba2c3700
-
+Array typekind/rank: Real*8 / 2 
+~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
 LocalArrayPrint: Array at address 0x862a70:
-            rank = 2, typekind = 6, base_addr = 0x2aaaba29f700
+            rank = 2, typekind = 6, base_addr = 0x2aaaba29b700
             dim[0] = 7  localDeCount = 1
 ~ local data in LocalArray for DE 2 ~
 LocalArrayPrint: Array at address 0x862a70:
-            rank = 2, typekind = 6, base_addr = 0x2aaaba29f700
+            rank = 2, typekind = 6, base_addr = 0x2aaaba29b700
             dim[0] = 8  dim[1] = 11  
   Real, *8, Dim 2, Data values:
 LocalArrayPrint: Array at address 0x862a70:
-            rank = 2, typekind = 6, base_addr = 0x2aaaba29f880
+            rank = 2, typekind = 6, base_addr = 0x2aaaba29b880
             dim[0] = 7  dim[1] = 11  
   Real, *8, Dim 2, Data values:
+            rank = 2, typekind = 6, base_addr = 0x2aaaba2bb700
             dim[0] = 8  dim[1] = 12  
   Real, *8, Dim 2, Data values:
-( 1, 1) =  0
 dim[1] = 12  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  0
-( 2, 1) =  0
-( 3, 1) =  0
-( 4, 1) =  0
-( 5, 1) =  0
-( 2, 1) =  0
-( 3, 1) =  0
-( 4, 1) =  0
-( 5, 1) =  0
-( 6, 1) =  0
+( 1, 1) =  0
 ( 1, 1) =  0
 ( 2, 1) =  0
 ( 3, 1) =  0
 ( 4, 1) =  0
 ( 5, 1) =  0
-( 6, 1) =  0
-( 7, 1) =  0
-( 8, 1) =  0
-( 1, 2) =  0
-( 2, 2) =  0
-  skipping to end ...
-( 7,10) =  0
 ( 1, 1) =  0
 ( 2, 1) =  0
 ( 3, 1) =  0
@@ -382,25 +366,20 @@ dim[1] = 12
 ( 7, 1) =  0
 ( 1, 2) =  0
 ( 2, 2) =  0
-( 3, 2) =  0
-  skipping to end ...
-( 5,10) =  0
-( 6,10) =  0
-( 7,10) =  0
+( 2, 1) =  0
+( 3, 1) =  0
+( 4, 1) =  0
+( 5, 1) =  0
 ( 6, 1) =  0
 ( 7, 1) =  0
 ( 8, 1) =  0
 ( 1, 2) =  0
 ( 2, 2) =  0
-  skipping to end ...
-( 7,11) =  0
-( 8,11) =  0
-( 1,12) =  0
-( 2,12) =  0
-( 3,12) =  0
-( 4,12) =  0
-( 5,12) =  0
-( 6,12) =  0
+( 2, 1) =  0
+( 3, 1) =  0
+( 4, 1) =  0
+( 5, 1) =  0
+( 6, 1) =  0
 ( 7, 1) =  0
 ( 1, 2) =  0
 ( 2, 2) =  0
@@ -410,24 +389,24 @@ dim[1] = 12
 ( 6,11) =  0
 ( 7,11) =  0
 ( 1,12) =  0
-( 2,12) =  0
-( 3,12) =  0
-( 4,12) =  0
-( 5,12) =  0
-( 6,12) =  0
-( 7,12) =  0
+( 6, 1) =  0
+( 7, 1) =  0
+( 8, 1) =  0
+( 1, 2) =  0
+( 2, 2) =  0
+  skipping to end ...
+( 7,10) =  0
 ( 8,10) =  0
 ( 1,11) =  0
 ( 2,11) =  0
 ( 3,11) =  0
 ( 4,11) =  0
 ( 5,11) =  0
-( 6,11) =  0
-( 7,11) =  0
-( 8,11) =  0
-dim 1: [0]: [1 [1 [1, 8] 8] 8]
-dim 2: [1]: [1 [1 [1, 11] 11] 11]
---- ESMCI::Array::print end ---
+( 3, 2) =  0
+  skipping to end ...
+( 5,10) =  0
+( 6,10) =  0
+( 7,10) =  0
 ( 1,11) =  0
 ( 2,11) =  0
 ( 3,11) =  0
@@ -436,19 +415,40 @@ dim 2: [1]: [1 [1 [1, 11] 11] 11]
 ( 6,11) =  0
 ( 7,11) =  0
 dim 1: [0]: [1 [1 [1, 7] 7] 7]
-dim 2: [1]: [1 [1 [1, 11] 11] 11]
---- ESMCI::Array::print end ---
+  skipping to end ...
+( 7,11) =  0
+( 8,11) =  0
+( 1,12) =  0
+( 2,12) =  0
+( 3,12) =  0
+( 4,12) =  0
+( 5,12) =  0
+( 6,12) =  0
 ( 7,12) =  0
 ( 8,12) =  0
 dim 1: [0]: [1 [1 [1, 8] 8] 8]
 dim 2: [1]: [1 [1 [1, 12] 12] 12]
---- ESMCI::Array::print end ---
+( 2,12) =  0
+( 3,12) =  0
+( 4,12) =  0
+( 5,12) =  0
+( 6,12) =  0
+( 7,12) =  0
 dim 1: [0]: [1 [1 [1, 7] 7] 7]
 dim 2: [1]: [1 [1 [1, 12] 12] 12]
 --- ESMCI::Array::print end ---
-  PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBund
+( 6,11) =  0
+( 7,11) =  0
+( 8,11) =  0
+dim 1: [0]: [1 [1 [1, 8] 8] 8]
+dim 2: [1]: [1 [1 [1, 11] 11] 11]
+--- ESMCI::Array::print end ---
+dim 2: [1]: [1 [1 [1, 11] 11] 11]
+--- ESMCI::Array::print end ---
+--- ESMCI::Array::print end ---
   PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBund
  leCreateUTest.F90, line 361
+  PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBund
  leCreateUTest.F90, line 361
   PASS  ArrayBundleRemove with arrayNameList size 1 exising Test, ESMF_ArrayBund
  leCreateUTest.F90, line 361
@@ -535,101 +535,101 @@ dim 2: [1]: [1 [1 [1, 12] 12] 12]
   PASS  ArrayBundleAdd with multiflag #2 Test, ESMF_ArrayBundleCreateUTest.F90, 
  line 448
 --- ESMCI::ArrayBundle::print start ---
+ArrayBundle: MyArrayBundle
+arrayCount = 9
 --- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
 arrayCount = 9
-Container::print() multipmap:item=0 key=MyArray2ArrayBundle: MyArrayBundle
-arrayCount = 9
-Container::print() multipmap:item=0 key=MyArray2 value=0x861540
-Container::print() multipmap:item=--- ESMCI::ArrayBundle::print start ---
+Container::print() multipmap:item=0 key=MyArray2 value=--- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
 arrayCount = 9
 Container::print() multipmap:item=0 key=MyArray2 value=0x861540
-Container::print() multipmap:item=1 key=MyArray4 value=0x863ae0--- ESMCI::ArrayBundle::print start ---
+Container::print() multipmap:item=1 key=MyArray4--- ESMCI::ArrayBundle::print start ---
 ArrayBundle: MyArrayBundle
 arrayCount = 9
 Container::print() multipmap:item=0 key=MyArray2 value=0x861540
-Container::print() multipmap:item=1 key=MyArray4 value=0x863ae0
-Container::print() multipmap:item=2 key=MyArray4 value=0x8635d0
+Container::print() multipmap:item=1 key=MyArray4 value=0x863ae0Container::print() multipmap:item=0 key=MyArray2 value=0x8635d0
 Container::print() multipmap:item=1 key=MyArray4 value=0x865b70
-Container::print() multipmap:item=2 key=MyArray4 value=0x865b70
-Container::print() multipmap:item=31 key=MyArray4 value=0x863ae0
+Container::print() multipmap:item=2 key=MyArray4 value=0x861540
+Container::print() multipmap:item=1 key=MyArray4 value=0x863ae0
 Container::print() multipmap:item=2 key=MyArray4 value=0x863ae0
 Container::print() multipmap:item=3 key=MyArray4 value=0x863ae0
-Container::print() multipmap:item=
 Container::print() multipmap:item=2 key=MyArray4 value=0x863ae0
 Container::print() multipmap:item=3 key=MyArray4 value=0x863ae0
-Container::print() multipmap:item=4 key=MyArray5 value=0x864ed0
- value=0x863ae0
+Container::print() multipmap:item=4 key=MyArray5
+Container::print() multipmap:item=2 key=MyArray4 value=0x863ae0
 Container::print() multipmap:item=3 key=MyArray4 value=0x863ae0
-Container::print() multipmap:item=4 key=MyArray5 value=0x864ed0
-Container::print() multipmap:item=5 key=MyArray5 value= key=MyArray4 value=0x865b70
+Container::print() multipmap:item=4 key=MyArray5 value=0x865b70
+Container::print() multipmap:item=3 key=MyArray4 value=0x865b70
 Container::print() multipmap:item=4 key=MyArray5 value=0x866f60
-Container::print() multipmap:item=5 key=MyArray5 value=0x866f60
+Container::print() multipmap:item=5 key=MyArray5 value=0x863ae0
 Container::print() multipmap:item=4 key=MyArray5 value=0x864ed0
 Container::print() multipmap:item=5 key=MyArray5 value=0x864ed0
-Container::print() multipmap:item=6 key=MyArray6 value=0x864330
+Container::print() multipmap:item=6 key=MyArray6 value=0x864ed0
 Container::print() multipmap:item=5 key=MyArray5 value=0x864ed0
 Container::print() multipmap:item=6 key=MyArray6 value=0x864330
-Container::print() multipmap:item=7 key=MyArray6 value=0x864ed0
+Container::print() multipmap:item=70x864ed0
+Container::print() multipmap:item=5 key=MyArray5 value=0x864ed0
 Container::print() multipmap:item=6 key=MyArray6 value=0x864330
-Container::print() multipmap:item=7 key=MyArray6 value=0x864330
-Container::print() multipmap:item=8 key=6 key=MyArray6 value=0x8663c0
+Container::print() multipmap:item=7 key=MyArray6 value=0x866f60
+Container::print() multipmap:item=6 key=MyArray6 value=0x8663c0
 Container::print() multipmap:item=7 key=MyArray6 value=0x8663c0
-Container::print() multipmap:item=8 key=MyArray6 value=Container::print() multipmap:item=7 key=MyArray6 value=0x864330
+Container::print() multipmap:item=8 value=0x864330
+Container::print() multipmap:item=7 key=MyArray6 value=0x864330
 Container::print() multipmap:item=8 key=MyArray6 value=0x864330
-Container::print()      list:item=0 key=MyArray2 value=0x864330
+Container::print()      list:item=0 key=MyArray2 value=0x861540 key=MyArray6 value=0x864330
 Container::print() multipmap:item=8 key=MyArray6 value=0x864330
 Container::print()      list:item=0 key=MyArray2 value=0x861540
-Container::print()      list:item=1 key=MyArray6 value=0x864330
+Container::print()      list:item=1 key= value=0x864330
+Container::print() multipmap:item=8 key=MyArray6 value=0x864330
 Container::print()      list:item=0 key=MyArray2 value=0x861540
-Container::print()      list:item=1 key=MyArray6 value=0x864330
-Container::print()      list:item=0x8663c0
+Container::print()      list:item=1 key=MyArray6 value=0x864330 key=MyArray6 value=0x8663c0
 Container::print()      list:item=0 key=MyArray2 value=0x8635d0
 Container::print()      list:item=1 key=MyArray6 value=0x8663c0
-Container::print()      list:item=20x861540
+Container::print()      list:item=2 key=
 Container::print()      list:item=1 key=MyArray6 value=0x864330
 Container::print()      list:item=2 key=MyArray4 value=0x863ae0
-Container::print()      list:item=3 key=MyArray4MyArray6 value=0x864330
+Container::print()      list:item=3 key=MyArray4 value=0x863ae0MyArray6 value=0x864330
 Container::print()      list:item=2 key=MyArray4 value=0x863ae0
 Container::print()      list:item=3 key=MyArray4 value=0x863ae0
-Container::print()      list:item=4 key=2 key=MyArray4 value=0x863ae0
+Container::print()      list:item=4 key=
+Container::print()      list:item=2 key=MyArray4 value=0x863ae0
 Container::print()      list:item=3 key=MyArray4 value=0x863ae0
-Container::print()      list:item=4 key=MyArray6 value=0x864330
- key=MyArray4 value=0x865b70
+Container::print()      list:item=4 key=MyArray6 value=0x864330MyArray4 value=0x865b70
 Container::print()      list:item=3 key=MyArray4 value=0x865b70
 Container::print()      list:item=4 key=MyArray6 value=0x8663c0
- value=0x863ae0
+Container::print()      list:item=5
 Container::print()      list:item=4 key=MyArray6 value=0x864330
 Container::print()      list:item=5 key=MyArray5 value=0x864ed0
-Container::print()      list:item=6MyArray6 value=0x864330
+Container::print()      list:item=6 key=MyArray4 value=MyArray6 value=0x864330
 Container::print()      list:item=5 key=MyArray5 value=0x864ed0
 Container::print()      list:item=6 key=MyArray4 value=0x863ae0
-Container::print()      list:item=7Container::print()      list:item=5 key=MyArray5 value=0x864ed0
+Container::print()      list:item=
+Container::print()      list:item=5 key=MyArray5 value=0x864ed0
 Container::print()      list:item=6 key=MyArray4 value=0x863ae0
-Container::print()      list:item=7 key=MyArray6 value=0x864330Container::print()      list:item=5 key=MyArray5 value=0x866f60
+Container::print()      list:item=7 key= key=MyArray5 value=0x866f60
 Container::print()      list:item=6 key=MyArray4 value=0x865b70
-Container::print()      list:item=7 key=MyArray6 value= key=MyArray4 value=0x863ae0
+Container::print()      list:item=7 key=MyArray6 value=0x8663c0
+0x863ae0
 Container::print()      list:item=7 key=MyArray6 value=0x864330
 Container::print()      list:item=8 key=MyArray5 value=0x864ed0
---- ESMCI::ArrayBundle::print end --- key=MyArray6 value=0x864330
+--- ESMCI::ArrayBundle::print end ---
+7 key=MyArray6 value=0x864330
 Container::print()      list:item=8 key=MyArray5 value=0x864ed0
 --- ESMCI::ArrayBundle::print end ---
-
+MyArray6 value=0x864330
 Container::print()      list:item=8 key=MyArray5 value=0x864ed0
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundleGet with arrayName to get count Test, ESMF_ArrayBundleCreateU
- Test.F90, line 460
-0x8663c0
 Container::print()      list:item=8 key=MyArray5 value=0x866f60
 --- ESMCI::ArrayBundle::print end ---
   PASS  ArrayBundleGet with arrayName to get count Test, ESMF_ArrayBundleCreateU
  Test.F90, line 460
-
   PASS  ArrayBundleGet with arrayName to get count Test, ESMF_ArrayBundleCreateU
  Test.F90, line 460
   PASS  ArrayBundleGet with arrayName to get count Test, ESMF_ArrayBundleCreateU
  Test.F90, line 460
+ Test.F90, line 460
   PASS  Check arrayCount Test, ESMF_ArrayBundleCreateUTest.F90, line 466
   PASS  Check arrayCount Test, ESMF_ArrayBundleCreateUTest.F90, line 466
   PASS  Check arrayCount Test, ESMF_ArrayBundleCreateUTest.F90, line 466
@@ -663,6 +663,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                     
  name of arrayList(           2 ) is: 
+ MyArray6                                                                       
  name of arrayList(           2 ) is: 
  MyArray6                                                                       
                                                                                 
@@ -678,25 +679,16 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
- MyArray6                                                                       
                                                                                 
                                                                                 
                     
  name of arrayList(           3 ) is: 
- name of arrayList(           3 ) is: 
  MyArray6                                                                       
-                                                                                
-                                                                                
-                    
-  PASS  Verify Container Get arrayList for arrayname Test, ESMF_ArrayBundleCreat
- eUTest.F90, line 493
  name of arrayList(           3 ) is: 
  MyArray6                                                                       
                                                                                 
                                                                                 
                     
-  PASS  Verify Container Get arrayList for arrayname Test, ESMF_ArrayBundleCreat
- eUTest.F90, line 493
  name of arrayList(           3 ) is: 
  MyArray6                                                                       
                                                                                 
@@ -704,10 +696,18 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                     
   PASS  Verify Container Get arrayList for arrayname Test, ESMF_ArrayBundleCreat
  eUTest.F90, line 493
+ name of arrayList(           3 ) is: 
  MyArray6                                                                       
                                                                                 
                                                                                 
                     
+  PASS  Verify Container Get arrayList for arrayname Test, ESMF_ArrayBundleCreat
+ eUTest.F90, line 493
+                                                                                
+                                                                                
+                    
+  PASS  Verify Container Get arrayList for arrayname Test, ESMF_ArrayBundleCreat
+ eUTest.F90, line 493
   PASS  Verify Container Get arrayList for arrayname Test, ESMF_ArrayBundleCreat
  eUTest.F90, line 493
   PASS  ArrayBundleGet arrayCount Test, ESMF_ArrayBundleCreateUTest.F90, line 50
@@ -771,7 +771,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                     
  name of arrayList(           3 ) is: 
- MyArray4                                                                       
  name of arrayList(           3 ) is: 
  MyArray4                                                                       
                                                                                 
@@ -787,16 +786,11 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
-                                                                                
-                                                                                
-                    
- name of arrayList(           4 ) is: 
- MyArray4                                                                       
- name of arrayList(           4 ) is: 
  MyArray4                                                                       
                                                                                 
                                                                                 
                     
+ name of arrayList(           4 ) is: 
  name of arrayList(           4 ) is: 
  MyArray4                                                                       
                                                                                 
@@ -807,15 +801,24 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
+ name of arrayList(           4 ) is: 
+ MyArray4                                                                       
+                                                                                
+                                                                                
+                    
+ MyArray4                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           5 ) is: 
+ name of arrayList(           5 ) is: 
+ MyArray5                                                                       
                                                                                 
                                                                                 
                     
  name of arrayList(           5 ) is: 
  MyArray5                                                                       
                                                                                 
- name of arrayList(           5 ) is: 
- MyArray5                                                                       
-                                                                                
                                                                                 
                     
  name of arrayList(           5 ) is: 
@@ -823,17 +826,11 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
- name of arrayList(           5 ) is: 
  MyArray5                                                                       
                                                                                 
-                                                                                
-                    
                                                                                 
                     
  name of arrayList(           6 ) is: 
- MyArray5                                                                       
-                                                                                
-                                                                                
  name of arrayList(           6 ) is: 
  MyArray5                                                                       
                                                                                 
@@ -845,11 +842,18 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                     
  name of arrayList(           6 ) is: 
+ MyArray5                                                                       
+                                                                                
+                                                                                
+                    
  MyArray5                                                                       
                                                                                 
                                                                                 
                     
  name of arrayList(           7 ) is: 
+ MyArray6                                                                       
+                                                                                
+                                                                                
                     
  name of arrayList(           7 ) is: 
  MyArray6                                                                       
@@ -867,7 +871,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                     
  name of arrayList(           8 ) is: 
- MyArray6                                                                       
+ name of arrayList(           8 ) is: 
  MyArray6                                                                       
                                                                                 
                                                                                 
@@ -875,14 +879,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  name of arrayList(           8 ) is: 
  MyArray6                                                                       
                                                                                 
- name of arrayList(           8 ) is: 
- MyArray6                                                                       
-                                                                                
-                                                                                
-                    
-                                                                                
-                                                                                
-                    
                                                                                 
                     
  name of arrayList(           8 ) is: 
@@ -890,18 +886,12 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
- name of arrayList(           9 ) is: 
  MyArray6                                                                       
                                                                                 
                                                                                 
                     
  name of arrayList(           9 ) is: 
  MyArray6                                                                       
-                                                                                
-                                                                                
-                    
-  PASS  Verify Container Get arrayList for arrayname default order (abc) Test, E
- SMF_ArrayBundleCreateUTest.F90, line 545
  name of arrayList(           9 ) is: 
  MyArray6                                                                       
                                                                                 
@@ -916,6 +906,16 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                     
   PASS  Verify Container Get arrayList for arrayname default order (abc) Test, E
  SMF_ArrayBundleCreateUTest.F90, line 545
+ name of arrayList(           9 ) is: 
+ MyArray6                                                                       
+                                                                                
+                                                                                
+                    
+  PASS  Verify Container Get arrayList for arrayname default order (abc) Test, E
+ SMF_ArrayBundleCreateUTest.F90, line 545
+                                                                                
+                                                                                
+                    
   PASS  Verify Container Get arrayList for arrayname default order (abc) Test, E
  SMF_ArrayBundleCreateUTest.F90, line 545
   PASS  ArrayBundleGet arrayNameList default order (abc) Test, ESMF_ArrayBundleC
@@ -926,11 +926,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  reateUTest.F90, line 552
   PASS  ArrayBundleGet arrayNameList default order (abc) Test, ESMF_ArrayBundleC
  reateUTest.F90, line 552
- arrayNameList(           1 ) is: 
- MyArray2                                                                       
-                                                                                
-                                                                                
-                    
  arrayNameList(           1 ) is: 
  MyArray2                                                                       
                                                                                 
@@ -950,6 +945,11 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  MyArray4                                                                       
                                                                                 
                                                                                 
+ arrayNameList(           1 ) is: 
+ MyArray2                                                                       
+                                                                                
+                                                                                
+                    
  arrayNameList(           2 ) is: 
  MyArray4                                                                       
                                                                                 
@@ -957,6 +957,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                     
  arrayNameList(           3 ) is: 
  MyArray4                                                                       
+                                                                                
  arrayNameList(           2 ) is: 
  MyArray4                                                                       
                                                                                 
@@ -970,6 +971,8 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  arrayNameList(           4 ) is: 
  MyArray4                                                                       
                                                                                 
+                                                                                
+                    
  arrayNameList(           2 ) is: 
  MyArray4                                                                       
                                                                                 
@@ -986,6 +989,9 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                     
  arrayNameList(           5 ) is: 
+ MyArray5                                                                       
+                                                                                
+                                                                                
                     
  arrayNameList(           3 ) is: 
  MyArray4                                                                       
@@ -1003,21 +1009,9 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                     
                                                                                 
-                                                                                
                     
  arrayNameList(           4 ) is: 
  MyArray4                                                                       
-                                                                                
-                                                                                
-                    
- arrayNameList(           5 ) is: 
- MyArray5                                                                       
-                                                                                
-                                                                                
-                    
- arrayNameList(           6 ) is: 
- MyArray5                                                                       
-                                                                                
                                                                                 
                                                                                 
                     
@@ -1032,10 +1026,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                     
  arrayNameList(           7 ) is: 
- MyArray6                                                                       
-                                                                                
-                                                                                
-                    
+ arrayNameList(           5 ) is: 
  MyArray5                                                                       
                                                                                 
                                                                                 
@@ -1053,6 +1044,24 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  arrayNameList(           8 ) is: 
  MyArray6                                                                       
                                                                                 
+                    
+ arrayNameList(           6 ) is: 
+ MyArray5                                                                       
+                                                                                
+                                                                                
+                    
+ arrayNameList(           7 ) is: 
+ MyArray6                                                                       
+                                                                                
+                                                                                
+                    
+ arrayNameList(           8 ) is: 
+ MyArray6                                                                       
+                                                                                
+                                                                                
+                    
+ arrayNameList(           9 ) is: 
+ MyArray6                                                                       
                                                                                 
  arrayNameList(           6 ) is: 
  MyArray5                                                                       
@@ -1074,7 +1083,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
- arrayNameList(           7 ) is: 
  MyArray6                                                                       
                                                                                 
                                                                                 
@@ -1091,9 +1099,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                     
   PASS  Verify Container Get arrayNameList for arrayname default order (abc) Tes
  t, ESMF_ArrayBundleCreateUTest.F90, line 573
- arrayNameList(           8 ) is: 
- MyArray6                                                                       
-                                                                                
                                                                                 
                     
  arrayNameList(           9 ) is: 
@@ -1103,15 +1108,10 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                     
   PASS  Verify Container Get arrayNameList for arrayname default order (abc) Tes
  t, ESMF_ArrayBundleCreateUTest.F90, line 573
-                    
- arrayNameList(           9 ) is: 
- MyArray6                                                                       
-                                                                                
                                                                                 
                     
   PASS  Verify Container Get arrayNameList for arrayname default order (abc) Tes
  t, ESMF_ArrayBundleCreateUTest.F90, line 573
-                    
   PASS  Verify Container Get arrayNameList for arrayname default order (abc) Tes
  t, ESMF_ArrayBundleCreateUTest.F90, line 573
   PASS  ArrayBundleGet arrayList ESMF_ITEMORDER_ADDORDER Test, ESMF_ArrayBundleC
@@ -1127,8 +1127,45 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
+ name of arrayList(           1 ) is: 
+ MyArray2                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           1 ) is: 
+ MyArray2                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           1 ) is: 
+ MyArray2                                                                       
+                                                                                
+                                                                                
+                    
  name of arrayList(           2 ) is: 
  MyArray6                                                                       
+ name of arrayList(           2 ) is: 
+ MyArray6                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           2 ) is: 
+ MyArray6                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           2 ) is: 
+ MyArray6                                                                       
+                                                                                
+                                                                                
+                    
+                                                                                
+                                                                                
+                    
+ name of arrayList(           3 ) is: 
+ MyArray4                                                                       
+ name of arrayList(           3 ) is: 
+ MyArray4                                                                       
                                                                                 
                                                                                 
                     
@@ -1137,9 +1174,33 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
                                                                                 
                                                                                 
                     
+ name of arrayList(           3 ) is: 
+ MyArray4                                                                       
+                                                                                
+                                                                                
+                    
+                                                                                
+                                                                                
+                    
  name of arrayList(           4 ) is: 
  MyArray4                                                                       
                                                                                 
+ name of arrayList(           4 ) is: 
+ MyArray4                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           4 ) is: 
+ MyArray4                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           4 ) is: 
+ MyArray4                                                                       
+                                                                                
+                                                                                
+                    
+ name of arrayList(           5 ) is: 
                                                                                 
                     
  name of arrayList(           5 ) is: 
@@ -1226,26 +1287,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  0
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
- name of arrayList(           1 ) is: 
- MyArray2                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           2 ) is: 
- MyArray6                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           3 ) is: 
- MyArray4                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           4 ) is: 
- MyArray4                                                                       
-                                                                                
-                                                                                
-                    
  name of arrayList(           5 ) is: 
  MyArray6                                                                       
                                                                                 
@@ -1330,26 +1371,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  0
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
- name of arrayList(           1 ) is: 
- MyArray2                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           2 ) is: 
- MyArray6                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           3 ) is: 
- MyArray4                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           4 ) is: 
- MyArray4                                                                       
-                                                                                
-                                                                                
-                    
  name of arrayList(           5 ) is: 
  MyArray6                                                                       
                                                                                 
@@ -1434,27 +1455,6 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  0
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
- name of arrayList(           1 ) is: 
- MyArray2                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           2 ) is: 
- MyArray6                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           3 ) is: 
- MyArray4                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           4 ) is: 
- MyArray4                                                                       
-                                                                                
-                                                                                
-                    
- name of arrayList(           5 ) is: 
  MyArray6                                                                       
                                                                                 
                                                                                 
@@ -1538,7 +1538,7 @@ Container::print()      list:item=8 key=MyArray5 value=0x866f60
  0
   PASS  ArrayBundleDestroy Test, ESMF_ArrayBundleCreateUTest.F90, line 702
   Ending Test, file ESMF_ArrayBundleCreateUTest.F90, line 726
-  PET           0  Test Elapsed Time    3.84900000000000       msec.
-  PET           2  Test Elapsed Time    3.84900000000000       msec.
+  PET           0  Test Elapsed Time    3.83300000000000       msec.
   PET           1  Test Elapsed Time    4.19800000000000       msec.
-  PET           3  Test Elapsed Time    3.89600000000000       msec.
+  PET           2  Test Elapsed Time    3.85200000000000       msec.
+  PET           3  Test Elapsed Time    3.87800000000000       msec.
