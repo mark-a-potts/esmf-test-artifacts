@@ -1,16 +1,12 @@
 #!/bin/bash -l
-export JOBID=$1
+export JOBID=12346
 
 module use /home/mpotts/spack/share/spack/modules/linux-linuxmint19-skylake
 
 module load python
 module load gcc/9.3.0-gcc-7.5.0 openmpi/3.1.3-gcc-9.3.0 netcdf-c/4.7.4-gcc-9.3.0-openmpi
 module load hdf5/1.10.7-gcc-9.3.0-openmpi 
-module list
 module load netcdf-fortran/4.5.3-gcc-9.3.0-openmpi 
-module list
-module list >& module-test.log
-
 set -x
 export ESMF_NETCDF=nc-config
 
@@ -25,7 +21,7 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-
+chmod +x runpython.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
@@ -35,9 +31,7 @@ cd ../src/addon/ESMPy
 
 export PATH=$PATH:$HOME/.local/bin
 python3 setup.py build 2>&1 | tee python_build.log
-ssh chianti "export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_examples_dryrun"
-ssh chianti "export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_regrid_from_file_dryrun"
-ssh chianti "export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_regrid_from_file_dryrun"
+ssh chianti /home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1/runpython.sh 2>&1 | tee python_build.log
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
