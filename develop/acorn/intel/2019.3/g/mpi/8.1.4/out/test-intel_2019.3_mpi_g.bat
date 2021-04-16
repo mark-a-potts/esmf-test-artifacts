@@ -7,7 +7,7 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g
+cd /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop
 
 module unload PrgEnv-cray PrgEnv-gnu
 
@@ -31,7 +31,7 @@ export ESMF_CXXLINKOPTS="-fPIC -lnetcdff -lnetcdff"
 export ESMF_NETCDF=$PWD/nc-config
 sed -i 's/^aprun/mpiexec/' scripts/mpirun.unicos
 sed -i 's/lmpi++/lfmpich/' build_config/Linux.intel.default/build_rules.mk
-export ESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g
+export ESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpi
 export ESMF_BOPT='g'
@@ -45,5 +45,5 @@ export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh alogin01 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g/getres-test.sh
+ssh alogin02 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/getres-test.sh
 
