@@ -2,7 +2,7 @@
 #SBATCH --account=nggps_emc
 #SBATCH -o test-gfortran_8.3.0_mpiuni_g.bat_%j.o
 #SBATCH -e test-gfortran_8.3.0_mpiuni_g.bat_%j.e
-#SBATCH --time=2:00:00
+#SBATCH --time=1:00:00
 #SBATCH --cluster=c4
 #SBATCH --qos=normal
 #SBATCH --nodes=1
