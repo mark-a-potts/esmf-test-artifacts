@@ -7,7 +7,6 @@
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
   ints=         102         204         409         819
-  strlen =          60
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
@@ -70,7 +69,8 @@
 -- ready to call f90string2 by callback, passing 25
  -- entering f90string2 subroutine
   ints=         102         204         409         819
-  strlen =           fstr=0123456789abcdefghijklmnopqrstuvwxyz
+  strlen =           strlen =          60
+  fstr=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string2 subroutine
   PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
  -- entering f90string3 subroutine
@@ -137,10 +137,7 @@
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
-
-
--- return 25
+ -- leaving f90string3 25
   fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
  -- leaving f90string2 subroutine
 
@@ -220,7 +217,10 @@
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
- -- ed from call f90string3 by callback
+ --  subroutine
+
+
+-- returned from call f90string3 by callback
 
 
 -- leaving c_strings
@@ -300,5 +300,5 @@ leaving f90string3 subroutine
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time    1.5000000000000013       msec.
-  PET           1  Test Elapsed Time    1.4199999999999768       msec.
+  PET           0  Test Elapsed Time    1.3150000000000106       msec.
+  PET           1  Test Elapsed Time    1.4080000000000203       msec.
