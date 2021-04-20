@@ -1,12 +1,13 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #SBATCH --account=s2326
+#SBATCH -o build-gfortran_8.3.0_mpt_g.bat_%j.o
+#SBATCH -e build-gfortran_8.3.0_mpt_g.bat_%j.e
+#SBATCH --time=1:20:00
 #SBATCH --partition=compute
 #SBATCH --qos=allnccs
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
-#SBATCH --time=1:00:00
 #SBATCH --exclusive
-#SBATCH --output build-gfortran_8.3.0_mpt_g.bat_%j.o
 export JOBID=$SLURM_JOBID
 module load comp/gcc/8.3.0 mpi/sgi-mpt/2.17 
 
