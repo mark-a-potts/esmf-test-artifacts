@@ -1,10 +1,10 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #PBS -N build-intel_2019.3_mpi_O.bat
-#PBS -j oe
+#PBS -l walltime=1:00:00
+#PBS -l walltime=1:00:00
 #PBS -q workq
 #PBS -A emc
 #PBS -l select=1:ncpus=128:mpiprocs=128
-#PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop
@@ -14,7 +14,6 @@ module unload PrgEnv-cray PrgEnv-gnu
 module load PrgEnv-intel cray-pals
 module load intel/19.1.3.304 cray-mpich/8.1.4 cray-netcdf/4.7.4.3
 module load cray-hdf5/1.12.0.3 
-module list
 module list >& module-build.log
 
 set -x
@@ -40,5 +39,4 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 128 clean 2>&1| tee clean_$JOBID.log 
 make -j 128 2>&1| tee build_$JOBID.log
 
-ssh alogin02 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/getres-build.sh
-
+ssh alogin01 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/getres-build.sh
