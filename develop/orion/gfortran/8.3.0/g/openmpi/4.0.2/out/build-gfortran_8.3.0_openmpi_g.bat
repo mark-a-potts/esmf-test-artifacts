@@ -1,12 +1,13 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #SBATCH --account=da-cpu
+#SBATCH -o build-gfortran_8.3.0_openmpi_g.bat_%j.o
+#SBATCH -e build-gfortran_8.3.0_openmpi_g.bat_%j.e
+#SBATCH --time=1:00:00
 #SBATCH --partition=orion
 #SBATCH --qos=batch
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=40
-#SBATCH --time=1:00:00
 #SBATCH --exclusive
-#SBATCH --output build-gfortran_8.3.0_openmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
 module load gcc/8.3.0 openmpi/4.0.2 netcdf/4.7.2
 module list >& module-build.log

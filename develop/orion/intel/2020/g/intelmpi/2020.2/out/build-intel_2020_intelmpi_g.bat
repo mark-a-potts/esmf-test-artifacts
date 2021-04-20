@@ -1,12 +1,13 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #SBATCH --account=da-cpu
+#SBATCH -o build-intel_2020_intelmpi_g.bat_%j.o
+#SBATCH -e build-intel_2020_intelmpi_g.bat_%j.e
+#SBATCH --time=1:00:00
 #SBATCH --partition=orion
 #SBATCH --qos=batch
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=40
-#SBATCH --time=1:00:00
 #SBATCH --exclusive
-#SBATCH --output build-intel_2020_intelmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
 module load intel/2020.2 impi/2020.2 netcdf/4.7.4
 module list >& module-build.log
