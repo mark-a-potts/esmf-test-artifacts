@@ -1,12 +1,13 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #SBATCH --account=da-cpu
+#SBATCH -o build-intel_18.0.4_intelmpi_g.bat_%j.o
+#SBATCH -e build-intel_18.0.4_intelmpi_g.bat_%j.e
+#SBATCH --time=1:20:00
 #SBATCH --partition=hera
 #SBATCH --qos=batch
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=40
-#SBATCH --time=1:00:00
 #SBATCH --exclusive
-#SBATCH --output build-intel_18.0.4_intelmpi_g.bat_%j.o
 export JOBID=$SLURM_JOBID
 module load intel/18.0.5.274 impi/2018.4.274 netcdf/4.7.0
 module list >& module-build.log
