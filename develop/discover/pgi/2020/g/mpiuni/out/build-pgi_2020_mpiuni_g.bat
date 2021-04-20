@@ -1,12 +1,13 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #SBATCH --account=s2326
+#SBATCH -o build-pgi_2020_mpiuni_g.bat_%j.o
+#SBATCH -e build-pgi_2020_mpiuni_g.bat_%j.e
+#SBATCH --time=1:20:00
 #SBATCH --partition=compute
 #SBATCH --qos=allnccs
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
-#SBATCH --time=1:20:00
 #SBATCH --exclusive
-#SBATCH --output build-pgi_2020_mpiuni_g.bat_%j.o
 export JOBID=$SLURM_JOBID
 module load comp/pgi/20.4  
 
