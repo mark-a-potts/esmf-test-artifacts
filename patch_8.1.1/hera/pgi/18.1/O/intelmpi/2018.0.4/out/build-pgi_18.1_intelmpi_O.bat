@@ -1,12 +1,13 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #SBATCH --account=da-cpu
+#SBATCH -o build-pgi_18.1_intelmpi_O.bat_%j.o
+#SBATCH -e build-pgi_18.1_intelmpi_O.bat_%j.e
+#SBATCH --time=1:20:00
 #SBATCH --partition=hera
 #SBATCH --qos=batch
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=40
-#SBATCH --time=1:20:00
 #SBATCH --exclusive
-#SBATCH --output build-pgi_18.1_intelmpi_O.bat_%j.o
 export JOBID=$SLURM_JOBID
 module load pgi/18.10 impi/2018.0.4 
 
