@@ -7,7 +7,7 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /p/work1/mpotts/gfortran_9.2.0_openmpi_g
+cd /p/work1/mpotts/gfortran_9.2.0_openmpi_g_develop
 
 module load cseinit
 module load gcc/9.2.0 compiler/openmpi/2.1.2 
@@ -16,7 +16,7 @@ module list >& module-test.log
 
 set -x
 
-export ESMF_DIR=/p/work1/mpotts/gfortran_9.2.0_openmpi_g
+export ESMF_DIR=/p/work1/mpotts/gfortran_9.2.0_openmpi_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_BOPT='g'
@@ -30,5 +30,5 @@ export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh gaffney06 /p/work1/mpotts/gfortran_9.2.0_openmpi_g/getres-test.sh
+ssh gaffney06 /p/work1/mpotts/gfortran_9.2.0_openmpi_g_develop/getres-test.sh
 
