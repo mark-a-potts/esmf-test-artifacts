@@ -10,11 +10,14 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build-gfortran_9.2.0_intelmpi_O.bat
+	build-gfortran_9.2.0_intelmpi_O.bat_18165890.e
 	getres-build.sh
 	getres-test.sh
 	nuopc-app-prototypes/
+	runpython.sh
 	test-gfortran_9.2.0_intelmpi_O.bat
-	test-gfortran_9.2.0_intelmpi_O.bat_18148400.o
+	test-gfortran_9.2.0_intelmpi_O.bat_18165891.e
+	test-gfortran_9.2.0_intelmpi_O.bat_18165891.o
 
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
@@ -62,10 +65,10 @@ ESMF_BOPT=O
 ESMF_COMM=intelmpi
 ESMF_COMPILER=gfortran
 ESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1
-ESMF_NETCDF=nc-config
 ESMF_NETCDF_INCLUDE=/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include
 ESMF_NETCDF_LIBPATH=/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib
 ESMF_NETCDF_LIBS=-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 
+ESMF_NETCDF=nc-config
 ESMF_TESTEXHAUSTIVE=ON
 ESMF_TESTWITHTHREADS=ON
  
@@ -132,7 +135,7 @@ ESMF_BENCHMARK_THRESHOLD_MSEC: 500
  
 --------------------------------------------------------------
  * Other relevant environment variables *
-PATH:    /apps/hdf5/1.10.5/gnu/gcc-9.2.0/bin:/apps/netcdf/4.7.2/gnu/gcc-9.2.0/bin:/apps/intel/compilers_and_libraries_2020/linux/mpi/intel64/bin:/apps/intel/compilers_and_libraries_2020/linux/mpi/intel64/libfabric/bin:/apps/gnu/gcc-9.2.0/bin:/apps/intel/intelpython3/bin:/usr/lib64/qt-3.3/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/apps/local/bin:/apps/local/sbin:/apps/slurm/default/tools:/apps/slurm/default/bin:/apps/slurm/default/sbin:/apps/slurm/tools/sbank/bin:/home/Mark.Potts/bin
+PATH:    /apps/hdf5/1.10.5/gnu/gcc-9.2.0/bin:/apps/netcdf/4.7.2/gnu/gcc-9.2.0/bin:/apps/intel/compilers_and_libraries_2020/linux/mpi/intel64/bin:/apps/intel/compilers_and_libraries_2020/linux/mpi/intel64/libfabric/bin:/apps/gnu/gcc-9.2.0/bin:/apps/intel/intelpython3/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/apps/local/bin:/apps/local/sbin:/apps/slurm/default/tools:/apps/slurm/default/bin:/apps/slurm/default/sbin:/apps/slurm/tools/sbank/bin:/home/Mark.Potts/ecbuild-install/bin:/home/Mark.Potts/bin
 LD_LIBRARY_PATH: /apps/hdf5/1.10.5/gnu/gcc-9.2.0/lib:/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib:/apps/intel/compilers_and_libraries_2020/linux/mpi/intel64/lib/release:/apps/intel/compilers_and_libraries_2020/linux/mpi/intel64/lib:/apps/intel/compilers_and_libraries_2020/linux/mpi/intel64/libfabric/lib:/apps/gnu/gcc-9.2.0/lib64:/apps/gnu/gcc-9.2.0/lib::/apps/slurm/default/lib
  
 --------------------------------------------------------------
@@ -187,8 +190,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Tue Apr 20 06:01:44 UTC 2021 on h34m15
-Machine characteristics: Linux h34m15 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Tue Apr 20 19:45:03 UTC 2021 on h20c03
+Machine characteristics: Linux h20c03 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1'
@@ -2400,13 +2403,13 @@ make TNAME=TraceIO NP=4 ftest_profile_preload
 make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Trace/tests'
 env ESMF_RUNTIME_TRACE=ON LD_PRELOAD=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/lib/libO/Linux.gfortran.64.intelmpi.default/libesmftrace_preload.so mpirun -np 4 ./ESMF_TraceIOUTest 1> ./ESMF_TraceIOUTest.stdout 2>&1
 cat: ./PET*TraceIOUTest.Log: No such file or directory
-mv: cannot stat './traceout': No such file or directory
+mv: cannot stat ‘./traceout’: No such file or directory
 make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Trace/tests'
 env ESMF_RUNTIME_PROFILE=ON make TNAME=TraceMPI NP=4 ftest_profile_preload 
 make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Trace/tests'
 env ESMF_RUNTIME_TRACE=ON LD_PRELOAD=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/lib/libO/Linux.gfortran.64.intelmpi.default/libesmftrace_preload.so mpirun -np 4 ./ESMF_TraceMPIUTest 1> ./ESMF_TraceMPIUTest.stdout 2>&1
 cat: ./PET*TraceMPIUTest.Log: No such file or directory
-mv: cannot stat './traceout': No such file or directory
+mv: cannot stat ‘./traceout’: No such file or directory
 make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Trace/tests'
 make TNAME=TraceRegion NP=4 ctest
 make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Trace/tests'
@@ -3093,121 +3096,3 @@ make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.
 make TNAME=PointList NP=4 ftest
 make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/PointList/tests'
 mpirun -np 4 ./ESMF_PointListUTest 1> ./ESMF_PointListUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/PointList/tests'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/PointList/tests'
-make[5]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/PointList'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid
-make[5]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/src
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/src'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/src'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/interface
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/interface'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/interface'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/doc
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/doc'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/doc'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/examples
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/examples'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid/examples'
-make[5]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Regrid'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field
-make[5]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/src
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/src'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/src'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/interface
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/interface'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/interface'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/doc
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/doc'
-make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/doc'
-tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests
-make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-cp -r data /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default
-chmod u+rw /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default/data/*
-make TNAME=Field NP=1 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMC_FieldUTest 1> ./ESMC_FieldUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-rm -f /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default/meshmeshweights.nc
-make TNAME=FieldRegrid NP=1 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMC_FieldRegridUTest 1> ./ESMC_FieldRegridUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldRegridCsrv NP=1 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMC_FieldRegridCsrvUTest 1> ./ESMC_FieldRegridCsrvUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldGridRegrid NP=1 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMC_FieldGridRegridUTest 1> ./ESMC_FieldGridRegridUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldGridRegrid2 NP=1 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMC_FieldGridRegrid2UTest 1> ./ESMC_FieldGridRegrid2UTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldGridRegridCsrv NP=1 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMC_FieldGridRegridCsrvUTest 1> ./ESMC_FieldGridRegridCsrvUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldGridRegridCsrv2 NP=1 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMC_FieldGridRegridCsrv2UTest 1> ./ESMC_FieldGridRegridCsrv2UTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldGridRegridPar NP=4 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMC_FieldGridRegridParUTest 1> ./ESMC_FieldGridRegridParUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldGridGridRegrid NP=4 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMC_FieldGridGridRegridUTest 1> ./ESMC_FieldGridGridRegridUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldGridGridRegridCsrv NP=4 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMC_FieldGridGridRegridCsrvUTest 1> ./ESMC_FieldGridGridRegridCsrvUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mkdir -p /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default/data
-rm -f /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default/data/weights_esmc_smmsff.nc
-make TNAME=FieldSMMFromFile NP=4 ctest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMC_FieldSMMFromFileUTest 1> ./ESMC_FieldSMMFromFileUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=Field NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldUTest 1> ./ESMF_FieldUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldCreateGet NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldCreateGetUTest 1> ./ESMF_FieldCreateGetUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldRegrid NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldRegridUTest 1> ./ESMF_FieldRegridUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-cp -r data /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default
-chmod u+rw /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default/data/*
-make TNAME=FieldRegridCS NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldRegridCSUTest 1> ./ESMF_FieldRegridCSUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldRegridCsrv NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldRegridCsrvUTest 1> ./ESMF_FieldRegridCsrvUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldRegridCsrv2nd NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldRegridCsrv2ndUTest 1> ./ESMF_FieldRegridCsrv2ndUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldArbGrid NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldArbGridUTest 1> ./ESMF_FieldArbGridUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-rm -f /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/test/testO/Linux.gfortran.64.intelmpi.default/field2.nc
-make TNAME=FieldIO NP=4 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 4 ./ESMF_FieldIOUTest 1> ./ESMF_FieldIOUTest.stdout 2>&1
-make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-make TNAME=FieldStress NP=1 ftest
-make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_patch_8.1.1/src/Infrastructure/Field/tests'
-mpirun -np 1 ./ESMF_FieldStressUTest 1> ./ESMF_FieldStressUTest.stdout 2>&1

@@ -1,28 +1,82 @@
+build time -- 2021-04-20 19:45:27
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+[h8c52:65384:0:65384] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2b5cc00f4924)
+==== backtrace (tid:  65384) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003bd57 NC_open()  ???:0
+ 9 0x000000000003b191 nc_open()  ???:0
+10 0x000000000001161e nf_open_()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:189
+11 0x000000000006eb06 __netcdf_MOD_nf90_open()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:64
+12 0x0000000001d6add5 __esmf_ioscripmod_MOD_esmf_scripinq()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/interface/ESMF_IOScrip.F90:411
+13 0x0000000001c6030c __esmf_gridmod_MOD_esmf_gridcreatefrmscrip()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/interface/ESMF_Grid.F90:6714
+14 0x0000000001c67317 __esmf_gridmod_MOD_esmf_gridcreatefrmncfile()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/interface/ESMF_Grid.F90:6494
+15 0x0000000000408cc3 MAIN__()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/examples/ESMF_GridUsageEx.F90:1251
+16 0x0000000000411fe5 main()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/examples/ESMF_GridUsageEx.F90:28
+17 0x0000000000022555 __libc_start_main()  ???:0
+18 0x0000000000401b49 _start()  ???:0
+=================================
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x2b5684fef62f in ???
+#1  0x2b568400ab76 in PMPI_Comm_set_attr
+	at ../../src/mpi/attr/comm_set_attr.c:244
+#2  0x2b5683487965 in H5_init_library
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+#3  0x2b56835311c2 in H5Eset_auto2
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+#4  0x2b5682e583fd in ???
+#5  0x2b5682e58412 in ???
+#6  0x2b5682e63e26 in ???
+#7  0x2b5682df587e in ???
+#8  0x2b5682df9d56 in ???
+#9  0x2b5682df9190 in ???
+#10  0x2b5682b5361d in nf_open_
+	at /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:189
+#11  0x2b5682bb0b05 in __netcdf_MOD_nf90_open
+	at /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:64
+#12  0x2b5680b94dd4 in __esmf_ioscripmod_MOD_esmf_scripinq
+	at /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/interface/ESMF_IOScrip.F90:411
+#13  0x2b5680a8a30b in esmf_gridcreatefrmscrip
+	at /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/interface/ESMF_Grid.F90:6714
+#14  0x2b5680a91316 in __esmf_gridmod_MOD_esmf_gridcreatefrmncfile
+	at /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/interface/ESMF_Grid.F90:6494
+#15  0x408cc2 in esmf_gridcreateex
+	at /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/examples/ESMF_GridUsageEx.F90:1251
+#16  0x411fe4 in main
+	at /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Grid/examples/ESMF_GridUsageEx.F90:28
 
 ===================================================================================
 =   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 0 PID 75779 RUNNING AT h1c52
+=   RANK 0 PID 65384 RUNNING AT h8c52
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 65385 RUNNING AT h8c52
 =   KILLED BY SIGNAL: 9 (Killed)
 ===================================================================================
 
 ===================================================================================
 =   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 1 PID 75780 RUNNING AT h1c52
+=   RANK 2 PID 65386 RUNNING AT h8c52
 =   KILLED BY SIGNAL: 9 (Killed)
 ===================================================================================
 
 ===================================================================================
 =   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 2 PID 75781 RUNNING AT h1c52
-=   KILLED BY SIGNAL: 9 (Killed)
-===================================================================================
-
-===================================================================================
-=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 3 PID 75782 RUNNING AT h1c52
+=   RANK 3 PID 65387 RUNNING AT h8c52
 =   KILLED BY SIGNAL: 9 (Killed)
 ===================================================================================

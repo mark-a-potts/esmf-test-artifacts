@@ -10,11 +10,14 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build-intel_18.0.4_intelmpi_g.bat
+	build-intel_18.0.4_intelmpi_g.bat_18166249.e
 	getres-build.sh
 	getres-test.sh
 	nuopc-app-prototypes/
+	runpython.sh
 	test-intel_18.0.4_intelmpi_g.bat
-	test-intel_18.0.4_intelmpi_g.bat_18148850.o
+	test-intel_18.0.4_intelmpi_g.bat_18166250.e
+	test-intel_18.0.4_intelmpi_g.bat_18166250.o
 
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
@@ -132,7 +135,7 @@ ESMF_BENCHMARK_THRESHOLD_MSEC: 500
  
 --------------------------------------------------------------
  * Other relevant environment variables *
-PATH:    /apps/netcdf/4.7.0/intel/18.0.5.274/bin:/apps/intel/compilers_and_libraries_2018/linux/mpi/intel64/bin:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/bin/intel64:/apps/intel/intelpython3/bin:/usr/lib64/qt-3.3/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/apps/local/bin:/apps/local/sbin:/apps/slurm/default/tools:/apps/slurm/default/bin:/apps/slurm/default/sbin:/apps/slurm/tools/sbank/bin:/home/Mark.Potts/bin
+PATH:    /apps/netcdf/4.7.0/intel/18.0.5.274/bin:/apps/intel/compilers_and_libraries_2018/linux/mpi/intel64/bin:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/bin/intel64:/apps/intel/intelpython3/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/apps/local/bin:/apps/local/sbin:/apps/slurm/default/tools:/apps/slurm/default/bin:/apps/slurm/default/sbin:/apps/slurm/tools/sbank/bin:/home/Mark.Potts/ecbuild-install/bin:/home/Mark.Potts/bin
 LD_LIBRARY_PATH: /apps/netcdf/4.7.0/intel/18.0.5.274/lib:/apps/intel/compilers_and_libraries_2018/linux/mpi/intel64/lib::/apps/slurm/default/lib:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/compiler/lib/intel64:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/ipp/lib/intel64:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/compiler/lib/intel64_lin:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/mkl/lib/intel64_lin:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/tbb/lib/intel64/gcc4.7:/apps/intel/parallel_studio_xe_2018.4.057/debugger_2018/libipt/intel64/lib:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/daal/lib/intel64_lin:/apps/intel/parallel_studio_xe_2018.4.057/compilers_and_libraries_2018/linux/daal/../tbb/lib/intel64_lin/gcc4.4
  
 --------------------------------------------------------------
@@ -187,8 +190,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Tue Apr 20 06:30:36 UTC 2021 on h8c27
-Machine characteristics: Linux h8c27 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Tue Apr 20 19:57:17 UTC 2021 on h14c10
+Machine characteristics: Linux h14c10 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1'
@@ -3012,3 +3015,134 @@ chmod u+rw /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch
 make TNAME=FieldRegridCS NP=4 ftest
 make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
 mpirun -np 4 ./ESMF_FieldRegridCSUTest 1> ./ESMF_FieldRegridCSUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldRegridCsrv NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldRegridCsrvUTest 1> ./ESMF_FieldRegridCsrvUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldRegridCsrv2nd NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldRegridCsrv2ndUTest 1> ./ESMF_FieldRegridCsrv2ndUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldArbGrid NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldArbGridUTest 1> ./ESMF_FieldArbGridUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+rm -f /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/test/testg/Linux.intel.64.intelmpi.default/field2.nc
+make TNAME=FieldIO NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldIOUTest 1> ./ESMF_FieldIOUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldStress NP=1 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 1 ./ESMF_FieldStressUTest 1> ./ESMF_FieldStressUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldRegridXGSMM NP=2 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 2 ./ESMF_FieldRegridXGSMMUTest 1> ./ESMF_FieldRegridXGSMMUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldRegridXG NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldRegridXGUTest 1> ./ESMF_FieldRegridXGUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldGather NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldGatherUTest 1> ./ESMF_FieldGatherUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldRedist NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldRedistUTest 1> ./ESMF_FieldRedistUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldLSSMM NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldLSSMMUTest 1> ./ESMF_FieldLSSMMUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldSMM NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldSMMUTest 1> ./ESMF_FieldSMMUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldRedistArb NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldRedistArbUTest 1> ./ESMF_FieldRedistArbUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldMeshSMM NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldMeshSMMUTest 1> ./ESMF_FieldMeshSMMUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=FieldHalo NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldHaloUTest 1> ./ESMF_FieldHaloUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mkdir -p /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/test/testg/Linux.intel.64.intelmpi.default/data
+rm -f /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/test/testg/Linux.intel.64.intelmpi.default/data/test_smm_from_file_weights.nc
+rm -f /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/test/testg/Linux.intel.64.intelmpi.default/weights_esmf_smmsff.nc
+cp -f ../../IO/tests/T42_grid.nc /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/test/testg/Linux.intel.64.intelmpi.default/data
+chmod u+rw /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/test/testg/Linux.intel.64.intelmpi.default/data/*
+make TNAME=FieldSMMFromFile NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_FieldSMMFromFileUTest 1> ./ESMF_FieldSMMFromFileUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TESTHARNESSCASE=field_default NP=4 run_test_harness
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make TNAME=TestHarness HNAME=field_default_NP4 run_test_harness_sec
+make[8]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make[9]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+mpirun -np 4 ./ESMF_TestHarnessUTest -case field_default_test.rc -xml field_default.xml
+xsltproc -o field_default.html /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/test_harness/src/HarnessHttp.xslt field_default.xml
+make[9]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make[8]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/tests'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/examples
+make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/examples'
+make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field/examples'
+make[5]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Field'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container
+make[5]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/interface
+make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/interface'
+make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/interface'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/tests
+make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/tests'
+make TNAME=Container NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/tests'
+mpirun -np 4 ./ESMF_ContainerUTest 1> ./ESMF_ContainerUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/tests'
+make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container/tests'
+make[5]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/Container'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle
+make[5]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/src
+make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/src'
+make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/src'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/interface
+make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/interface'
+make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/interface'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/doc
+make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/doc'
+make[6]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/doc'
+tree_run_unit_tests in: /scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests
+make[6]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+make TNAME=FieldBundle NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+mpirun -np 4 ./ESMF_FieldBundleUTest 1> ./ESMF_FieldBundleUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+make TNAME=FieldBundleCrGet NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+mpirun -np 4 ./ESMF_FieldBundleCrGetUTest 1> ./ESMF_FieldBundleCrGetUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+make TNAME=FieldBundleRedist NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+mpirun -np 4 ./ESMF_FieldBundleRedistUTest 1> ./ESMF_FieldBundleRedistUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+make TNAME=FieldBundleSMM NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+mpirun -np 4 ./ESMF_FieldBundleSMMUTest 1> ./ESMF_FieldBundleSMMUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+make TNAME=FieldBundleIO NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+mpirun -np 4 ./ESMF_FieldBundleIOUTest 1> ./ESMF_FieldBundleIOUTest.stdout 2>&1
+make[7]: Leaving directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+make TNAME=FieldBundleRegrid NP=4 ftest
+make[7]: Entering directory `/scratch1/NCEPDEV/da/Mark.Potts/sandbox/intel_18.0.4_intelmpi_g_patch_8.1.1/src/Infrastructure/FieldBundle/tests'
+mpirun -np 4 ./ESMF_FieldBundleRegridUTest 1> ./ESMF_FieldBundleRegridUTest.stdout 2>&1
