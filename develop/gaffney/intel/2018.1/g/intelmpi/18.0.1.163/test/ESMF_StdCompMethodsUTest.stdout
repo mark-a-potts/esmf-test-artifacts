@@ -1,4 +1,4 @@
-build time -- 2021-04-20 12:51:27
+build time -- 2021-04-20 18:48:49
   Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
   Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
   Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
@@ -10,13 +10,16 @@ build time -- 2021-04-20 12:51:27
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
---- ESMCI::VM::print() start ---
---- ESMCI::VMId::print() start ------ ESMCI::VMId::print() start ------ ESMCI::VMId::print() start ---
+--- ESMCI::VMId::print() start ------ ESMCI::VMId::print() start ------ ESMCI::VMId::print() start ------ ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 
+  vmKeyWidth = 
+  vmKeyWidth = 
   vmKeyWidth = 1
-  vmKeyWidth =   vmKeyWidth = 1
-  vmKey=0x
+  vmKey=0x1
+  vmKey=0xF0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
@@ -27,16 +30,18 @@ build time -- 2021-04-20 12:51:27
 F0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
-1
-  vmKey=0xF0000000
-  localID = 0
---- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
 vm located at: 0x7b6410
+
+--- VMK::print() start ---
+vm located at: 0x7b6410
+npets = 4, mypet=2
+  pth_mutex =		 0x7f05b0
+  pth_finish_count =	 (nil)
 --- VMK::print() start ---
 vm located at: 0x7b6410
 npets = 4, mypet=0
-  pth_mutex =		 0x7f05d0
+  pth_mutex =		 0x7f05e0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -45,10 +50,8 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 nothreadsflag: 1
---- VMK::print() start ---
-vm located at: 0x7b6410
 npets = 4, mypet=1
-  pth_mutex =		 0x7f05b0
+  pth_mutex =		 0x7f05c0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
@@ -57,12 +60,7 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 nothreadsflag: 1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0--- VMK::print() start ---
-vm located at: 0x7b6410
-npets = 4, mypet=2
-  pth_mutex =		 0x7f05c0
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
 MPI_Comm_rank in MPI_COMM_WORLD: 2
 MPI thread level support: 3
@@ -70,6 +68,9 @@ mpi_mutex_flag: 0
 mpionly: 1
 nothreadsflag: 1
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+--- VMK::print() start ---
+vm located at: 0x7b6410
 npets = 4, mypet=3
   pth_mutex =		 0x7f05c0
   pth_finish_count =	 (nil)
@@ -82,7 +83,15 @@ mpionly: 1
 nothreadsflag: 1
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
@@ -90,9 +99,6 @@ ncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
-
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
 ncores = 4
@@ -102,9 +108,7 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+, cid[3][0]=3
 ncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
@@ -112,15 +116,11 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
-, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
   PASS  Gridded Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 368
@@ -254,19 +254,17 @@ ncores = 4
   PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
   PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
   PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
+  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F9
+ 0, line 511
+  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F9
+ 0, line 511
   PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
   PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F9
  0, line 511
+  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 51
+ 8
   PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F9
  0, line 511
-  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F9
- 0, line 511
-  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F9
- 0, line 511
-  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 51
- 8
-  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 51
- 8
   PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 51
  8
   PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 51
@@ -275,38 +273,40 @@ ncores = 4
  st.F90, line 525
   PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTe
  st.F90, line 525
-  PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTe
- st.F90, line 525
+  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 51
+ 8
   PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTe
  st.F90, line 525
   PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, lin
  e 532
   PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, lin
  e 532
-  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, lin
- e 532
+  PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTe
+ st.F90, line 525
   PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, lin
  e 532
   PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethod
  sUTest.F90, line 539
   PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethod
  sUTest.F90, line 539
-  PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethod
- sUTest.F90, line 539
+  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, lin
+ e 532
   PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethod
  sUTest.F90, line 539
   PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line
   546
   PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line
   546
-  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line
-  546
+  PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethod
+ sUTest.F90, line 539
   PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line
   546
   PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
  UTest.F90, line 553
   PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
  UTest.F90, line 553
+  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line
+  546
   PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
  UTest.F90, line 553
   PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
@@ -368,14 +368,14 @@ ncores = 4
   PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line
   619
   PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
+  Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
   PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
   PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
   PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
   Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
   Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
   Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
-  Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
-  PET           2  Test Elapsed Time    4.76200000000000       msec.
-  PET           0  Test Elapsed Time    4.77600000000000       msec.
-  PET           1  Test Elapsed Time    4.80000000000001       msec.
-  PET           3  Test Elapsed Time    5.05900000000001       msec.
+  PET           0  Test Elapsed Time    4.85500000000000       msec.
+  PET           2  Test Elapsed Time    4.79100000000000       msec.
+  PET           3  Test Elapsed Time    4.89600000000000       msec.
+  PET           1  Test Elapsed Time    5.15200000000000       msec.
