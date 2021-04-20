@@ -7,7 +7,7 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /p/work1/mpotts/gfortran_9.2.0_mpiuni_g
+cd /p/work1/mpotts/gfortran_9.2.0_mpiuni_g_develop
 
 module load cseinit
 module load gcc/9.2.0  
@@ -16,7 +16,7 @@ module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/p/work1/mpotts/gfortran_9.2.0_mpiuni_g
+export ESMF_DIR=/p/work1/mpotts/gfortran_9.2.0_mpiuni_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
@@ -25,5 +25,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 48 clean 2>&1| tee clean_$JOBID.log 
 make -j 48 2>&1| tee build_$JOBID.log
 
-ssh gaffney06 /p/work1/mpotts/gfortran_9.2.0_mpiuni_g/getres-build.sh
+ssh gaffney06 /p/work1/mpotts/gfortran_9.2.0_mpiuni_g_develop/getres-build.sh
 
