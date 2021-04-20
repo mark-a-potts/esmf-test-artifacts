@@ -1,10 +1,9 @@
 #!/bin/bash -l
-export JOBID=$1
+export JOBID=12345
 
 module use /project/esmf/stack/modulefiles
 module load gnu/9.3.0/compiler gnu/9.3.0/openmpi/4.1.0 gnu/9.3.0/netcdf-c/4.7.4
 module load gnu/9.3.0/netcdf-fortran/4.5.3 
-module list
 module list >& module-build.log
 
 set -x
