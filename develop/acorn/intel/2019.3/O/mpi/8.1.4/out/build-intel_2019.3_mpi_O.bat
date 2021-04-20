@@ -40,5 +40,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 128 clean 2>&1| tee clean_$JOBID.log 
 make -j 128 2>&1| tee build_$JOBID.log
 
-ssh alogin02 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/getres-build.sh
+ssh alogin01 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/getres-build.sh
 
