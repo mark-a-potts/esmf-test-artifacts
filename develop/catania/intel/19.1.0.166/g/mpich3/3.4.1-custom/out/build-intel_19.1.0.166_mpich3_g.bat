@@ -1,5 +1,5 @@
 #!/bin/bash -l
-export JOBID=$1
+export JOBID=12345
 
 module use /project/esmf/stack/modulefiles
 module load intel/19.1.0.166/compiler intel/19.1.0.166/mpich3/3.4.1-custom 
