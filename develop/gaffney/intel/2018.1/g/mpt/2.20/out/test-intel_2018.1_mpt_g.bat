@@ -7,7 +7,7 @@
 #PBS -l walltime=1:00:00
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /p/work1/mpotts/intel_2018.1_mpt_g
+cd /p/work1/mpotts/intel_2018.1_mpt_g_develop
 
 module load cseinit-intel
 module load compiler/intel/18.0.1.163 mpt/2.20 cse/netcdf/latest
@@ -19,7 +19,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILEOPTS=-I$CSE_NETCDF_FORTRAN_INCLUDE_DIR
-export ESMF_DIR=/p/work1/mpotts/intel_2018.1_mpt_g
+export ESMF_DIR=/p/work1/mpotts/intel_2018.1_mpt_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpt
 export ESMF_BOPT='g'
@@ -33,5 +33,5 @@ export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh gaffney06 /p/work1/mpotts/intel_2018.1_mpt_g/getres-test.sh
+ssh gaffney06 /p/work1/mpotts/intel_2018.1_mpt_g_develop/getres-test.sh
 
