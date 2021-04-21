@@ -477,7 +477,7 @@ atmE.F90:17.6:
       1
 Fatal Error: File 'esmf.mod' opened at (1) is not a GNU Fortran module file
 gmake: *** [atmE.o] Error 1
-mv: cannot stat ‘atmE.so’: No such file or directory
+mv: cannot stat 'atmE.so': No such file or directory
 rm -f PET*.ESMF_LogFile
 rm -f *.o *.mod *.mk
 mpigxx -c -std=c++11 -O -DNDEBUG -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp  -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/include  -I/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96bb1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop -D__SDIR__='' -DESMF_CXXSTD=11 atmF.C
@@ -550,7 +550,7 @@ gmake: *** No rule to make target `OcnSub/ocnSub.mk'.  Stop.
 Makefile:34: ../OcnCommon/ocnCommon.mk: No such file or directory
 Makefile:42: OcnSub/ocnSub.mk: No such file or directory
 gmake: *** No rule to make target `OcnSub/ocnSub.mk'.  Stop.
-mv: cannot stat ‘ocn.so’: No such file or directory
+mv: cannot stat 'ocn.so': No such file or directory
 Makefile:35: ATM-A/atmA.mk: No such file or directory
 Makefile:99: OcnModelA/ocn.mk: No such file or directory
 Makefile:108: OcnModelB/ocn.mk: No such file or directory
@@ -907,3 +907,90 @@ mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenm
 mpifc -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default -L/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib -L/apps/gnu/gcc-9.2.0/lib64/../lib64/ -Wl,-rpath,/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default -Wl,-rpath,/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib -Wl,-rpath,/apps/gnu/gcc-9.2.0/lib64/../lib64/ -o mainApp mainApp.o driverComp.o advectDiffComp.o -lesmf  -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 
 /usr/bin/ld: warning: libmpi.so.40, needed by /apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib/libnetcdff.so, may conflict with libmpi.so.12
 + mpirun -np 4 ./mainApp
++ local result=255
++ set +x
+FINISHED: NestingTelescopeMultipleProto
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+STARTING: SingleModelProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f mainApp *.o *.mod
+mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/include -I/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96bb1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop -DESMF_VERSION_MAJOR=8 model.F90
+mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/include -I/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96bb1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop -DESMF_VERSION_MAJOR=8 driver.F90
+mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/include -I/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96bb1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop -DESMF_VERSION_MAJOR=8 mainApp.F90
+mpifc -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default -L/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib -L/apps/gnu/gcc-9.2.0/lib64/../lib64/ -Wl,-rpath,/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default -Wl,-rpath,/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib -Wl,-rpath,/apps/gnu/gcc-9.2.0/lib64/../lib64/ -o mainApp mainApp.o driver.o model.o -lesmf  -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 
+/usr/bin/ld: warning: libmpi.so.40, needed by /apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib/libnetcdff.so, may conflict with libmpi.so.12
++ mpirun -np 4 ./mainApp
++ local result=0
++ set +x
+FINISHED: SingleModelProto
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+STARTING: SingleModelOpenMPProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f mainApp *.o *.mod
+mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/include -I/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96bb1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop -DESMF_VERSION_MAJOR=8 model.F90
+mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/include -I/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96bb1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop -DESMF_VERSION_MAJOR=8 driver.F90
+mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.intelmpi.default -I/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/include -I/apps/netcdf/4.7.2/gnu/gcc-9.2.0/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_04-7-g3098c96bb1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop -DESMF_VERSION_MAJOR=8 mainApp.F90
+mpifc -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default -L/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib -L/apps/gnu/gcc-9.2.0/lib64/../lib64/ -Wl,-rpath,/scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.intelmpi.default -Wl,-rpath,/apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib -Wl,-rpath,/apps/gnu/gcc-9.2.0/lib64/../lib64/ -o mainApp mainApp.o driver.o model.o -lesmf  -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 
+/usr/bin/ld: warning: libmpi.so.40, needed by /apps/netcdf/4.7.2/gnu/gcc-9.2.0/lib/libnetcdff.so, may conflict with libmpi.so.12
++ mpirun -np 4 ./mainApp
++ local result=0
++ set +x
+FINISHED: SingleModelOpenMPProto
+---------------------------------------------------------------------------
+
+== TEST SUMMARY START ==
+FAIL: AsyncIOBlockingProto
+FAIL: AsyncIONonblockingProto
+PASS: AtmOcnConOptsProto
+PASS: AtmOcnConProto
+FAIL: AtmOcnCplListProto
+PASS: AtmOcnCplSetProto
+PASS: AtmOcnFDSynoProto
+PASS: AtmOcnIceSimpleImplicitProto
+PASS: AtmOcnImplicitProto
+PASS: AtmOcnLndProto
+PASS: AtmOcnLogNoneProto
+PASS: AtmOcnMedIngestFromConfigProto
+PASS: AtmOcnMedIngestFromInternalProto
+PASS: AtmOcnMedPetListProto
+PASS: AtmOcnMedPetListTimescalesProto
+PASS: AtmOcnMedPetListTimescalesSplitFastProto
+PASS: AtmOcnMedProto
+FAIL: AtmOcnMirrorFieldsProto
+PASS: AtmOcnPetListProto
+PASS: AtmOcnProto
+PASS: AtmOcnRtmTwoTimescalesProto
+FAIL: AtmOcnScalarProto
+FAIL: AtmOcnSelectExternalProto
+FAIL: AtmOcnSelectExternalProto
+FAIL: AtmOcnSelectExternalProto
+FAIL: AtmOcnSelectExternalProto
+FAIL: AtmOcnSelectExternalProto
+PASS: AtmOcnSelectProto
+PASS: AtmOcnSelectProto
+PASS: AtmOcnSelectProto
+PASS: AtmOcnSimpleImplicitProto
+FAIL: AtmOcnTransferGridProto
+FAIL: AtmOcnTransferLocStreamProto
+FAIL: AtmOcnTransferMeshProto
+FAIL: ComponentExplorer
+PASS: CustomFieldDictionaryProto
+FAIL: DriverInDriverDataDepProto
+PASS: DriverInDriverProto
+FAIL: DynPhyProto
+FAIL: ExternalDriverAPIProto
+PASS: GenericMediatorProto
+FAIL: HierarchyProto
+PASS: NamespaceProto
+FAIL: NestingMultipleProto
+FAIL: NestingSingleProto
+FAIL: NestingTelescopeMultipleProto
+PASS: SingleModelProto
+PASS: SingleModelOpenMPProto
+== TEST SUMMARY STOP ==
+
+---------------------------------------------------------------------------
