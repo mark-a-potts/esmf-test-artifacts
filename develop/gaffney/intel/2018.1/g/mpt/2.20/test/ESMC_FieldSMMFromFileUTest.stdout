@@ -1,18 +1,18 @@
-build time -- 2021-04-21 06:10:34
+build time -- 2021-04-21 21:03:09
 Beginning Test, file ESMC_FieldSMMFromFileUTest.C, line 41
 NUMBER_OF_PROCESSORS 4
 Beginning Test, file ESMC_FieldSMMFromFileUTest.C, line 41
 NUMBER_OF_PROCESSORS 4
 Beginning Test, file ESMC_FieldSMMFromFileUTest.C, line 41
-NUMBER_OF_PROCESSORS 4
 Beginning Test, file ESMC_FieldSMMFromFileUTest.C, line 41
+NUMBER_OF_PROCESSORS 4
 NUMBER_OF_PROCESSORS 4
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 23006, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldSMMFromFileUTest
+	Process ID: 377207, Host: r3i3n13, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldSMMFromFileUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/23006/exe, process 23006
+MPT: Attaching to program: /proc/377207/exe, process 377207
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: done.
@@ -50,7 +50,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab071618c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab4bf6806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff62c0 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 23006, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldSMMFromFileUTe"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff62c0 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 377207, Host: r3i3n13, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldSMMFromFileU"...) at sig.c:340
 MPT: #3  0x00002aaab4bf6a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5a0080) at sig.c:489
 MPT: #4  0x00002aaab4bf6d9b in slave_sig_handler (signo=11, 
@@ -100,12 +100,12 @@ MPT: #22 0x00002aaaae28bad8 in esmcpio_cpp_createfile (iosystem_handle=1,
 MPT:     file=..., iotype=6, fname=..., amode_in=4)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:564
 MPT: #23 0x00002aaaac6a6920 in ESMCI::PIO_Handler::open (this=0x17a84c0, 
-MPT:     readonly=false, rc=0x7fffffff9000)
+MPT:     readonly=false, rc=0x7fffffff8fe0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
 MPT: #24 0x00002aaaac37168e in ESMCI::IO_Handler::open (this=0x17a84c0, 
 MPT:     file="data/weights_esmc_smmsff.nc", 
 MPT:     filestatusflag_arg=ESMC_FILESTATUS_UNKNOWN, overwrite_arg=false, 
-MPT:     readonly_arg=false, rc=0x7fffffff909c)
+MPT:     readonly_arg=false, rc=0x7fffffff907c)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
 MPT: #25 0x00002aaaac380644 in ESMCI::IO::open (this=0x17a9a10, 
 MPT:     file="data/weights_esmc_smmsff.nc", 
@@ -118,16 +118,16 @@ MPT:     overwrite=false, status=ESMC_FILESTATUS_UNKNOWN, timeslice=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
 MPT: #27 0x00002aaaabe22843 in ESMCI::Array::write (this=0x17b3170, 
 MPT:     file="data/weights_esmc_smmsff.nc", variableName="S", 
-MPT:     convention="netcdf", purpose="metadata", overwrite=0x7fffffff9523, 
-MPT:     status=0x7fffffff96e8, timeslice=0x0, iofmt=0x7fffffff96d8)
+MPT:     convention="netcdf", purpose="metadata", overwrite=0x7fffffff9503, 
+MPT:     status=0x7fffffff96c8, timeslice=0x0, iofmt=0x7fffffff96b8)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/src/ESMCI_Array.C:4064
-MPT: #28 0x00002aaaabe05d15 in c_esmc_arraywrite_ (array=0x7fffffff9ac0, 
+MPT: #28 0x00002aaaabe05d15 in c_esmc_arraywrite_ (array=0x7fffffff9aa0, 
 MPT:     file=0x40b5c4 "data/weights_esmc_smmsff.nc", 
 MPT:     variableName=0x2aaaaeee0f70 <__STRLITPACK_1554> "S", 
 MPT:     convention=0x2aaaaeee0f74 <__STRLITPACK_1553> "netcdf", 
 MPT:     purpose=0x2aaaaeee0f7c <__STRLITPACK_1552> "metadata", 
-MPT:     opt_overwriteflag=0x7fffffff96f8, status=0x7fffffff96e8, timeslice=0x0, 
-MPT:     iofmt=0x7fffffff96d8, rc=0x7fffffff9678, file_l=27, varname_l=1, 
+MPT:     opt_overwriteflag=0x7fffffff96d8, status=0x7fffffff96c8, timeslice=0x0, 
+MPT:     iofmt=0x7fffffff96b8, rc=0x7fffffff9658, file_l=27, varname_l=1, 
 MPT:     convention_l=6, purpose_l=8)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/interface/ESMCI_Array_F.C:798
 MPT: #29 0x00002aaaac9a02be in esmf_arraymod::esmf_arraywrite (array=..., 
@@ -184,7 +184,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\320\314A\r', '\000' <repeats 28 times>, '\200\065\217\003', '\000' <repeats 20 times>, 'a\000\000\000\000\000\000\000\f\001\000\000\000\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\300\324\025\003', '\000' <repeats 28 times>, '\220X\353\002', '\000' <repeats 20 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\020-\363\003', '\000' <repeats 20 times>, 'P-\363\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, ' \037\357\000\000\000\000\000\240\314A\r', '\000' <repeats 28 times>, '\020\264h\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: dstfile=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -194,7 +194,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 24 times>, '\276G\005', '\000' <repeats 20 times>, '@\276G\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\320\314A\r', '\000' <repeats 28 times>, '\240\242\327\002', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '`Y\210\003', '\000' <repeats 20 times>, '\240Y\210\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, ' \037\357\000\000\000\000\000\240\314A\r', '\000' <repeats 28 times>, '@{T\005', '\000' <repeats 20 times>, '!\000\000\000\000\000\000\000\230\253\377\377\377\177', '\000' <repeats 18 times>..., 
 MPT:     srcfiletype=<error reading variable: Cannot access memory at address 0x0>, dstfiletype=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     largefileflag=<error reading variable: Cannot access memory at address 0x0>, srcfracfield=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     dstfracfield=<error reading variable: Cannot access memory at address 0x0>, rc=18, .tmp.FILENAME.len_V$e8a4=27, .tmp.SRCFILE.len_V$e8bb=0, 
@@ -202,33 +202,33 @@ MPT:     .tmp.DSTFILE.len_V$e8be=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/interface/ESMF_Field_C.F90:1292
 MPT: #33 0x00002aaaac24fcb4 in ESMCI::Field::regridstorefile (fieldpsrc=0x17a58b0, 
 MPT:     fieldpdst=0x17a68f0, filename=0x40b5c4 "data/weights_esmc_smmsff.nc", 
-MPT:     srcMaskValues=0x0, dstMaskValues=0x0, routehandlep=0x7fffffffb040, 
+MPT:     srcMaskValues=0x0, dstMaskValues=0x0, routehandlep=0x7fffffffb020, 
 MPT:     regridMethod=0x0, polemethod=0x0, regridPoleNPnts=0x0, lineType=0x0, 
 MPT:     normType=0x0, unmappedAction=0x0, ignoreDegenerate=0x0, 
-MPT:     create_rh=0x7fffffffb230, filemode=0x0, srcFile=0x0, dstFile=0x0, 
+MPT:     create_rh=0x7fffffffb210, filemode=0x0, srcFile=0x0, dstFile=0x0, 
 MPT:     srcFileType=0x0, dstFileType=0x0, largeFileFlag=0x0, srcFracField=0x0, 
 MPT:     dstFracField=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/interface/ESMCI_Field.C:1577
 MPT: #34 0x00002aaaabdcfb12 in ESMC_FieldRegridStoreFile (srcField=..., 
 MPT:     dstField=..., filename=0x40b5c4 "data/weights_esmc_smmsff.nc", 
-MPT:     srcMaskValues=0x0, dstMaskValues=0x0, routehandle=0x7fffffffb2d8, 
+MPT:     srcMaskValues=0x0, dstMaskValues=0x0, routehandle=0x7fffffffb2b8, 
 MPT:     regridmethod=0x0, polemethod=0x0, regridPoleNPnts=0x0, lineType=0x0, 
 MPT:     normType=0x0, unmappedaction=0x0, ignoreDegenerate=0x0, 
-MPT:     create_rh=0x7fffffffb230, filemode=0x0, srcFile=0x0, dstFile=0x0, 
+MPT:     create_rh=0x7fffffffb210, filemode=0x0, srcFile=0x0, dstFile=0x0, 
 MPT:     srcFileType=0x0, dstFileType=0x0, largeFileFlag=0x0, srcFracField=0x0, 
 MPT:     dstFracField=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/interface/ESMC_Field.C:523
 MPT: #35 0x000000000040787f in main () at ESMC_FieldSMMFromFileUTest.C:193
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 23006] will be detached.
+MPT: 	Inferior 1 [process 377207] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/23006/exe, process 23006
-MPT: [Inferior 1 (process 23006) detached]
+MPT: Detaching from program: /proc/377207/exe, process 377207
+MPT: [Inferior 1 (process 377207) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i1n7, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldSMMFromFileUTest, Rank 0, Process 23006: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r3i3n13, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldSMMFromFileUTest, Rank 0, Process 377207: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11
