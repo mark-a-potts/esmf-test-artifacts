@@ -6,7 +6,7 @@
 #PBS -l select=1:ncpus=128:mpiprocs=128
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop
+cd /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop
 
 module unload PrgEnv-cray PrgEnv-gnu
 
@@ -29,7 +29,7 @@ export ESMF_CXXLINKOPTS="-fPIC -lnetcdff -lnetcdff"
 export ESMF_NETCDF=$PWD/nc-config
 sed -i 's/^aprun/mpiexec/' scripts/mpirun.unicos
 sed -i 's/lmpi++/lfmpich/' build_config/Linux.intel.default/build_rules.mk
-export ESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop
+export ESMF_DIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpi
 export ESMF_BOPT='g'
@@ -38,4 +38,4 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh alogin01 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/getres-test.sh
+ssh alogin01 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/getres-test.sh
