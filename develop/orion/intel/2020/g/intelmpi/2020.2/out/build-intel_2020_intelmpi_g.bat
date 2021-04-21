@@ -9,6 +9,8 @@
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+
+module load intelpython3
 module load intel/2020.2 impi/2020.2 netcdf/4.7.4
 module list >& module-build.log
 
