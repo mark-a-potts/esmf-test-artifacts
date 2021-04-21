@@ -1,18 +1,18 @@
-build time -- 2021-04-20 18:48:45
+build time -- 2021-04-21 06:10:34
   Beginning Test, file ESMF_IOUTest.F90, line 57
   Beginning Test, file ESMF_IOUTest.F90, line 57
   Beginning Test, file ESMF_IOUTest.F90, line 57
   NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_IOUTest.F90, line 57
-  NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 193981, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest
+	Process ID: 10314, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/193981/exe, process 193981
+MPT: Attaching to program: /proc/10314/exe, process 10314
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -50,7 +50,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177b18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb4806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff5ec0 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 193981, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest\n\tMPT Vers"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff5f40 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 10314, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest\n\tMPT Versio"...) at sig.c:340
 MPT: #3  0x00002aaab1eb4a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5a0080) at sig.c:489
 MPT: #4  0x00002aaab1eb4d9b in slave_sig_handler (signo=11, 
@@ -99,11 +99,11 @@ MPT: #22 0x00002aaaae28bad8 in esmcpio_cpp_createfile (iosystem_handle=1,
 MPT:     file=..., iotype=6, fname=..., amode_in=4)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:564
 MPT: #23 0x00002aaaac6a6920 in ESMCI::PIO_Handler::open (this=0x19285a0, 
-MPT:     readonly=false, rc=0x7fffffff8be0)
+MPT:     readonly=false, rc=0x7fffffff8c60)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
 MPT: #24 0x00002aaaac37168e in ESMCI::IO_Handler::open (this=0x19285a0, 
 MPT:     file="doodle.nc", filestatusflag_arg=ESMC_FILESTATUS_UNKNOWN, 
-MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff8c7c)
+MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff8cfc)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
 MPT: #25 0x00002aaaac380644 in ESMCI::IO::open (this=0x19282b0, file="doodle.nc", 
 MPT:     filestatusflag=ESMC_FILESTATUS_UNKNOWN, iofmt=ESMF_IOFMT_NETCDF, 
@@ -115,16 +115,16 @@ MPT:     timeslice=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
 MPT: #27 0x00002aaaabe22843 in ESMCI::Array::write (this=0x19289d0, 
 MPT:     file="doodle.nc", variableName="S", convention="netcdf", 
-MPT:     purpose="metadata", overwrite=0x7fffffff9103, status=0x7fffffff92c8, 
-MPT:     timeslice=0x0, iofmt=0x7fffffff92b8)
+MPT:     purpose="metadata", overwrite=0x7fffffff9183, status=0x7fffffff9348, 
+MPT:     timeslice=0x0, iofmt=0x7fffffff9338)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/src/ESMCI_Array.C:4064
-MPT: #28 0x00002aaaabe05d15 in c_esmc_arraywrite_ (array=0x7fffffff96a0, 
-MPT:     file=0x7fffffffb028 "doodle.nc", ' ' <repeats 23 times>, "\314\314\314\314\314\314\314\314 ESMF_OutputWeightFile", ' ' <repeats 138 times>..., 
+MPT: #28 0x00002aaaabe05d15 in c_esmc_arraywrite_ (array=0x7fffffff9720, 
+MPT:     file=0x7fffffffb0a8 "doodle.nc", ' ' <repeats 23 times>, "\314\314\314\314\314\314\314\314 ESMF_OutputWeightFile", ' ' <repeats 138 times>..., 
 MPT:     variableName=0x2aaaaeee0f70 <__STRLITPACK_1554> "S", 
 MPT:     convention=0x2aaaaeee0f74 <__STRLITPACK_1553> "netcdf", 
 MPT:     purpose=0x2aaaaeee0f7c <__STRLITPACK_1552> "metadata", 
-MPT:     opt_overwriteflag=0x7fffffff92d8, status=0x7fffffff92c8, timeslice=0x0, 
-MPT:     iofmt=0x7fffffff92b8, rc=0x7fffffff9258, file_l=32, varname_l=1, 
+MPT:     opt_overwriteflag=0x7fffffff9358, status=0x7fffffff9348, timeslice=0x0, 
+MPT:     iofmt=0x7fffffff9338, rc=0x7fffffff92d8, file_l=32, varname_l=1, 
 MPT:     convention_l=6, purpose_l=8)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/interface/ESMCI_Array_F.C:798
 MPT: #29 0x00002aaaac9a02be in esmf_arraymod::esmf_arraywrite (array=..., 
@@ -147,14 +147,14 @@ MPT: #33 0x00002aaab2d79555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #34 0x000000000040b729 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 193981] will be detached.
+MPT: 	Inferior 1 [process 10314] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/193981/exe, process 193981
-MPT: [Inferior 1 (process 193981) detached]
+MPT: Detaching from program: /proc/10314/exe, process 10314
+MPT: [Inferior 1 (process 10314) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r2i4n20, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest, Rank 0, Process 193981: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r3i1n7, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest, Rank 0, Process 10314: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

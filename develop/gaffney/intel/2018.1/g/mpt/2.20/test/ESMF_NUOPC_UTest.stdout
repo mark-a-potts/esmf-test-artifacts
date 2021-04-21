@@ -1,11 +1,11 @@
-build time -- 2021-04-20 18:48:45
-  Beginning Test, file ESMF_NUOPC_UTest.F90, line 225
+build time -- 2021-04-21 06:10:34
   Beginning Test, file ESMF_NUOPC_UTest.F90, line 225
   Beginning Test, file ESMF_NUOPC_UTest.F90, line 225
   Beginning Test, file ESMF_NUOPC_UTest.F90, line 225
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_NUOPC_UTest.F90, line 225
   NUMBER_OF_PROCESSORS           4
   PASS  NUOPC_NoOp() Test, ESMF_NUOPC_UTest.F90, line 280
   PASS  NUOPC_NoOp() Test, ESMF_NUOPC_UTest.F90, line 280
@@ -19,10 +19,10 @@ build time -- 2021-04-20 18:48:45
  st.F90, line 48
   PASS  NUOPC_CompSpecialize() for GridComp before Derive() Test, ESMF_NUOPC_UTe
  st.F90, line 48
+  PASS  NUOPC_CompDerive() for GridComp Test, ESMF_NUOPC_UTest.F90, line 55
+  PASS  NUOPC_CompDerive() for GridComp Test, ESMF_NUOPC_UTest.F90, line 55
   PASS  NUOPC_CompDerive() for GridComp Test, ESMF_NUOPC_UTest.F90, line 55
   PASS  NUOPC_CompSpecialize() for GridComp Test, ESMF_NUOPC_UTest.F90, line 66
-  PASS  NUOPC_CompDerive() for GridComp Test, ESMF_NUOPC_UTest.F90, line 55
-  PASS  NUOPC_CompDerive() for GridComp Test, ESMF_NUOPC_UTest.F90, line 55
   PASS  NUOPC_CompDerive() for GridComp Test, ESMF_NUOPC_UTest.F90, line 55
   PASS  NUOPC_CompSpecialize() for GridComp Test, ESMF_NUOPC_UTest.F90, line 66
   PASS  NUOPC_CompSpecialize() for GridComp Test, ESMF_NUOPC_UTest.F90, line 66
@@ -81,57 +81,47 @@ build time -- 2021-04-20 18:48:45
  NUOPC_DriverPrint for PET:           1
    Model, Mediator, and Driver components, in the order
    that they were added to the Driver:
+ NUOPC_DriverPrint for PET:           3
+   Model, Mediator, and Driver components, in the order
+   that they were added to the Driver:
+           1 :  testComp1
+           1 :  testComp1
+           2 :  testComp2
+   Connector components, in the order
+   that they were added to the Driver:
+           1 :  testComp1-TO-testComp2
+           1 :  testComp1
+           2 :  testComp2
+   Connector components, in the order
+   that they were added to the Driver:
+           1 :  testComp1-TO-testComp2
+NUOPC_RunSequenceArrayPrint: element     1 out of      1
  NUOPC_DriverPrint for PET:           2
    Model, Mediator, and Driver components, in the order
    that they were added to the Driver:
            1 :  testComp1
            2 :  testComp2
- NUOPC_DriverPrint for PET:           3
-   Model, Mediator, and Driver components, in the order
+   Connector components, in the order
    that they were added to the Driver:
-           1 :  testComp1
+           1 :  testComp1-TO-testComp2
+NUOPC_RunSequenceArrayPrint: element     1 out of      1
            2 :  testComp2
    Connector components, in the order
    that they were added to the Driver:
            1 :  testComp1-TO-testComp2
-           1 :  testComp1
-           2 :  testComp2
-   Connector components, in the order
-   that they were added to the Driver:
-           1 :  testComp1-TO-testComp2
-           1 :  testComp1
-           2 :  testComp2
-   Connector components, in the order
-   that they were added to the Driver:
-           1 :  testComp1-TO-testComp2
-   Connector components, in the order
-   that they were added to the Driver:
-           1 :  testComp1-TO-testComp2
 NUOPC_RunSequenceArrayPrint: element     1 out of      1
+runSeq::
 NUOPC_RunSequenceArrayPrint: element     1 out of      1
 runSeq::
  runElementPrint:      1     2     1
  runElementPrint:      2     1     1
-NUOPC_RunSequenceArrayPrint: element     1 out of      1
 runSeq::
  runElementPrint:      1     2     1
  runElementPrint:      2     1     1
- runElementPrint:      1    -1     1
-NUOPC_RunSequenceArrayPrint: element     1 out of      1
-runSeq::
- runElementPrint:      1     2     1
- runElementPrint:      2     1     1
- runElementPrint:      1    -1     1
- runElementPrint:      2    -1     1
  runElementPrint:      1    -1     1
  runElementPrint:      2    -1     1
  runElementPrint:     -1    -1     0
 ::
-  PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
- runElementPrint:      2    -1     1
- runElementPrint:     -1    -1     0
-::
-  PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
 runSeq::
  runElementPrint:      1     2     1
  runElementPrint:      2     1     1
@@ -140,8 +130,18 @@ runSeq::
  runElementPrint:     -1    -1     0
 ::
   PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
+ runElementPrint:      1     2     1
+ runElementPrint:      2     1     1
+ runElementPrint:      1    -1     1
+ runElementPrint:      2    -1     1
  runElementPrint:     -1    -1     0
 ::
+  PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
+ runElementPrint:      1    -1     1
+ runElementPrint:      2    -1     1
+ runElementPrint:     -1    -1     0
+::
+  PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
   PASS  NUOPC_DriverPrint() Test, ESMF_NUOPC_UTest.F90, line 335
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 343
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 343
@@ -206,8 +206,6 @@ runSeq::
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 432
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 432
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 432
-  PASS  NUOPC_DriverGet() slotCount validate Test, ESMF_NUOPC_UTest.F90, line 43
- 9
   PASS  NUOPC_DriverGet() slotCount Test, ESMF_NUOPC_UTest.F90, line 432
   PASS  NUOPC_DriverGet() slotCount validate Test, ESMF_NUOPC_UTest.F90, line 43
  9
@@ -215,11 +213,13 @@ runSeq::
  9
   PASS  NUOPC_DriverGet() slotCount validate Test, ESMF_NUOPC_UTest.F90, line 43
  9
+  PASS  NUOPC_DriverGet() slotCount validate Test, ESMF_NUOPC_UTest.F90, line 43
+ 9
+  PASS  NUOPC_FreeFormatGetLine() Test, ESMF_NUOPC_UTest.F90, line 447
+  PASS  NUOPC_FreeFormatGetLine() Test, ESMF_NUOPC_UTest.F90, line 447
   PASS  NUOPC_FreeFormatGetLine() Test, ESMF_NUOPC_UTest.F90, line 447
   PASS  NUOPC_FreeFormatGetLine() Test, ESMF_NUOPC_UTest.F90, line 447
   PASS  NUOPC_FreeFormatAdd() Test, ESMF_NUOPC_UTest.F90, line 455
-  PASS  NUOPC_FreeFormatGetLine() Test, ESMF_NUOPC_UTest.F90, line 447
-  PASS  NUOPC_FreeFormatGetLine() Test, ESMF_NUOPC_UTest.F90, line 447
   PASS  NUOPC_FreeFormatAdd() Test, ESMF_NUOPC_UTest.F90, line 455
   PASS  NUOPC_FreeFormatAdd() Test, ESMF_NUOPC_UTest.F90, line 455
   PASS  NUOPC_FreeFormatAdd() Test, ESMF_NUOPC_UTest.F90, line 455
@@ -231,15 +231,15 @@ runSeq::
   PASS  NUOPC_DriverEgestRunSequence() Test, ESMF_NUOPC_UTest.F90, line 471
   PASS  NUOPC_DriverEgestRunSequence() Test, ESMF_NUOPC_UTest.F90, line 471
   PASS  NUOPC_DriverEgestRunSequence() Test, ESMF_NUOPC_UTest.F90, line 471
+  PASS  NUOPC_FreeFormatPrint() Test, ESMF_NUOPC_UTest.F90, line 479
+  PASS  NUOPC_FreeFormatPrint() Test, ESMF_NUOPC_UTest.F90, line 479
+  PASS  NUOPC_FreeFormatPrint() Test, ESMF_NUOPC_UTest.F90, line 479
   PASS  NUOPC_FreeFormatPrint() Test, ESMF_NUOPC_UTest.F90, line 479
   PASS  NUOPC_FreeFormatGet() Test, ESMF_NUOPC_UTest.F90, line 487
-  PASS  NUOPC_FreeFormatPrint() Test, ESMF_NUOPC_UTest.F90, line 479
-  PASS  NUOPC_FreeFormatPrint() Test, ESMF_NUOPC_UTest.F90, line 479
-  PASS  NUOPC_FreeFormatPrint() Test, ESMF_NUOPC_UTest.F90, line 479
+  PASS  NUOPC_FreeFormatGet() Test, ESMF_NUOPC_UTest.F90, line 487
   PASS  NUOPC_FreeFormatGet() Test, ESMF_NUOPC_UTest.F90, line 487
   PASS  NUOPC_FreeFormatGet() Test, ESMF_NUOPC_UTest.F90, line 487
   PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 495
-  PASS  NUOPC_FreeFormatGet() Test, ESMF_NUOPC_UTest.F90, line 487
   PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 495
   PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 495
   PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 495
@@ -272,35 +272,35 @@ Printing currTime to stdout:    0  1  1  0  0  0   0
 Printing currTime to stdout:    0  1  1  0  0  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 535
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 544
-Printing startTime to stdout:    0  1  1  0  0  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 544
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 544
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 544
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 553
 Printing startTime to stdout:    0  1  1  0  0  0   0
-Printing startTime to stdout:    0  1  1  0  0  0   0
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 553
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 562
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 553
 Printing startTime to stdout:    0  1  1  0  0  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 553
-Printing stopTime to stdout:    0  1  1  0 30  0   0
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 571
+Printing startTime to stdout:    0  1  1  0  0  0   0
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 553
+Printing startTime to stdout:    0  1  1  0  0  0   0
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 553
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 562
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 562
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 562
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 562
 Printing stopTime to stdout:    0  1  1  0 30  0   0
+Printing stopTime to stdout:    0  1  1  0 30  0   0
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 571
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 571
 Printing stopTime to stdout:    0  1  1  0 30  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 571
 Printing stopTime to stdout:    0  1  1  0 30  0   0
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 571
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 580
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 580
+  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 580
   PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 580
   PASS  NUOPC_CompAreServicesSet() for CplComp Test, ESMF_NUOPC_UTest.F90, line 
  588
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 580
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 580
-  PASS  ESMF_ClockPrint() Test, ESMF_NUOPC_UTest.F90, line 580
   PASS  NUOPC_CompAreServicesSet() for CplComp Test, ESMF_NUOPC_UTest.F90, line 
  588
   PASS  NUOPC_CompAreServicesSet() for CplComp Test, ESMF_NUOPC_UTest.F90, line 
@@ -352,43 +352,39 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
   PASS  NUOPC_InitAttributes() Test, ESMF_NUOPC_UTest.F90, line 636
   PASS  NUOPC_InitAttributes() Test, ESMF_NUOPC_UTest.F90, line 636
   PASS  NUOPC_GetAttribute() Test, ESMF_NUOPC_UTest.F90, line 644
-  PASS  NUOPC_SetAttribute() Test, ESMF_NUOPC_UTest.F90, line 652
   PASS  NUOPC_GetAttribute() Test, ESMF_NUOPC_UTest.F90, line 644
   PASS  NUOPC_GetAttribute() Test, ESMF_NUOPC_UTest.F90, line 644
   PASS  NUOPC_GetAttribute() Test, ESMF_NUOPC_UTest.F90, line 644
   PASS  NUOPC_SetAttribute() Test, ESMF_NUOPC_UTest.F90, line 652
   PASS  NUOPC_SetAttribute() Test, ESMF_NUOPC_UTest.F90, line 652
-  PASS  NUOPC_UpdateTimestamp() Test, ESMF_NUOPC_UTest.F90, line 660
   PASS  NUOPC_SetAttribute() Test, ESMF_NUOPC_UTest.F90, line 652
-  PASS  NUOPC_FieldDictionaryAddEntry() Test, ESMF_NUOPC_UTest.F90, line 668
+  PASS  NUOPC_SetAttribute() Test, ESMF_NUOPC_UTest.F90, line 652
   PASS  NUOPC_UpdateTimestamp() Test, ESMF_NUOPC_UTest.F90, line 660
   PASS  NUOPC_UpdateTimestamp() Test, ESMF_NUOPC_UTest.F90, line 660
   PASS  NUOPC_UpdateTimestamp() Test, ESMF_NUOPC_UTest.F90, line 660
-  PASS  NUOPC_FieldDictionaryGetEntry() Test, ESMF_NUOPC_UTest.F90, line 676
+  PASS  NUOPC_UpdateTimestamp() Test, ESMF_NUOPC_UTest.F90, line 660
   PASS  NUOPC_FieldDictionaryAddEntry() Test, ESMF_NUOPC_UTest.F90, line 668
   PASS  NUOPC_FieldDictionaryAddEntry() Test, ESMF_NUOPC_UTest.F90, line 668
   PASS  NUOPC_FieldDictionaryAddEntry() Test, ESMF_NUOPC_UTest.F90, line 668
-  PASS  NUOPC_FieldDictionaryHasEntry() (existing entry) Test, ESMF_NUOPC_UTest.
- F90, line 684
+  PASS  NUOPC_FieldDictionaryAddEntry() Test, ESMF_NUOPC_UTest.F90, line 668
   PASS  NUOPC_FieldDictionaryGetEntry() Test, ESMF_NUOPC_UTest.F90, line 676
   PASS  NUOPC_FieldDictionaryGetEntry() Test, ESMF_NUOPC_UTest.F90, line 676
   PASS  NUOPC_FieldDictionaryGetEntry() Test, ESMF_NUOPC_UTest.F90, line 676
-  PASS  NUOPC_FieldDictionaryHasEntry() return value (existing entry) Test, ESMF
- _NUOPC_UTest.F90, line 691
+  PASS  NUOPC_FieldDictionaryGetEntry() Test, ESMF_NUOPC_UTest.F90, line 676
   PASS  NUOPC_FieldDictionaryHasEntry() (existing entry) Test, ESMF_NUOPC_UTest.
  F90, line 684
   PASS  NUOPC_FieldDictionaryHasEntry() (existing entry) Test, ESMF_NUOPC_UTest.
  F90, line 684
-  PASS  NUOPC_FieldDictionaryHasEntry() (not existing entry) Test, ESMF_NUOPC_UT
- est.F90, line 699
+  PASS  NUOPC_FieldDictionaryHasEntry() (existing entry) Test, ESMF_NUOPC_UTest.
+ F90, line 684
   PASS  NUOPC_FieldDictionaryHasEntry() (existing entry) Test, ESMF_NUOPC_UTest.
  F90, line 684
   PASS  NUOPC_FieldDictionaryHasEntry() return value (existing entry) Test, ESMF
  _NUOPC_UTest.F90, line 691
   PASS  NUOPC_FieldDictionaryHasEntry() return value (existing entry) Test, ESMF
  _NUOPC_UTest.F90, line 691
-  PASS  NUOPC_FieldDictionaryHasEntry() return value (not existing entry) Test, 
- ESMF_NUOPC_UTest.F90, line 706
+  PASS  NUOPC_FieldDictionaryHasEntry() return value (existing entry) Test, ESMF
+ _NUOPC_UTest.F90, line 691
   PASS  NUOPC_FieldDictionaryHasEntry() return value (existing entry) Test, ESMF
  _NUOPC_UTest.F90, line 691
   PASS  NUOPC_FieldDictionaryHasEntry() (not existing entry) Test, ESMF_NUOPC_UT
@@ -397,52 +393,50 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  est.F90, line 699
   PASS  NUOPC_FieldDictionaryHasEntry() (not existing entry) Test, ESMF_NUOPC_UT
  est.F90, line 699
-  PASS  NUOPC_FieldDictionarySetSyno() (existing entry) Test, ESMF_NUOPC_UTest.F
- 90, line 715
+  PASS  NUOPC_FieldDictionaryHasEntry() (not existing entry) Test, ESMF_NUOPC_UT
+ est.F90, line 699
   PASS  NUOPC_FieldDictionaryHasEntry() return value (not existing entry) Test, 
  ESMF_NUOPC_UTest.F90, line 706
   PASS  NUOPC_FieldDictionaryHasEntry() return value (not existing entry) Test, 
  ESMF_NUOPC_UTest.F90, line 706
   PASS  NUOPC_FieldDictionaryHasEntry() return value (not existing entry) Test, 
  ESMF_NUOPC_UTest.F90, line 706
+  PASS  NUOPC_FieldDictionaryHasEntry() return value (not existing entry) Test, 
+ ESMF_NUOPC_UTest.F90, line 706
   PASS  NUOPC_FieldDictionarySetSyno() (existing entry) Test, ESMF_NUOPC_UTest.F
  90, line 715
   PASS  NUOPC_FieldDictionarySetSyno() (existing entry) Test, ESMF_NUOPC_UTest.F
  90, line 715
   PASS  NUOPC_FieldDictionarySetSyno() (existing entry) Test, ESMF_NUOPC_UTest.F
  90, line 715
+  PASS  NUOPC_FieldDictionarySetSyno() (existing entry) Test, ESMF_NUOPC_UTest.F
+ 90, line 715
+  PASS  NUOPC_FieldDictionarySetSyno() (non existing entry) Test, ESMF_NUOPC_UTe
+ st.F90, line 724
+  PASS  NUOPC_FieldDictionarySetSyno() (non existing entry) Test, ESMF_NUOPC_UTe
+ st.F90, line 724
+  PASS  NUOPC_FieldDictionarySetSyno() (non existing entry) Test, ESMF_NUOPC_UTe
+ st.F90, line 724
   PASS  NUOPC_FieldDictionarySetSyno() (non existing entry) Test, ESMF_NUOPC_UTe
  st.F90, line 724
   PASS  NUOPC_FieldDictionaryMatchSyno() (existing entry) Test, ESMF_NUOPC_UTest
  .F90, line 733
+  PASS  NUOPC_FieldDictionaryMatchSyno() (existing entry) Test, ESMF_NUOPC_UTest
+ .F90, line 733
+  PASS  NUOPC_FieldDictionaryMatchSyno() (existing entry) Test, ESMF_NUOPC_UTest
+ .F90, line 733
+  PASS  NUOPC_FieldDictionaryMatchSyno() (existing entry) Test, ESMF_NUOPC_UTest
+ .F90, line 733
   PASS  NUOPC_FieldDictionaryMatchSyno() return value (existing entry) Test, ESM
  F_NUOPC_UTest.F90, line 740
-  PASS  NUOPC_FieldDictionarySetSyno() (non existing entry) Test, ESMF_NUOPC_UTe
- st.F90, line 724
-  PASS  NUOPC_FieldDictionarySetSyno() (non existing entry) Test, ESMF_NUOPC_UTe
- st.F90, line 724
-  PASS  NUOPC_FieldDictionarySetSyno() (non existing entry) Test, ESMF_NUOPC_UTe
- st.F90, line 724
+  PASS  NUOPC_FieldDictionaryMatchSyno() return value (existing entry) Test, ESM
+ F_NUOPC_UTest.F90, line 740
+  PASS  NUOPC_FieldDictionaryMatchSyno() return value (existing entry) Test, ESM
+ F_NUOPC_UTest.F90, line 740
+  PASS  NUOPC_FieldDictionaryMatchSyno() return value (existing entry) Test, ESM
+ F_NUOPC_UTest.F90, line 740
   PASS  NUOPC_FieldDictionaryMatchSyno() (non existing entry1) Test, ESMF_NUOPC_
  UTest.F90, line 749
-  PASS  NUOPC_FieldDictionaryMatchSyno() (existing entry) Test, ESMF_NUOPC_UTest
- .F90, line 733
-  PASS  NUOPC_FieldDictionaryMatchSyno() (existing entry) Test, ESMF_NUOPC_UTest
- .F90, line 733
-  PASS  NUOPC_FieldDictionaryMatchSyno() (existing entry) Test, ESMF_NUOPC_UTest
- .F90, line 733
-  PASS  NUOPC_FieldDictionaryMatchSyno() return value (not existing entry1) Test
- , ESMF_NUOPC_UTest.F90, line 756
-  PASS  NUOPC_FieldDictionaryMatchSyno() return value (existing entry) Test, ESM
- F_NUOPC_UTest.F90, line 740
-  PASS  NUOPC_FieldDictionaryMatchSyno() return value (existing entry) Test, ESM
- F_NUOPC_UTest.F90, line 740
-  PASS  NUOPC_FieldDictionaryMatchSyno() return value (existing entry) Test, ESM
- F_NUOPC_UTest.F90, line 740
-  PASS  NUOPC_FieldDictionaryMatchSyno() (non existing entry2) Test, ESMF_NUOPC_
- UTest.F90, line 765
-  PASS  NUOPC_FieldDictionaryMatchSyno() return value (not existing entry2) Test
- , ESMF_NUOPC_UTest.F90, line 772
   PASS  NUOPC_FieldDictionaryMatchSyno() (non existing entry1) Test, ESMF_NUOPC_
  UTest.F90, line 749
   PASS  NUOPC_FieldDictionaryMatchSyno() (non existing entry1) Test, ESMF_NUOPC_
@@ -455,7 +449,10 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  , ESMF_NUOPC_UTest.F90, line 756
   PASS  NUOPC_FieldDictionaryMatchSyno() return value (not existing entry1) Test
  , ESMF_NUOPC_UTest.F90, line 756
-  PASS  NUOPC_FieldDictionarySetup() Test, ESMF_NUOPC_UTest.F90, line 780
+  PASS  NUOPC_FieldDictionaryMatchSyno() return value (not existing entry1) Test
+ , ESMF_NUOPC_UTest.F90, line 756
+  PASS  NUOPC_FieldDictionaryMatchSyno() (non existing entry2) Test, ESMF_NUOPC_
+ UTest.F90, line 765
   PASS  NUOPC_FieldDictionaryMatchSyno() (non existing entry2) Test, ESMF_NUOPC_
  UTest.F90, line 765
   PASS  NUOPC_FieldDictionaryMatchSyno() (non existing entry2) Test, ESMF_NUOPC_
@@ -468,26 +465,29 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
  , ESMF_NUOPC_UTest.F90, line 772
   PASS  NUOPC_FieldDictionaryMatchSyno() return value (not existing entry2) Test
  , ESMF_NUOPC_UTest.F90, line 772
+  PASS  NUOPC_FieldDictionaryMatchSyno() return value (not existing entry2) Test
+ , ESMF_NUOPC_UTest.F90, line 772
   PASS  NUOPC_FieldDictionarySetup() Test, ESMF_NUOPC_UTest.F90, line 780
   PASS  NUOPC_FieldDictionarySetup() Test, ESMF_NUOPC_UTest.F90, line 780
   PASS  NUOPC_FieldDictionarySetup() Test, ESMF_NUOPC_UTest.F90, line 780
+  PASS  NUOPC_FieldDictionarySetup() Test, ESMF_NUOPC_UTest.F90, line 780
   PASS  NUOPC_FieldDictionaryEgest() Test, ESMF_NUOPC_UTest.F90, line 788
   PASS  NUOPC_FieldDictionaryEgest() Test, ESMF_NUOPC_UTest.F90, line 788
   PASS  NUOPC_FieldDictionaryEgest() Test, ESMF_NUOPC_UTest.F90, line 788
   PASS  NUOPC_FieldDictionaryEgest() Test, ESMF_NUOPC_UTest.F90, line 788
+  PASS  NUOPC_FreeFormatLog() for fdFF Test, ESMF_NUOPC_UTest.F90, line 796
+  PASS  NUOPC_FreeFormatLog() for fdFF Test, ESMF_NUOPC_UTest.F90, line 796
+  PASS  NUOPC_FreeFormatLog() for fdFF Test, ESMF_NUOPC_UTest.F90, line 796
   PASS  NUOPC_FreeFormatLog() for fdFF Test, ESMF_NUOPC_UTest.F90, line 796
   PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 804
+  PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 804
+  PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 804
+  PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 804
   PASS  NUOPC_GetTimestamp() for Field Test, ESMF_NUOPC_UTest.F90, line 812
-  PASS  NUOPC_FreeFormatLog() for fdFF Test, ESMF_NUOPC_UTest.F90, line 796
-  PASS  NUOPC_FreeFormatLog() for fdFF Test, ESMF_NUOPC_UTest.F90, line 796
-  PASS  NUOPC_FreeFormatLog() for fdFF Test, ESMF_NUOPC_UTest.F90, line 796
+  PASS  NUOPC_GetTimestamp() for Field Test, ESMF_NUOPC_UTest.F90, line 812
+  PASS  NUOPC_GetTimestamp() for Field Test, ESMF_NUOPC_UTest.F90, line 812
+  PASS  NUOPC_GetTimestamp() for Field Test, ESMF_NUOPC_UTest.F90, line 812
   PASS  NUOPC_IsAtTime() for Field Test, ESMF_NUOPC_UTest.F90, line 820
-  PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 804
-  PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 804
-  PASS  NUOPC_FreeFormatDestroy() Test, ESMF_NUOPC_UTest.F90, line 804
-  PASS  NUOPC_GetTimestamp() for Field Test, ESMF_NUOPC_UTest.F90, line 812
-  PASS  NUOPC_GetTimestamp() for Field Test, ESMF_NUOPC_UTest.F90, line 812
-  PASS  NUOPC_GetTimestamp() for Field Test, ESMF_NUOPC_UTest.F90, line 812
   PASS  NUOPC_IsAtTime() for Field Test, ESMF_NUOPC_UTest.F90, line 820
   PASS  NUOPC_IsAtTime() for Field Test, ESMF_NUOPC_UTest.F90, line 820
   PASS  NUOPC_IsAtTime() for Field Test, ESMF_NUOPC_UTest.F90, line 820
@@ -500,11 +500,11 @@ Printing stopTime to stdout:    0  1  1  0 30  0   0
   PASS  Complete field for further testing Test, ESMF_NUOPC_UTest.F90, line 841
   PASS  Complete field for further testing Test, ESMF_NUOPC_UTest.F90, line 841
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 235227, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_NUOPC_UTest
+	Process ID: 51509, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_NUOPC_UTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/235227/exe, process 235227
+MPT: Attaching to program: /proc/51509/exe, process 51509
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -542,7 +542,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177b18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb4806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff2b40 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 235227, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_NUOPC_UTest\n\tMPT "...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff2bc0 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 51509, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_NUOPC_UTest\n\tMPT Ve"...) at sig.c:340
 MPT: #3  0x00002aaab1eb4a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5a0080) at sig.c:489
 MPT: #4  0x00002aaab1eb4d9b in slave_sig_handler (signo=11, 
@@ -591,11 +591,11 @@ MPT: #22 0x00002aaaae28bad8 in esmcpio_cpp_createfile (iosystem_handle=1,
 MPT:     file=..., iotype=6, fname=..., amode_in=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:564
 MPT: #23 0x00002aaaac6a6920 in ESMCI::PIO_Handler::open (this=0x19f6960, 
-MPT:     readonly=false, rc=0x7fffffff5870)
+MPT:     readonly=false, rc=0x7fffffff58f0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
 MPT: #24 0x00002aaaac37168e in ESMCI::IO_Handler::open (this=0x19f6960, 
 MPT:     file="field_test.nc", filestatusflag_arg=ESMC_FILESTATUS_REPLACE, 
-MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff590c)
+MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff598c)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
 MPT: #25 0x00002aaaac380644 in ESMCI::IO::open (this=0x19f6900, 
 MPT:     file="field_test.nc", filestatusflag=ESMC_FILESTATUS_REPLACE, 
@@ -605,11 +605,11 @@ MPT: #26 0x00002aaaac37e18b in ESMCI::IO::write (this=0x19f6900,
 MPT:     file="field_test.nc", iofmt=ESMF_IOFMT_NETCDF, overwrite=false, 
 MPT:     status=ESMC_FILESTATUS_REPLACE, timeslice=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
-MPT: #27 0x00002aaaac36f3f3 in c_esmc_iowrite_ (ptr=0x7fffffff5e58, 
-MPT:     file=0x7fffffff5de0 "field_test.nc", len_file=0x7fffffff5c24, 
-MPT:     opt_iofmt=0x7fffffff5ca8, opt_overwrite=0x7fffffff5c98, 
-MPT:     opt_status=0x7fffffff5c88, timeslice=0x0, schema=0x0, 
-MPT:     len_schema=0x7fffffff5c18, rc=0x7fffffff5c30, file_l=13, schema_l=0)
+MPT: #27 0x00002aaaac36f3f3 in c_esmc_iowrite_ (ptr=0x7fffffff5ed8, 
+MPT:     file=0x7fffffff5e60 "field_test.nc", len_file=0x7fffffff5ca4, 
+MPT:     opt_iofmt=0x7fffffff5d28, opt_overwrite=0x7fffffff5d18, 
+MPT:     opt_status=0x7fffffff5d08, timeslice=0x0, schema=0x0, 
+MPT:     len_schema=0x7fffffff5c98, rc=0x7fffffff5cb0, file_l=13, schema_l=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/interface/ESMCI_IO_F.C:169
 MPT: #28 0x00002aaaad65b01e in esmf_iomod::esmf_iowrite (io=..., 
 MPT:     filename='field_test.nc', 
@@ -625,8 +625,8 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\360\257\254\017', '\000' <repeats 20 times>, '\060\260\254\017', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '  \357\000\000\000\000\000\240\356U\r', '\000' <repeats 28 times>, '\320\314\372\016', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
-MPT:     rc=18, .tmp.FILENAME.len_V$111=13, .tmp.SCHEMA.len_V$119=0)
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\300\247\240\002', '\000' <repeats 21 times>, '\250\240\002', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000P\217\342', '\000' <repeats 29 times>, '\240U\243\f', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., rc=18, 
+MPT:     .tmp.FILENAME.len_V$111=13, .tmp.SCHEMA.len_V$119=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/interface/ESMF_IO.F90:519
 MPT: #29 0x00002aaaad2ae3bf in esmf_fieldwrmod::esmf_fieldwrite (field=..., 
 MPT:     filename='field_test.nc', 
@@ -640,7 +640,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\260\357\215\n', '\000' <repeats 20 times>, '\360\357\215\n', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '  \357\000\000\000\000\000\240\356U\r', '\000' <repeats 28 times>, '\060\334-\n', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, 'p~\213\005', '\000' <repeats 20 times>, '\260~\213\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000P\217\342', '\000' <repeats 30 times>, '\327-\n', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: purpose=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -650,7 +650,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '@9\303\005', '\000' <repeats 20 times>, '\200\071\303\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '  \357\000\000\000\000\000\240\356U\r', '\000' <repeats 28 times>, '\200%\016\003', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\300\070\303\005', '\000' <repeats 21 times>, '\071\303\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000P\217\342', '\000' <repeats 29 times>, '\360\037\341\002', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
 MPT:     overwrite=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     status=..., 
 MPT:     timeslice=<error reading variable: Cannot access memory at address 0x0>, 
@@ -672,14 +672,14 @@ MPT: #33 0x00002aaab2d79555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #34 0x000000000040e669 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 235227] will be detached.
+MPT: 	Inferior 1 [process 51509] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/235227/exe, process 235227
-MPT: [Inferior 1 (process 235227) detached]
+MPT: Detaching from program: /proc/51509/exe, process 51509
+MPT: [Inferior 1 (process 51509) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r2i4n20, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_NUOPC_UTest, Rank 0, Process 235227: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r3i1n7, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_NUOPC_UTest, Rank 0, Process 51509: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

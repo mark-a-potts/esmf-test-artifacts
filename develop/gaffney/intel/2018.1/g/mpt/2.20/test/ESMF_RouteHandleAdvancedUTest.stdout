@@ -1,4 +1,4 @@
-build time -- 2021-04-20 18:48:45
+build time -- 2021-04-21 06:10:34
   Beginning Test, file ESMF_RouteHandleAdvancedUTest.F90, line 346
   Beginning Test, file ESMF_RouteHandleAdvancedUTest.F90, line 346
   Beginning Test, file ESMF_RouteHandleAdvancedUTest.F90, line 346
@@ -80,11 +80,11 @@ build time -- 2021-04-20 18:48:45
   PASS  Transfer RouteHandle to a different petList, ESMF_RouteHandleAdvancedUTe
  st.F90, line 602
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 186892, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_RouteHandleAdvancedUTest
+	Process ID: 3019, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_RouteHandleAdvancedUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/186892/exe, process 186892
+MPT: Attaching to program: /proc/3019/exe, process 3019
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -122,7 +122,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177b18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb4806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff6280 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 186892, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_RouteHandleAdvanc"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff6300 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 3019, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_RouteHandleAdvancedU"...) at sig.c:340
 MPT: #3  0x00002aaab1eb4a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5a0080) at sig.c:489
 MPT: #4  0x00002aaab1eb4d9b in slave_sig_handler (signo=11, 
@@ -171,11 +171,11 @@ MPT: #22 0x00002aaaae28bad8 in esmcpio_cpp_createfile (iosystem_handle=1,
 MPT:     file=..., iotype=6, fname=..., amode_in=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:564
 MPT: #23 0x00002aaaac6a6920 in ESMCI::PIO_Handler::open (this=0x19945b0, 
-MPT:     readonly=false, rc=0x7fffffff8fa0)
+MPT:     readonly=false, rc=0x7fffffff9020)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
 MPT: #24 0x00002aaaac37168e in ESMCI::IO_Handler::open (this=0x19945b0, 
 MPT:     file="commMatrix.nc", filestatusflag_arg=ESMC_FILESTATUS_REPLACE, 
-MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff903c)
+MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff90bc)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
 MPT: #25 0x00002aaaac380644 in ESMCI::IO::open (this=0x1994510, 
 MPT:     file="commMatrix.nc", filestatusflag=ESMC_FILESTATUS_REPLACE, 
@@ -187,12 +187,12 @@ MPT:     status=ESMC_FILESTATUS_REPLACE, timeslice=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
 MPT: #27 0x00002aaaabe22843 in ESMCI::Array::write (this=0x197e580, 
 MPT:     file="commMatrix.nc", variableName="", convention="", purpose="", 
-MPT:     overwrite=0x7fffffff9580, status=0x7fffffff960c, timeslice=0x0, iofmt=0x0)
+MPT:     overwrite=0x7fffffff9600, status=0x7fffffff968c, timeslice=0x0, iofmt=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/src/ESMCI_Array.C:4064
 MPT: #28 0x00002aaaac6da297 in ESMCI::RouteHandle::print (this=0x1f3cdd0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Route/src/ESMCI_RHandle.C:938
-MPT: #29 0x00002aaaac6d2ee8 in c_esmc_routehandleprint_ (ptr=0x7fffffff9f00, 
-MPT:     rc=0x7fffffff9b78)
+MPT: #29 0x00002aaaac6d2ee8 in c_esmc_routehandleprint_ (ptr=0x7fffffff9f80, 
+MPT:     rc=0x7fffffff9bf8)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Route/interface/ESMCI_RHandle_F.C:209
 MPT: #30 0x00002aaaada386f3 in esmf_rhandlemod::esmf_routehandleprint (
 MPT:     routehandle=..., 
@@ -205,14 +205,14 @@ MPT: #33 0x00002aaab2d79555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #34 0x000000000040c329 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 186892] will be detached.
+MPT: 	Inferior 1 [process 3019] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/186892/exe, process 186892
-MPT: [Inferior 1 (process 186892) detached]
+MPT: Detaching from program: /proc/3019/exe, process 3019
+MPT: [Inferior 1 (process 3019) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r2i4n20, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_RouteHandleAdvancedUTest, Rank 0, Process 186892: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r3i1n7, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_RouteHandleAdvancedUTest, Rank 0, Process 3019: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

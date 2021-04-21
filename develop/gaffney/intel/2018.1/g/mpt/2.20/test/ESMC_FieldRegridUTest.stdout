@@ -1,4 +1,4 @@
-build time -- 2021-04-20 18:48:45
+build time -- 2021-04-21 06:10:34
 Beginning Test, file ESMC_FieldRegridUTest.C, line 68
 NUMBER_OF_PROCESSORS 1
 PASS MeshCreate, ESMC_FieldRegridUTest.C, line 125
@@ -17,11 +17,11 @@ PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTes
 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.C, line 325
 PASS Create an InterArray for maskValues in ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.C, line 343
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 205404, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest
+	Process ID: 21709, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/205404/exe, process 205404
+MPT: Attaching to program: /proc/21709/exe, process 21709
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: done.
@@ -59,7 +59,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab071618c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab4bf6806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff5c40 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 205404, Host: r2i4n20, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest\n"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff5d00 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 21709, Host: r3i1n7, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest\n\tM"...) at sig.c:340
 MPT: #3  0x00002aaab4bf6a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabb9a0080) at sig.c:489
 MPT: #4  0x00002aaab4bf6d9b in slave_sig_handler (signo=11, 
@@ -109,11 +109,11 @@ MPT: #22 0x00002aaaae28bad8 in esmcpio_cpp_createfile (iosystem_handle=1,
 MPT:     file=..., iotype=6, fname=..., amode_in=4)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:564
 MPT: #23 0x00002aaaac6a6920 in ESMCI::PIO_Handler::open (this=0x17b0070, 
-MPT:     readonly=false, rc=0x7fffffff8980)
+MPT:     readonly=false, rc=0x7fffffff8a20)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
 MPT: #24 0x00002aaaac37168e in ESMCI::IO_Handler::open (this=0x17b0070, 
 MPT:     file="meshmeshweights.nc", filestatusflag_arg=ESMC_FILESTATUS_UNKNOWN, 
-MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff8a1c)
+MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7fffffff8abc)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
 MPT: #25 0x00002aaaac380644 in ESMCI::IO::open (this=0x17ae2a0, 
 MPT:     file="meshmeshweights.nc", filestatusflag=ESMC_FILESTATUS_UNKNOWN, 
@@ -125,16 +125,16 @@ MPT:     status=ESMC_FILESTATUS_UNKNOWN, timeslice=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
 MPT: #27 0x00002aaaabe22843 in ESMCI::Array::write (this=0x17aed90, 
 MPT:     file="meshmeshweights.nc", variableName="S", convention="netcdf", 
-MPT:     purpose="metadata", overwrite=0x7fffffff8ea3, status=0x7fffffff9068, 
-MPT:     timeslice=0x0, iofmt=0x7fffffff9058)
+MPT:     purpose="metadata", overwrite=0x7fffffff8f43, status=0x7fffffff9108, 
+MPT:     timeslice=0x0, iofmt=0x7fffffff90f8)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/src/ESMCI_Array.C:4064
-MPT: #28 0x00002aaaabe05d15 in c_esmc_arraywrite_ (array=0x7fffffff9440, 
+MPT: #28 0x00002aaaabe05d15 in c_esmc_arraywrite_ (array=0x7fffffff94e0, 
 MPT:     file=0x17abd28 "meshmeshweights.nc", 
 MPT:     variableName=0x2aaaaeee0f70 <__STRLITPACK_1554> "S", 
 MPT:     convention=0x2aaaaeee0f74 <__STRLITPACK_1553> "netcdf", 
 MPT:     purpose=0x2aaaaeee0f7c <__STRLITPACK_1552> "metadata", 
-MPT:     opt_overwriteflag=0x7fffffff9078, status=0x7fffffff9068, timeslice=0x0, 
-MPT:     iofmt=0x7fffffff9058, rc=0x7fffffff8ff8, file_l=18, varname_l=1, 
+MPT:     opt_overwriteflag=0x7fffffff9118, status=0x7fffffff9108, timeslice=0x0, 
+MPT:     iofmt=0x7fffffff90f8, rc=0x7fffffff9098, file_l=18, varname_l=1, 
 MPT:     convention_l=6, purpose_l=8)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/interface/ESMCI_Array_F.C:798
 MPT: #29 0x00002aaaac9a02be in esmf_arraymod::esmf_arraywrite (array=..., 
@@ -190,7 +190,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, '\061', '\000' <repeats 23 times>, 'Ѐ\317\005', '\000' <repeats 20 times>, '\361\017\000\000\000\000\000\000xS\332\003\000\000\000\000`\352\331\003\000\000\000\000\236\236s\001\000\000\000\000ESMCI::ArrayHelper::SrcInfo<ESMCI::SeqIndex<long long>, ESMCI::SeqIndex<long long> >* std::__unin'..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: '\000' <repeats 24 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\340s\f\003', '\000' <repeats 28 times>, '\340\215w\005', '\000' <repeats 20 times>, 'a\000\000\000\000\000\000\000\f\001\000\000\000\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\000\234\020\003', '\000' <repeats 28 times>, '\340\005\303\005', '\000' <repeats 20 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: dstfile=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -200,7 +200,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 24 times>, '\024\177\005', '\000' <repeats 20 times>, '@\024\177\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\240 \357\000\000\000\000\000\020\036\206\f', '\000' <repeats 28 times>, '\200cs\003', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '@\032\234\005', '\000' <repeats 20 times>, '\220\260\323\005', '\000' <repeats 12 times>, '\241', '\000' <repeats 11 times>, '\t', '\000' <repeats 35 times>, '\001', '\000' <repeats 47 times>, '\260\345\r\r\000\000\000\000\260\345\r\r', '\000' <repeats 20 times>..., 
 MPT:     srcfiletype=<error reading variable: Cannot access memory at address 0x0>, dstfiletype=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     largefileflag=<error reading variable: Cannot access memory at address 0x0>, srcfracfield=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     dstfracfield=<error reading variable: Cannot access memory at address 0x0>, rc=18, .tmp.FILENAME.len_V$e8a4=18, .tmp.SRCFILE.len_V$e8bb=0, 
@@ -208,7 +208,7 @@ MPT:     .tmp.DSTFILE.len_V$e8be=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/interface/ESMF_Field_C.F90:1292
 MPT: #33 0x00002aaaac24fcb4 in ESMCI::Field::regridstorefile (fieldpsrc=0x17a5fa0, 
 MPT:     fieldpdst=0x17a9fd0, filename=0x17abd28 "meshmeshweights.nc", 
-MPT:     srcMaskValues=0x0, dstMaskValues=0x0, routehandlep=0x7fffffffa9c0, 
+MPT:     srcMaskValues=0x0, dstMaskValues=0x0, routehandlep=0x7fffffffaa60, 
 MPT:     regridMethod=0x0, polemethod=0x0, regridPoleNPnts=0x0, lineType=0x0, 
 MPT:     normType=0x0, unmappedAction=0x0, ignoreDegenerate=0x0, create_rh=0x0, 
 MPT:     filemode=0x0, srcFile=0x0, dstFile=0x0, srcFileType=0x0, dstFileType=0x0, 
@@ -216,7 +216,7 @@ MPT:     largeFileFlag=0x0, srcFracField=0x0, dstFracField=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/interface/ESMCI_Field.C:1577
 MPT: #34 0x00002aaaabdcfb12 in ESMC_FieldRegridStoreFile (srcField=..., 
 MPT:     dstField=..., filename=0x17abd28 "meshmeshweights.nc", srcMaskValues=0x0, 
-MPT:     dstMaskValues=0x0, routehandle=0x7fffffffb048, regridmethod=0x0, 
+MPT:     dstMaskValues=0x0, routehandle=0x7fffffffb0e8, regridmethod=0x0, 
 MPT:     polemethod=0x0, regridPoleNPnts=0x0, lineType=0x0, normType=0x0, 
 MPT:     unmappedaction=0x0, ignoreDegenerate=0x0, create_rh=0x0, filemode=0x0, 
 MPT:     srcFile=0x0, dstFile=0x0, srcFileType=0x0, dstFileType=0x0, 
@@ -225,14 +225,14 @@ MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/
 MPT: #35 0x0000000000408719 in main () at ESMC_FieldRegridUTest.C:351
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 205404] will be detached.
+MPT: 	Inferior 1 [process 21709] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/205404/exe, process 205404
-MPT: [Inferior 1 (process 205404) detached]
+MPT: Detaching from program: /proc/21709/exe, process 21709
+MPT: [Inferior 1 (process 21709) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r2i4n20, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest, Rank 0, Process 205404: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r3i1n7, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest, Rank 0, Process 21709: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11
