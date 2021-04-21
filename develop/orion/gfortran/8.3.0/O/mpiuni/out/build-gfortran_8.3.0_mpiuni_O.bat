@@ -9,6 +9,8 @@
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+
+module load intelpython3
 export ESMF_MPIRUN=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load gcc/8.3.0  netcdf/4.7.2
 module list >& module-build.log
