@@ -1,0 +1,96 @@
+build time -- 2021-04-21 13:17:43
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+Beginning Test, file ESMCI_IO_NetCDFUTest.C, line 53
+NUMBER_OF_PROCESSORS 4
+Beginning Test, file ESMCI_IO_NetCDFUTest.C, line 53
+NUMBER_OF_PROCESSORS 4
+Beginning Test, file ESMCI_IO_NetCDFUTest.C, line 53
+NUMBER_OF_PROCESSORS 4
+Beginning Test, file ESMCI_IO_NetCDFUTest.C, line 53
+NUMBER_OF_PROCESSORS 4
+PASS Create ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 62
+PASS Create ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 62
+PASS Create ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 62
+PASS Create ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 62
+PASS Create ESMCI_State object, ESMCI_IO_NetCDFUTest.C, line 70
+PASS read netcdf data into ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 83
+PASS Create ESMCI_State object, ESMCI_IO_NetCDFUTest.C, line 70
+PASS read netcdf data into ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 83
+PASS write netcdf data from ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 92
+PASS Create ESMCI_State object, ESMCI_IO_NetCDFUTest.C, line 70
+PASS read netcdf data into ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 83
+PASS write netcdf data from ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 92
+PASS Create ESMCI_State object, ESMCI_IO_NetCDFUTest.C, line 70
+PASS write netcdf data from ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 92
+[h15c44:143932:0:143932] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2b1e6b635924)
+PASS Destroy ESMCI_State object, ESMCI_IO_NetCDFUTest.C, line 100
+PASS Destroy ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 108
+PASS Destroy ESMCI_State object, ESMCI_IO_NetCDFUTest.C, line 100
+PASS Destroy ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 108
+Ending Test, file ESMCI_IO_NetCDFUTest.C, line 113
+Ending Test, file ESMCI_IO_NetCDFUTest.C, line 113
+PASS Destroy ESMCI_State object, ESMCI_IO_NetCDFUTest.C, line 100
+PASS Destroy ESMCI_IO_NetCDF object, ESMCI_IO_NetCDFUTest.C, line 108
+Ending Test, file ESMCI_IO_NetCDFUTest.C, line 113
+==== backtrace (tid: 143932) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003bd57 NC_open()  ???:0
+ 9 0x000000000003b191 nc_open()  ???:0
+10 0x0000000000e017c7 ESMCI::IO_NetCDF::read()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO_NetCDF.C:231
+11 0x00000000004014f0 main()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/tests/ESMCI_IO_NetCDFUTest.C:80
+12 0x0000000000022555 __libc_start_main()  ???:0
+13 0x00000000004010e9 _start()  ???:0
+=================================
+[h15c44:143932:0] Caught signal 11 (Segmentation fault)
+==== backtrace ====
+ 2 0x000000000006c54c mxm_handle_error()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:641
+ 3 0x000000000006ca9c mxm_error_signal_handler()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:616
+ 4 0x000000000000f630 _L_unlock_13()  funlockfile.c:0
+ 5 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 6 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 7 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 8 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 9 0x000000000009a413 nc4_hdf5_initialize()  ??:0
+10 0x00000000000a5e27 NC_HDF5_initialize()  ??:0
+11 0x000000000003787f nc_initialize()  ??:0
+12 0x000000000003bd57 NC_open()  ??:0
+13 0x000000000003b191 nc_open()  ??:0
+14 0x0000000000e017c7 _ZN5ESMCI9IO_NetCDF4readERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO_NetCDF.C:231
+15 0x00000000004014f0 main()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/tests/ESMCI_IO_NetCDFUTest.C:80
+16 0x0000000000022555 __libc_start_main()  ??:0
+17 0x00000000004010e9 _start()  ??:0
+===================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 143932 RUNNING AT h15c44
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 143933 RUNNING AT h15c44
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 2 PID 143934 RUNNING AT h15c44
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 3 PID 143935 RUNNING AT h15c44
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
