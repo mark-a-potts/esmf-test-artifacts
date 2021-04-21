@@ -1,0 +1,88 @@
+build time -- 2021-04-21 06:39:10
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+[h16c54:40894:0:40894] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2b50e535bce4)
+==== backtrace (tid:  40894) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003bd57 NC_open()  ???:0
+ 9 0x000000000003b191 nc_open()  ???:0
+10 0x000000000001161e nf_open_()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:189
+11 0x000000000006eb06 __netcdf_MOD_nf90_open()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:64
+12 0x0000000000c759db __esmf_iofiletypecheckmod_MOD_esmf_filetypecheck()  ???:0
+13 0x0000000000dba38e __esmf_regridweightgenmod_MOD_esmf_regridweightgenfile()  ???:0
+14 0x0000000000400e24 __esmf_arraysmmfromfileutestmod_MOD_test_smm_from_file()  ???:0
+15 0x000000000040100e MAIN__()  ESMF_ArraySMMFromFileUTest.F90:0
+16 0x0000000000401282 main()  ???:0
+17 0x0000000000022555 __libc_start_main()  ???:0
+18 0x0000000000400ce9 _start()  ???:0
+=================================
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x2b4b44c0562f in ???
+#1  0x2b4b43c20b76 in PMPI_Comm_set_attr
+	at ../../src/mpi/attr/comm_set_attr.c:244
+#2  0x2b4b4309d965 in H5_init_library
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+#3  0x2b4b431471c2 in H5Eset_auto2
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+#4  0x2b4b42a6e3fd in ???
+#5  0x2b4b42a6e412 in ???
+#6  0x2b4b42a79e26 in ???
+#7  0x2b4b42a0b87e in ???
+#8  0x2b4b42a0fd56 in ???
+#9  0x2b4b42a0f190 in ???
+#10  0x2b4b4276961d in nf_open_
+	at /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:189
+#11  0x2b4b427c6b05 in __netcdf_MOD_nf90_open
+	at /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:64
+#12  0x2b4b410069da in ???
+#13  0x2b4b4114b38d in ???
+#14  0x400e23 in ???
+#15  0x40100d in ???
+#16  0x401281 in ???
+#17  0x2b4b45c5a554 in ???
+#18  0x400ce8 in ???
+#19  0xffffffffffffffff in ???
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 40891 RUNNING AT h16c54
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 40892 RUNNING AT h16c54
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 2 PID 40893 RUNNING AT h16c54
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 3 PID 40894 RUNNING AT h16c54
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
