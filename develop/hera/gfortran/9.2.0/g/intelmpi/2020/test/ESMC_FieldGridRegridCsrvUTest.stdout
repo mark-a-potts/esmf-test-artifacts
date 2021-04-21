@@ -1,0 +1,92 @@
+build time -- 2021-04-21 06:46:48
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+Beginning Test, file ESMC_FieldGridRegridCsrvUTest.C, line 69
+NUMBER_OF_PROCESSORS 1
+PASS GridCreate, ESMC_FieldGridRegridCsrvUTest.C, line 114
+PASS GridAddCoord, ESMC_FieldGridRegridCsrvUTest.C, line 130
+PASS GridAddItem, ESMC_FieldGridRegridCsrvUTest.C, line 140
+PASS GridGetItem - mask, ESMC_FieldGridRegridCsrvUTest.C, line 151
+PASS GridGetCoord - X, ESMC_FieldGridRegridCsrvUTest.C, line 176
+PASS GridGetCoord - Y, ESMC_FieldGridRegridCsrvUTest.C, line 199
+PASS GridGetCoord - X, ESMC_FieldGridRegridCsrvUTest.C, line 224
+PASS GridGetCoord - Y, ESMC_FieldGridRegridCsrvUTest.C, line 247
+PASS GridAddItem - area, ESMC_FieldGridRegridCsrvUTest.C, line 271
+PASS GridGetItem - area, ESMC_FieldGridRegridCsrvUTest.C, line 282
+PASS MeshCreate, ESMC_FieldGridRegridCsrvUTest.C, line 366
+PASS MeshAddNodes, ESMC_FieldGridRegridCsrvUTest.C, line 374
+PASS MeshAddElements, ESMC_FieldGridRegridCsrvUTest.C, line 388
+PASS MeshGetLocalNodeCount, ESMC_FieldGridRegridCsrvUTest.C, line 398
+PASS MeshGetLocalElementCount, ESMC_FieldGridRegridCsrvUTest.C, line 409
+PASS Create ESMC_Field object from a Grid via TypeKind, ESMC_FieldGridRegridCsrvUTest.C, line 424
+PASS Create ESMC_Field object from a Mesh via TypeKind, ESMC_FieldGridRegridCsrvUTest.C, line 433
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldGridRegridCsrvUTest.C, line 446
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldGridRegridCsrvUTest.C, line 470
+PASS Create an InterArray for maskValues in ESMC_FieldRegridStore(), ESMC_FieldGridRegridCsrvUTest.C, line 485
+PASS Create an ESMC_RouteHandle via ESMC_FieldRegridStore(), ESMC_FieldGridRegridCsrvUTest.C, line 510
+PASS Execute ESMC_FieldRegrid(), ESMC_FieldGridRegridCsrvUTest.C, line 518
+[h35m47:247645:0:247645] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2b8d098ed924)
+==== backtrace (tid: 247645) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003baa1 NC_create()  ???:0
+ 9 0x000000000003b0a2 nc__create()  ???:0
+10 0x000000000003b05b nc_create()  ???:0
+11 0x00000000000113ae nf_create_()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:64
+12 0x000000000006e8fe __netcdf_MOD_nf90_create()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:134
+13 0x000000000257c695 __esmfionf_mod_MOD_create_nf()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/PIO/ionf_mod.F90:109
+14 0x000000000265da5c __esmfpiolib_mod_MOD_createfile()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/PIO/piolib_mod.F90:2500
+15 0x00000000025e6b4e esmcpio_cpp_createfile()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:565
+16 0x000000000107b804 ESMCI::PIO_Handler::open()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
+17 0x0000000000e01020 ESMCI::IO_Handler::open()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
+18 0x0000000000df7fa4 ESMCI::IO::open()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:830
+19 0x0000000000df69de ESMCI::IO::write()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
+20 0x0000000000a9057c ESMCI::Array::write()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Array/src/ESMCI_Array.C:4064
+21 0x00000000010b2f09 ESMCI::RouteHandle::print()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Route/src/ESMCI_RHandle.C:938
+22 0x00000000011b400b ESMC_RouteHandlePrint()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Route/interface/ESMC_RHandle.C:80
+23 0x00000000004034a5 main()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:525
+24 0x0000000000022555 __libc_start_main()  ???:0
+25 0x0000000000401369 _start()  ???:0
+=================================
+[h35m47:247645:0] Caught signal 11 (Segmentation fault)
+==== backtrace ====
+ 2 0x000000000006c54c mxm_handle_error()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:641
+ 3 0x000000000006ca9c mxm_error_signal_handler()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:616
+ 4 0x000000000000f630 _L_unlock_13()  funlockfile.c:0
+ 5 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 6 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 7 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 8 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 9 0x000000000009a413 nc4_hdf5_initialize()  ??:0
+10 0x00000000000a5e27 NC_HDF5_initialize()  ??:0
+11 0x000000000003787f nc_initialize()  ??:0
+12 0x000000000003baa1 NC_create()  ??:0
+13 0x000000000003b0a2 nc__create()  ??:0
+14 0x000000000003b05b nc_create()  ??:0
+15 0x00000000000113ae nf_create_()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/nf_control.F90:64
+16 0x000000000006e8fe __netcdf_MOD_nf90_create()  /tmp/Role.Apps/spack-stage/spack-stage-netcdf-fortran-4.5.2-nbyhestkjlc2k7g5fmpepvrs5vrrxifc/spack-src/fortran/netcdf4_file.f90:134
+17 0x000000000257c695 __esmfionf_mod_MOD_create_nf()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/PIO/ionf_mod.F90:109
+18 0x000000000265da5c __esmfpiolib_mod_MOD_createfile()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/PIO/piolib_mod.F90:2500
+19 0x00000000025e6b4e esmcpio_cpp_createfile()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:565
+20 0x000000000107b804 _ZN5ESMCI11PIO_Handler4openEbPi()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
+21 0x0000000000e01020 _ZN5ESMCI10IO_Handler4openERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE20ESMC_FileStatus_FlagbbPi()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
+22 0x0000000000df7fa4 _ZN5ESMCI2IO4openERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE20ESMC_FileStatus_Flag15ESMC_IOFmt_Flagbb()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:830
+23 0x0000000000df69de _ZN5ESMCI2IO5writeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE15ESMC_IOFmt_Flagb20ESMC_FileStatus_FlagPi()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
+24 0x0000000000a9057c _ZN5ESMCI5Array5writeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_S8_S8_PbP20ESMC_FileStatus_FlagPiP15ESMC_IOFmt_Flag()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Array/src/ESMCI_Array.C:4064
+25 0x00000000010b2f09 _ZNK5ESMCI11RouteHandle5printEv()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Route/src/ESMCI_RHandle.C:938
+26 0x00000000011b400b ESMC_RouteHandlePrint()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Route/interface/ESMC_RHandle.C:80
+27 0x00000000004034a5 main()  /scratch1/NCEPDEV/da/Mark.Potts/sandbox/gfortran_9.2.0_intelmpi_g_develop/src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:525
+28 0x0000000000022555 __libc_start_main()  ??:0
+29 0x0000000000401369 _start()  ??:0
+===================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 247645 RUNNING AT h35m47
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
