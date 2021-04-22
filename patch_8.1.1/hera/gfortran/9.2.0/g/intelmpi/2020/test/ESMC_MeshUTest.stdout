@@ -1,5 +1,4 @@
-build time -- 2021-04-21 13:17:54
-MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+build time -- 2021-04-22 12:27:43
 Beginning Test, file ESMC_MeshUTest.C, line 53
 NUMBER_OF_PROCESSORS 1
 PASS MeshCreate, ESMC_MeshUTest.C, line 121
@@ -18,9 +17,53 @@ PASS MeshVerifyElemCoord, ESMC_MeshUTest.C, line 282
 PASS MeshWrite, ESMC_MeshUTest.C, line 291
 PASS MeshFreeMemory, ESMC_MeshUTest.C, line 301
 PASS MeshDestroy, ESMC_MeshUTest.C, line 310
-
-===================================================================================
-=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 0 PID 268557 RUNNING AT h16c31
-=   KILLED BY SIGNAL: 9 (Killed)
-===================================================================================
+[h13c03:274388:0:274388] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2b681ad08924)
+==== backtrace (tid: 274388) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003bd57 NC_open()  ???:0
+ 9 0x000000000003b191 nc_open()  ???:0
+10 0x000000000119bbb9 c_convertscrip_()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/IO/interface/ESMC_IOScrip2ESMF.C:318
+11 0x0000000001def159 __esmf_meshmod_MOD_esmf_meshcreatefromscrip()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:2902
+12 0x0000000001df86e4 __esmf_meshmod_MOD_esmf_meshcreatefromfile()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:2052
+13 0x0000000001e04691 f_esmf_meshcreatefromfile_()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMF_Mesh_C.F90:74
+14 0x0000000000fc68c5 ESMCI::Mesh::createfromfile()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/src/ESMCI_Mesh.C:108
+15 0x0000000000fd7e69 ESMCI::MeshCXX::createFromFile()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/src/ESMCI_MeshCXX.C:242
+16 0x00000000011b3119 ESMC_MeshCreateFromFile()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMC_Mesh.C:94
+17 0x000000000040245b main()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:320
+18 0x0000000000022555 __libc_start_main()  ???:0
+19 0x0000000000400fe9 _start()  ???:0
+=================================
+[h13c03:274388:0] Caught signal 11 (Segmentation fault)
+==== backtrace ====
+ 2 0x000000000006c54c mxm_handle_error()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:641
+ 3 0x000000000006ca9c mxm_error_signal_handler()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:616
+ 4 0x000000000000f630 _L_unlock_13()  funlockfile.c:0
+ 5 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 6 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 7 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 8 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 9 0x000000000009a413 nc4_hdf5_initialize()  ??:0
+10 0x00000000000a5e27 NC_HDF5_initialize()  ??:0
+11 0x000000000003787f nc_initialize()  ??:0
+12 0x000000000003bd57 NC_open()  ??:0
+13 0x000000000003b191 nc_open()  ??:0
+14 0x000000000119bbb9 c_convertscrip_()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/IO/interface/ESMC_IOScrip2ESMF.C:318
+15 0x0000000001def159 __esmf_meshmod_MOD_esmf_meshcreatefromscrip()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:2902
+16 0x0000000001df86e4 __esmf_meshmod_MOD_esmf_meshcreatefromfile()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:2052
+17 0x0000000001e04691 f_esmf_meshcreatefromfile_()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMF_Mesh_C.F90:74
+18 0x0000000000fc68c5 _ZN5ESMCI4Mesh14createfromfileEPKciPiS3_S2_S3_S2_S3_S3_P18ESMC_CoordSys_FlagS3_()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/src/ESMCI_Mesh.C:108
+19 0x0000000000fd7e69 _ZN5ESMCI7MeshCXX14createFromFileEPKciPiS3_S2_S3_S2_S3_()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/src/ESMCI_MeshCXX.C:242
+20 0x00000000011b3119 ESMC_MeshCreateFromFile()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/interface/ESMC_Mesh.C:94
+21 0x000000000040245b main()  /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_intelmpi_g_patch_8.1.1/src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:320
+22 0x0000000000022555 __libc_start_main()  ??:0
+23 0x0000000000400fe9 _start()  ??:0
+===================
+srun: error: h13c03: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=18219136.100
