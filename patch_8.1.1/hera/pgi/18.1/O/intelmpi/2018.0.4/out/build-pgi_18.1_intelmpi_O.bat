@@ -9,13 +9,14 @@
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+export ESMF_MPIRUN=mpirun.srun
 module load pgi/18.10 impi/2018.0.4 
 
 module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/scratch1/NCEPDEV/da/Mark.Potts/sandbox/pgi_18.1_intelmpi_O_patch_8.1.1
+export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/pgi_18.1_intelmpi_O_patch_8.1.1
 export ESMF_COMPILER=pgi
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'
