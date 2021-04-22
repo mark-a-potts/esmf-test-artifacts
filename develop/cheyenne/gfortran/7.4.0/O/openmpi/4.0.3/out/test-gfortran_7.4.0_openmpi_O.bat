@@ -24,10 +24,10 @@ make info 2>&1| tee info.log
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
+chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-chmod +x runpython.sh
 
 cd ../src/addon/ESMPy
 
@@ -37,4 +37,5 @@ ssh cheyenne6 /glade/scratch/mpotts/gfortran_7.4.0_openmpi_O_develop/runpython.s
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
+ssh cheyenne6 /glade/scratch/mpotts/gfortran_7.4.0_openmpi_O_develop/getres-test.sh
 ssh cheyenne6 /glade/scratch/mpotts/gfortran_7.4.0_openmpi_O_develop/getres-test.sh
