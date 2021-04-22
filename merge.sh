@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 git checkout origin/plavac develop/plavac
 git status
