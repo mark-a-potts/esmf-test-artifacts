@@ -23,3 +23,4 @@ make info 2>&1| tee info.log
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
 ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_mpt_g_develop/getres-test.sh
+ssh cheyenne6 /glade/scratch/mpotts/intel_18.0.5_mpt_g_develop/getres-test.sh
