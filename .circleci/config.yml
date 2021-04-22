@@ -1,13 +1,21 @@
 version: 2.1
 
-jobs:
+orbs:
+  python: circleci/python@0.2.1
 
-  build:
-    docker:
-      - image: circleci/python
-        auth:
-          username: $ESMF_DOCKER_USERNAME
-          password: $ESMF_DOCKER_PASSWORD
+jobs:
+  build-and-test:
+    executor: python/default
     steps:
-      - checkout:
-      - run: echo "hello there"
+      - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
+      - run:
+          command: ./manage.py test
+          name: Test
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
