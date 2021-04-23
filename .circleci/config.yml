@@ -12,7 +12,7 @@ commands:
       - run:
           name: Checkout Code (esmf-test-artifacts)
 #         command: git clone --depth 1 --branch ${CIRCLE_BRANCH} https://github.com/esmf-org/esmf-test-artifacts.git
-          command: ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts;git clone git@github.com:mark-a-potts/esmf-test-artifacts.git
+          command: echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;git clone git@github.com:mark-a-potts/esmf-test-artifacts.git
       - run:
           name: cd to artifacts
 #         command: whoami; git config --global user.email "mark.potts@noaa.gov";git config --global user.name "dcv-bot";cd esmf-test-artifacts; git checkout origin/${CIRCLE_BRANCH} develop/${CIRCLE_BRANCH}; git add develop; echo ${CIRCLE_BRANCH}; git commit -a -m'update from ${CIRCLE_BRANCH}'; git push origin main 
