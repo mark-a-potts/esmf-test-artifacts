@@ -1,0 +1,33 @@
+version: 2.1
+
+commands:
+  merge-branch:
+    parameters:
+      branch:
+        type: string
+    steps:
+      - run:
+          name: Checkout Code (esmf-test-artifacts)
+          command: echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;git clone git@github.com:mark-a-potts/esmf-test-artifacts.git
+      - run:
+          name: run scripts
+          command: cd esmf-test-artifacts/.circleci/runscp.sh
+
+jobs:
+  mt-test:
+    docker:
+      - image: circleci/python
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "3a:c8:f5:d7:b1:d5:51:d6:70:cf:4b:d2:9b:60:3d:44"
+      - merge-branch:
+          branch: plavac
+
+workflows:
+
+  merge-branch:
+    jobs:
+      - mt-test:
+          name: test
+
