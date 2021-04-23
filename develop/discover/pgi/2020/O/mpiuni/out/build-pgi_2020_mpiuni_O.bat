@@ -1,21 +1,22 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #SBATCH --account=s2326
+#SBATCH -o build-pgi_2020_mpiuni_O.bat_%j.o
+#SBATCH -e build-pgi_2020_mpiuni_O.bat_%j.e
+#SBATCH --time=1:20:00
 #SBATCH --partition=compute
 #SBATCH --qos=allnccs
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
-#SBATCH --time=1:20:00
 #SBATCH --exclusive
-#SBATCH --output build-pgi_2020_mpiuni_O.bat_%j.o
 export JOBID=$SLURM_JOBID
-export ESMF_MPIRUN=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_O/src/Infrastructure/stubs/mpiuni/mpirun
+export ESMF_MPIRUN=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load comp/pgi/20.4  
 
 module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_O
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_O_develop
 export ESMF_COMPILER=pgi
 export ESMF_COMM=mpiuni
 export ESMF_BOPT='O'

@@ -1,3 +1,4 @@
+build time -- 2021-04-21 20:17:56
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
@@ -8,8 +9,6 @@
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          60
-  fstr=0123456789abcdefghijklmnopqrstuvwxyz
- -- leaving f90string2 subroutine
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
@@ -72,7 +71,9 @@
 -- ready to call f90string2 by callback, passing 25
  -- entering f90string2 subroutine
   ints=         102         204         409         819
-  strlen =           PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
+  strlen =           fstr=0123456789abcdefghijklmnopqrstuvwxyz
+ -- leaving f90string2 subroutine
+  PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
  -- entering f90string3 subroutine
   ints=         102         204         409         819
   strlen =         120
@@ -140,11 +141,7 @@
  -- leaving f90string3 subroutine
 
 
--- returned from call f90string3 by callback
-
-
--- leaving c_strings
-  PASS  Calling c_s 25
+-- return 25
   fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
  -- leaving f90string2 subroutine
 
@@ -224,7 +221,11 @@
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
- -- trings with fstr, ESMF_StringUTest.F90, line 90
+ -- ed from call f90string3 by callback
+
+
+-- leaving c_strings
+  PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
   PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
 
 
@@ -300,5 +301,5 @@ leaving f90string3 subroutine
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time    1.1720000000000064       msec.
-  PET           1  Test Elapsed Time    1.1379999999999724       msec.
+  PET           1  Test Elapsed Time    1.1619999999999964       msec.
+  PET           0  Test Elapsed Time    1.1540000000000439       msec.

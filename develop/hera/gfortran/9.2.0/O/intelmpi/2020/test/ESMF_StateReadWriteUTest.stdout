@@ -1,24 +1,21 @@
-MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
-MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
-MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
-MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
-  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
-  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
-  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+build time -- 2021-04-22 12:22:36
   Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
   NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
   NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
   NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
   NUMBER_OF_PROCESSORS           4
   PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
   PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
   PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
   PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
-  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
   PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
   PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
   PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
   PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
   PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
   PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
   PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
@@ -27,27 +24,56 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
   PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
   PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+[h13c29:265621:0:265621] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x2ba8ffbb0924)
+==== backtrace (tid: 265621) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000246b76 PMPI_Comm_set_attr()  /localdisk/jenkins/workspace/workspace/ch4-build-linux-2019/impi-ch4-build-linux_build/CONF/impi-ch4-build-linux-release/label/impi-ch4-build-linux-intel64/_buildspace/release/../../src/mpi/attr/comm_set_attr.c:244
+ 2 0x000000000004b966 H5_init_library()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+ 3 0x00000000000f51c3 H5Eset_auto2()  /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+ 4 0x000000000009a3fe set_auto()  hdf5internal.c:0
+ 5 0x000000000009a413 nc4_hdf5_initialize()  ???:0
+ 6 0x00000000000a5e27 NC_HDF5_initialize()  ???:0
+ 7 0x000000000003787f nc_initialize()  ???:0
+ 8 0x000000000003bd57 NC_open()  ???:0
+ 9 0x000000000003b191 nc_open()  ???:0
+10 0x0000000000523eae ESMCI::IO_NetCDF::read()  ???:0
+11 0x000000000075832f ESMCI::State::read()  ???:0
+12 0x0000000000758cb7 c_esmc_stateread_()  ???:0
+13 0x0000000000dccfdc __esmf_stateapimod_MOD_esmf_stateread()  ???:0
+14 0x000000000040152c MAIN__()  ESMF_StateReadWriteUTest.F90:0
+15 0x0000000000403455 main()  ???:0
+16 0x0000000000022555 __libc_start_main()  ???:0
+17 0x0000000000401139 _start()  ???:0
+=================================
 
-===================================================================================
-=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 0 PID 238547 RUNNING AT h12c54
-=   KILLED BY SIGNAL: 9 (Killed)
-===================================================================================
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
 
-===================================================================================
-=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 1 PID 238548 RUNNING AT h12c54
-=   KILLED BY SIGNAL: 9 (Killed)
-===================================================================================
-
-===================================================================================
-=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 2 PID 238549 RUNNING AT h12c54
-=   KILLED BY SIGNAL: 9 (Killed)
-===================================================================================
-
-===================================================================================
-=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
-=   RANK 3 PID 238550 RUNNING AT h12c54
-=   KILLED BY SIGNAL: 9 (Killed)
-===================================================================================
+Backtrace for this error:
+#0  0x2ba28518b62f in ???
+#1  0x2ba2841a6b76 in PMPI_Comm_set_attr
+	at ../../src/mpi/attr/comm_set_attr.c:244
+#2  0x2ba283623965 in H5_init_library
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5.c:146
+#3  0x2ba2836cd1c2 in H5Eset_auto2
+	at /tmp/Role.Apps/spack-stage/spack-stage-hdf5-1.10.5-bwfiz7ovtsb5axzwbbm6n2godpvhvfyd/spack-src/src/H5E.c:1663
+#4  0x2ba282ff43fd in ???
+#5  0x2ba282ff4412 in ???
+#6  0x2ba282fffe26 in ???
+#7  0x2ba282f9187e in ???
+#8  0x2ba282f95d56 in ???
+#9  0x2ba282f95190 in ???
+#10  0x2ba280e3dead in ???
+#11  0x2ba28107232e in ???
+#12  0x2ba281072cb6 in ???
+#13  0x2ba2816e6fdb in ???
+#14  0x40152b in ???
+#15  0x403454 in ???
+#16  0x2ba2861e0554 in ???
+#17  0x401138 in ???
+#18  0xffffffffffffffff in ???
+srun: error: h13c29: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=18217261.153
+slurmstepd: error: *** STEP 18217261.153 ON h13c29 CANCELLED AT 2021-04-22T13:02:51 ***
+srun: error: h13c29: tasks 1,3: Terminated
+srun: error: h13c29: task 2: Terminated
+srun: Force Terminated StepId=18217261.153
