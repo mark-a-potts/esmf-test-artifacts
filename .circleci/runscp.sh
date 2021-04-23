@@ -18,6 +18,7 @@ git checkout origin/$host $branch/$host
 export hash=`git show -s --format=%s |  awk -F " " '{print $8}'`
 export message=`git show -s --format=%s`
 echo $message
-find $branch -iname summary.dat | xargs grep -l "hash = $hash" | xargs grep -L "hash = $hash." | xargs grep "test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $2,$3,$4,$6,$7,$5,$12,$14}' | column -t > "$branch/$hash.summary"
+find $branch -iname summary.dat | xargs grep -l "hash = $hash" | xargs grep -L "hash = $hash." | xargs grep "test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $2,$3,$4,$6,$7,$5,$12,$14}' > "$branch/$hash.summary"
+git add $branch
 git commit -a -m"$message"
 git push origin main
