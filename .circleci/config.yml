@@ -19,13 +19,13 @@ commands:
           command: git config --global user.email "mark.potts@noaa.gov";git config --global user.name "dcv-bot";cd esmf-test-artifacts; ls; git branch; git branch -r; 
       - run:
           name: add branch
-          command: echo ${CIRCLE_BRANCH};git checkout origin/plavac develop/plavac
+          command: echo $PWD;ls -l;cd esmf-test-artifacts;git checkout origin/${CIRCLE_BRANCH} develop/${CIRCLE_BRANCH}
       - run:
           name: commit changes
-          command: git commit -a -m'updates from plavac'
-      - run:
-          name: push changes
-          command: git push origin main
+          command: cd esmf-test-artifacts;git commit -a -m'updates from ${CIRCLE_BRANCH}';git push origin main
+#     - run:
+#         name: push changes
+#         command: git push origin main
 #     - run:
 #         name: Install Dependencies
 #         command: pip3 install jsonschema unittest-xml-reporting click gitpython requests python-dateutil pytest-shutil
