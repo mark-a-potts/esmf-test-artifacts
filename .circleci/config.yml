@@ -1,0 +1,39 @@
+version: 2.1
+
+commands:
+  merge-branch:
+    parameters:
+      branch:
+        type: string
+    steps:
+      - run:
+          name: Checkout Code (esmf-test-artifacts)
+          command: echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;git clone git@github.com:mark-a-potts/esmf-test-artifacts.git
+      - run:
+          name: cd to artifacts
+          command: echo $SHELL;git config --global user.email "mark.potts@noaa.gov";git config --global user.name "dcv-bot";cd esmf-test-artifacts; ls; git branch; git branch -r;
+      - run:
+          name: add branch
+          command: echo $PWD;ls -l;cd esmf-test-artifacts;export host=`git show -s --format=%s |  awk -F " " '{print $10}'`;export branch=`git show -s --format=%s |  awk -F " " '{print $5}' | awk -F"_._" '{print $5}'`;git checkout origin/$host $branch/$host
+      - run:
+          name: commit changes
+          command: cd esmf-test-artifacts;export hash=`git show -s --format=%s |  awk -F " " '{print $8}'`;export $message=`git show -s --format=%s`;find $branch -iname summary.dat | xargs grep -l "hash = $hash" | xargs grep -L "hash = $hash." | xgrep "test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $2,$3,$4,$6,$7,$5,$12,$14}' | column -t > $branch/$hash.summary; git commit -a -m"$message";git push origin main
+
+jobs:
+  mt-test:
+    docker:
+      - image: circleci/python
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "3a:c8:f5:d7:b1:d5:51:d6:70:cf:4b:d2:9b:60:3d:44"
+      - merge-branch:
+          branch: plavac
+
+workflows:
+
+  merge-branch:
+    jobs:
+      - mt-test:
+          name: test
+
